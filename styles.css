@@ -1,11 +1,14 @@
 html {
     font-size: 14px;
+    color: white;
+    background: black url("thumbnails/Shiki_Natsume_1.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 
 body {
     font-family: sans-serif;
-    color: white;
-    background-color: black;
     margin: 1.5rem;
 }
 
@@ -122,10 +125,11 @@ a:not(:hover) {
 }
 
 .vn-grid {
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: space-evenly;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     padding-left: 3px;
+    justify-items: center;
+    grid-gap: 2.5rem;
 }
 
 .item {
@@ -133,7 +137,6 @@ a:not(:hover) {
     grid-template-columns: 190px 20px;
     grid-gap: 5px;
     grid-auto-rows: min-content;
-    padding: 0 2.5rem 2.5rem 0;
 }
 
 .vn-icon,
