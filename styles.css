@@ -71,6 +71,7 @@ a:not(:hover) {
 
 .test {
     display: flex;
+    font-size: 0.9rem;
 }
 
 .test > div {
