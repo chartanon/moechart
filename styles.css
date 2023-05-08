@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
 html {
     font-size: 14px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: sans-serif;
     color: white;
     background-color: black;
     margin: 1.5rem;
@@ -27,12 +25,12 @@ a:not(:hover) {
     text-decoration: none;
 }
 
-/*.plot-1 .vn-title,
-.plot-1 .vn-tags,
-.plot-1 .vn-thumb,
-.plot-1 .vn-icon,
-.plot-1 .vn-playtime,
-.test > div.plot-1 {
+/*.comedy .vn-title,
+.comedy .vn-tags,
+.comedy .vn-thumb,
+.comedy .vn-icon,
+.comedy .vn-playtime,
+.test > div.comedy {
     filter: drop-shadow(0 0 3px yellow)
             drop-shadow(0 0 3px rgba(255,255,0,0.4));
 }*/
@@ -48,6 +46,7 @@ a:not(:hover) {
     top: 1.5rem;
     border: 1px solid rgba(255,255,255,0.5);
     padding: 0.3rem;
+    border-radius: 0.2rem;
 }
 
 .main-grid {
@@ -132,6 +131,7 @@ a:not(:hover) {
     display: grid;
     grid-template-columns: 190px 20px;
     grid-gap: 5px;
+    grid-auto-rows: min-content;
     padding: 0 2.5rem 2.5rem 0;
 }
 
@@ -162,12 +162,12 @@ a:not(:hover) {
     outline-offset: -4px;
 }
 
-.plot-5 .vn-thumb {border-color: #2e62dd;}
-.plot-4 .vn-thumb {border-color: #9b3add;}
-.plot-3 .vn-thumb {border-color: #dd4b4b;}
-.plot-2 .vn-thumb {border-color: #dd7b4b;}
-.plot-1 .vn-thumb {border-color: #e1cd5d;}
-.plot-nuki .vn-thumb {border-color: #e8e8e8;}
+.story .vn-thumb {border-color: #2e62dd;}
+.storom .vn-thumb {border-color: #9b3add;}
+.romance .vn-thumb {border-color: #dd4b4b;}
+.romcom .vn-thumb {border-color: #dd7b4b;}
+.comedy .vn-thumb {border-color: #e1cd5d;}
+.nukige .vn-thumb {border-color: #e8e8e8;}
 
 .vn-tags {
     grid-column: 1;
@@ -185,10 +185,14 @@ a:not(:hover) {
 .vn-icon:nth-last-of-type(2) {grid-row: 6}
 .vn-icon:last-of-type {grid-row: 7}
 
+.main-grid.upcoming { margin-top: 1.7rem;}
+
 .upcoming-list {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
 }
+
+.upcoming-list a {text-align: start;}
 
 .upcoming-list date {
     justify-self: end;
