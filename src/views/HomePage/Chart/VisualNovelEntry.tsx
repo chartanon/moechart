@@ -43,7 +43,8 @@ export enum GenreFocus {
     STORY_ROMANCE = 'STORY_ROMANCE',
     ROMANCE = 'ROMANCE',
     ROM_COM = 'ROM_COM',
-    COMEDY = 'COMEDY'
+    COMEDY = 'COMEDY',
+    NUKIGE = 'NUKIGE'
 }
 
 export interface VisualNovelProps {

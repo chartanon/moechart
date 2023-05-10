@@ -5,315 +5,1973 @@ import {
     VisualNovelProps
 } from './VisualNovelEntry';
 
+import aokana from '../../assets/thumbnails/aokana.jpg';
+import haretaka from '../../assets/thumbnails/haretaka.jpg';
+import konosora from '../../assets/thumbnails/konosora.jpg';
+import chrono_clock from '../../assets/thumbnails/chrono-clock.jpg';
+import maitetsu from '../../assets/thumbnails/maitetsu.jpg';
+import da_capo from '../../assets/thumbnails/da-capo.jpg';
+import yoakena from '../../assets/thumbnails/yoakena.jpg';
+import dal_segno from '../../assets/thumbnails/dal-segno.jpg';
+import hello_good_bye from '../../assets/thumbnails/hello-good-bye.jpg';
+import kinkoi from '../../assets/thumbnails/kinkoi.jpg';
+import hoshimemo from '../../assets/thumbnails/hoshimemo.jpg';
+import daitoshokan from '../../assets/thumbnails/daitoshokan.jpg';
+import sakusaku from '../../assets/thumbnails/sakusaku.jpg';
+import miazora from '../../assets/thumbnails/miazora.jpg';
+import koichoco from '../../assets/thumbnails/koichoco.jpg';
+import koiken_otome from '../../assets/thumbnails/koiken-otome.jpg';
+import corona_blossom from '../../assets/thumbnails/corona-blossom.jpg';
+import hitotsuba from '../../assets/thumbnails/hitotsuba.jpg';
+import date_a_live from '../../assets/thumbnails/date-a-live.jpg';
+import sanoba_witch from '../../assets/thumbnails/sanoba-witch.jpg';
+import princess_evangile from '../../assets/thumbnails/princess-evangile.jpg';
+import koirizo from '../../assets/thumbnails/koirizo.jpg';
+import hatsukoi from '../../assets/thumbnails/hatsukoi.jpg';
+import cafe_stella from '../../assets/thumbnails/cafe-stella.jpg';
+import senren_banka from '../../assets/thumbnails/senren-banka.jpg';
+import riddle_joker from '../../assets/thumbnails/riddle-joker.jpg';
+import hinatabokko from '../../assets/thumbnails/hinatabokko.jpg';
+import canvas_2 from '../../assets/thumbnails/canvas-2.jpg';
+import period from '../../assets/thumbnails/period.jpg';
+import koi_ama from '../../assets/thumbnails/koi-ama.jpg';
+import to_heart_2 from '../../assets/thumbnails/to-heart-2.jpg';
+import loca_love from '../../assets/thumbnails/loca-love.jpg';
+import suki_suki from '../../assets/thumbnails/suki-suki.jpg';
+import hoshi_ori from '../../assets/thumbnails/hoshi-ori.jpg';
+import yotsunoha from '../../assets/thumbnails/yotsunoha.jpg';
+import kimihime from '../../assets/thumbnails/kimihime.jpg';
+import amairo_choco from '../../assets/thumbnails/amairo-choco.jpg';
+import island_diary from '../../assets/thumbnails/island-diary.jpg';
+import harmoney from '../../assets/thumbnails/harmoney.jpg';
+import study_steady from '../../assets/thumbnails/study-steady.jpg';
+import himukai from '../../assets/thumbnails/himukai.jpg';
+import knot_fiction from '../../assets/thumbnails/knot-fiction.jpg';
+import ninki_seiyuu from '../../assets/thumbnails/ninki-seiyuu.jpg';
+import love_sweets from '../../assets/thumbnails/love-sweets.jpg';
 import aikagi from '../../assets/thumbnails/aikagi.jpg';
+import icing from '../../assets/thumbnails/icing.jpg';
+import shuffle from '../../assets/thumbnails/shuffle.jpg';
+import nekopara from '../../assets/thumbnails/nekopara.jpg';
+import noble_works from '../../assets/thumbnails/noble-works.jpg';
+import dracu_riot from '../../assets/thumbnails/dracu-riot.jpg';
+import neko_nin from '../../assets/thumbnails/neko-nin.jpg';
 import wagahigh from '../../assets/thumbnails/wagahigh.jpg';
+import tsujidou from '../../assets/thumbnails/tsujidou.jpg';
+import fureraba from '../../assets/thumbnails/fureraba.jpg';
+import making_lovers from '../../assets/thumbnails/making-lovers.jpg';
+import sugar_style from '../../assets/thumbnails/sugar-style.jpg';
+import harem_kingdom from '../../assets/thumbnails/harem-kingdom.jpg';
+import primal_hearts from '../../assets/thumbnails/primal-hearts.jpg';
+import mml from '../../assets/thumbnails/mml.jpg';
+import damekoi from '../../assets/thumbnails/damekoi.jpg';
+import onikiss from '../../assets/thumbnails/onikiss.jpg';
+import ixshetell from '../../assets/thumbnails/ixshetell.jpg';
+import amatarasu_riddle from '../../assets/thumbnails/amatarasu-riddle.jpg';
+import ninnin_days from '../../assets/thumbnails/ninnin-days.jpg';
+import troubledays from '../../assets/thumbnails/troubledays.jpg';
+import karakara from '../../assets/thumbnails/karakara.jpg';
+import nekomiko from '../../assets/thumbnails/nekomiko.jpg';
+import yuki_koi_melt from '../../assets/thumbnails/yuki-koi-melt.jpg';
+import kukkoro_days from '../../assets/thumbnails/kukkoro-days.jpg';
+import sextett from '../../assets/thumbnails/sextett.jpg';
+import mashimaro from '../../assets/thumbnails/mashimaro.jpg';
+import kamiyaba from '../../assets/thumbnails/kamiyaba.jpg';
+import otome_domain from '../../assets/thumbnails/otome-domain.jpg';
+import idoldays from '../../assets/thumbnails/idoldays.jpg';
+import pet_jijou from '../../assets/thumbnails/pet-jijou.jpg';
+import yukizakura from '../../assets/thumbnails/yukizakura.jpg';
+import osadai from '../../assets/thumbnails/osadai.jpg';
+import ikikoi from '../../assets/thumbnails/ikikoi.jpg';
+import majikoi from '../../assets/thumbnails/majikoi.jpg';
+import sakura_sakura from '../../assets/thumbnails/sakura-sakura.jpg';
+import sankaku_renai from '../../assets/thumbnails/sankaku-renai.jpg';
+import koikari from '../../assets/thumbnails/koikari.jpg';
+import onigokko from '../../assets/thumbnails/onigokko.jpg';
+import noratoto from '../../assets/thumbnails/noratoto.jpg';
+import drapri from '../../assets/thumbnails/drapri.jpg';
+import renai_royale from '../../assets/thumbnails/renai-royale.jpg';
+import lovekami from '../../assets/thumbnails/lovekami.jpg';
+import koi_iro_chu from '../../assets/thumbnails/koi-iro-chu.jpg';
+import momoiro_closet from '../../assets/thumbnails/momoiro-closet.jpg';
+import koikuma from '../../assets/thumbnails/koikuma.jpg';
+import kanojo_no_seiiki from '../../assets/thumbnails/kanojo-no-seiiki.jpg';
+import uchi_no_kanojo from '../../assets/thumbnails/uchi-no-kanojo.jpg';
+import tenkiame from '../../assets/thumbnails/tenkiame.jpg';
+import wabisabi from '../../assets/thumbnails/wabisabi.jpg';
+import nyan_cafe from '../../assets/thumbnails/nyan-cafe.jpg';
+import wan_nyan from '../../assets/thumbnails/wan-nyan.jpg';
+import honey from '../../assets/thumbnails/honey.jpg';
+import oneyuu from '../../assets/thumbnails/oneyuu.jpg';
+import shugaten from '../../assets/thumbnails/shugaten.jpg';
+import mamiya_mami from '../../assets/thumbnails/mamiya-mami.jpg';
+import giniro_haruka from '../../assets/thumbnails/giniro-haruka.jpg';
+import clover_days from '../../assets/thumbnails/clover-days.jpg';
+import walkure_romanze from '../../assets/thumbnails/walkure-romanze.jpg';
+import aonatsu_line from '../../assets/thumbnails/aonatsu-line.jpg';
+import orefukahi from '../../assets/thumbnails/orefukahi.jpg';
+import lover_able from '../../assets/thumbnails/lover-able.jpg';
+import majikoi_a5 from '../../assets/thumbnails/majikoi-a5.jpg';
+import nursery_rhyme from '../../assets/thumbnails/nursery-rhyme.jpg';
+import ponkowa from '../../assets/thumbnails/ponkowa.jpg';
+import tenshi_souzou from '../../assets/thumbnails/tenshi-souzou.jpg';
+import secret_agent from '../../assets/thumbnails/secret-agent.jpg';
+import flowlove from '../../assets/thumbnails/flowlove.jpg';
+import kakenuke from '../../assets/thumbnails/kakenuke.jpg';
+import renai_royale_fd from '../../assets/thumbnails/renai-royale-fd.jpg';
+import baka_moe_heart from '../../assets/thumbnails/baka-moe-heart.jpg';
+import enking from '../../assets/thumbnails/enking.jpg';
+import melty_moment from '../../assets/thumbnails/melty-moment.jpg';
+import iroseka from '../../assets/thumbnails/iroseka.jpg';
+import amairo_choco2 from '../../assets/thumbnails/amairo-choco2.jpg';
+import imouto_no_seiiki from '../../assets/thumbnails/imouto-no-seiiki.jpg';
+import gakkou_no_seiiki from '../../assets/thumbnails/gakkou-no-seiiki.jpg';
+import hoshikaka from '../../assets/thumbnails/hoshikaka.jpg';
+import akasaka from '../../assets/thumbnails/akasaka.jpg';
+import yumeiro from '../../assets/thumbnails/yumeiro.jpg';
+import chiikano from '../../assets/thumbnails/chiikano.jpg';
+import hamidashi from '../../assets/thumbnails/hamidashi.jpg';
+import raspberry_cube from '../../assets/thumbnails/raspberry-cube.jpg';
 
 export const visualNovelData: VisualNovelProps[] = [
     {
-        name: 'Aikagi',
+        name: 'Aokana',
         vndbLink: 'https://vndb.org/v12849',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: aokana,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Group of Friends, Sports',
+        descriptionSecondRowText: 'Competition',
+        translationReleaseDate: Date.parse('2019-09-27')
+    },
+    {
+        name: 'Haretaka',
+        vndbLink: 'https://vndb.org/v15077',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: haretaka,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Student Club, Rockets',
+        descriptionSecondRowText: 'Design Story',
+        translationReleaseDate: Date.parse('2019-09-19')
+    },
+    {
+        name: 'Konosora',
+        vndbLink: 'https://vndb.org/v9093',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: konosora,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Group of Friends, Gliders',
+        descriptionSecondRowText: 'Design Story',
+        translationReleaseDate: Date.parse('2018-03-23')
+    },
+    {
+        name: 'Chrono Clock',
+        vndbLink: 'https://vndb.org/v16208',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: chrono_clock,
+        attributes: [
+            Attribute.FLOATING_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Slice of Life Comedy, Deities',
+        descriptionSecondRowText: 'Time Travel',
+        translationReleaseDate: Date.parse('2017-02-28')
+    },
+    {
+        name: 'Maitetsu',
+        vndbLink: 'https://vndb.org/v18131',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: maitetsu,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Countryside, Trains',
+        descriptionSecondRowText: 'Steampunk',
+        translationReleaseDate: Date.parse('2018-06-29')
+    },
+    {
+        name: 'D.C. ~Da Capo~',
+        vndbLink: 'https://vndb.org/v264',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: da_capo,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Slice of Life, Drama',
+        descriptionSecondRowText: 'Fantasy',
+        translationReleaseDate: Date.parse('2008-12-25')
+    },
+    {
+        name: 'Yoakena',
+        vndbLink: 'https://vndb.org/v232',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: yoakena,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Science Fiction, Drama',
+        descriptionSecondRowText: 'Lost Technology',
+        translationReleaseDate: Date.parse('2016-07-18')
+    },
+    {
+        name: 'D.S. -Dal Segno-',
+        vndbLink: 'https://vndb.org/v17742',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: dal_segno,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Slice of Life, Drama',
+        descriptionSecondRowText: 'Science Fiction',
+        translationReleaseDate: Date.parse('2017-06-30')
+    },
+    {
+        name: 'Hello,good-bye',
+        vndbLink: 'https://vndb.org/v5316',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: hello_good_bye,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Politics, Slice of Life',
+        descriptionSecondRowText: 'Espionage',
+        translationReleaseDate: Date.parse('2019-01-25')
+    },
+    {
+        name: 'Kinkoi',
+        vndbLink: 'https://vndb.org/v21852',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: kinkoi,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Blondes, School Life Comedy',
+        descriptionSecondRowText: 'Reunion',
+        translationReleaseDate: Date.parse('2021-06-11')
+    },
+    {
+        name: 'Hoshimemo',
+        vndbLink: 'https://vndb.org/v1474',
+        playtime: PlaytimeLength.VERY_LONG,
+        thumbnailSource: hoshimemo,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'School Life Comedy, Drama',
+        descriptionSecondRowText: 'Supernatural',
+        translationReleaseDate: Date.parse('2012-03-31')
+    },
+    {
+        name: 'Daitoshokan',
+        vndbLink: 'https://vndb.org/v8158',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: daitoshokan,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Urban Fantasy, Mystery',
+        descriptionSecondRowText: 'Library Club',
+        translationReleaseDate: Date.parse('2019-03-23')
+    },
+    {
+        name: 'SakuSaku',
+        vndbLink: 'https://vndb.org/v10304',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: sakusaku,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Shinigami, Slice of Life',
+        descriptionSecondRowText: 'Supernatural',
+        translationReleaseDate: Date.parse('2017-10-02')
+    },
+    {
+        name: 'Miazora',
+        vndbLink: 'https://vndb.org/v16560',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: miazora,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Slice of Life, Drama',
+        descriptionSecondRowText: 'Astronomy Club',
+        translationReleaseDate: Date.parse('2017-12-15')
+    },
+    {
+        name: 'Koichoco',
+        vndbLink: 'https://vndb.org/v4028',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: koichoco,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Friendship, Student Club',
+        descriptionSecondRowText: 'Central Heroine',
+        translationReleaseDate: Date.parse('2015-11-30')
+    },
+    {
+        name: 'Koiken Otome',
+        vndbLink: 'https://vndb.org/v10608',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: koiken_otome,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Group of Friends, Action',
+        descriptionSecondRowText: 'Superpowers',
+        translationReleaseDate: Date.parse('2016-07-13')
+    },
+    {
+        name: 'Corona Blossom',
+        vndbLink: 'https://vndb.org/v19125',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: corona_blossom,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.KINETIC_NOVEL
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Slice of Life Comedy, Space',
+        descriptionSecondRowText: 'Science Fiction',
+        translationReleaseDate: Date.parse('2016-07-21')
+    },
+    {
+        name: 'Hitotsuba',
+        vndbLink: 'https://vndb.org/v17827',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: hitotsuba,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Dousei, Warplanes',
+        descriptionSecondRowText: 'Competition',
+        translationReleaseDate: Date.parse('2019-02-27')
+    },
+    {
+        name: 'Date A Live',
+        vndbLink: 'https://vndb.org/v12702',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: date_a_live,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.TRUE_ROUTE,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Dating Sim, Slice of Life',
+        descriptionSecondRowText: 'Science Fiction',
+        translationReleaseDate: Date.parse('2019-07-23')
+    },
+    {
+        name: 'Sanoba Witch',
+        vndbLink: 'https://vndb.org/v16044',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: sanoba_witch,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Occult Club, Witches',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2018-10-26')
+    },
+    {
+        name: 'Princess Evangile',
+        vndbLink: 'https://vndb.org/v6710',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: princess_evangile,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'School Dormitory, Drama',
+        descriptionSecondRowText: 'All-girls School',
+        translationReleaseDate: Date.parse('2015-03-27')
+    },
+    {
+        name: 'Koirizo',
+        vndbLink: 'https://vndb.org/v13046',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: koirizo,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Dousei, Slice of Life Comedy',
+        descriptionSecondRowText: 'Resort',
+        translationReleaseDate: Date.parse('2015-09-19')
+    },
+    {
+        name: 'Hatsukoi 1/1',
+        vndbLink: 'https://vndb.org/v9124',
+        playtime: PlaytimeLength.VERY_LONG,
+        thumbnailSource: hatsukoi,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Student Club, Slice of Life',
+        descriptionSecondRowText: 'High School',
+        translationReleaseDate: Date.parse('2017-05-06')
+    },
+    {
+        name: 'Cafe Stella',
+        vndbLink: 'https://vndb.org/v26414',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: cafe_stella,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Cafe, Slice of Life',
+        descriptionSecondRowText: 'Supernatural',
+        translationReleaseDate: Date.parse('2022-03-25')
+    },
+    {
+        name: 'Senren Banka',
+        vndbLink: 'https://vndb.org/v19073',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: senren_banka,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Rural Japan, Slice of Life',
+        descriptionSecondRowText: 'Supernatural',
+        translationReleaseDate: Date.parse('2020-02-14')
+    },
+    {
+        name: 'Riddle Joker',
+        vndbLink: 'https://vndb.org/v22230',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: riddle_joker,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Secret Identity, Slice of Life',
+        descriptionSecondRowText: 'Supernatural',
+        translationReleaseDate: Date.parse('2020-12-18')
+    },
+    {
+        name: 'Hinatabokko',
+        vndbLink: 'https://vndb.org/v898',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: hinatabokko,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Slice of Life, Cafe',
+        descriptionSecondRowText: 'University',
+        translationReleaseDate: Date.parse('2008-07-10')
+    },
+    {
+        name: 'Canvas 2',
+        vndbLink: 'https://vndb.org/v174',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: canvas_2,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Teacher MC, High School',
+        descriptionSecondRowText: 'Painting Club',
+        translationReleaseDate: Date.parse('2010-10-08')
+    },
+    {
+        name: 'Period',
+        vndbLink: 'https://vndb.org/v573',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: period,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Angels, High School',
+        descriptionSecondRowText: 'Drama',
+        translationReleaseDate: Date.parse('2012-08-13')
+    },
+    {
+        name: 'Koi Ama',
+        vndbLink: 'https://vndb.org/v21903',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: koi_ama,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Cafe, Waitresses',
+        descriptionSecondRowText: 'Countryside',
+        translationReleaseDate: Date.parse('2018-09-07')
+    },
+    {
+        name: 'To Heart 2',
+        vndbLink: 'https://vndb.org/v20',
+        playtime: PlaytimeLength.VERY_LONG,
+        thumbnailSource: to_heart_2,
+        attributes: [
+            Attribute.NVL_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'High School, Drama',
+        descriptionSecondRowText: 'Reunion',
+        translationReleaseDate: Date.parse('2017-09-26')
+    },
+    {
+        name: 'Loca Love',
+        vndbLink: 'https://vndb.org/v23067',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: loca_love,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Dousei, Destiny',
+        descriptionSecondRowText: 'Slice of Life',
+        translationReleaseDate: Date.parse('2018-10-26')
+    },
+    {
+        name: 'SukiSuki',
+        vndbLink: 'https://vndb.org/v17376',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: suki_suki,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'School Life Comedy, Fairies',
+        descriptionSecondRowText: 'Dating Sim',
+        translationReleaseDate: Date.parse('2018-12-13')
+    },
+    {
+        name: 'Hoshi Ori',
+        vndbLink: 'https://vndb.org/v14265',
+        playtime: PlaytimeLength.VERY_LONG,
+        thumbnailSource: hoshi_ori,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Slice of Life, Festival',
+        descriptionSecondRowText: 'Passage of Time',
+        translationReleaseDate: Date.parse('2019-04-03')
+    },
+    {
+        name: 'Yotsunoha',
+        vndbLink: 'https://vndb.org/v566',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: yotsunoha,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Slice of Life, Reunion',
+        descriptionSecondRowText: 'Middle School',
+        translationReleaseDate: Date.parse('2019-07-13')
+    },
+    {
+        name: 'Kimihime',
+        vndbLink: 'https://vndb.org/v5942',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: kimihime,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Secret Identity, Slice of Life',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2019-11-08')
+    },
+    {
+        name: 'Amairo Chocolata',
+        vndbLink: 'https://vndb.org/v26581',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: amairo_choco,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Cafe, Slice of Life',
+        descriptionSecondRowText: 'Kemonomimi',
+        translationReleaseDate: Date.parse('2020-12-22')
+    },
+    {
+        name: 'Island Diary',
+        vndbLink: 'https://vndb.org/v21436',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: island_diary,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.KINETIC_NOVEL
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Survival, Slice of Life',
+        descriptionSecondRowText: 'Kemonomimi',
+        translationReleaseDate: Date.parse('2021-03-19')
+    },
+    {
+        name: 'HarmonEy',
+        vndbLink: 'https://vndb.org/v22075',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: harmoney,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Wife Heroine, Slice of Life',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2021-03-15')
+    },
+    {
+        name: 'Study § Steady',
+        vndbLink: 'https://vndb.org/v24689',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: study_steady,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Winter, Long H-scenes',
+        descriptionSecondRowText: 'Slice of Life',
+        translationReleaseDate: Date.parse('2021-06-30')
+    },
+    {
+        name: 'Himukai Chihiro',
+        vndbLink: 'https://vndb.org/v30118',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: himukai,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Pillow Talk, Reunion',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2021-07-21')
+    },
+    {
+        name: 'Knot Fiction!',
+        vndbLink: 'https://vndb.org/v24586',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: knot_fiction,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Wife Heroine, Adult MC',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2020-12-19')
+    },
+    {
+        name: 'Ninki Seiyuu',
+        vndbLink: 'https://vndb.org/v20148',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: ninki_seiyuu,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Seiyuu Heroine, Dousei',
+        descriptionSecondRowText: 'Drama',
+        translationReleaseDate: Date.parse('2021-10-08')
+    },
+    {
+        name: 'Love Sweets',
+        vndbLink: 'https://vndb.org/v14269',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: love_sweets,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Waitress Heroine, Cafe',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2021-10-28')
+    },
+    {
+        name: 'Aikagi',
+        vndbLink: 'https://vndb.org/v20232',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: aikagi,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Winter, Dousei',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2021-11-18')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
+        name: 'Icing -love coating-',
+        vndbLink: 'https://vndb.org/v27367',
         playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        thumbnailSource: icing,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Bakery, Wife Heroine',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2021-12-03')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'SHUFFLE!',
+        vndbLink: 'https://vndb.org/v28',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: shuffle,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Gods and Devils, Reunion',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2009-08-15')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
+        name: 'Neko Para',
+        vndbLink: 'https://vndb.org/v15538',
         playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        thumbnailSource: nekopara,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.KINETIC_NOVEL,
+            Attribute.FANDISC
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Cafe, Dousei, Polyamory',
+        descriptionSecondRowText: 'Catgirls',
+        translationReleaseDate: Date.parse('2014-12-29')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Noble ☆ Works',
+        vndbLink: 'https://vndb.org/v4806',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: noble_works,
         attributes: [
+            Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Secret Identity, Dousei',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2015-12-24')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'DRACU-RIOT!',
+        vndbLink: 'https://vndb.org/v8213',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: dracu_riot,
         attributes: [
+            Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Urban Fantasy, Vampires',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2016-09-30')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
+        name: 'Neko-nin',
+        vndbLink: 'https://vndb.org/v20433',
         playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        thumbnailSource: neko_nin,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
+            Attribute.ADV_TEXTBOX,
             Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.FANDISC
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Fantasy, Catgirls',
+        descriptionSecondRowText: 'Polyamory',
+        translationReleaseDate: Date.parse('2017-04-21')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
+        name: 'Wagahigh',
+        vndbLink: 'https://vndb.org/v17823',
+        playtime: PlaytimeLength.LONG,
         thumbnailSource: wagahigh,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Slice of Life, Student Club',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2017-07-27')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Tsujidou',
+        vndbLink: 'https://vndb.org/v9879',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: tsujidou,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Central Heroine, Delinquents',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2018-03-19')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Fureraba',
+        vndbLink: 'https://vndb.org/v11856',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: fureraba,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Central Heroine, Delinquents',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2018-03-19')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Making*Lovers',
+        vndbLink: 'https://vndb.org/v21552',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: making_lovers,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Dating Sim, Adult Life',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2020-04-03')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Sugar*Style',
+        vndbLink: 'https://vndb.org/v24320',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: sugar_style,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Dormitory, University',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2021-04-30')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Harem Kingdom',
+        vndbLink: 'https://vndb.org/v26765',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: harem_kingdom,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Polyamory, Isekai',
+        descriptionSecondRowText: 'King Protagonist',
+        translationReleaseDate: Date.parse('2021-09-24')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'PRIMAL×HEARTS',
+        vndbLink: 'https://vndb.org/v14887',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: primal_hearts,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Student Council, Politics',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2021-07-30')
     },
     {
-        name: 'Wagamama High Spec',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'MML',
+        vndbLink: 'https://vndb.org/v12559',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: mml,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.ADV_TEXTBOX
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
-        translationReleaseDate: Date.parse('1998-03-25')
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Childhood Promise, Reunion',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2018-04-26')
     },
     {
-        name: 'Wagamama High Spec: OC',
-        vndbLink: 'https://vndb.org/v12849',
-        playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        name: 'Damekoi',
+        vndbLink: 'https://vndb.org/v415',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: damekoi,
         attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LADDER_STRUCTURE
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Love Triangle, Dousei',
+        descriptionSecondRowText: 'Central Heroine',
+        translationReleaseDate: Date.parse('2019-05-16')
+    },
+    {
+        name: 'Onikiss',
+        vndbLink: 'https://vndb.org/v18694',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: onikiss,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Dousei, Imouto, Kissing',
+        descriptionSecondRowText: 'Family Life Comedy',
+        translationReleaseDate: Date.parse('2019-09-24')
+    },
+    {
+        name: 'IxSHE Tell',
+        vndbLink: 'https://vndb.org/v21956',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: ixshetell,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Love Triangle, Deredere',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2020-08-28')
+    },
+    {
+        name: 'Amatarasu',
+        vndbLink: 'https://vndb.org/v12992',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: amatarasu_riddle,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Maggic, Slice of Life, Comedy',
+        descriptionSecondRowText: 'Urban Fantasy',
+        translationReleaseDate: Date.parse('2019-10-10')
+    },
+    {
+        name: 'NinNinDays',
+        vndbLink: 'https://vndb.org/v26310',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: ninnin_days,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
             Attribute.LINEAR_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Ninja Heroine, Dousei',
+        descriptionSecondRowText: 'Modern Day',
+        translationReleaseDate: Date.parse('2019-08-08')
+    },
+    {
+        name: 'TroubleDays',
+        vndbLink: 'https://vndb.org/v27751',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: troubledays,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Succubus, Modern Days',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2020-02-13')
+    },
+    {
+        name: 'Karakara',
+        vndbLink: 'https://vndb.org/v18974',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: karakara,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.KINETIC_NOVEL,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Dystopia, Kemonomimi',
+        descriptionSecondRowText: 'Lost Technology',
+        translationReleaseDate: Date.parse('2016-06-27')
+    },
+    {
+        name: 'NekoMiko',
+        vndbLink: 'https://vndb.org/v25170',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: nekomiko,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Catgirls, Polyamory',
+        descriptionSecondRowText: 'Shinto Shrine',
+        translationReleaseDate: Date.parse('2019-01-24')
+    },
+    {
+        name: 'Yuki Koi Melt',
+        vndbLink: 'https://vndb.org/v15064',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: yuki_koi_melt,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Winter Club, School Life',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2020-04-29')
+    },
+    {
+        name: 'KukkoroDays',
+        vndbLink: 'https://vndb.org/v28345',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kukkoro_days,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Knight Heroine, Modern Day',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2020-05-14')
+    },
+    {
+        name: 'Sextett',
+        vndbLink: 'https://vndb.org/v29482',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: sextett,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Isekai, Polyamory',
+        descriptionSecondRowText: 'Episodic',
+        translationReleaseDate: Date.parse('2020-12-14')
+    },
+    {
+        name: 'Mashimaro',
+        vndbLink: 'https://vndb.org/v20622',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: mashimaro,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Cafe, Part-time Job',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2022-01-07')
+    },
+    {
+        name: 'Kamiyaba',
+        vndbLink: 'https://vndb.org/v19769',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: kamiyaba,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Goddess Heroine, Comedy',
+        descriptionSecondRowText: 'Destiny',
+        translationReleaseDate: Date.parse('2022-01-21')
+    },
+    {
+        name: 'Otome * Domain',
+        vndbLink: 'https://vndb.org/v18149',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: otome_domain,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Trap MC, All-girls School',
+        descriptionSecondRowText: 'School Dormitory',
+        translationReleaseDate: Date.parse('2022-12-23')
+    },
+    {
+        name: 'IdolDays',
+        vndbLink: 'https://vndb.org/v31363',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: idoldays,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Idols, Dousei',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2021-08-05')
+    },
+    {
+        name: 'Uchi no Pet Jijou',
+        vndbLink: 'https://vndb.org/v34004',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: pet_jijou,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.KINETIC_NOVEL
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Angels and Demons, Dousei',
+        descriptionSecondRowText: 'Deredere Heroine',
+        translationReleaseDate: Date.parse('2022-04-08')
+    },
+    {
+        name: 'Yukizakura',
+        vndbLink: 'https://vndb.org/v71',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: yukizakura,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Countryside, Winter',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2007-12-13')
+    },
+    {
+        name: 'Osadai',
+        vndbLink: 'https://vndb.org/v2622',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: osadai,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Science Fiction, Parody',
+        descriptionSecondRowText: 'Tongue-in-cheek',
+        translationReleaseDate: Date.parse('2011-12-26')
+    },
+    {
+        name: 'Ikikoi',
+        vndbLink: 'https://vndb.org/v5240',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: ikikoi,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Slice of life, High School',
+        descriptionSecondRowText: 'Slapstick',
+        translationReleaseDate: Date.parse('2013-11-24')
+    },
+    {
+        name: 'Majikoi',
+        vndbLink: 'https://vndb.org/v1143',
+        playtime: PlaytimeLength.VERY_LONG,
+        thumbnailSource: majikoi,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Martial Arts, Group of Friends',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2015-03-10')
+    },
+    {
+        name: 'Sakura Sakura',
+        vndbLink: 'https://vndb.org/v481',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: sakura_sakura,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Dousei, Slice of Life Comedy',
+        descriptionSecondRowText: 'Multiple MCs',
+        translationReleaseDate: Date.parse('2018-11-19')
+    },
+    {
+        name: 'Sankaku Ren\'ai',
+        vndbLink: 'https://vndb.org/v19444',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: sankaku_renai,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Slice of Life, Group of Friends',
+        descriptionSecondRowText: 'Comedic Love Triangle',
+        translationReleaseDate: Date.parse('2019-05-31')
+    },
+    {
+        name: 'Koikari',
+        vndbLink: 'https://vndb.org/v25366',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: koikari,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Love Triangle, Comedy',
+        descriptionSecondRowText: 'Rent-a-boyfriend',
+        translationReleaseDate: Date.parse('2021-10-22')
+    },
+    {
+        name: 'Onigokko!',
+        vndbLink: 'https://vndb.org/v5549',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: onigokko,
+        attributes: [
+            Attribute.FLOATING_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Japanese Mythology, Comedy',
+        descriptionSecondRowText: 'Slice of Life',
+        translationReleaseDate: Date.parse('2021-06-29')
+    },
+    {
+        name: 'Noratoto',
+        vndbLink: 'https://vndb.org/v18148',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: noratoto,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Animorph, Different Worlds',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2019-06-17')
+    },
+    {
+        name: 'DraPri',
+        vndbLink: 'https://vndb.org/v28634',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: drapri,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Dragons, Love Triangle',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2021-01-29')
+    },
+    {
+        name: 'Ren\'ai x Royale',
+        vndbLink: 'https://vndb.org/v28633',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: renai_royale,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Comedy, 4th Wall Breaking',
+        descriptionSecondRowText: 'Love Triangle',
+        translationReleaseDate: Date.parse('2022-09-30')
+    },
+    {
+        name: 'Lovekami',
+        vndbLink: 'https://vndb.org/v20337',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: lovekami,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Goddesses, Slice of Life',
+        descriptionSecondRowText: 'Comedic Love Triangle',
+        translationReleaseDate: Date.parse('2017-10-27')
+    },
+    {
+        name: 'Koiiro Chu! Lips',
+        vndbLink: 'https://vndb.org/v4017',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: koi_iro_chu,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Cupids, Supernatural',
+        descriptionSecondRowText: 'Student Life Comedy',
+        translationReleaseDate: Date.parse('2014-06-21')
+    },
+    {
+        name: 'Momoiro Closet',
+        vndbLink: 'https://vndb.org/v21458',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: momoiro_closet,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Otaku, Slice of Life',
+        descriptionSecondRowText: 'Cosplay',
+        translationReleaseDate: Date.parse('2018-04-27')
+    },
+    {
+        name: 'Koikuma',
+        vndbLink: 'https://vndb.org/v17515',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: koikuma,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Dousei, Slice of Life Comedy',
+        descriptionSecondRowText: 'Demons',
+        translationReleaseDate: Date.parse('2018-10-26')
+    },
+    {
+        name: 'Kanojo no Seiiki',
+        vndbLink: 'https://vndb.org/v16150',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kanojo_no_seiiki,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Master and Servant, Comedy',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2023-03-13')
+    },
+    {
+        name: 'Uchi no Kanojo',
+        vndbLink: 'https://vndb.org/v22658',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: uchi_no_kanojo,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.FANDISC
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Deredere, Dousei',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2021-08-26')
+    },
+    {
+        name: 'Tenkiame',
+        vndbLink: 'https://vndb.org/v17337',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: tenkiame,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Countryside, Kitsune',
+        descriptionSecondRowText: 'Slice of Life',
+        translationReleaseDate: Date.parse('2018-12-26')
+    },
+    {
+        name: 'Wabisabi',
+        vndbLink: 'https://vndb.org/v27276',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: wabisabi,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.KINETIC_NOVEL
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Countryside, Kemonomimi',
+        descriptionSecondRowText: 'Goddess Heroine',
+        translationReleaseDate: Date.parse('2019-12-20')
+    },
+    {
+        name: 'Nyan Café',
+        vndbLink: 'https://vndb.org/v12505',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: nyan_cafe,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Cat Cafe, Polyamory',
+        descriptionSecondRowText: 'Adult Protagonist',
+        translationReleaseDate: Date.parse('2020-07-09')
+    },
+    {
+        name: 'Wan Nyan',
+        vndbLink: 'https://vndb.org/v17997',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: wan_nyan,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Deredere Heroines, Baking',
+        descriptionSecondRowText: 'Animal Cafe',
+        translationReleaseDate: Date.parse('2020-09-03')
+    },
+    {
+        name: 'Honey*Honey*Honey!',
+        vndbLink: 'https://vndb.org/v28834',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: honey,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Deredere Heroine, Pillow Talk',
+        descriptionSecondRowText: 'Teacher Heroine',
+        translationReleaseDate: Date.parse('2021-08-06')
+    },
+    {
+        name: 'Oneyuu',
+        vndbLink: 'https://vndb.org/v22483',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: oneyuu,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Older Sister, Secret Romance',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2022-03-31')
+    },
+    {
+        name: 'Shugaten!',
+        vndbLink: 'https://vndb.org/v20196',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: shugaten,
+        attributes: [
             Attribute.ADV_TEXTBOX
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Love Lab',
+        descriptionSecondRowText: '2023-05-26',
         translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
-        name: 'Wagamama High Spec: OC',
-        vndbLink: 'https://vndb.org/v12849',
+        name: 'Mamiya Mami',
+        vndbLink: 'https://vndb.org/v33130',
         playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        thumbnailSource: mamiya_mami,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
             Attribute.ADV_TEXTBOX
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: '2023-07-21',
         translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
-        name: 'Wagamama High Spec: OC',
-        vndbLink: 'https://vndb.org/v12849',
+        name: 'Gin\'iro, Haruka',
+        vndbLink: 'https://vndb.org/v18778',
         playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        thumbnailSource: giniro_haruka,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
             Attribute.ADV_TEXTBOX
         ],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'Early 2023',
         translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
-        name: 'Wagamama High Spec: OC',
-        vndbLink: 'https://vndb.org/v12849',
+        name: 'Clover Day\'s',
+        vndbLink: 'https://vndb.org/v13325',
         playtime: PlaytimeLength.SHORT,
-        thumbnailSource: wagahigh,
+        thumbnailSource: clover_days,
         attributes: [
-            Attribute.UNLOCKABLE_ROUTES,
-            Attribute.NVL_TEXTBOX,
-            Attribute.LINEAR_PLOT,
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2023',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Walkure Romanze',
+        vndbLink: 'https://vndb.org/v4041',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: walkure_romanze,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'Partial patch released',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Aonatsu Line',
+        vndbLink: 'https://vndb.org/v24702',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: aonatsu_line,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Orefukahi',
+        vndbLink: 'https://vndb.org/v23388',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: orefukahi,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'Common route patch released',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Lover Able',
+        vndbLink: 'https://vndb.org/v5734',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: lover_able,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Majikoi A5',
+        vndbLink: 'https://vndb.org/v20602',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: majikoi_a5,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: '85%, Partial patch released',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Nursery☆Rhyme',
+        vndbLink: 'https://vndb.org/v310',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: nursery_rhyme,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Ponkowa',
+        vndbLink: 'https://vndb.org/v31002',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: ponkowa,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Tenshi☆Souzou',
+        vndbLink: 'https://vndb.org/v40520',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: tenshi_souzou,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Secret Agent',
+        vndbLink: 'https://vndb.org/v27227',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: secret_agent,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Floral Flowlove',
+        vndbLink: 'https://vndb.org/v18842',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: flowlove,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Kakenuke',
+        vndbLink: 'https://vndb.org/v28286',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kakenuke,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Ren\'ai x Royale FDs',
+        vndbLink: 'https://vndb.org/v30239',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: renai_royale_fd,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Baka Moe Heart',
+        vndbLink: 'https://vndb.org/v13651',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: baka_moe_heart,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Enking',
+        vndbLink: 'https://vndb.org/v31740',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: enking,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'MeltyMoment',
+        vndbLink: 'https://vndb.org/v12830',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: melty_moment,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Irotoridori no Sekai',
+        vndbLink: 'https://vndb.org/v5834',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: iroseka,
+        attributes: [
             Attribute.ADV_TEXTBOX
         ],
         genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'Blah blah blah row one',
-        descriptionSecondRowText: 'Blah blah blah row two',
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA (soon)',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Amairo Chocolata 2',
+        vndbLink: 'https://vndb.org/v30228',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: amairo_choco2,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Imouto no Seiiki',
+        vndbLink: 'https://vndb.org/v16845',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: imouto_no_seiiki,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Gakkou no Seiiki',
+        vndbLink: 'https://vndb.org/v19302',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: gakkou_no_seiiki,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Hoshikaka',
+        vndbLink: 'https://vndb.org/v2968',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: hoshikaka,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'AkaSaka',
+        vndbLink: 'https://vndb.org/v547',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: akasaka,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Yumeiro',
+        vndbLink: 'https://vndb.org/v16516',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: yumeiro,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Chiikano',
+        vndbLink: 'https://vndb.org/v11072',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: chiikano,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Hamidashi Creative',
+        vndbLink: 'https://vndb.org/v27449',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: hamidashi,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        translationReleaseDate: Date.parse('1998-03-25'),
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Raspberry Cube',
+        vndbLink: 'https://vndb.org/v22847',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: raspberry_cube,
+        attributes: [
+            Attribute.ADV_TEXTBOX
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
         translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     }
