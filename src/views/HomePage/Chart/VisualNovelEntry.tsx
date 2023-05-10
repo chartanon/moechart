@@ -50,7 +50,7 @@ export enum GenreFocus {
 export interface VisualNovelProps {
     name: string;
     vndbLink: string;
-    playtime: PlaytimeLength;
+    playtime?: PlaytimeLength;
     thumbnailSource: string;
     attributes: Attribute[];
     genreFocus: GenreFocus;
