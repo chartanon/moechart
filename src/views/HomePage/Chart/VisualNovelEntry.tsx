@@ -169,12 +169,12 @@ export const VisualNovelEntry: React.FC<VisualNovelProps> = ({
                     </AdditionalIconsContainer>
                 </IconsContainer>
             </ContentBody>
-            <LabelFont $outlineColour={outlineColour} $textAlign="right">
+            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
                 {descriptionFirstRowText}
-            </LabelFont>
-            <LabelFont $outlineColour={outlineColour} $textAlign="right">
+            </DescriptionFont>
+            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
                 {descriptionSecondRowText}
-            </LabelFont>
+            </DescriptionFont>
         </Container>
     );
 };
@@ -195,19 +195,20 @@ const ThumbnailImage = styled.img<{ $outlineColour: string }>`
     height: ${IMAGE_HEIGHT}px;
     object-fit: cover;
     box-sizing: border-box;
-    border: 3px solid
-        ${({ $outlineColour }) =>
-            $outlineColour
-                ? css`
-                      ${$outlineColour}
-                  `
-                : ''};
     border-radius: 9px;
-    outline: 1px solid black;
-    outline-offset: -4px;
+
+    ${({ $outlineColour }) => {
+        return css`
+            :hover {
+                outline: 4px solid ${$outlineColour};
+            }
+            box-shadow: 0 10px 40px ${$outlineColour};
+        `;
+    }}
 `;
 
 const IconsContainer = styled(Column)`
+    padding-left: 5px;
     display: flex;
     height: 100%;
     & > :nth-child(2) {
@@ -224,4 +225,8 @@ const AdditionalIconsContainer = styled(Column)`
 
 const Link = styled.a`
     text-decoration: none;
+`;
+
+const DescriptionFont = styled(LabelFont)`
+    font-size: 0.8rem;
 `;

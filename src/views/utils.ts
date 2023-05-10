@@ -95,12 +95,12 @@ export const LabelFont = styled(BaseFont)<{
     ${({ $outlineColour }) =>
         $outlineColour
             ? css`
-                  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px,
-                      #fff 0px 0px 15px, ${$outlineColour} 0px 0px 20px,
-                      ${$outlineColour} 0px 0px 30px,
-                      ${$outlineColour} 0px 0px 40px,
-                      ${$outlineColour} 0px 0px 50px,
-                      ${$outlineColour} 0px 0px 75px;
+                  text-shadow: #fff 0px 0px 20px, #fff 0px 0px 20px,
+                      #fff 0px 0px 20px, ${$outlineColour} 0px 0px 5px,
+                      ${$outlineColour} 0px 0px 10px,
+                      ${$outlineColour} 0px 0px 10px,
+                      ${$outlineColour} 0px 0px 10px,
+                      ${$outlineColour} 0px 0px 10px;
               `
             : ''};
 `;
