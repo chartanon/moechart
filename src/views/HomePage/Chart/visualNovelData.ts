@@ -1572,407 +1572,291 @@ export const visualNovelData: VisualNovelProps[] = [
     {
         name: 'Shugaten!',
         vndbLink: 'https://vndb.org/v20196',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: shugaten,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Love Lab',
         descriptionSecondRowText: '2023-05-26',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: mamiya_mami,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Shiravune',
         descriptionSecondRowText: '2023-07-21',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Gin\'iro, Haruka',
         vndbLink: 'https://vndb.org/v18778',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: giniro_haruka,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'Early 2023',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Clover Day\'s',
         vndbLink: 'https://vndb.org/v13325',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: clover_days,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: '2023',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Walkure Romanze',
         vndbLink: 'https://vndb.org/v4041',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: walkure_romanze,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'Partial patch released',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Aonatsu Line',
         vndbLink: 'https://vndb.org/v24702',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: aonatsu_line,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Orefukahi',
         vndbLink: 'https://vndb.org/v23388',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: orefukahi,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'Common route patch released',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Lover Able',
         vndbLink: 'https://vndb.org/v5734',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: lover_able,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Majikoi A5',
         vndbLink: 'https://vndb.org/v20602',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: majikoi_a5,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: '85%, Partial patch released',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Nursery☆Rhyme',
         vndbLink: 'https://vndb.org/v310',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: nursery_rhyme,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Ponkowa',
         vndbLink: 'https://vndb.org/v31002',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: ponkowa,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Tenshi☆Souzou',
         vndbLink: 'https://vndb.org/v40520',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: tenshi_souzou,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Secret Agent',
         vndbLink: 'https://vndb.org/v27227',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: secret_agent,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Floral Flowlove',
         vndbLink: 'https://vndb.org/v18842',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: flowlove,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Kakenuke',
         vndbLink: 'https://vndb.org/v28286',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: kakenuke,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Ren\'ai x Royale FDs',
         vndbLink: 'https://vndb.org/v30239',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: renai_royale_fd,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Baka Moe Heart',
         vndbLink: 'https://vndb.org/v13651',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: baka_moe_heart,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Enking',
         vndbLink: 'https://vndb.org/v31740',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: enking,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'MeltyMoment',
         vndbLink: 'https://vndb.org/v12830',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: melty_moment,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Irotoridori no Sekai',
         vndbLink: 'https://vndb.org/v5834',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: iroseka,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA (soon)',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Amairo Chocolata 2',
         vndbLink: 'https://vndb.org/v30228',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: amairo_choco2,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Imouto no Seiiki',
         vndbLink: 'https://vndb.org/v16845',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: imouto_no_seiiki,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Gakkou no Seiiki',
         vndbLink: 'https://vndb.org/v19302',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: gakkou_no_seiiki,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Hoshikaka',
         vndbLink: 'https://vndb.org/v2968',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: hoshikaka,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'AkaSaka',
         vndbLink: 'https://vndb.org/v547',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: akasaka,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Yumeiro',
         vndbLink: 'https://vndb.org/v16516',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: yumeiro,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Chiikano',
         vndbLink: 'https://vndb.org/v11072',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: chiikano,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Hamidashi Creative',
         vndbLink: 'https://vndb.org/v27449',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: hamidashi,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     },
     {
         name: 'Raspberry Cube',
         vndbLink: 'https://vndb.org/v22847',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: raspberry_cube,
-        attributes: [
-            Attribute.ADV_TEXTBOX
-        ],
+        attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
         descriptionSecondRowText: 'TBA',
-        translationReleaseDate: Date.parse('1998-03-25'),
         isUpcomingRelease: true
     }
 ];
