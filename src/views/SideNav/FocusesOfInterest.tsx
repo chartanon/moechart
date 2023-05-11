@@ -1,11 +1,27 @@
-import React from 'react';
-import { Section, TitleFont, LabelFont } from '../utils';
+import React, { useState } from 'react';
+import { Section, TitleFont, LabelFont, VerticalFade, Button } from '../utils';
 import styled from 'styled-components';
+import { HelpIcon } from '../assets/icons/HelpIcon';
+import { Row } from '../utils';
+import { AnimatePresence } from 'framer-motion';
 
 export const FocusesOfInterest: React.FC = () => {
+    const [shouldShowFocusDisclaimer, setShouldShowFocusDisclaimer] =
+        useState<boolean>(false);
+
     return (
         <Section>
-            <TitleFont>FOCUSES OF INTEREST</TitleFont>
+            <Row>
+                <TitleFont>FOCUS OF INTEREST</TitleFont>
+                <Button
+                    onClick={() =>
+                        setShouldShowFocusDisclaimer(!shouldShowFocusDisclaimer)
+                    }
+                >
+                    <HelpIcon />
+                </Button>
+            </Row>
+
             <GradientText>
                 <GradientTopLabel>Storyline</GradientTopLabel>
                 <GradientTopLabel>Romance</GradientTopLabel>
@@ -16,12 +32,22 @@ export const FocusesOfInterest: React.FC = () => {
                 <GradientBottomLabel>Sto-Rom</GradientBottomLabel>
                 <GradientBottomLabel>Rom-Com</GradientBottomLabel>
             </GradientText>
-            <LabelFont $textAlign="justify">
-                Note: Romance and comedy are present (to varying degrees) in all
-                the titles listed here. Generally, moege have simple storylines,
-                but there are still some titles that are more engaging or
-                memorable than others in this aspect.
-            </LabelFont>
+            <DisclaimerContainer>
+                <AnimatePresence>
+                    {shouldShowFocusDisclaimer ? (
+                        <VerticalFade>
+                            <LabelFont $textAlign="justify">
+                                Romance and comedy are present (to varying
+                                degrees) in all the titles listed here.
+                                Generally, moege have simple storylines, but
+                                there are still some titles that are more
+                                engaging or memorable than others in this
+                                aspect.
+                            </LabelFont>
+                        </VerticalFade>
+                    ) : null}
+                </AnimatePresence>
+            </DisclaimerContainer>
         </Section>
     );
 };
@@ -54,4 +80,8 @@ const GradientTopLabel = styled(LabelFont)`
 
 const GradientBottomLabel = styled(LabelFont)`
     width: 50%;
+`;
+
+const DisclaimerContainer = styled(Row)`
+    gap: 12px;
 `;
