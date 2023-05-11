@@ -90,6 +90,10 @@ export const TitleFont = styled(BaseFont)<{ $fontColour?: string }>`
               `};
 `;
 
+export const SubTitleFont = styled(TitleFont)`
+    font-size: 1.15rem;
+`;
+
 export const LabelFont = styled(BaseFont)<{
     $outlineColour?: string;
 }>`

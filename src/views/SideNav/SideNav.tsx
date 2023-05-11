@@ -50,6 +50,6 @@ const TextContainer = styled(Column)`
 `;
 
 const Divider = styled.div`
-    padding: 20px;
+    padding-bottonm: 0px;
     border-bottom: 2px solid ${COLOURS.SECONDARY};
 `;

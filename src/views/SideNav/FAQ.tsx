@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {
     Button,
-    Column,
     LabelFont,
     Section,
+    SubTitleFont,
     TitleFont,
     VerticalFade
 } from '../utils';
@@ -26,7 +26,7 @@ export const FAQ: React.FC = () => {
                         )
                     }
                 >
-                    <LabelFont>THE FUCK IS A MOEGE?</LabelFont>
+                    <SubTitleFont>THE FUCK IS A MOEGE?</SubTitleFont>
                 </Button>
                 <AnimatePresence>
                     {shouldShowMoegeDescription ? (
@@ -59,7 +59,7 @@ export const FAQ: React.FC = () => {
                         )
                     }
                 >
-                    <LabelFont>ABOUT THE MOECHART</LabelFont>
+                    <SubTitleFont>ABOUT THE MOECHART</SubTitleFont>
                 </Button>
                 <AnimatePresence>
                     {shouldShowAboutDescription ? (
