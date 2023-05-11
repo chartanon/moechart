@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
+import React from 'react';
 
 export const Row = styled.div<{
     $centered?: boolean;
@@ -108,4 +111,38 @@ export const LabelFont = styled(BaseFont)<{
 export const HeaderFont = styled(BaseFont)`
     font-size: 3rem;
     color: ${COLOURS.TEXT};
+`;
+
+export const Button = styled.button`
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+`;
+
+export const VerticalFade: React.FC<{
+    children?: React.ReactNode | undefined;
+}> = ({ children }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.7 }
+            }}
+            exit={{
+                opacity: 0,
+                y: -15,
+                transition: { duration: 0.5 }
+            }}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+export const Section = styled(Column)`
+    display: flex;
+    gap: 10px;
 `;
