@@ -1,17 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {
-    Button,
-    COLOURS,
-    Column,
-    LabelFont,
-    VerticalFade,
-    TitleFont,
-    Section
-} from '../utils';
+import { COLOURS, Column, TitleFont, Section } from '../utils';
 import { legendData } from './LegendData';
 import { LegendItem } from './LegendItem';
-import { AnimatePresence, motion } from 'framer-motion';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
 
