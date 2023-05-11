@@ -20,7 +20,7 @@ export const MoegeChart: React.FC = () => {
             <SectionHeader>
                 <VNFont>/vn/</VNFont> MOECHART
             </SectionHeader>
-            <UpdatedInfoFont>(Last Updated: Now lol)</UpdatedInfoFont>
+            <UpdatedInfoFont>(Last Updated: 2023-05-11)</UpdatedInfoFont>
             <EntriesContainer>
                 {releasedVisualNovels.map(visualNovel => {
                     return (
