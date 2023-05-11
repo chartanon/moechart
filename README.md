@@ -1,2 +1,1 @@
 # /vn/ Moege Chart
-test
