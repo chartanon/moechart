@@ -1,6 +1,7 @@
 {
     "name": "moechart",
     "version": "0.1.0",
+    "homepage": "https://chartanon.github.io/moechart",
     "private": false,
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
@@ -22,6 +23,8 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -49,6 +52,7 @@
         "@types/axios": "^0.14.0",
         "@types/react-helmet": "^6.1.6",
         "@types/react-router-dom": "^5.3.3",
-        "@types/styled-components": "^5.1.1"
+        "@types/styled-components": "^5.1.1",
+        "gh-pages": "^5.0.0"
     }
 }
