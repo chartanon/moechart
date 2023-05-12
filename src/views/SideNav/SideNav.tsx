@@ -1,24 +1,55 @@
 import React from 'react';
 import styled from 'styled-components';
 import { COLOURS, Column, TitleFont, Section } from '../utils';
-import { legendData } from './LegendData';
-import { LegendItem } from './LegendItem';
+import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
+import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelEntry';
+import { attributesList, playtimesList } from './LegendData';
+import { AttributeItem } from './AttributeItem';
 
 export const SIDE_NAV_WIDTH = 300;
 
-export const SideNav: React.FC = () => {
+interface IProps {
+    selectedPlaytimeFilter: PlaytimeLength | null;
+    handleSetSelectedPlaytimeFilter: (value: PlaytimeLength | null) => void;
+    selectedAttributesFilters: Attribute[];
+    handleSetSelectedAttributesFilters: (value: Attribute) => void;
+}
+
+export const SideNav: React.FC<IProps> = ({
+    selectedPlaytimeFilter,
+    handleSetSelectedPlaytimeFilter,
+    selectedAttributesFilters,
+    handleSetSelectedAttributesFilters
+}) => {
     return (
         <NavBar>
             <TextContainer>
                 <Section>
                     <TitleFont>LEGEND</TitleFont>
-                    {legendData.map(legendItem => {
+                    {playtimesList.map(playtimeItem => {
+                        const isSelected =
+                            selectedPlaytimeFilter === playtimeItem.length;
                         return (
-                            <LegendItem
-                                {...legendItem}
-                                key={legendItem.label}
+                            <PlaytimeItem
+                                key={playtimeItem.length}
+                                isSelected={isSelected}
+                                {...playtimeItem}
+                                onClick={handleSetSelectedPlaytimeFilter}
+                            />
+                        );
+                    })}
+                    {attributesList.map(attribute => {
+                        return (
+                            <AttributeItem
+                                key={attribute.type}
+                                isSelected={selectedAttributesFilters.some(
+                                    attributeFilter =>
+                                        attributeFilter === attribute.type
+                                )}
+                                {...attribute}
+                                onClick={handleSetSelectedAttributesFilters}
                             />
                         );
                     })}

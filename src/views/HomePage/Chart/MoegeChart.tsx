@@ -2,18 +2,45 @@ import React from 'react';
 import styled from 'styled-components';
 import { COLOURS, Column, HeaderFont, LabelFont, Row } from '../../utils';
 import { visualNovelData } from './visualNovelData';
-import { VisualNovelEntry, VisualNovelProps } from './VisualNovelEntry';
+import {
+    Attribute,
+    PlaytimeLength,
+    VisualNovelEntry
+} from './VisualNovelEntry';
 
-//https://svg2jsx.com
+interface IProps {
+    selectedPlaytimeFilter: PlaytimeLength | null;
+    selectedAttributesFilters: Attribute[];
+}
 
-export const MoegeChart: React.FC = () => {
-    const releasedVisualNovels: VisualNovelProps[] = [];
-    const unreleasedVisualNovels = visualNovelData.filter(visualNovel => {
-        if (!visualNovel.isUpcomingRelease) {
-            releasedVisualNovels.push(visualNovel);
+export const MoegeChart: React.FC<IProps> = ({
+    selectedPlaytimeFilter,
+    selectedAttributesFilters
+}) => {
+    const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
+        if (
+            selectedPlaytimeFilter !== null &&
+            selectedPlaytimeFilter !== visualNovel.playtime
+        ) {
+            return false;
         }
-        return visualNovel.isUpcomingRelease;
+        if (
+            selectedAttributesFilters.length !== 0 &&
+            selectedAttributesFilters.some(
+                attribute => !visualNovel.attributes.includes(attribute)
+            )
+        ) {
+            return false;
+        }
+        return !visualNovel.isUpcomingRelease;
     });
+
+    const unreleasedVisualNovels = visualNovelData.filter(
+        visualNovel =>
+            visualNovel.isUpcomingRelease &&
+            selectedPlaytimeFilter === null &&
+            selectedAttributesFilters.length === 0
+    );
 
     return (
         <Container>
@@ -22,7 +49,7 @@ export const MoegeChart: React.FC = () => {
             </SectionHeader>
             <UpdatedInfoFont>(Last Updated: 2023-05-11)</UpdatedInfoFont>
             <EntriesContainer>
-                {releasedVisualNovels.map(visualNovel => {
+                {filteredReleasedVisualNovels.map(visualNovel => {
                     return (
                         <Entry
                             {...visualNovel}
