@@ -3,19 +3,31 @@ import { MoegeChart } from './Chart/MoegeChart';
 import { SIDE_NAV_WIDTH, SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
-import { PlaytimeLength, Attribute } from './Chart/VisualNovelEntry';
+import {
+    PlaytimeLength,
+    Attribute,
+    GenreFocus
+} from './Chart/VisualNovelEntry';
 
 export const HomePage: React.FC = () => {
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =
         useState<PlaytimeLength | null>(null);
+    const [selectedGenreFocusFilter, setSelectedGenreFocusFilter] =
+        useState<GenreFocus | null>(null);
     const [selectedAttributesFilters, setSelectedAttributesFilters] = useState<
         Attribute[]
     >([]);
 
-    const handleSetSelectedPlaytimeFilter = (value: PlaytimeLength | null) => {
+    const handleSetSelectedPlaytimeFilter = (value: PlaytimeLength) => {
         selectedPlaytimeFilter === value
             ? setSelectedPlaytimeFilter(null)
             : setSelectedPlaytimeFilter(value);
+    };
+
+    const handleSetSelectedGenreFocusFilter = (value: GenreFocus) => {
+        selectedGenreFocusFilter === value
+            ? setSelectedGenreFocusFilter(null)
+            : setSelectedGenreFocusFilter(value);
     };
 
     const handleSetSelectedAttributesFilters = (value: Attribute) => {
@@ -37,6 +49,10 @@ export const HomePage: React.FC = () => {
                 handleSetSelectedPlaytimeFilter={
                     handleSetSelectedPlaytimeFilter
                 }
+                selectedGenreFocusFilter={selectedGenreFocusFilter}
+                handleSetSelectedGenreFocusFilter={
+                    handleSetSelectedGenreFocusFilter
+                }
                 selectedAttributesFilters={selectedAttributesFilters}
                 handleSetSelectedAttributesFilters={
                     handleSetSelectedAttributesFilters
@@ -44,6 +60,7 @@ export const HomePage: React.FC = () => {
             />
             <MoegeChart
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
+                selectedGenreFocusFilter={selectedGenreFocusFilter}
                 selectedAttributesFilters={selectedAttributesFilters}
             />
         </Container>

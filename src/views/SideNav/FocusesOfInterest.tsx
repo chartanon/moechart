@@ -1,11 +1,27 @@
 import React, { useState } from 'react';
-import { Section, TitleFont, LabelFont, VerticalFade, Button } from '../utils';
+import {
+    Section,
+    TitleFont,
+    LabelFont,
+    VerticalFade,
+    Button,
+    COLOURS
+} from '../utils';
 import styled from 'styled-components';
 import { HelpIcon } from '../assets/icons/HelpIcon';
 import { Row } from '../utils';
 import { AnimatePresence } from 'framer-motion';
+import { GenreFocus } from '../HomePage/Chart/VisualNovelEntry';
 
-export const FocusesOfInterest: React.FC = () => {
+interface IProps {
+    selectedGenreFocusFilter: GenreFocus | null;
+    onClick: (value: GenreFocus) => void;
+}
+
+export const FocusesOfInterest: React.FC<IProps> = ({
+    selectedGenreFocusFilter,
+    onClick
+}) => {
     const [shouldShowFocusDisclaimer, setShouldShowFocusDisclaimer] =
         useState<boolean>(false);
 
@@ -23,14 +39,71 @@ export const FocusesOfInterest: React.FC = () => {
             </Row>
 
             <GradientText>
-                <GradientTopLabel>Storyline</GradientTopLabel>
-                <GradientTopLabel>Romance</GradientTopLabel>
-                <GradientTopLabel>Comedy</GradientTopLabel>
+                <GradientTopButton
+                    onClick={() => onClick(GenreFocus.STORYLINE)}
+                >
+                    <LabelFont
+                        $outlineColour={
+                            selectedGenreFocusFilter === GenreFocus.STORYLINE
+                                ? COLOURS.GENRE.STORYLINE
+                                : undefined
+                        }
+                    >
+                        Storyline
+                    </LabelFont>
+                </GradientTopButton>
+                <GradientTopButton onClick={() => onClick(GenreFocus.ROMANCE)}>
+                    <LabelFont
+                        $outlineColour={
+                            selectedGenreFocusFilter === GenreFocus.ROMANCE
+                                ? COLOURS.GENRE.ROMANCE
+                                : undefined
+                        }
+                    >
+                        Romance
+                    </LabelFont>
+                </GradientTopButton>
+                <GradientTopButton onClick={() => onClick(GenreFocus.COMEDY)}>
+                    <LabelFont
+                        $outlineColour={
+                            selectedGenreFocusFilter === GenreFocus.COMEDY
+                                ? COLOURS.GENRE.COMEDY
+                                : undefined
+                        }
+                    >
+                        Comedy
+                    </LabelFont>
+                </GradientTopButton>
             </GradientText>
             <GradientBar />
             <GradientText>
-                <GradientBottomLabel>Sto-Rom</GradientBottomLabel>
-                <GradientBottomLabel>Rom-Com</GradientBottomLabel>
+                <GradientBottomButton
+                    onClick={() => onClick(GenreFocus.STORY_ROMANCE)}
+                >
+                    <LabelFont
+                        $outlineColour={
+                            selectedGenreFocusFilter ===
+                            GenreFocus.STORY_ROMANCE
+                                ? COLOURS.GENRE.STORY_ROMANCE
+                                : undefined
+                        }
+                    >
+                        Sto-Rom
+                    </LabelFont>
+                </GradientBottomButton>
+                <GradientBottomButton
+                    onClick={() => onClick(GenreFocus.ROM_COM)}
+                >
+                    <LabelFont
+                        $outlineColour={
+                            selectedGenreFocusFilter === GenreFocus.ROM_COM
+                                ? COLOURS.GENRE.ROM_COM
+                                : undefined
+                        }
+                    >
+                        Rom-Com
+                    </LabelFont>
+                </GradientBottomButton>
             </GradientText>
             <DisclaimerContainer>
                 <AnimatePresence>
@@ -74,12 +147,18 @@ const GradientBar = styled.div`
     transform-style: preserve-3d;
 `;
 
-const GradientTopLabel = styled(LabelFont)`
+const GradientTopButton = styled(Button)`
     width: 33%;
+    border: none;
+    background: none;
+    cursor: pointer;
 `;
 
-const GradientBottomLabel = styled(LabelFont)`
+const GradientBottomButton = styled(Button)`
     width: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
 `;
 
 const DisclaimerContainer = styled(Row)`

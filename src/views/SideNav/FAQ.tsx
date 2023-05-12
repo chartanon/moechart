@@ -17,7 +17,6 @@ export const FAQ: React.FC = () => {
 
     return (
         <Section>
-            <FAQFont>FAQ</FAQFont>
             <Section>
                 <Button
                     onClick={() =>

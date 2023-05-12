@@ -5,7 +5,7 @@ import { PlaytimeLength } from '../HomePage/Chart/VisualNovelEntry';
 
 interface IProps extends PlaytimeProps {
     isSelected: boolean;
-    onClick: (value: PlaytimeLength | null) => void;
+    onClick: (value: PlaytimeLength) => void;
 }
 
 export const PlaytimeItem: React.FC<IProps> = ({

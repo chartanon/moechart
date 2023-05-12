@@ -4,7 +4,11 @@ import { COLOURS, Column, TitleFont, Section } from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
-import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelEntry';
+import {
+    Attribute,
+    GenreFocus,
+    PlaytimeLength
+} from '../HomePage/Chart/VisualNovelEntry';
 import { attributesList, playtimesList } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 
@@ -12,7 +16,9 @@ export const SIDE_NAV_WIDTH = 300;
 
 interface IProps {
     selectedPlaytimeFilter: PlaytimeLength | null;
-    handleSetSelectedPlaytimeFilter: (value: PlaytimeLength | null) => void;
+    handleSetSelectedPlaytimeFilter: (value: PlaytimeLength) => void;
+    selectedGenreFocusFilter: GenreFocus | null;
+    handleSetSelectedGenreFocusFilter: (value: GenreFocus) => void;
     selectedAttributesFilters: Attribute[];
     handleSetSelectedAttributesFilters: (value: Attribute) => void;
 }
@@ -20,12 +26,18 @@ interface IProps {
 export const SideNav: React.FC<IProps> = ({
     selectedPlaytimeFilter,
     handleSetSelectedPlaytimeFilter,
+    selectedGenreFocusFilter,
+    handleSetSelectedGenreFocusFilter,
     selectedAttributesFilters,
     handleSetSelectedAttributesFilters
 }) => {
     return (
         <NavBar>
             <TextContainer>
+                <FocusesOfInterest
+                    selectedGenreFocusFilter={selectedGenreFocusFilter}
+                    onClick={handleSetSelectedGenreFocusFilter}
+                />
                 <Section>
                     <TitleFont>LEGEND</TitleFont>
                     {playtimesList.map(playtimeItem => {
@@ -54,7 +66,7 @@ export const SideNav: React.FC<IProps> = ({
                         );
                     })}
                 </Section>
-                <FocusesOfInterest />
+
                 <Divider />
                 <FAQ />
             </TextContainer>

@@ -4,17 +4,20 @@ import { COLOURS, Column, HeaderFont, LabelFont, Row } from '../../utils';
 import { visualNovelData } from './visualNovelData';
 import {
     Attribute,
+    GenreFocus,
     PlaytimeLength,
     VisualNovelEntry
 } from './VisualNovelEntry';
 
 interface IProps {
     selectedPlaytimeFilter: PlaytimeLength | null;
+    selectedGenreFocusFilter: GenreFocus | null;
     selectedAttributesFilters: Attribute[];
 }
 
 export const MoegeChart: React.FC<IProps> = ({
     selectedPlaytimeFilter,
+    selectedGenreFocusFilter,
     selectedAttributesFilters
 }) => {
     const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
@@ -23,8 +26,12 @@ export const MoegeChart: React.FC<IProps> = ({
             selectedPlaytimeFilter !== visualNovel.playtime
         ) {
             return false;
-        }
-        if (
+        } else if (
+            selectedGenreFocusFilter !== null &&
+            selectedGenreFocusFilter !== visualNovel.genreFocus
+        ) {
+            return false;
+        } else if (
             selectedAttributesFilters.length !== 0 &&
             selectedAttributesFilters.some(
                 attribute => !visualNovel.attributes.includes(attribute)
@@ -39,6 +46,7 @@ export const MoegeChart: React.FC<IProps> = ({
         visualNovel =>
             visualNovel.isUpcomingRelease &&
             selectedPlaytimeFilter === null &&
+            selectedGenreFocusFilter === null &&
             selectedAttributesFilters.length === 0
     );
 
