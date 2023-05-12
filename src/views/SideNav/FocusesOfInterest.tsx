@@ -7,7 +7,7 @@ import {
     Button,
     COLOURS
 } from '../utils';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { HelpIcon } from '../assets/icons/HelpIcon';
 import { Row } from '../utils';
 import { AnimatePresence } from 'framer-motion';
@@ -42,37 +42,40 @@ export const FocusesOfInterest: React.FC<IProps> = ({
                 <GradientTopButton
                     onClick={() => onClick(GenreFocus.STORYLINE)}
                 >
-                    <LabelFont
+                    <GradientLabelFont
                         $outlineColour={
                             selectedGenreFocusFilter === GenreFocus.STORYLINE
                                 ? COLOURS.GENRE.STORYLINE
                                 : undefined
                         }
+                        $hoverColour={COLOURS.GENRE.STORYLINE}
                     >
                         Storyline
-                    </LabelFont>
+                    </GradientLabelFont>
                 </GradientTopButton>
                 <GradientTopButton onClick={() => onClick(GenreFocus.ROMANCE)}>
-                    <LabelFont
+                    <GradientLabelFont
                         $outlineColour={
                             selectedGenreFocusFilter === GenreFocus.ROMANCE
                                 ? COLOURS.GENRE.ROMANCE
                                 : undefined
                         }
+                        $hoverColour={COLOURS.GENRE.ROMANCE}
                     >
                         Romance
-                    </LabelFont>
+                    </GradientLabelFont>
                 </GradientTopButton>
                 <GradientTopButton onClick={() => onClick(GenreFocus.COMEDY)}>
-                    <LabelFont
+                    <GradientLabelFont
                         $outlineColour={
                             selectedGenreFocusFilter === GenreFocus.COMEDY
                                 ? COLOURS.GENRE.COMEDY
                                 : undefined
                         }
+                        $hoverColour={COLOURS.GENRE.COMEDY}
                     >
                         Comedy
-                    </LabelFont>
+                    </GradientLabelFont>
                 </GradientTopButton>
             </GradientText>
             <GradientBar />
@@ -80,43 +83,45 @@ export const FocusesOfInterest: React.FC<IProps> = ({
                 <GradientBottomButton
                     onClick={() => onClick(GenreFocus.STORY_ROMANCE)}
                 >
-                    <LabelFont
+                    <GradientLabelFont
                         $outlineColour={
                             selectedGenreFocusFilter ===
                             GenreFocus.STORY_ROMANCE
                                 ? COLOURS.GENRE.STORY_ROMANCE
                                 : undefined
                         }
+                        $hoverColour={COLOURS.GENRE.STORY_ROMANCE}
                     >
                         Sto-Rom
-                    </LabelFont>
+                    </GradientLabelFont>
                 </GradientBottomButton>
                 <GradientBottomButton
                     onClick={() => onClick(GenreFocus.ROM_COM)}
                 >
-                    <LabelFont
+                    <GradientLabelFont
                         $outlineColour={
                             selectedGenreFocusFilter === GenreFocus.ROM_COM
                                 ? COLOURS.GENRE.ROM_COM
                                 : undefined
                         }
+                        $hoverColour={COLOURS.GENRE.ROM_COM}
                     >
                         Rom-Com
-                    </LabelFont>
+                    </GradientLabelFont>
                 </GradientBottomButton>
             </GradientText>
             <DisclaimerContainer>
                 <AnimatePresence>
                     {shouldShowFocusDisclaimer ? (
                         <VerticalFade>
-                            <LabelFont $textAlign="justify">
+                            <GradientLabelFont $textAlign="justify">
                                 Romance and comedy are present (to varying
                                 degrees) in all the titles listed here.
                                 Generally, moege have simple storylines, but
                                 there are still some titles that are more
                                 engaging or memorable than others in this
                                 aspect.
-                            </LabelFont>
+                            </GradientLabelFont>
                         </VerticalFade>
                     ) : null}
                 </AnimatePresence>
@@ -163,4 +168,20 @@ const GradientBottomButton = styled(Button)`
 
 const DisclaimerContainer = styled(Row)`
     gap: 12px;
+`;
+
+const GradientLabelFont = styled(LabelFont)<{ $hoverColour?: string }>`
+    ${({ $hoverColour }) =>
+        $hoverColour
+            ? css`
+                  :hover {
+                      outline: 4px outset ${$hoverColour};
+                      border-radius: 3px;
+                      background: ${$hoverColour};
+                  }
+                  :active {
+                      outline: 2px outset ${$hoverColour};
+                  }
+              `
+            : ''};
 `;
