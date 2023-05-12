@@ -71,5 +71,6 @@ const Container = styled.div`
     padding-left: calc(${SIDE_NAV_WIDTH}px + 20px);
     padding-bottom: 40px;
     margin-bottom: -10px;
+    min-height: 96vh;
     background: fixed url(${Background}) bottom right no-repeat;
 `;
