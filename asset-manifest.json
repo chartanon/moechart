@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.b765f068.js",
+    "main.js": "/moechart/static/js/main.1e21ae7a.js",
     "static/media/clover-days.jpg": "/moechart/static/media/clover-days.8e4ab011e719f0b8a305.jpg",
     "static/media/koikuma.jpg": "/moechart/static/media/koikuma.b8b914a342dec8689435.jpg",
     "static/media/hamidashi.jpg": "/moechart/static/media/hamidashi.ffc9017cc2d057d1acb3.jpg",
@@ -130,9 +130,9 @@
     "static/media/lovekami.jpg": "/moechart/static/media/lovekami.5e2d3958cc88868b645e.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.b765f068.js.map": "/moechart/static/js/main.b765f068.js.map"
+    "main.1e21ae7a.js.map": "/moechart/static/js/main.1e21ae7a.js.map"
   },
   "entrypoints": [
-    "static/js/main.b765f068.js"
+    "static/js/main.1e21ae7a.js"
   ]
 }
