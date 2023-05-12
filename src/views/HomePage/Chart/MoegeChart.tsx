@@ -1,19 +1,62 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOURS, Column, HeaderFont, LabelFont, Row } from '../../utils';
+import {
+    COLOURS,
+    Column,
+    HeaderFont,
+    LabelFont,
+    Row,
+    StaggeredEntranceFade
+} from '../../utils';
 import { visualNovelData } from './visualNovelData';
-import { VisualNovelEntry, VisualNovelProps } from './VisualNovelEntry';
+import {
+    Attribute,
+    GenreFocus,
+    PlaytimeLength,
+    VisualNovelEntry
+} from './VisualNovelEntry';
+import { AnimatePresence } from 'framer-motion';
 
-//https://svg2jsx.com
+interface IProps {
+    selectedPlaytimeFilter: PlaytimeLength | null;
+    selectedGenreFocusFilter: GenreFocus | null;
+    selectedAttributesFilters: Attribute[];
+}
 
-export const MoegeChart: React.FC = () => {
-    const releasedVisualNovels: VisualNovelProps[] = [];
-    const unreleasedVisualNovels = visualNovelData.filter(visualNovel => {
-        if (!visualNovel.isUpcomingRelease) {
-            releasedVisualNovels.push(visualNovel);
+export const MoegeChart: React.FC<IProps> = ({
+    selectedPlaytimeFilter,
+    selectedGenreFocusFilter,
+    selectedAttributesFilters
+}) => {
+    const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
+        if (
+            selectedPlaytimeFilter !== null &&
+            selectedPlaytimeFilter !== visualNovel.playtime
+        ) {
+            return false;
+        } else if (
+            selectedGenreFocusFilter !== null &&
+            selectedGenreFocusFilter !== visualNovel.genreFocus
+        ) {
+            return false;
+        } else if (
+            selectedAttributesFilters.length !== 0 &&
+            selectedAttributesFilters.some(
+                attribute => !visualNovel.attributes.includes(attribute)
+            )
+        ) {
+            return false;
         }
-        return visualNovel.isUpcomingRelease;
+        return !visualNovel.isUpcomingRelease;
     });
+
+    const unreleasedVisualNovels = visualNovelData.filter(
+        visualNovel =>
+            visualNovel.isUpcomingRelease &&
+            selectedPlaytimeFilter === null &&
+            selectedGenreFocusFilter === null &&
+            selectedAttributesFilters.length === 0
+    );
 
     return (
         <Container>
@@ -22,28 +65,40 @@ export const MoegeChart: React.FC = () => {
             </SectionHeader>
             <UpdatedInfoFont>(Last Updated: 2023-05-11)</UpdatedInfoFont>
             <EntriesContainer>
-                {releasedVisualNovels.map(visualNovel => {
-                    return (
-                        <Entry
-                            {...visualNovel}
-                            key={visualNovel.thumbnailSource}
-                        />
-                    );
-                })}
+                <AnimatePresence>
+                    {filteredReleasedVisualNovels.map((visualNovel, index) => {
+                        return (
+                            <StaggeredEntranceFade index={index}>
+                                <Entry
+                                    {...visualNovel}
+                                    key={visualNovel.thumbnailSource}
+                                />
+                            </StaggeredEntranceFade>
+                        );
+                    })}
+                </AnimatePresence>
             </EntriesContainer>
 
             {unreleasedVisualNovels.length > 0 ? (
                 <>
                     <SectionHeader>UPCOMING</SectionHeader>
                     <EntriesContainer>
-                        {unreleasedVisualNovels.map(visualNovel => {
-                            return (
-                                <Entry
-                                    {...visualNovel}
-                                    key={visualNovel.thumbnailSource}
-                                />
-                            );
-                        })}
+                        <AnimatePresence>
+                            {unreleasedVisualNovels.map(
+                                (visualNovel, index) => {
+                                    return (
+                                        <StaggeredEntranceFade index={index}>
+                                            <Entry
+                                                {...visualNovel}
+                                                key={
+                                                    visualNovel.thumbnailSource
+                                                }
+                                            />
+                                        </StaggeredEntranceFade>
+                                    );
+                                }
+                            )}
+                        </AnimatePresence>
                     </EntriesContainer>
                 </>
             ) : null}

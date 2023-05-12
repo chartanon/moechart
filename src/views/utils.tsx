@@ -60,7 +60,7 @@ export const COLOURS = {
     TEXT: '#ffffff',
     SECONDARY: '#AED6F1',
     BACKGROUND: '#000000',
-    NAVBAR: '#232323'
+    NAVBAR: '#2e1c2b'
 };
 
 const BaseFont = styled.div<{ $textAlign?: string }>`
@@ -87,10 +87,6 @@ export const TitleFont = styled(BaseFont)<{ $fontColour?: string }>`
             : css`
                   ${COLOURS.TEXT}
               `};
-`;
-
-export const SubTitleFont = styled(TitleFont)`
-    font-size: 1.15rem;
 `;
 
 export const LabelFont = styled(BaseFont)<{
@@ -138,6 +134,25 @@ export const VerticalFade: React.FC<{
                 opacity: 0,
                 y: -15,
                 transition: { duration: 0.5 }
+            }}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+export const StaggeredEntranceFade: React.FC<{
+    children?: React.ReactNode | undefined;
+    index: number;
+}> = ({ children, index }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -20, y: -20 }}
+            animate={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+                transition: { duration: Math.min(0.1 * index, 2) }
             }}
         >
             {children}
