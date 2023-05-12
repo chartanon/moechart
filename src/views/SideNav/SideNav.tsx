@@ -66,7 +66,6 @@ export const SideNav: React.FC<IProps> = ({
                         );
                     })}
                 </Section>
-
                 <Divider />
                 <FAQ />
             </TextContainer>
@@ -81,7 +80,7 @@ const NavBar = styled(Column)`
     z-index: 999;
     top: 0;
     left: 0;
-    background-color: ${COLOURS.NAVBAR};
+    background-image: linear-gradient(${COLOURS.NAVBAR}, ${COLOURS.BACKGROUND});
     overflow-y: scroll;
     scrollbar-color: ${COLOURS.TEXT} ${COLOURS.NAVBAR};
 `;

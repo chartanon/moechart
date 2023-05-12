@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOURS, Column, HeaderFont, LabelFont, Row } from '../../utils';
+import {
+    COLOURS,
+    Column,
+    HeaderFont,
+    LabelFont,
+    Row,
+    StaggeredEntranceFade
+} from '../../utils';
 import { visualNovelData } from './visualNovelData';
 import {
     Attribute,
@@ -8,6 +15,7 @@ import {
     PlaytimeLength,
     VisualNovelEntry
 } from './VisualNovelEntry';
+import { AnimatePresence } from 'framer-motion';
 
 interface IProps {
     selectedPlaytimeFilter: PlaytimeLength | null;
@@ -57,28 +65,40 @@ export const MoegeChart: React.FC<IProps> = ({
             </SectionHeader>
             <UpdatedInfoFont>(Last Updated: 2023-05-11)</UpdatedInfoFont>
             <EntriesContainer>
-                {filteredReleasedVisualNovels.map(visualNovel => {
-                    return (
-                        <Entry
-                            {...visualNovel}
-                            key={visualNovel.thumbnailSource}
-                        />
-                    );
-                })}
+                <AnimatePresence>
+                    {filteredReleasedVisualNovels.map((visualNovel, index) => {
+                        return (
+                            <StaggeredEntranceFade index={index}>
+                                <Entry
+                                    {...visualNovel}
+                                    key={visualNovel.thumbnailSource}
+                                />
+                            </StaggeredEntranceFade>
+                        );
+                    })}
+                </AnimatePresence>
             </EntriesContainer>
 
             {unreleasedVisualNovels.length > 0 ? (
                 <>
                     <SectionHeader>UPCOMING</SectionHeader>
                     <EntriesContainer>
-                        {unreleasedVisualNovels.map(visualNovel => {
-                            return (
-                                <Entry
-                                    {...visualNovel}
-                                    key={visualNovel.thumbnailSource}
-                                />
-                            );
-                        })}
+                        <AnimatePresence>
+                            {unreleasedVisualNovels.map(
+                                (visualNovel, index) => {
+                                    return (
+                                        <StaggeredEntranceFade index={index}>
+                                            <Entry
+                                                {...visualNovel}
+                                                key={
+                                                    visualNovel.thumbnailSource
+                                                }
+                                            />
+                                        </StaggeredEntranceFade>
+                                    );
+                                }
+                            )}
+                        </AnimatePresence>
                     </EntriesContainer>
                 </>
             ) : null}
