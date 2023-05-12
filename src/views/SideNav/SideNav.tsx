@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOURS, Column, TitleFont, Section } from '../utils';
+import {
+    COLOURS,
+    Column,
+    TitleFont,
+    Section,
+    LabelFont,
+    Button
+} from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
@@ -11,6 +18,7 @@ import {
 } from '../HomePage/Chart/VisualNovelEntry';
 import { attributesList, playtimesList } from './LegendData';
 import { AttributeItem } from './AttributeItem';
+import { LegendButton } from './components';
 
 export const SIDE_NAV_WIDTH = 300;
 
@@ -21,6 +29,7 @@ interface IProps {
     handleSetSelectedGenreFocusFilter: (value: GenreFocus) => void;
     selectedAttributesFilters: Attribute[];
     handleSetSelectedAttributesFilters: (value: Attribute) => void;
+    clearFilters: () => void;
 }
 
 export const SideNav: React.FC<IProps> = ({
@@ -29,7 +38,8 @@ export const SideNav: React.FC<IProps> = ({
     selectedGenreFocusFilter,
     handleSetSelectedGenreFocusFilter,
     selectedAttributesFilters,
-    handleSetSelectedAttributesFilters
+    handleSetSelectedAttributesFilters,
+    clearFilters
 }) => {
     return (
         <NavBar>
@@ -66,6 +76,9 @@ export const SideNav: React.FC<IProps> = ({
                         );
                     })}
                 </Section>
+                <ClearButton onClick={clearFilters}>
+                    <LabelFont>CLEAR</LabelFont>
+                </ClearButton>
                 <Divider />
                 <FAQ />
             </TextContainer>
@@ -94,4 +107,10 @@ const TextContainer = styled(Column)`
 const Divider = styled.div`
     padding-bottonm: 0px;
     border-bottom: 2px solid ${COLOURS.SECONDARY};
+`;
+
+const ClearButton = styled(LegendButton)`
+    outline: 4px solid white;
+    border-radius: 4px;
+    padding: 12px;
 `;

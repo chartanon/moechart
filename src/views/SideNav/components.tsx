@@ -15,7 +15,7 @@ export const LegendLabel = styled(LabelFont)`
     padding-left: 8px;
 `;
 
-export const LegendButton = styled(Button)<{ $isSelected: boolean }>`
+export const LegendButton = styled(Button)<{ $isSelected?: boolean }>`
     :hover {
         font-weight: bold;
         box-shadow: 2px 2px 4px ${COLOURS.TEXT};
@@ -23,6 +23,7 @@ export const LegendButton = styled(Button)<{ $isSelected: boolean }>`
     }
 
     :active {
+        font-weight: normal;
         outline: 2px solid ${COLOURS.TEXT};
         box-shadow: 2px 2px 4px ${COLOURS.TEXT};
     }

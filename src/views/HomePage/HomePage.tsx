@@ -42,6 +42,12 @@ export const HomePage: React.FC = () => {
         }
     };
 
+    const clearFilters = () => {
+        setSelectedPlaytimeFilter(null);
+        setSelectedGenreFocusFilter(null);
+        setSelectedAttributesFilters([]);
+    };
+
     return (
         <Container>
             <SideNav
@@ -57,6 +63,7 @@ export const HomePage: React.FC = () => {
                 handleSetSelectedAttributesFilters={
                     handleSetSelectedAttributesFilters
                 }
+                clearFilters={clearFilters}
             />
             <MoegeChart
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
