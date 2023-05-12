@@ -68,11 +68,11 @@ export const MoegeChart: React.FC<IProps> = ({
                 <AnimatePresence>
                     {filteredReleasedVisualNovels.map((visualNovel, index) => {
                         return (
-                            <StaggeredEntranceFade index={index}>
-                                <Entry
-                                    {...visualNovel}
-                                    key={visualNovel.thumbnailSource}
-                                />
+                            <StaggeredEntranceFade
+                                key={visualNovel.thumbnailSource}
+                                index={index}
+                            >
+                                <Entry {...visualNovel} />
                             </StaggeredEntranceFade>
                         );
                     })}
@@ -87,13 +87,11 @@ export const MoegeChart: React.FC<IProps> = ({
                             {unreleasedVisualNovels.map(
                                 (visualNovel, index) => {
                                     return (
-                                        <StaggeredEntranceFade index={index}>
-                                            <Entry
-                                                {...visualNovel}
-                                                key={
-                                                    visualNovel.thumbnailSource
-                                                }
-                                            />
+                                        <StaggeredEntranceFade
+                                            key={visualNovel.thumbnailSource}
+                                            index={index}
+                                        >
+                                            <Entry {...visualNovel} />
                                         </StaggeredEntranceFade>
                                     );
                                 }

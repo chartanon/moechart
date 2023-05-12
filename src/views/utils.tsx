@@ -154,6 +154,12 @@ export const StaggeredEntranceFade: React.FC<{
                 y: 0,
                 transition: { duration: Math.min(0.1 * index, 2) }
             }}
+            exit={{
+                opacity: 0,
+                x: 40,
+                y: -40,
+                transition: { duration: 0.4 }
+            }}
         >
             {children}
         </motion.div>
