@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Row, LabelFont, Button } from '../utils';
 
 export const LegendItemContainer = styled(Row)`
-    padding: 10px 5px 10px 5px;
+    padding: 7px 5px 7px 5px;
     & > :last-child {
         margin-left: auto;
         text-align: right;
@@ -16,8 +16,6 @@ export const LegendLabel = styled(LabelFont)`
 `;
 
 export const LegendButton = styled(Button)<{ $isSelected: boolean }>`
-    padding-top: 6px;
-
     :hover {
         font-weight: bold;
     }
