@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    COLOURS,
-    Column,
-    TitleFont,
-    Section,
-    LabelFont,
-    Button
-} from '../utils';
+import { COLOURS, Column, TitleFont, Section, LabelFont } from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
