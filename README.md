@@ -1,6 +1,6 @@
 # /vn/ Moege Chart
 
-## Ideas
+## Ideas/TODOs
 
 -   Add a VN counter somewhere to show how many VNs fit under the current set of filters
 -   Automatically sort all VNs by GenreFocus so chartanon doesn't have to manually place each new VN in the correct area
