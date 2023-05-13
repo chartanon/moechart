@@ -4,6 +4,7 @@
 
 -   Add a VN counter somewhere to show how many VNs fit under the current set of filters
 -   Automatically sort all VNs by GenreFocus so chartanon doesn't have to manually place each new VN in the correct area
+-   Colourize moenukige in the faq to have the white text-shadow
 
 ## Working Area
 
