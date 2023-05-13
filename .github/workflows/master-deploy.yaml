@@ -1,0 +1,36 @@
+name: Master build and deploy
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - public/**
+      - src/**
+      - package-lock.json
+      - tsconfig.json
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy site
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Check build and create artifact
+        id: create-artifact
+        uses: ./.github/actions/check-build
+        with:
+          generate_artifact: "true"
+      - name: Fetch artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ steps.create-artifact.outputs.artifact-name }}
+          path: build
+      - name: Set up nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - name: Publish github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
