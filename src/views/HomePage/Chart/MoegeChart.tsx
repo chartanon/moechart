@@ -13,8 +13,8 @@ import {
     Attribute,
     GenreFocus,
     PlaytimeLength,
-    VisualNovelEntry
-} from './VisualNovelEntry';
+    VisualNovelCard
+} from './VisualNovelCard';
 import { AnimatePresence } from 'framer-motion';
 
 interface IProps {
@@ -114,7 +114,7 @@ const UpdatedInfoFont = styled(LabelFont)`
     justify-content: flex-end;
 `;
 
-const Entry = styled(VisualNovelEntry)`
+const Entry = styled(VisualNovelCard)`
     padding: 20px;
 `;
 

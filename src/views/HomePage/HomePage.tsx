@@ -3,11 +3,7 @@ import { MoegeChart } from './Chart/MoegeChart';
 import { SIDE_NAV_WIDTH, SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
-import {
-    PlaytimeLength,
-    Attribute,
-    GenreFocus
-} from './Chart/VisualNovelEntry';
+import { PlaytimeLength, Attribute, GenreFocus } from './Chart/VisualNovelCard';
 
 export const HomePage: React.FC = () => {
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =

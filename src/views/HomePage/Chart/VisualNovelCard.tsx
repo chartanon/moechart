@@ -60,7 +60,7 @@ export interface VisualNovelProps {
     isUpcomingRelease?: boolean;
 }
 
-export const VisualNovelEntry: React.FC<VisualNovelProps> = ({
+export const VisualNovelCard: React.FC<VisualNovelProps> = ({
     name,
     vndbLink,
     playtime,
@@ -94,7 +94,7 @@ export const VisualNovelEntry: React.FC<VisualNovelProps> = ({
     return (
         <Container>
             <Link href={vndbLink}>
-                <TitleFont>{name}</TitleFont>
+                <Name>{name}</Name>
             </Link>
             <ContentBody>
                 <Link href={vndbLink}>
@@ -186,6 +186,10 @@ const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
 `;
 
+const Name = styled(TitleFont)`
+    padding-bottom: 14px;
+`;
+
 const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
 `;
@@ -201,6 +205,7 @@ const ThumbnailImage = styled.img<{ $outlineColour: string }>`
         return css`
             :hover {
                 outline: 4px solid ${$outlineColour};
+                margin-top: -10px;
             }
             box-shadow: 0 10px 40px ${$outlineColour};
         `;

@@ -14,7 +14,7 @@ import { KineticNovelIcon } from '../assets/icons/KineticNovelIcon';
 import { FandiscIcon } from '../assets/icons/FandiscIcon';
 import { FrenchGirlIcon } from '../assets/icons/FrenchGirlIcon';
 import { ReactElement } from 'react';
-import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelEntry';
+import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
 
 interface BaseProps {
     IconSVG: () => ReactElement;

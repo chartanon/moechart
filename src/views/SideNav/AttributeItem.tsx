@@ -1,7 +1,7 @@
 import React from 'react';
 import { AttributeProps } from './LegendData';
 import { LegendButton, LegendItemContainer, LegendLabel } from './components';
-import { Attribute } from '../HomePage/Chart/VisualNovelEntry';
+import { Attribute } from '../HomePage/Chart/VisualNovelCard';
 
 interface IProps extends AttributeProps {
     isSelected: boolean;

@@ -8,7 +8,7 @@ import {
     Attribute,
     GenreFocus,
     PlaytimeLength
-} from '../HomePage/Chart/VisualNovelEntry';
+} from '../HomePage/Chart/VisualNovelCard';
 import { attributesList, playtimesList } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { LegendButton } from './components';

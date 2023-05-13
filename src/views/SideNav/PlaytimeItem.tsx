@@ -1,7 +1,7 @@
 import React from 'react';
 import { PlaytimeProps } from './LegendData';
 import { LegendButton, LegendItemContainer, LegendLabel } from './components';
-import { PlaytimeLength } from '../HomePage/Chart/VisualNovelEntry';
+import { PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
 
 interface IProps extends PlaytimeProps {
     isSelected: boolean;
