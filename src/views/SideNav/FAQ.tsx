@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Section } from '../utils';
+import { COLOURS, LabelFont, Section } from '../utils';
 import { FAQItem } from './FAQItem';
+import styled from 'styled-components';
 export const FAQ: React.FC = () => {
     const [shouldShowMoegeDescription, setShouldShowMoegeDescription] =
         useState(false);
@@ -33,7 +34,10 @@ export const FAQ: React.FC = () => {
                         no game will be rated here. The main purpose of the
                         chart is to provide a complete list of moege (currently
                         translated and future releases) sorted by 3
-                        content-related focuses. Additionally, some Moenukige
+                        content-related focuses. Additionally, some{' '}
+                        <MoenukigeFont $outlineColour={COLOURS.GENRE.NUKIGE}>
+                            Moenukige
+                        </MoenukigeFont>{' '}
                         (ero centric titles with significant moege elements)
                         will also be listed on this chart.
                     </>
@@ -68,3 +72,7 @@ export const FAQ: React.FC = () => {
         </Section>
     );
 };
+
+const MoenukigeFont = styled(LabelFont)`
+    display: inline;
+`;
