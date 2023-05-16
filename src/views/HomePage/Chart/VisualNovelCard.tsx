@@ -216,7 +216,7 @@ const IconsContainer = styled(Column)`
     padding-left: 5px;
     display: flex;
     height: 100%;
-    & > :nth-child(2) {
+    & > :last-child {
         align-self: flex-end;
         justify-content: flex-end;
     }

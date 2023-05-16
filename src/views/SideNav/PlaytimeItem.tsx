@@ -1,7 +1,8 @@
 import React from 'react';
 import { PlaytimeProps } from './LegendData';
-import { LegendButton, LegendItemContainer, LegendLabel } from './components';
+import { LegendItemContainer, LegendLabel } from './components';
 import { PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
+import { ResponsiveButton } from '../utils';
 
 interface IProps extends PlaytimeProps {
     isSelected: boolean;
@@ -17,7 +18,7 @@ export const PlaytimeItem: React.FC<IProps> = ({
     onClick
 }) => {
     return (
-        <LegendButton
+        <ResponsiveButton
             $isSelected={!!isSelected}
             onClick={() => onClick(length)}
         >
@@ -26,6 +27,6 @@ export const PlaytimeItem: React.FC<IProps> = ({
                 <LegendLabel>{label}</LegendLabel>
                 <LegendLabel>{secondaryLabel}</LegendLabel>
             </LegendItemContainer>
-        </LegendButton>
+        </ResponsiveButton>
     );
 };

@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOURS, Column, TitleFont, Section, LabelFont } from '../utils';
+import {
+    COLOURS,
+    Column,
+    TitleFont,
+    Section,
+    LabelFont,
+    ResponsiveButton
+} from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
@@ -16,7 +23,6 @@ import {
     sortingList
 } from './LegendData';
 import { AttributeItem } from './AttributeItem';
-import { LegendButton } from './components';
 import { SortByItem } from './SortByItem';
 
 export const SIDE_NAV_WIDTH = 300;
@@ -127,7 +133,7 @@ const Divider = styled.div`
     border-bottom: 2px solid ${COLOURS.SECONDARY};
 `;
 
-const ClearButton = styled(LegendButton)`
+const ClearButton = styled(ResponsiveButton)`
     outline: 4px solid white;
     border-radius: 4px;
     padding: 12px;

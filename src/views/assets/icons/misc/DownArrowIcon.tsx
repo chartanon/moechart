@@ -1,13 +1,15 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
-export const DownArrowIcon = () => {
+export const ArrowIcon: React.FC<{ rotate?: number }> = ({ rotate }) => {
     return (
-        <svg
+        <StyledSVG
             xmlns="http://www.w3.org/2000/svg"
             width="22"
             height="22"
             version="1.1"
             viewBox="0 0 5.821 5.821"
+            $rotate={rotate}
         >
             <g strokeWidth="0.529">
                 <rect
@@ -56,6 +58,15 @@ export const DownArrowIcon = () => {
                     ry="0.265"
                 ></ellipse>
             </g>
-        </svg>
+        </StyledSVG>
     );
 };
+
+const StyledSVG = styled.svg<{ $rotate?: number }>`
+    ${({ $rotate }) =>
+        $rotate
+            ? css`
+                  transform: rotate(${$rotate}deg);
+              `
+            : ''}
+`;

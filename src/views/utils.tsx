@@ -170,3 +170,24 @@ export const Section = styled(Column)`
     display: flex;
     gap: 10px;
 `;
+
+export const ResponsiveButton = styled(Button)<{ $isSelected?: boolean }>`
+    :hover {
+        font-weight: bold;
+        box-shadow: 2px 2px 4px ${COLOURS.TEXT};
+        outline: 3px solid ${COLOURS.TEXT};
+    }
+
+    :active {
+        font-weight: normal;
+        outline: 2px solid ${COLOURS.TEXT};
+        box-shadow: 2px 2px 4px ${COLOURS.TEXT};
+    }
+
+    ${({ $isSelected }) =>
+        $isSelected
+            ? css`
+                  outline: 3px solid ${COLOURS.TEXT};
+              `
+            : ''};
+`;
