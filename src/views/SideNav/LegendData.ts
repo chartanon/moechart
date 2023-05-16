@@ -1,20 +1,22 @@
-import { PlaytimeShortIcon } from '../assets/icons/PlaytimeShortIcon';
-import { PlaytimeMediumIcon } from '../assets/icons/PlaytimeMediumIcon';
-import { PlaytimeLongIcon } from '../assets/icons/PlaytimeLongIcon';
-import { PlaytimeVeryLongIcon } from '../assets/icons/PlaytimeVeryLongIcon';
-import { ADVIcon } from '../assets/icons/ADVIcon';
-import { NVLIcon } from '../assets/icons/NVLIcon';
-import { FloatingTextIcon } from '../assets/icons/FloatingTextIcon';
-import { LockIcon } from '../assets/icons/LockIcon';
-import { BranchIcon } from '../assets/icons/BranchIcon';
-import { LadderIcon } from '../assets/icons/LadderIcon';
-import { TrueIcon } from '../assets/icons/TrueIcon';
-import { LinearPlotIcon } from '../assets/icons/LinearPlotIcon';
-import { KineticNovelIcon } from '../assets/icons/KineticNovelIcon';
-import { FandiscIcon } from '../assets/icons/FandiscIcon';
-import { FrenchGirlIcon } from '../assets/icons/FrenchGirlIcon';
+import { PlaytimeShortIcon } from '../assets/icons/playtime/PlaytimeShortIcon';
+import { PlaytimeMediumIcon } from '../assets/icons/playtime/PlaytimeMediumIcon';
+import { PlaytimeLongIcon } from '../assets/icons/playtime/PlaytimeLongIcon';
+import { PlaytimeVeryLongIcon } from '../assets/icons/playtime/PlaytimeVeryLongIcon';
+import { ADVIcon } from '../assets/icons/attribute/ADVIcon';
+import { NVLIcon } from '../assets/icons/attribute/NVLIcon';
+import { FloatingTextIcon } from '../assets/icons/attribute/FloatingTextIcon';
+import { LockIcon } from '../assets/icons/attribute/LockIcon';
+import { BranchIcon } from '../assets/icons/attribute/BranchIcon';
+import { LadderIcon } from '../assets/icons/attribute/LadderIcon';
+import { TrueIcon } from '../assets/icons/attribute/TrueIcon';
+import { LinearPlotIcon } from '../assets/icons/attribute/LinearPlotIcon';
+import { KineticNovelIcon } from '../assets/icons/attribute/KineticNovelIcon';
+import { FandiscIcon } from '../assets/icons/attribute/FandiscIcon';
+import { FrenchGirlIcon } from '../assets/icons/attribute/FrenchGirlIcon';
 import { ReactElement } from 'react';
-import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelEntry';
+import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
+import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
+import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
 
 interface BaseProps {
     IconSVG: () => ReactElement;
@@ -27,6 +29,15 @@ export interface AttributeProps extends BaseProps {
 export interface PlaytimeProps extends BaseProps {
     length: PlaytimeLength;
     secondaryLabel: string;
+}
+
+export interface SortingProps extends BaseProps {
+    option: SortingOption;
+}
+
+export enum SortingOption {
+    CHRONOLOGICAL = 'CHRONOLOGICAL',
+    RANDOM = 'RANDOM'
 }
 
 export const playtimesList: PlaytimeProps[] = [
@@ -53,6 +64,19 @@ export const playtimesList: PlaytimeProps[] = [
         label: 'Very Long',
         secondaryLabel: '>50 hrs',
         length: PlaytimeLength.VERY_LONG
+    }
+];
+
+export const sortingList: SortingProps[] = [
+    {
+        IconSVG: ClockIcon,
+        label: 'Newest Releases',
+        option: SortingOption.CHRONOLOGICAL
+    },
+    {
+        IconSVG: DiceIcon,
+        label: 'Random 10',
+        option: SortingOption.RANDOM
     }
 ];
 

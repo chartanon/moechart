@@ -1,16 +1,15 @@
 import React from 'react';
-import { AttributeProps } from './LegendData';
+import { SortingOption, SortingProps } from './LegendData';
 import { LegendItemContainer, LegendLabel } from './components';
-import { Attribute } from '../HomePage/Chart/VisualNovelCard';
 import { ResponsiveButton } from '../utils';
 
-interface IProps extends AttributeProps {
+interface IProps extends SortingProps {
     isSelected: boolean;
-    onClick: (value: Attribute) => void;
+    onClick: (value: SortingOption) => void;
 }
 
-export const AttributeItem: React.FC<IProps> = ({
-    type,
+export const SortByItem: React.FC<IProps> = ({
+    option,
     IconSVG,
     label,
     isSelected,
@@ -19,7 +18,7 @@ export const AttributeItem: React.FC<IProps> = ({
     return (
         <ResponsiveButton
             $isSelected={!!isSelected}
-            onClick={() => onClick(type)}
+            onClick={() => onClick(option)}
         >
             <LegendItemContainer>
                 <IconSVG />

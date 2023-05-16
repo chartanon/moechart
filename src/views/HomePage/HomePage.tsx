@@ -3,13 +3,13 @@ import { MoegeChart } from './Chart/MoegeChart';
 import { SIDE_NAV_WIDTH, SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
-import {
-    PlaytimeLength,
-    Attribute,
-    GenreFocus
-} from './Chart/VisualNovelEntry';
+import { PlaytimeLength, Attribute, GenreFocus } from './Chart/VisualNovelCard';
+import { SortingOption } from '../SideNav/LegendData';
 
 export const HomePage: React.FC = () => {
+    const [selectedSortingOptions, setSelectedSortingOptions] = useState<
+        SortingOption[]
+    >([]);
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =
         useState<PlaytimeLength | null>(null);
     const [selectedGenreFocusFilter, setSelectedGenreFocusFilter] =
@@ -17,6 +17,22 @@ export const HomePage: React.FC = () => {
     const [selectedAttributesFilters, setSelectedAttributesFilters] = useState<
         Attribute[]
     >([]);
+
+    const handleSetSelectedSortingOptions = (value: SortingOption) => {
+        if (
+            selectedSortingOptions.some(
+                sortingOption => sortingOption === value
+            )
+        ) {
+            setSelectedSortingOptions(
+                selectedSortingOptions.filter(
+                    sortingOption => sortingOption !== value
+                )
+            );
+        } else {
+            setSelectedSortingOptions([...selectedSortingOptions, value]);
+        }
+    };
 
     const handleSetSelectedPlaytimeFilter = (value: PlaytimeLength) => {
         selectedPlaytimeFilter === value
@@ -43,6 +59,7 @@ export const HomePage: React.FC = () => {
     };
 
     const clearFilters = () => {
+        setSelectedSortingOptions([]);
         setSelectedPlaytimeFilter(null);
         setSelectedGenreFocusFilter(null);
         setSelectedAttributesFilters([]);
@@ -51,6 +68,10 @@ export const HomePage: React.FC = () => {
     return (
         <Container>
             <SideNav
+                selectedSortingOptions={selectedSortingOptions}
+                handleSetSelectedSortingOptions={
+                    handleSetSelectedSortingOptions
+                }
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 handleSetSelectedPlaytimeFilter={
                     handleSetSelectedPlaytimeFilter
@@ -66,6 +87,7 @@ export const HomePage: React.FC = () => {
                 clearFilters={clearFilters}
             />
             <MoegeChart
+                selectedSortingOptions={selectedSortingOptions}
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 selectedGenreFocusFilter={selectedGenreFocusFilter}
                 selectedAttributesFilters={selectedAttributesFilters}

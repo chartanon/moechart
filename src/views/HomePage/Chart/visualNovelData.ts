@@ -3,7 +3,7 @@ import {
     GenreFocus,
     PlaytimeLength,
     VisualNovelProps
-} from './VisualNovelEntry';
+} from './VisualNovelCard';
 
 import aokana from '../../assets/thumbnails/aokana.jpg';
 import haretaka from '../../assets/thumbnails/haretaka.jpg';

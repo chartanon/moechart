@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOURS, Column, TitleFont, Section, LabelFont } from '../utils';
+import {
+    COLOURS,
+    Column,
+    TitleFont,
+    Section,
+    LabelFont,
+    ResponsiveButton
+} from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
@@ -8,14 +15,21 @@ import {
     Attribute,
     GenreFocus,
     PlaytimeLength
-} from '../HomePage/Chart/VisualNovelEntry';
-import { attributesList, playtimesList } from './LegendData';
+} from '../HomePage/Chart/VisualNovelCard';
+import {
+    SortingOption,
+    attributesList,
+    playtimesList,
+    sortingList
+} from './LegendData';
 import { AttributeItem } from './AttributeItem';
-import { LegendButton } from './components';
+import { SortByItem } from './SortByItem';
 
 export const SIDE_NAV_WIDTH = 300;
 
 interface IProps {
+    selectedSortingOptions: SortingOption[];
+    handleSetSelectedSortingOptions: (value: SortingOption) => void;
     selectedPlaytimeFilter: PlaytimeLength | null;
     handleSetSelectedPlaytimeFilter: (value: PlaytimeLength) => void;
     selectedGenreFocusFilter: GenreFocus | null;
@@ -26,6 +40,8 @@ interface IProps {
 }
 
 export const SideNav: React.FC<IProps> = ({
+    selectedSortingOptions,
+    handleSetSelectedSortingOptions,
     selectedPlaytimeFilter,
     handleSetSelectedPlaytimeFilter,
     selectedGenreFocusFilter,
@@ -42,7 +58,7 @@ export const SideNav: React.FC<IProps> = ({
                     onClick={handleSetSelectedGenreFocusFilter}
                 />
                 <Section>
-                    <TitleFont>LEGEND</TitleFont>
+                    <TitleFont>FILTERS</TitleFont>
                     {playtimesList.map(playtimeItem => {
                         const isSelected =
                             selectedPlaytimeFilter === playtimeItem.length;
@@ -65,6 +81,21 @@ export const SideNav: React.FC<IProps> = ({
                                 )}
                                 {...attribute}
                                 onClick={handleSetSelectedAttributesFilters}
+                            />
+                        );
+                    })}
+                </Section>
+                <Section>
+                    <TitleFont>EXTRA TOOLS</TitleFont>
+                    {sortingList.map(sortingOption => {
+                        return (
+                            <SortByItem
+                                key={sortingOption.option}
+                                isSelected={selectedSortingOptions.some(
+                                    option => option === sortingOption.option
+                                )}
+                                {...sortingOption}
+                                onClick={handleSetSelectedSortingOptions}
                             />
                         );
                     })}
@@ -102,7 +133,7 @@ const Divider = styled.div`
     border-bottom: 2px solid ${COLOURS.SECONDARY};
 `;
 
-const ClearButton = styled(LegendButton)`
+const ClearButton = styled(ResponsiveButton)`
     outline: 4px solid white;
     border-radius: 4px;
     padding: 12px;

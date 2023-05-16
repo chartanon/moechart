@@ -1,21 +1,21 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { PlaytimeShortIcon } from '../../assets/icons/PlaytimeShortIcon';
+import { PlaytimeShortIcon } from '../../assets/icons/playtime/PlaytimeShortIcon';
 import { COLOURS, Column, Row, LabelFont, TitleFont } from '../../utils';
-import { PlaytimeMediumIcon } from '../../assets/icons/PlaytimeMediumIcon';
-import { PlaytimeVeryLongIcon } from '../../assets/icons/PlaytimeVeryLongIcon';
-import { PlaytimeLongIcon } from '../../assets/icons/PlaytimeLongIcon';
-import { ADVIcon } from '../../assets/icons/ADVIcon';
-import { NVLIcon } from '../../assets/icons/NVLIcon';
-import { FloatingTextIcon } from '../../assets/icons/FloatingTextIcon';
-import { LockIcon } from '../../assets/icons/LockIcon';
-import { BranchIcon } from '../../assets/icons/BranchIcon';
-import { LadderIcon } from '../../assets/icons/LadderIcon';
-import { TrueIcon } from '../../assets/icons/TrueIcon';
-import { LinearPlotIcon } from '../../assets/icons/LinearPlotIcon';
-import { KineticNovelIcon } from '../../assets/icons/KineticNovelIcon';
-import { FandiscIcon } from '../../assets/icons/FandiscIcon';
-import { FrenchGirlIcon } from '../../assets/icons/FrenchGirlIcon';
+import { PlaytimeMediumIcon } from '../../assets/icons/playtime/PlaytimeMediumIcon';
+import { PlaytimeVeryLongIcon } from '../../assets/icons/playtime/PlaytimeVeryLongIcon';
+import { PlaytimeLongIcon } from '../../assets/icons/playtime/PlaytimeLongIcon';
+import { ADVIcon } from '../../assets/icons/attribute/ADVIcon';
+import { NVLIcon } from '../../assets/icons/attribute/NVLIcon';
+import { FloatingTextIcon } from '../../assets/icons/attribute/FloatingTextIcon';
+import { LockIcon } from '../../assets/icons/attribute/LockIcon';
+import { BranchIcon } from '../../assets/icons/attribute/BranchIcon';
+import { LadderIcon } from '../../assets/icons/attribute/LadderIcon';
+import { TrueIcon } from '../../assets/icons/attribute/TrueIcon';
+import { LinearPlotIcon } from '../../assets/icons/attribute/LinearPlotIcon';
+import { KineticNovelIcon } from '../../assets/icons/attribute/KineticNovelIcon';
+import { FandiscIcon } from '../../assets/icons/attribute/FandiscIcon';
+import { FrenchGirlIcon } from '../../assets/icons/attribute/FrenchGirlIcon';
 
 export enum PlaytimeLength {
     SHORT = 'SHORT',
@@ -60,7 +60,7 @@ export interface VisualNovelProps {
     isUpcomingRelease?: boolean;
 }
 
-export const VisualNovelEntry: React.FC<VisualNovelProps> = ({
+export const VisualNovelCard: React.FC<VisualNovelProps> = ({
     name,
     vndbLink,
     playtime,
@@ -94,7 +94,7 @@ export const VisualNovelEntry: React.FC<VisualNovelProps> = ({
     return (
         <Container>
             <Link href={vndbLink}>
-                <TitleFont>{name}</TitleFont>
+                <Name>{name}</Name>
             </Link>
             <ContentBody>
                 <Link href={vndbLink}>
@@ -186,6 +186,10 @@ const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
 `;
 
+const Name = styled(TitleFont)`
+    padding-bottom: 14px;
+`;
+
 const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
 `;
@@ -201,6 +205,7 @@ const ThumbnailImage = styled.img<{ $outlineColour: string }>`
         return css`
             :hover {
                 outline: 4px solid ${$outlineColour};
+                margin-top: -10px;
             }
             box-shadow: 0 10px 40px ${$outlineColour};
         `;
@@ -211,7 +216,7 @@ const IconsContainer = styled(Column)`
     padding-left: 5px;
     display: flex;
     height: 100%;
-    & > :nth-child(2) {
+    & > :last-child {
         align-self: flex-end;
         justify-content: flex-end;
     }
