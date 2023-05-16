@@ -9,13 +9,21 @@ import {
     GenreFocus,
     PlaytimeLength
 } from '../HomePage/Chart/VisualNovelCard';
-import { attributesList, playtimesList } from './LegendData';
+import {
+    SortingOption,
+    attributesList,
+    playtimesList,
+    sortingList
+} from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { LegendButton } from './components';
+import { SortByItem } from './SortByItem';
 
 export const SIDE_NAV_WIDTH = 300;
 
 interface IProps {
+    selectedSortingOptions: SortingOption[];
+    handleSetSelectedSortingOptions: (value: SortingOption) => void;
     selectedPlaytimeFilter: PlaytimeLength | null;
     handleSetSelectedPlaytimeFilter: (value: PlaytimeLength) => void;
     selectedGenreFocusFilter: GenreFocus | null;
@@ -26,6 +34,8 @@ interface IProps {
 }
 
 export const SideNav: React.FC<IProps> = ({
+    selectedSortingOptions,
+    handleSetSelectedSortingOptions,
     selectedPlaytimeFilter,
     handleSetSelectedPlaytimeFilter,
     selectedGenreFocusFilter,
@@ -42,7 +52,22 @@ export const SideNav: React.FC<IProps> = ({
                     onClick={handleSetSelectedGenreFocusFilter}
                 />
                 <Section>
-                    <TitleFont>LEGEND</TitleFont>
+                    <TitleFont>SORT BY</TitleFont>
+                    {sortingList.map(sortingOption => {
+                        return (
+                            <SortByItem
+                                key={sortingOption.option}
+                                isSelected={selectedSortingOptions.some(
+                                    option => option === sortingOption.option
+                                )}
+                                {...sortingOption}
+                                onClick={handleSetSelectedSortingOptions}
+                            />
+                        );
+                    })}
+                </Section>
+                <Section>
+                    <TitleFont>FILTERS</TitleFont>
                     {playtimesList.map(playtimeItem => {
                         const isSelected =
                             selectedPlaytimeFilter === playtimeItem.length;

@@ -16,14 +16,17 @@ import {
     VisualNovelCard
 } from './VisualNovelCard';
 import { AnimatePresence } from 'framer-motion';
+import { SortingOption } from '../../SideNav/LegendData';
 
 interface IProps {
+    selectedSortingOptions: SortingOption[];
     selectedPlaytimeFilter: PlaytimeLength | null;
     selectedGenreFocusFilter: GenreFocus | null;
     selectedAttributesFilters: Attribute[];
 }
 
 export const MoegeChart: React.FC<IProps> = ({
+    selectedSortingOptions,
     selectedPlaytimeFilter,
     selectedGenreFocusFilter,
     selectedAttributesFilters
@@ -57,6 +60,22 @@ export const MoegeChart: React.FC<IProps> = ({
                 genreFocusOrder.indexOf(visualNovelOne.genreFocus) -
                 genreFocusOrder.indexOf(visualNovelTwo.genreFocus)
         );
+    }
+
+    if (selectedSortingOptions.length !== 0) {
+        selectedSortingOptions.forEach(option => {
+            switch (option) {
+                case SortingOption.CHRONOLOGICAL:
+                    filteredReleasedVisualNovels.sort(
+                        (visualNovelOne, visualNovelTwo) =>
+                            visualNovelTwo.translationReleaseDate! -
+                            visualNovelOne.translationReleaseDate!
+                    );
+                    break;
+                case SortingOption.RANDOM:
+                    break;
+            }
+        });
     }
 
     const unreleasedVisualNovels = visualNovelData.filter(

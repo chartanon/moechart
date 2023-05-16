@@ -15,6 +15,8 @@ import { FandiscIcon } from '../assets/icons/attribute/FandiscIcon';
 import { FrenchGirlIcon } from '../assets/icons/attribute/FrenchGirlIcon';
 import { ReactElement } from 'react';
 import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
+import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
+import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
 
 interface BaseProps {
     IconSVG: () => ReactElement;
@@ -27,6 +29,15 @@ export interface AttributeProps extends BaseProps {
 export interface PlaytimeProps extends BaseProps {
     length: PlaytimeLength;
     secondaryLabel: string;
+}
+
+export interface SortingProps extends BaseProps {
+    option: SortingOption;
+}
+
+export enum SortingOption {
+    CHRONOLOGICAL = 'CHRONOLOGICAL',
+    RANDOM = 'RANDOM'
 }
 
 export const playtimesList: PlaytimeProps[] = [
@@ -53,6 +64,19 @@ export const playtimesList: PlaytimeProps[] = [
         label: 'Very Long',
         secondaryLabel: '>50 hrs',
         length: PlaytimeLength.VERY_LONG
+    }
+];
+
+export const sortingList: SortingProps[] = [
+    {
+        IconSVG: ClockIcon,
+        label: 'Most Recent',
+        option: SortingOption.CHRONOLOGICAL
+    },
+    {
+        IconSVG: DiceIcon,
+        label: 'Random',
+        option: SortingOption.RANDOM
     }
 ];
 
