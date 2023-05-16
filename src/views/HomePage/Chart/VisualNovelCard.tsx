@@ -1,21 +1,21 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { PlaytimeShortIcon } from '../../assets/icons/PlaytimeShortIcon';
+import { PlaytimeShortIcon } from '../../assets/icons/playtime/PlaytimeShortIcon';
 import { COLOURS, Column, Row, LabelFont, TitleFont } from '../../utils';
-import { PlaytimeMediumIcon } from '../../assets/icons/PlaytimeMediumIcon';
-import { PlaytimeVeryLongIcon } from '../../assets/icons/PlaytimeVeryLongIcon';
-import { PlaytimeLongIcon } from '../../assets/icons/PlaytimeLongIcon';
-import { ADVIcon } from '../../assets/icons/ADVIcon';
-import { NVLIcon } from '../../assets/icons/NVLIcon';
-import { FloatingTextIcon } from '../../assets/icons/FloatingTextIcon';
-import { LockIcon } from '../../assets/icons/LockIcon';
-import { BranchIcon } from '../../assets/icons/BranchIcon';
-import { LadderIcon } from '../../assets/icons/LadderIcon';
-import { TrueIcon } from '../../assets/icons/TrueIcon';
-import { LinearPlotIcon } from '../../assets/icons/LinearPlotIcon';
-import { KineticNovelIcon } from '../../assets/icons/KineticNovelIcon';
-import { FandiscIcon } from '../../assets/icons/FandiscIcon';
-import { FrenchGirlIcon } from '../../assets/icons/FrenchGirlIcon';
+import { PlaytimeMediumIcon } from '../../assets/icons/playtime/PlaytimeMediumIcon';
+import { PlaytimeVeryLongIcon } from '../../assets/icons/playtime/PlaytimeVeryLongIcon';
+import { PlaytimeLongIcon } from '../../assets/icons/playtime/PlaytimeLongIcon';
+import { ADVIcon } from '../../assets/icons/attribute/ADVIcon';
+import { NVLIcon } from '../../assets/icons/attribute/NVLIcon';
+import { FloatingTextIcon } from '../../assets/icons/attribute/FloatingTextIcon';
+import { LockIcon } from '../../assets/icons/attribute/LockIcon';
+import { BranchIcon } from '../../assets/icons/attribute/BranchIcon';
+import { LadderIcon } from '../../assets/icons/attribute/LadderIcon';
+import { TrueIcon } from '../../assets/icons/attribute/TrueIcon';
+import { LinearPlotIcon } from '../../assets/icons/attribute/LinearPlotIcon';
+import { KineticNovelIcon } from '../../assets/icons/attribute/KineticNovelIcon';
+import { FandiscIcon } from '../../assets/icons/attribute/FandiscIcon';
+import { FrenchGirlIcon } from '../../assets/icons/attribute/FrenchGirlIcon';
 
 export enum PlaytimeLength {
     SHORT = 'SHORT',

@@ -8,7 +8,7 @@ import {
     COLOURS
 } from '../utils';
 import styled, { css } from 'styled-components';
-import { HelpIcon } from '../assets/icons/HelpIcon';
+import { HelpIcon } from '../assets/icons/misc/HelpIcon';
 import { Row } from '../utils';
 import { AnimatePresence } from 'framer-motion';
 import { GenreFocus } from '../HomePage/Chart/VisualNovelCard';
