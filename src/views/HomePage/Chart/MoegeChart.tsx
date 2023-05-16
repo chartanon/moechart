@@ -50,6 +50,15 @@ export const MoegeChart: React.FC<IProps> = ({
         return !visualNovel.isUpcomingRelease;
     });
 
+    if (selectedGenreFocusFilter === null) {
+        const genreFocusOrder = Object.values(GenreFocus);
+        filteredReleasedVisualNovels.sort(
+            (visualNovelOne, visualNovelTwo) =>
+                genreFocusOrder.indexOf(visualNovelOne.genreFocus) -
+                genreFocusOrder.indexOf(visualNovelTwo.genreFocus)
+        );
+    }
+
     const unreleasedVisualNovels = visualNovelData.filter(
         visualNovel =>
             visualNovel.isUpcomingRelease &&
