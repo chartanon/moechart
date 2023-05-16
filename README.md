@@ -18,3 +18,5 @@ Princess Evangile because it has cool action and interesting drama while still b
 
 Majikoi
 It has lots of choices, a good cast of core heroines and bro characters, it's lengthy so a newcomer can sink their teeth into the genre properly, has a plethora of fandisks and a sequel they can also read and the vast majority of characters have sprites and are voiced.
+- The problem with this is that Majikoi isn't typical moege at all. It has real drama, lots of real fight scenes, and actual plot.
+If this is someone's 1st game they will be under the wrong impression of the genre. It would be a shame if someone that would love moege picks up Majikoi because it's promoted as a good 1st choice, and then they come to the conclusion they don't like moege if they don't like it.
