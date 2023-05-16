@@ -59,6 +59,7 @@ export const HomePage: React.FC = () => {
     };
 
     const clearFilters = () => {
+        setSelectedSortingOptions([]);
         setSelectedPlaytimeFilter(null);
         setSelectedGenreFocusFilter(null);
         setSelectedAttributesFilters([]);

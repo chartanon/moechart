@@ -72,7 +72,19 @@ export const MoegeChart: React.FC<IProps> = ({
                             visualNovelOne.translationReleaseDate!
                     );
                     break;
-                case SortingOption.RANDOM:
+                case SortingOption.RANDOM: {
+                    while (filteredReleasedVisualNovels.length > 10) {
+                        filteredReleasedVisualNovels.splice(
+                            Math.floor(
+                                Math.random() *
+                                    filteredReleasedVisualNovels.length
+                            ),
+                            1
+                        );
+                    }
+                    break;
+                }
+                default:
                     break;
             }
         });
@@ -81,6 +93,7 @@ export const MoegeChart: React.FC<IProps> = ({
     const unreleasedVisualNovels = visualNovelData.filter(
         visualNovel =>
             visualNovel.isUpcomingRelease &&
+            selectedSortingOptions.length === 0 &&
             selectedPlaytimeFilter === null &&
             selectedGenreFocusFilter === null &&
             selectedAttributesFilters.length === 0

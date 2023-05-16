@@ -52,21 +52,6 @@ export const SideNav: React.FC<IProps> = ({
                     onClick={handleSetSelectedGenreFocusFilter}
                 />
                 <Section>
-                    <TitleFont>SORT BY</TitleFont>
-                    {sortingList.map(sortingOption => {
-                        return (
-                            <SortByItem
-                                key={sortingOption.option}
-                                isSelected={selectedSortingOptions.some(
-                                    option => option === sortingOption.option
-                                )}
-                                {...sortingOption}
-                                onClick={handleSetSelectedSortingOptions}
-                            />
-                        );
-                    })}
-                </Section>
-                <Section>
                     <TitleFont>FILTERS</TitleFont>
                     {playtimesList.map(playtimeItem => {
                         const isSelected =
@@ -90,6 +75,21 @@ export const SideNav: React.FC<IProps> = ({
                                 )}
                                 {...attribute}
                                 onClick={handleSetSelectedAttributesFilters}
+                            />
+                        );
+                    })}
+                </Section>
+                <Section>
+                    <TitleFont>EXTRA TOOLS</TitleFont>
+                    {sortingList.map(sortingOption => {
+                        return (
+                            <SortByItem
+                                key={sortingOption.option}
+                                isSelected={selectedSortingOptions.some(
+                                    option => option === sortingOption.option
+                                )}
+                                {...sortingOption}
+                                onClick={handleSetSelectedSortingOptions}
                             />
                         );
                     })}

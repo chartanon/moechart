@@ -70,12 +70,12 @@ export const playtimesList: PlaytimeProps[] = [
 export const sortingList: SortingProps[] = [
     {
         IconSVG: ClockIcon,
-        label: 'Most Recent',
+        label: 'Newest Releases',
         option: SortingOption.CHRONOLOGICAL
     },
     {
         IconSVG: DiceIcon,
-        label: 'Random',
+        label: 'Random 10',
         option: SortingOption.RANDOM
     }
 ];
