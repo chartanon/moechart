@@ -128,8 +128,8 @@ export const attributesList: AttributeProps[] = [
     },
     {
         IconSVG: FandiscIcon,
-        label: "TL'd Fandisc(s)/Sequel",
-        type: Attribute.HAS_SEQUELS
+        label: "Fandisc/Sequel",
+        type: Attribute.SEQUEL
     },
     {
         IconSVG: FrenchGirlIcon,

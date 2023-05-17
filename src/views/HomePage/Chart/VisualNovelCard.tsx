@@ -34,7 +34,7 @@ export enum Attribute {
     TRUE_ROUTE = 'TRUE_ROUTE',
     LINEAR_PLOT = 'LINEAR_PLOT',
     KINETIC_NOVEL = 'KINETIC_NOVEL',
-    HAS_SEQUELS = 'HAS_SEQUELS',
+    SEQUEL = 'SEQUELS',
     SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS = 'SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS'
 }
 
@@ -155,7 +155,7 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
                                 if (attribute === Attribute.KINETIC_NOVEL) {
                                     return <KineticNovelIcon key="kinetic" />;
                                 }
-                                if (attribute === Attribute.HAS_SEQUELS) {
+                                if (attribute === Attribute.SEQUEL) {
                                     return <FandiscIcon key="fandisc" />;
                                 }
                                 if (
