@@ -2,6 +2,7 @@ import {
     Attribute,
     GenreFocus,
     PlaytimeLength,
+    Series,
     VisualNovelProps
 } from './VisualNovelCard';
 
@@ -182,13 +183,14 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: aokana,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Sports',
         descriptionSecondRowText: 'Competition',
-        translationReleaseDate: Date.parse('2019-09-27')
+        translationReleaseDate: Date.parse('2019-09-27'),
+        series: Series.AOKANA
     },
     {
         name: 'Aokana EXTRA1',
@@ -203,7 +205,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE, //TODO Romance?
         descriptionFirstRowText: 'Group of Friends, Pure Love',
         descriptionSecondRowText: 'Single Heroine',
-        translationReleaseDate: Date.parse('2020-11-06')
+        translationReleaseDate: Date.parse('2020-11-06'),
+        series: Series.AOKANA
     },
     {
         name: 'Aokana EXTRA2',
@@ -218,7 +221,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Sports',
         descriptionSecondRowText: 'Competition',
-        translationReleaseDate: Date.parse('2022-12-16')
+        translationReleaseDate: Date.parse('2022-12-16'),
+        series: Series.AOKANA
     },
     {
         name: 'Haretaka',
@@ -243,7 +247,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.STORYLINE,
@@ -305,7 +309,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.TRUE_ROUTE,
+            Attribute.TRUE_ROUTE
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.STORYLINE,
@@ -506,7 +510,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -538,7 +542,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.TRUE_ROUTE,
+            Attribute.TRUE_ROUTE
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -615,7 +619,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -725,7 +729,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: princess_evangile,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROMANCE,
@@ -859,7 +863,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: koi_ama,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROMANCE,
@@ -902,10 +906,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v23067',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: loca_love,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Dousei, Destiny',
         descriptionSecondRowText: 'Slice of Life',
@@ -916,10 +917,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v25690',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: loca_love_densha,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Dousei, Destiny',
         descriptionSecondRowText: 'Slice of Life',
@@ -930,10 +928,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v26376',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: loca_love_jinja,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Dousei, Destiny',
         descriptionSecondRowText: 'Slice of Life',
@@ -1035,7 +1030,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: study_steady,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROMANCE,
@@ -1131,7 +1126,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: shuffle,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1156,13 +1151,11 @@ export const visualNovelData: VisualNovelProps[] = [
     },
     {
         name: 'Nekopara Vol. 0-4',
-        vndbLink: 'https://vndb.org/v?q=Nekopara+Vol&ch=&f=N18032gengwcomplete-741&s=322',
+        vndbLink:
+            'https://vndb.org/v?q=Nekopara+Vol&ch=&f=N18032gengwcomplete-741&s=322',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: nekopara,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.KINETIC_NOVEL,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.KINETIC_NOVEL],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Cafe, Dousei, Polyamory',
         descriptionSecondRowText: 'Catgirls',
@@ -1200,13 +1193,11 @@ export const visualNovelData: VisualNovelProps[] = [
     },
     {
         name: 'Neko-nin Series',
-        vndbLink: 'https://vndb.org/v?q=neko-nin+exHeart&ch=&f=N18032gengwcomplete-741&s=322',
+        vndbLink:
+            'https://vndb.org/v?q=neko-nin+exHeart&ch=&f=N18032gengwcomplete-741&s=322',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: neko_nin,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Fantasy, Catgirls',
         descriptionSecondRowText: 'Polyamory',
@@ -1241,7 +1232,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: fureraba,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1271,7 +1262,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: making_lovers,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1323,7 +1314,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: primal_hearts,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1416,7 +1407,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: ninnin_days,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
+            Attribute.LINEAR_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1479,7 +1470,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: sextett,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
+            Attribute.LINEAR_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1505,7 +1496,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: karakara,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.KINETIC_NOVEL,
+            Attribute.KINETIC_NOVEL
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
@@ -1605,7 +1596,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: osadai,
         attributes: [
             Attribute.FLOATING_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.COMEDY,
@@ -1647,7 +1638,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.COMEDY,
@@ -1746,7 +1737,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.COMEDY,
@@ -1772,13 +1763,11 @@ export const visualNovelData: VisualNovelProps[] = [
     },
     {
         name: 'DraPri Series',
-        vndbLink: 'https://vndb.org/v?q=DraPri+Guu-ta-life&ch=&f=N18032gengwcomplete-741&s=322',
+        vndbLink:
+            'https://vndb.org/v?q=DraPri+Guu-ta-life&ch=&f=N18032gengwcomplete-741&s=322',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: drapri,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Dragons, Love Triangle',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1789,10 +1778,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v31669',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: kemonomichi,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Mahou Shoujo, Idols',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1817,7 +1803,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.COMEDY,
@@ -1871,7 +1857,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT,
+            Attribute.BRANCHING_PLOT
             //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.NUKIGE,
@@ -1911,10 +1897,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v22658',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: uchi_no_kanojo,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Deredere, Dousei',
         descriptionSecondRowText: 'Single Heroine',
@@ -1925,10 +1908,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v22725',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: uchi_no_imouto,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Forbidden Love, Dousei',
         descriptionSecondRowText: 'Single Heroine',
@@ -1939,10 +1919,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v22726',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: uchi_no_koibito,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Gyaru, Dousei',
         descriptionSecondRowText: 'Threesome',

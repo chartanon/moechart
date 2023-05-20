@@ -47,6 +47,10 @@ export enum GenreFocus {
     NUKIGE = 'NUKIGE'
 }
 
+export enum Series {
+    AOKANA = 'AOKANA'
+}
+
 export interface VisualNovelProps {
     name: string;
     vndbLink: string;
@@ -58,6 +62,7 @@ export interface VisualNovelProps {
     descriptionSecondRowText: string;
     translationReleaseDate?: number;
     isUpcomingRelease?: boolean;
+    series?: Series;
 }
 
 export const VisualNovelCard: React.FC<VisualNovelProps> = ({
