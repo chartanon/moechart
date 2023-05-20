@@ -21,11 +21,17 @@ import da_capo3 from '../../assets/thumbnails/da_capo3.jpg';
 import yoakena from '../../assets/thumbnails/yoakena.jpg';
 import dal_segno from '../../assets/thumbnails/dal-segno.jpg';
 import hello_good_bye from '../../assets/thumbnails/hello-good-bye.jpg';
+import nine_ep1 from '../../assets/thumbnails/nine_ep1.jpg';
+import nine_ep2 from '../../assets/thumbnails/nine_ep2.jpg';
+import nine_ep3 from '../../assets/thumbnails/nine_ep3.jpg';
+import nine_ep4 from '../../assets/thumbnails/nine_ep4.jpg';
+import nine_shinshou from '../../assets/thumbnails/nine_shinshou.jpg';
 import kinkoi from '../../assets/thumbnails/kinkoi.jpg';
 import kinkoi_gt from '../../assets/thumbnails/kinkoi_gt.jpg';
 import hoshimemo from '../../assets/thumbnails/hoshimemo.jpg';
 import hoshimemo_eh from '../../assets/thumbnails/hoshimemo_eh.jpg';
 import daitoshokan from '../../assets/thumbnails/daitoshokan.jpg';
+import tamayura_mirai from '../../assets/thumbnails/tamayura_mirai.jpg';
 import sakusaku from '../../assets/thumbnails/sakusaku.jpg';
 import miazora from '../../assets/thumbnails/miazora.jpg';
 import miazora_fd from '../../assets/thumbnails/miazora_fd.jpg';
@@ -106,6 +112,8 @@ import osadai from '../../assets/thumbnails/osadai.jpg';
 import osadai_fd from '../../assets/thumbnails/osadai_fd.jpg';
 import ikikoi from '../../assets/thumbnails/ikikoi.jpg';
 import majikoi from '../../assets/thumbnails/majikoi.jpg';
+import majikoi_s from '../../assets/thumbnails/majikoi_s.jpg';
+import majikoi_a1_4 from '../../assets/thumbnails/majikoi_a1_4.jpg';
 import sakura_sakura from '../../assets/thumbnails/sakura-sakura.jpg';
 import sankaku_renai from '../../assets/thumbnails/sankaku-renai.jpg';
 import koikari from '../../assets/thumbnails/koikari.jpg';
@@ -114,8 +122,10 @@ import onigokko_fd from '../../assets/thumbnails/onigokko_fd.jpg';
 import noratoto from '../../assets/thumbnails/noratoto.jpg';
 import noratoto_2 from '../../assets/thumbnails/noratoto_2.jpg';
 import drapri from '../../assets/thumbnails/drapri.jpg';
+import kemonomichi from '../../assets/thumbnails/kemonomichi.jpg';
 import renai_royale from '../../assets/thumbnails/renai-royale.jpg';
 import lovekami from '../../assets/thumbnails/lovekami.jpg';
+import lovekami_trouble from '../../assets/thumbnails/lovekami_trouble.jpg';
 import koi_iro_chu from '../../assets/thumbnails/koi-iro-chu.jpg';
 import momoiro_closet from '../../assets/thumbnails/momoiro-closet.jpg';
 import koikuma from '../../assets/thumbnails/koikuma.jpg';
@@ -123,6 +133,7 @@ import koikuma_fd from '../../assets/thumbnails/koikuma_fd.jpg';
 import kanojo_no_seiiki from '../../assets/thumbnails/kanojo-no-seiiki.jpg';
 import uchi_no_kanojo from '../../assets/thumbnails/uchi-no-kanojo.jpg';
 import uchi_no_imouto from '../../assets/thumbnails/uchi_no_imouto.jpg';
+import uchi_no_koibito from '../../assets/thumbnails/uchi_no_koibito.jpg';
 import tenkiame from '../../assets/thumbnails/tenkiame.jpg';
 import wabisabi from '../../assets/thumbnails/wabisabi.jpg';
 import nyan_cafe from '../../assets/thumbnails/nyan-cafe.jpg';
@@ -158,6 +169,9 @@ import yumeiro from '../../assets/thumbnails/yumeiro.jpg';
 import chiikano from '../../assets/thumbnails/chiikano.jpg';
 import hamidashi from '../../assets/thumbnails/hamidashi.jpg';
 import raspberry_cube from '../../assets/thumbnails/raspberry-cube.jpg';
+import nekopara_after from '../../assets/thumbnails/nekopara_after.jpg';
+import kemonomichi_love_plus from '../../assets/thumbnails/kemonomichi_love_plus.jpg';
+import kemonomichi_2 from '../../assets/thumbnails/kemonomichi_2.jpg';
 import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
 
 export const visualNovelData: VisualNovelProps[] = [
@@ -245,7 +259,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT, //TODO scenario select
+            Attribute.BRANCHING_PLOT, //TODO scenario selection
             Attribute.SEQUEL
         ],
         genreFocus: GenreFocus.STORYLINE,
@@ -409,6 +423,82 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2019-01-25')
     },
     {
+        name: '9-nine-:Episode 1',
+        vndbLink: 'https://vndb.org/v19829',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: nine_ep1,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT
+            //Attribute.HAS_SEQUELS
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Superpowers, Suspense',
+        descriptionSecondRowText: 'Urban Fantasy',
+        translationReleaseDate: Date.parse('2019-01-31')
+    },
+    {
+        name: '9-nine-:Episode 2',
+        vndbLink: 'https://vndb.org/v21668',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: nine_ep2,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Superpowers, Suspense',
+        descriptionSecondRowText: 'Urban Fantasy',
+        translationReleaseDate: Date.parse('2019-08-16')
+    },
+    {
+        name: '9-nine-:Episode 3',
+        vndbLink: 'https://vndb.org/v23740',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: nine_ep3,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Superpowers, Suspense',
+        descriptionSecondRowText: 'Urban Fantasy',
+        translationReleaseDate: Date.parse('2020-08-31')
+    },
+    {
+        name: '9-nine-:Episode 4',
+        vndbLink: 'https://vndb.org/v26523',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: nine_ep4,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Superpowers, Suspense',
+        descriptionSecondRowText: 'Urban Fantasy',
+        translationReleaseDate: Date.parse('2021-03-19')
+    },
+    {
+        name: '9-nine-:Shinshou',
+        vndbLink: 'https://vndb.org/v29724',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: nine_shinshou,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT, //TODO scenario selection?
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Superpowers, Suspense',
+        descriptionSecondRowText: 'Urban Fantasy',
+        translationReleaseDate: Date.parse('2022-03-18')
+    },
+    {
         name: 'Kinkoi',
         vndbLink: 'https://vndb.org/v21852',
         playtime: PlaytimeLength.LONG,
@@ -432,7 +522,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT, //TODO Scenario select
+            Attribute.BRANCHING_PLOT, //TODO scenario selection
             Attribute.SEQUEL
         ],
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -486,6 +576,21 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Urban Fantasy, Mystery',
         descriptionSecondRowText: 'Library Club',
         translationReleaseDate: Date.parse('2019-03-23')
+    },
+    {
+        name: 'Tamayura Mirai',
+        vndbLink: 'https://vndb.org/v23501',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: tamayura_mirai,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Fantasy, Mythology',
+        descriptionSecondRowText: 'Witch Heroine',
+        translationReleaseDate: Date.parse('2023-05-12')
     },
     {
         name: 'SakuSaku',
@@ -1049,20 +1154,19 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'School Life Comedy',
         translationReleaseDate: Date.parse('2014-06-06')
     },
-    {   //TODO add sequels
-        name: 'Neko Para',
-        vndbLink: 'https://vndb.org/v15538',
+    {
+        name: 'Nekopara Vol. 0-4',
+        vndbLink: 'https://vndb.org/v?q=Nekopara+Vol&ch=&f=N18032gengwcomplete-741&s=322',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: nekopara,
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.KINETIC_NOVEL,
-            //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Cafe, Dousei, Polyamory',
         descriptionSecondRowText: 'Catgirls',
-        translationReleaseDate: Date.parse('2014-12-29')
+        translationReleaseDate: Date.parse('2020-11-26')
     },
     {
         name: 'Noble ☆ Works',
@@ -1094,20 +1198,19 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2016-09-30')
     },
-    {   //TODO add sequels
-        name: 'Neko-nin',
-        vndbLink: 'https://vndb.org/v20433',
+    {
+        name: 'Neko-nin Series',
+        vndbLink: 'https://vndb.org/v?q=neko-nin+exHeart&ch=&f=N18032gengwcomplete-741&s=322',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: neko_nin,
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.LINEAR_PLOT,
-            //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Fantasy, Catgirls',
         descriptionSecondRowText: 'Polyamory',
-        translationReleaseDate: Date.parse('2017-04-21')
+        translationReleaseDate: Date.parse('2019-10-18')
     },
     {
         name: 'Wagahigh',
@@ -1369,7 +1472,7 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'Shinto Shrine',
         translationReleaseDate: Date.parse('2019-01-24')
     },
-    {   //TODO add sequels
+    {
         name: 'Sextett',
         vndbLink: 'https://vndb.org/v29482',
         playtime: PlaytimeLength.SHORT,
@@ -1536,7 +1639,7 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'Slapstick',
         translationReleaseDate: Date.parse('2013-11-24')
     },
-    {   //TODO add sequels/FDs
+    {
         name: 'Majikoi',
         vndbLink: 'https://vndb.org/v1143',
         playtime: PlaytimeLength.VERY_LONG,
@@ -1551,6 +1654,37 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2015-03-10')
+    },
+    {
+        name: 'Majikoi S',
+        vndbLink: 'https://vndb.org/v6245',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: majikoi_s,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.UNLOCKABLE_ROUTES,
+            Attribute.BRANCHING_PLOT,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Martial Arts, Group of Friends',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2015-07-17')
+    },
+    {
+        name: 'Majikoi A1 - A4',
+        vndbLink: 'https://vndb.org/v20598',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: majikoi_a1_4,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Martial Arts, Group of Friends',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2021-08-10')
     },
     {
         name: 'Sakura Sakura',
@@ -1636,20 +1770,33 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2019-11-08')
     },
-    {   //TODO add sequels
-        name: 'DraPri',
-        vndbLink: 'https://vndb.org/v28634',
+    {
+        name: 'DraPri Series',
+        vndbLink: 'https://vndb.org/v?q=DraPri+Guu-ta-life&ch=&f=N18032gengwcomplete-741&s=322',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: drapri,
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.LINEAR_PLOT,
-            //Attribute.HAS_SEQUELS
         ],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Dragons, Love Triangle',
         descriptionSecondRowText: 'Slice of Life Comedy',
-        translationReleaseDate: Date.parse('2021-01-29')
+        translationReleaseDate: Date.parse('2023-03-14')
+    },
+    {
+        name: 'Kemonomichi',
+        vndbLink: 'https://vndb.org/v31669',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kemonomichi,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Mahou Shoujo, Idols',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2022-08-12')
     },
     {
         name: "Ren'ai x Royale",
@@ -1662,7 +1809,7 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'Love Triangle',
         translationReleaseDate: Date.parse('2022-09-30')
     },
-    {   //TODO add sequels
+    {
         name: 'Lovekami',
         vndbLink: 'https://vndb.org/v20337',
         playtime: PlaytimeLength.MEDIUM,
@@ -1677,6 +1824,22 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Goddesses, Slice of Life',
         descriptionSecondRowText: 'Comedic Love Triangle',
         translationReleaseDate: Date.parse('2017-10-27')
+    },
+    {
+        name: 'Lovekami FD',
+        vndbLink: 'https://vndb.org/v21188',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: lovekami_trouble,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.BRANCHING_PLOT,
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
+            Attribute.SEQUEL
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Goddesses, Slice of Life',
+        descriptionSecondRowText: 'Comedic Love Triangle',
+        translationReleaseDate: Date.parse('2017-05-29')
     },
     {
         name: 'Koiiro Chu! Lips',
@@ -1770,6 +1933,20 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Forbidden Love, Dousei',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2021-08-26')
+    },
+    {
+        name: 'Uchi no Koibito',
+        vndbLink: 'https://vndb.org/v22726',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: uchi_no_koibito,
+        attributes: [
+            Attribute.ADV_TEXTBOX,
+            Attribute.LINEAR_PLOT,
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Gyaru, Dousei',
+        descriptionSecondRowText: 'Threesome',
+        translationReleaseDate: Date.parse('2023-05-20')
     },
     {
         name: 'Tenkiame',
@@ -2134,6 +2311,38 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Nekopara After',
+        vndbLink: 'https://vndb.org/v32946',
+        thumbnailSource: nekopara_after,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Kemonomichi L+P',
+        vndbLink: 'https://vndb.org/v36773',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kemonomichi_love_plus,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Sekai  Project',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Kemonomichi 2',
+        vndbLink: 'https://vndb.org/v40507',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kemonomichi_2,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
