@@ -166,7 +166,7 @@ export const MoegeChart: React.FC<IProps> = ({
                 </MusicButton>
             </Row>
 
-            <UpdatedInfoFont>(Last Updated: 2023-05-11)</UpdatedInfoFont>
+            <UpdatedInfoFont>(Last Updated: 2023-05-21)</UpdatedInfoFont>
             <EntriesContainer>
                 <AnimatePresence>
                     {filteredReleasedVisualNovels.map((visualNovel, index) => {
