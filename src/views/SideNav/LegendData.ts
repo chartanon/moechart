@@ -127,11 +127,6 @@ export const attributesList: AttributeProps[] = [
         type: Attribute.KINETIC_NOVEL
     },
     {
-        IconSVG: FandiscIcon,
-        label: "Fandisc/Sequel",
-        type: Attribute.SEQUEL
-    },
-    {
         IconSVG: FrenchGirlIcon,
         label: 'Suitable for 12-year-old French Girls',
         type: Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS

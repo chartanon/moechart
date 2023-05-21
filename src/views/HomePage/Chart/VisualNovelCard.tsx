@@ -34,8 +34,6 @@ export enum Attribute {
     TRUE_ROUTE = 'TRUE_ROUTE',
     LINEAR_PLOT = 'LINEAR_PLOT',
     KINETIC_NOVEL = 'KINETIC_NOVEL',
-    HAS_SEQUEL = `HAS_SEQUEL`,
-    SEQUEL = 'SEQUEL',
     SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS = 'SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS'
 }
 
@@ -48,22 +46,19 @@ export enum GenreFocus {
     NUKIGE = 'NUKIGE'
 }
 
-export enum Series {
-    AOKANA = 'AOKANA'
-}
-
 export interface VisualNovelProps {
     name: string;
     vndbLink: string;
     playtime?: PlaytimeLength;
     thumbnailSource: string;
     attributes: Attribute[];
+    sequels?: string[];
+    originalGame?: string;
     genreFocus: GenreFocus;
     descriptionFirstRowText: string;
     descriptionSecondRowText: string;
     translationReleaseDate?: number;
     isUpcomingRelease?: boolean;
-    series?: Series;
 }
 
 export const VisualNovelCard: React.FC<VisualNovelProps> = ({
@@ -74,7 +69,9 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
     attributes,
     genreFocus,
     descriptionFirstRowText,
-    descriptionSecondRowText
+    descriptionSecondRowText,
+    sequels,
+    originalGame
 }) => {
     const attributesOrder = Object.values(Attribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
@@ -161,8 +158,13 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
                                 if (attribute === Attribute.KINETIC_NOVEL) {
                                     return <KineticNovelIcon key="kinetic" />;
                                 }
-                                if (attribute === Attribute.SEQUEL) {
-                                    return <FandiscIcon key="fandisc" />;
+                                if (sequels?.length && sequels.length > 0) {
+                                    //TODO: replace with new icon?
+                                    return <FandiscIcon key="has-sequel" />;
+                                }
+                                if (originalGame) {
+                                    //TODO: replace with new icon?
+                                    return <FandiscIcon key="is-sequel" />;
                                 }
                                 if (
                                     attribute ===

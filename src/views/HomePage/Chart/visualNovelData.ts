@@ -2,7 +2,6 @@ import {
     Attribute,
     GenreFocus,
     PlaytimeLength,
-    Series,
     VisualNovelProps
 } from './VisualNovelCard';
 
@@ -181,48 +180,36 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v12849',
         playtime: PlaytimeLength.LONG,
         thumbnailSource: aokana,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: ['https://vndb.org/v20228', 'https://vndb.org/v21438'],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Sports',
         descriptionSecondRowText: 'Competition',
-        translationReleaseDate: Date.parse('2019-09-27'),
-        series: Series.AOKANA
+        translationReleaseDate: Date.parse('2019-09-27')
     },
     {
         name: 'Aokana EXTRA1',
         vndbLink: 'https://vndb.org/v20228',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: aokana_extra1,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        originalGame: 'https://vndb.org/v12849',
         genreFocus: GenreFocus.STORYLINE, //TODO Romance?
         descriptionFirstRowText: 'Group of Friends, Pure Love',
         descriptionSecondRowText: 'Single Heroine',
-        translationReleaseDate: Date.parse('2020-11-06'),
-        series: Series.AOKANA
+        translationReleaseDate: Date.parse('2020-11-06')
     },
     {
         name: 'Aokana EXTRA2',
         vndbLink: 'https://vndb.org/v21438',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: aokana_extra2,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        originalGame: 'https://vndb.org/v12849',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Sports',
         descriptionSecondRowText: 'Competition',
-        translationReleaseDate: Date.parse('2022-12-16'),
-        series: Series.AOKANA
+        translationReleaseDate: Date.parse('2022-12-16')
     },
     {
         name: 'Haretaka',
@@ -248,8 +235,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
             Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Gliders',
         descriptionSecondRowText: 'Design Story',
@@ -263,9 +250,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Gliders',
         descriptionSecondRowText: 'Design Story',
@@ -310,8 +297,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
             Attribute.TRUE_ROUTE
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Slice of Life, Drama',
         descriptionSecondRowText: 'Fantasy',
@@ -325,9 +312,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.TRUE_ROUTE,
-            Attribute.SEQUEL //TODO actually an alternative version
+            Attribute.TRUE_ROUTE
         ],
+        originalGame: '', //TODO actually an alternative version
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Slice of Life, Drama',
         descriptionSecondRowText: 'Fantasy',
@@ -338,11 +325,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v3537',
         playtime: PlaytimeLength.LONG,
         thumbnailSource: kotori_love_exp,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection/anthology
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        originalGame: '', //TODO scenario selection/anthology
         genreFocus: GenreFocus.STORYLINE, //TODO Romance?
         descriptionFirstRowText: 'Slice of Life, Wife Heroine',
         descriptionSecondRowText: 'Fantasy',
@@ -356,9 +340,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.TRUE_ROUTE,
-            Attribute.SEQUEL
+            Attribute.TRUE_ROUTE
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Drama',
         descriptionSecondRowText: 'Fantasy',
@@ -372,9 +356,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.TRUE_ROUTE,
-            Attribute.SEQUEL
+            Attribute.TRUE_ROUTE
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Slice of Life, Drama',
         descriptionSecondRowText: 'Magic School',
@@ -431,11 +415,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v19829',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: nine_ep1,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
@@ -446,11 +427,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v21668',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: nine_ep2,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
@@ -461,11 +439,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v23740',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: nine_ep3,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
@@ -476,11 +451,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v26523',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: nine_ep4,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
@@ -494,9 +466,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT, //TODO scenario selection?
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
-            Attribute.SEQUEL
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
@@ -511,8 +483,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
             Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Blondes, School Life Comedy',
         descriptionSecondRowText: 'Reunion',
@@ -526,9 +498,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Blondes, School Life Comedy',
         descriptionSecondRowText: 'Reunion',
@@ -543,8 +515,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
             Attribute.TRUE_ROUTE
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'School Life Comedy, Drama',
         descriptionSecondRowText: 'Supernatural',
@@ -558,9 +530,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'School Life Comedy, Drama',
         descriptionSecondRowText: 'Supernatural',
@@ -620,8 +592,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
             Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Slice of Life, Drama',
         descriptionSecondRowText: 'Astronomy Club',
@@ -635,9 +607,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
-            Attribute.SEQUEL
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
         ],
+        originalGame: '',
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Slice of Life, Drama',
         descriptionSecondRowText: 'Astronomy Club',
@@ -727,11 +699,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v6710',
         playtime: PlaytimeLength.LONG,
         thumbnailSource: princess_evangile,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'School Dormitory, Drama',
         descriptionSecondRowText: 'All-girls School',
@@ -744,9 +713,9 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: princess_evangile_wh,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'School Dormitory, Drama',
         descriptionSecondRowText: 'All-girls School',
@@ -861,11 +830,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v21903',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: koi_ama,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Cafe, Waitresses',
         descriptionSecondRowText: 'Countryside',
@@ -876,11 +842,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v24626',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: koi_ama_2,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Cafe, Waitresses',
         descriptionSecondRowText: 'Countryside',
@@ -1028,11 +991,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v24689',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: study_steady,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Winter, Long H-scenes',
         descriptionSecondRowText: 'Slice of Life',
@@ -1043,11 +1003,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v30793',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: icha_x2_study,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.KINETIC_NOVEL,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.KINETIC_NOVEL],
+        originalGame: '',
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Winter, Long H-scenes',
         descriptionSecondRowText: 'Slice of Life',
@@ -1124,11 +1081,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v28',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: shuffle,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Gods and Devils, Reunion',
         descriptionSecondRowText: 'School Life Comedy',
@@ -1139,11 +1093,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v202',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: really_really,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Gods and Devils, Family',
         descriptionSecondRowText: 'School Life Comedy',
@@ -1230,11 +1181,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v11856',
         playtime: PlaytimeLength.LONG,
         thumbnailSource: fureraba,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Dating Sim, Slice of Life',
         descriptionSecondRowText: 'School Life Comedy',
@@ -1247,9 +1195,9 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: fureraba_fd,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Girlfriend Heroines, Slice of Life',
         descriptionSecondRowText: 'School Life Comedy',
@@ -1260,11 +1208,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v21552',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: making_lovers,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Dating Sim, Adult Life',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1277,9 +1222,9 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: making_lovers_after,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Girlfriend Heroine, Adult Life',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1312,11 +1257,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v14887',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: primal_hearts,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Student Council, Politics',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1327,11 +1269,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v17038',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: primal_hearts_2,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Student Council, Politics',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1405,11 +1344,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v26310',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: ninnin_days,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Ninja Heroine, Dousei',
         descriptionSecondRowText: 'Modern Day',
@@ -1420,11 +1356,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v32805',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: ninnin_days_2,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Ninja Heroine, Dousei',
         descriptionSecondRowText: 'Modern Day',
@@ -1468,11 +1401,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v29482',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: sextett,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.LINEAR_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.LINEAR_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Isekai, Polyamory',
         descriptionSecondRowText: 'Episodic',
@@ -1494,11 +1424,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v18974',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: karakara,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.KINETIC_NOVEL
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.KINETIC_NOVEL],
+        sequels: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Dystopia, Kemonomimi',
         descriptionSecondRowText: 'Lost Technology',
@@ -1509,11 +1436,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v20980',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: karakara_2,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.KINETIC_NOVEL,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.KINETIC_NOVEL],
+        originalGame: '',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Dystopia, Kemonomimi',
         descriptionSecondRowText: 'Lost Technology',
@@ -1594,11 +1518,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v2622',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: osadai,
-        attributes: [
-            Attribute.FLOATING_TEXTBOX,
-            Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
-        ],
+        attributes: [Attribute.FLOATING_TEXTBOX, Attribute.BRANCHING_PLOT],
+        sequels: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Science Fiction, Parody',
         descriptionSecondRowText: 'Tongue-in-cheek',
@@ -1609,11 +1530,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v4981',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: osadai_fd,
-        attributes: [
-            Attribute.FLOATING_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.FLOATING_TEXTBOX, Attribute.BRANCHING_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Science Fiction, Parody',
         descriptionSecondRowText: 'Tongue-in-cheek',
@@ -1639,8 +1557,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
             Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1654,9 +1572,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT,
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT
         ],
+        originalGame: '',
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1667,11 +1585,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v20598',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: majikoi_a1_4,
-        attributes: [
-            Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT,
-            Attribute.SEQUEL
-        ],
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
+        originalGame: '',
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1738,8 +1653,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
             Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Animorph, Different Worlds',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1753,9 +1668,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
-            Attribute.SEQUEL
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
         ],
+        originalGame: '',
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Animorph, Different Worlds',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -1804,8 +1719,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
             Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Goddesses, Slice of Life',
         descriptionSecondRowText: 'Comedic Love Triangle',
@@ -1819,9 +1734,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.BRANCHING_PLOT,
-            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS,
-            Attribute.SEQUEL
+            Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
         ],
+        originalGame: '',
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Goddesses, Slice of Life',
         descriptionSecondRowText: 'Comedic Love Triangle',
@@ -1858,8 +1773,8 @@ export const visualNovelData: VisualNovelProps[] = [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
             Attribute.BRANCHING_PLOT
-            //Attribute.HAS_SEQUELS
         ],
+        sequels: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Dousei, Slice of Life Comedy',
         descriptionSecondRowText: 'Demons',
@@ -1873,9 +1788,9 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
-            Attribute.SEQUEL
+            Attribute.BRANCHING_PLOT //TODO scenario selection
         ],
+        originalGame: '',
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Dousei, Slice of Life Comedy',
         descriptionSecondRowText: 'Demons',

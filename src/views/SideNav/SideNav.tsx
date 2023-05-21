@@ -71,22 +71,21 @@ export const SideNav: React.FC<IProps> = ({
                             />
                         );
                     })}
-                    {attributesList.map(attribute => {
-                        return (
-                            <AttributeItem
-                                key={attribute.type}
-                                isSelected={selectedAttributesFilters.some(
-                                    attributeFilter =>
-                                        attributeFilter === attribute.type
-                                )}
-                                {...attribute}
-                                onClick={handleSetSelectedAttributesFilters}
-                            />
-                        );
-                    })}
+                    {attributesList.map(attribute => (
+                        <AttributeItem
+                            key={attribute.type}
+                            isSelected={selectedAttributesFilters.some(
+                                attributeFilter =>
+                                    attributeFilter === attribute.type
+                            )}
+                            {...attribute}
+                            onClick={handleSetSelectedAttributesFilters}
+                        />
+                    ))}
                 </Section>
                 <Section>
                     <TitleFont>EXTRA TOOLS</TitleFont>
+                    {/* TODO: add filters for sequels */}
                     {sortingList.map(sortingOption => {
                         return (
                             <SortByItem
