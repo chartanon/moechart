@@ -2514,7 +2514,6 @@ export const visualNovelData: VisualNovelProps[] = [
     {
         name: 'Kemonomichi L+P',
         vndbLink: 'https://vndb.org/v36773',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: kemonomichi_love_plus,
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
@@ -2525,7 +2524,6 @@ export const visualNovelData: VisualNovelProps[] = [
     {
         name: 'Kemonomichi 2',
         vndbLink: 'https://vndb.org/v40507',
-        playtime: PlaytimeLength.SHORT,
         thumbnailSource: kemonomichi_2,
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
