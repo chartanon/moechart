@@ -14,7 +14,6 @@ import { LadderIcon } from '../../assets/icons/attribute/LadderIcon';
 import { TrueIcon } from '../../assets/icons/attribute/TrueIcon';
 import { LinearPlotIcon } from '../../assets/icons/attribute/LinearPlotIcon';
 import { KineticNovelIcon } from '../../assets/icons/attribute/KineticNovelIcon';
-import { FandiscIcon } from '../../assets/icons/attribute/FandiscIcon';
 import { FrenchGirlIcon } from '../../assets/icons/attribute/FrenchGirlIcon';
 import { SeriesRelationshipMap } from './MoegeChart';
 import { VisualNovelProps } from './visualNovelData';
