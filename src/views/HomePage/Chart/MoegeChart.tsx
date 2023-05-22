@@ -10,7 +10,7 @@ import {
     Row,
     StaggeredEntranceFade
 } from '../../utils';
-import { visualNovelData } from './visualNovelData';
+import { VisualNovelProps, visualNovelData } from './visualNovelData';
 import {
     Attribute,
     GenreFocus,
@@ -25,19 +25,33 @@ import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
 
+interface SeriesRelationship {
+    vndbLink: string;
+    thumbnailSource: string;
+}
+
+export interface SeriesRelationshipMap {
+    [originalGameVNDBLink: string]: SeriesRelationship[];
+}
 interface IProps {
     selectedSortingOptions: SortingOption[];
     selectedPlaytimeFilter: PlaytimeLength | null;
     selectedGenreFocusFilter: GenreFocus | null;
     selectedAttributesFilters: Attribute[];
+    isSelectedHasSequelFilter: boolean;
+    isSelectedHideSequelFilter: boolean;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
     selectedSortingOptions,
     selectedPlaytimeFilter,
     selectedGenreFocusFilter,
-    selectedAttributesFilters
+    selectedAttributesFilters,
+    isSelectedHasSequelFilter,
+    isSelectedHideSequelFilter
 }) => {
+    let allSequelRelationships: SeriesRelationshipMap = {};
+
     const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
         if (
             selectedPlaytimeFilter !== null &&
@@ -55,6 +69,26 @@ export const MoegeChart: React.FC<IProps> = ({
                 attribute => !visualNovel.attributes.includes(attribute)
             )
         ) {
+            return false;
+        } else if (
+            isSelectedHasSequelFilter &&
+            (!visualNovel.sequels || visualNovel.sequels.length === 0)
+        ) {
+            return false;
+        } else if (isSelectedHideSequelFilter && visualNovel.originalGame) {
+            if (allSequelRelationships[visualNovel.originalGame]) {
+                allSequelRelationships[visualNovel.originalGame].push({
+                    vndbLink: visualNovel.vndbLink,
+                    thumbnailSource: visualNovel.thumbnailSource
+                });
+            } else {
+                allSequelRelationships[visualNovel.originalGame] = [
+                    {
+                        vndbLink: visualNovel.vndbLink,
+                        thumbnailSource: visualNovel.thumbnailSource
+                    }
+                ];
+            }
             return false;
         }
         return !visualNovel.isUpcomingRelease;
@@ -97,14 +131,20 @@ export const MoegeChart: React.FC<IProps> = ({
         });
     }
 
-    const unreleasedVisualNovels = visualNovelData.filter(
-        visualNovel =>
-            visualNovel.isUpcomingRelease &&
-            selectedSortingOptions.length === 0 &&
-            selectedPlaytimeFilter === null &&
-            selectedGenreFocusFilter === null &&
-            selectedAttributesFilters.length === 0
-    );
+    let unreleasedVisualNovels: VisualNovelProps[] = [];
+
+    if (
+        selectedSortingOptions.length === 0 &&
+        selectedPlaytimeFilter === null &&
+        selectedGenreFocusFilter === null &&
+        selectedAttributesFilters.length === 0 &&
+        isSelectedHasSequelFilter === false &&
+        isSelectedHideSequelFilter === false
+    ) {
+        unreleasedVisualNovels = visualNovelData.filter(
+            visualNovel => visualNovel.isUpcomingRelease
+        );
+    }
 
     const moechartTitleRef = React.useRef<HTMLDivElement>(null);
     const upcomingReleasesRef = React.useRef<HTMLDivElement>(null);
@@ -175,7 +215,15 @@ export const MoegeChart: React.FC<IProps> = ({
                                 key={visualNovel.thumbnailSource}
                                 index={index}
                             >
-                                <Entry {...visualNovel} />
+                                <Entry
+                                    {...visualNovel}
+                                    allSequelRelationships={
+                                        allSequelRelationships
+                                    }
+                                    isSelectedHideSequelFilter={
+                                        isSelectedHideSequelFilter
+                                    }
+                                />
                             </StaggeredEntranceFade>
                         );
                     })}

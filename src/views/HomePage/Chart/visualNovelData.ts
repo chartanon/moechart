@@ -1,9 +1,4 @@
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength,
-    VisualNovelProps
-} from './VisualNovelCard';
+import { Attribute, GenreFocus, PlaytimeLength } from './VisualNovelCard';
 
 import aokana from '../../assets/thumbnails/aokana.jpg';
 import aokana_extra1 from '../../assets/thumbnails/aokana_extra1.jpg';
@@ -191,6 +186,21 @@ import kemonomichi_love_plus from '../../assets/thumbnails/kemonomichi_love_plus
 import kemonomichi_2 from '../../assets/thumbnails/kemonomichi_2.jpg';
 import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
 
+export interface VisualNovelProps {
+    name: string;
+    vndbLink: string;
+    playtime?: PlaytimeLength;
+    thumbnailSource: string;
+    attributes: Attribute[];
+    sequels?: string[];
+    originalGame?: string;
+    genreFocus: GenreFocus;
+    descriptionFirstRowText: string;
+    descriptionSecondRowText: string;
+    translationReleaseDate?: number;
+    isUpcomingRelease?: boolean;
+}
+
 export const visualNovelData: VisualNovelProps[] = [
     {
         name: 'Aokana',
@@ -267,7 +277,8 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.BRANCHING_PLOT,
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v9093',
         genreFocus: GenreFocus.STORYLINE,

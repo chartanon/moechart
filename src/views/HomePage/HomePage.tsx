@@ -17,6 +17,10 @@ export const HomePage: React.FC = () => {
     const [selectedAttributesFilters, setSelectedAttributesFilters] = useState<
         Attribute[]
     >([]);
+    const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
+        useState<boolean>(false);
+    const [isSelectedHideSequelFilter, setIsSelectedIsSequelFilter] =
+        useState<boolean>(true);
 
     const handleSetSelectedSortingOptions = (value: SortingOption) => {
         if (
@@ -84,6 +88,10 @@ export const HomePage: React.FC = () => {
                 handleSetSelectedAttributesFilters={
                     handleSetSelectedAttributesFilters
                 }
+                isSelectedHasSequelFilter={isSelectedHasSequelFilter}
+                setIsSelectedHasSequelFilter={setIsSelectedHasSequelFilter}
+                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
+                setIsSelectedIsSequelFilter={setIsSelectedIsSequelFilter}
                 clearFilters={clearFilters}
             />
             <MoegeChart
@@ -91,6 +99,8 @@ export const HomePage: React.FC = () => {
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 selectedGenreFocusFilter={selectedGenreFocusFilter}
                 selectedAttributesFilters={selectedAttributesFilters}
+                isSelectedHasSequelFilter={isSelectedHasSequelFilter}
+                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
             />
         </Container>
     );

@@ -6,7 +6,8 @@ import {
     TitleFont,
     Section,
     LabelFont,
-    ResponsiveButton
+    ResponsiveButton,
+    Row
 } from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
@@ -24,6 +25,9 @@ import {
 } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { SortByItem } from './SortByItem';
+import { LegendItemContainer, LegendLabel } from './components';
+import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
+import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
 
 export const SIDE_NAV_WIDTH = 300;
 
@@ -36,6 +40,10 @@ interface IProps {
     handleSetSelectedGenreFocusFilter: (value: GenreFocus) => void;
     selectedAttributesFilters: Attribute[];
     handleSetSelectedAttributesFilters: (value: Attribute) => void;
+    isSelectedHasSequelFilter: boolean;
+    setIsSelectedHasSequelFilter: (value: boolean) => void;
+    isSelectedHideSequelFilter: boolean;
+    setIsSelectedIsSequelFilter: (value: boolean) => void;
     clearFilters: () => void;
 }
 
@@ -48,6 +56,10 @@ export const SideNav: React.FC<IProps> = ({
     handleSetSelectedGenreFocusFilter,
     selectedAttributesFilters,
     handleSetSelectedAttributesFilters,
+    isSelectedHasSequelFilter,
+    setIsSelectedHasSequelFilter,
+    isSelectedHideSequelFilter,
+    setIsSelectedIsSequelFilter,
     clearFilters
 }) => {
     return (
@@ -85,7 +97,35 @@ export const SideNav: React.FC<IProps> = ({
                 </Section>
                 <Section>
                     <TitleFont>EXTRA TOOLS</TitleFont>
-                    {/* TODO: add filters for sequels */}
+                    <Row $gap={15}>
+                        <ResponsiveButton
+                            $isSelected={isSelectedHasSequelFilter}
+                            onClick={() =>
+                                setIsSelectedHasSequelFilter(
+                                    !isSelectedHasSequelFilter
+                                )
+                            }
+                        >
+                            <LegendItemContainer>
+                                <HasSequelIcon />
+                                <LegendLabel>Show VNs with sequels</LegendLabel>
+                            </LegendItemContainer>
+                        </ResponsiveButton>
+                        <ResponsiveButton
+                            $isSelected={isSelectedHideSequelFilter}
+                            onClick={() =>
+                                setIsSelectedIsSequelFilter(
+                                    !isSelectedHideSequelFilter
+                                )
+                            }
+                        >
+                            <LegendItemContainer>
+                                <IsSequelIcon />
+                                <LegendLabel>Hide Sequels</LegendLabel>
+                            </LegendItemContainer>
+                        </ResponsiveButton>
+                    </Row>
+
                     {sortingList.map(sortingOption => {
                         return (
                             <SortByItem
