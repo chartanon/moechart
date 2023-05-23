@@ -12,6 +12,7 @@ export interface ChartEntryProps extends VisualNovelProps {
     allSequelRelationships?: SeriesRelationshipMap;
     isSelectedHideSequelFilter?: boolean;
     setIsInPopupView?: (value: boolean) => void;
+    shouldDisplayDateInTitle?: boolean;
 }
 
 export const ChartEntry: React.FC<ChartEntryProps> = ({
@@ -27,7 +28,9 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
     originalGame,
     allSequelRelationships,
     isSelectedHideSequelFilter,
-    setIsInPopupView
+    setIsInPopupView,
+    shouldDisplayDateInTitle,
+    translationReleaseDate
 }) => {
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
@@ -77,6 +80,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
                     onClose={handleCloseShowMoreSequelInfo}
                     originalGame={vndbLink}
                     allSequelRelations={allSequelRelationships ?? {}}
+                    shouldDisplayDateInTitle={shouldDisplayDateInTitle}
                 />
             ) : null}
 
@@ -94,6 +98,8 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
                 moreInfoOnClick={
                     isVNWithSequels ? handleSetShowMoreSequelInfo : undefined
                 }
+                shouldDisplayDateInTitle={shouldDisplayDateInTitle}
+                translationReleaseDate={translationReleaseDate}
             />
             {isVNWithSequels && isSelectedHideSequelFilter ? (
                 <SequelRow>

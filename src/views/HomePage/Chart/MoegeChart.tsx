@@ -81,7 +81,8 @@ export const MoegeChart: React.FC<IProps> = ({
                         visualNovel.descriptionFirstRowText,
                     descriptionSecondRowText:
                         visualNovel.descriptionSecondRowText,
-                    playtime: visualNovel.playtime
+                    playtime: visualNovel.playtime,
+                    translationReleaseDate: visualNovel.translationReleaseDate
                 });
             } else {
                 allSequelRelationships[visualNovel.originalGame] = [
@@ -95,7 +96,9 @@ export const MoegeChart: React.FC<IProps> = ({
                             visualNovel.descriptionFirstRowText,
                         descriptionSecondRowText:
                             visualNovel.descriptionSecondRowText,
-                        playtime: visualNovel.playtime
+                        playtime: visualNovel.playtime,
+                        translationReleaseDate:
+                            visualNovel.translationReleaseDate
                     }
                 ];
             }
@@ -113,6 +116,8 @@ export const MoegeChart: React.FC<IProps> = ({
         );
     }
 
+    let isSortingByChronological = false;
+
     if (selectedSortingOptions.length !== 0) {
         selectedSortingOptions.forEach(option => {
             switch (option) {
@@ -122,6 +127,7 @@ export const MoegeChart: React.FC<IProps> = ({
                             visualNovelTwo.translationReleaseDate! -
                             visualNovelOne.translationReleaseDate!
                     );
+                    isSortingByChronological = true;
                     break;
                 case SortingOption.RANDOM: {
                     while (filteredReleasedVisualNovels.length > 10) {
@@ -234,6 +240,9 @@ export const MoegeChart: React.FC<IProps> = ({
                                         isSelectedHideSequelFilter
                                     }
                                     setIsInPopupView={setIsInPopupView}
+                                    shouldDisplayDateInTitle={
+                                        isSortingByChronological
+                                    }
                                 />
                             </StaggeredEntranceFade>
                         );

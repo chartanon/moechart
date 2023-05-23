@@ -9,14 +9,24 @@ interface IProps {
     onClose?: () => void;
     originalGame: string;
     allSequelRelations: SeriesRelationshipMap;
+    shouldDisplayDateInTitle?: boolean;
 }
 
 export const SequelsPopup: React.FC<IProps> = ({
     isOpen,
     onClose,
     originalGame,
-    allSequelRelations
+    allSequelRelations,
+    shouldDisplayDateInTitle
 }) => {
+    if (shouldDisplayDateInTitle) {
+        allSequelRelations[originalGame].sort(
+            (visualNovelOne, visualNovelTwo) =>
+                visualNovelTwo.translationReleaseDate! -
+                visualNovelOne.translationReleaseDate!
+        );
+    }
+
     return (
         <Popup isOpen={isOpen} onClose={onClose}>
             <Column $centered>
@@ -36,6 +46,13 @@ export const SequelsPopup: React.FC<IProps> = ({
                                     relationship.descriptionSecondRowText
                                 }
                                 playtime={relationship.playtime}
+                                translationReleaseDate={
+                                    relationship.translationReleaseDate
+                                }
+                                shouldDisplayDateInTitle={
+                                    shouldDisplayDateInTitle
+                                }
+                                originalGame={originalGame}
                             />
                         );
                     })}

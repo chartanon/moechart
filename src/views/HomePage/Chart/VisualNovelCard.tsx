@@ -28,6 +28,7 @@ import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
 import { IMAGE_HEIGHT, IMAGE_WIDTH, ThumbnailImage } from './utils';
 import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
+import moment from 'moment';
 
 export enum PlaytimeLength {
     SHORT = 'SHORT',
@@ -61,6 +62,7 @@ export enum GenreFocus {
 
 export interface VisualNovelCardProps extends VisualNovelProps {
     moreInfoOnClick?: () => void;
+    shouldDisplayDateInTitle?: boolean;
 }
 
 export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
@@ -74,7 +76,9 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     descriptionSecondRowText,
     sequels,
     originalGame,
-    moreInfoOnClick
+    moreInfoOnClick,
+    shouldDisplayDateInTitle,
+    translationReleaseDate
 }) => {
     const attributesOrder = Object.values(Attribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
@@ -100,14 +104,23 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
 
     return (
         <Container>
-            <Row>
+            <TopRow>
                 {moreInfoOnClick ? (
                     <HelpButton onClick={moreInfoOnClick}>
                         <HelpIcon />
                     </HelpButton>
                 ) : null}
-                <Name>{name}</Name>
-            </Row>
+                {shouldDisplayDateInTitle ? (
+                    <Column>
+                        <Title>{name}</Title>
+                        <DateFont>
+                            ({moment(translationReleaseDate).format('ll')})
+                        </DateFont>
+                    </Column>
+                ) : (
+                    <Title>{name}</Title>
+                )}
+            </TopRow>
             <ContentBody>
                 <Link href={vndbLink}>
                     <ThumbnailImage
@@ -205,9 +218,8 @@ const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
 `;
 
-const Name = styled(TitleFont)`
+const Title = styled(TitleFont)`
     margin-left: 5px;
-    padding-bottom: 14px;
     font-size: 1.15rem;
 `;
 
@@ -248,5 +260,13 @@ const DescriptionFont = styled(LabelFont)`
 `;
 
 const HelpButton = styled(Button)`
-    margin-top: -13px;
+    margin-top: -2px;
+`;
+
+const TopRow = styled(Row)`
+    padding-bottom: 14px;
+`;
+
+const DateFont = styled(LabelFont)`
+    padding-left: 4px;
 `;
