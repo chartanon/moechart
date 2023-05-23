@@ -45,13 +45,11 @@ export const HomePage: React.FC = () => {
             ? setSelectedPlaytimeFilter(null)
             : setSelectedPlaytimeFilter(value);
     };
-
     const handleSetSelectedGenreFocusFilter = (value: GenreFocus) => {
         selectedGenreFocusFilter === value
             ? setSelectedGenreFocusFilter(null)
             : setSelectedGenreFocusFilter(value);
     };
-
     const handleSetSelectedAttributesFilters = (value: Attribute) => {
         if (selectedAttributesFilters.some(attribute => attribute === value)) {
             setSelectedAttributesFilters(
@@ -63,7 +61,6 @@ export const HomePage: React.FC = () => {
             setSelectedAttributesFilters([...selectedAttributesFilters, value]);
         }
     };
-
     const clearFilters = () => {
         setSelectedSortingOptions([]);
         setSelectedPlaytimeFilter(null);
