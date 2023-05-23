@@ -14,3 +14,5 @@ export const LegendLabel = styled(LabelFont)`
     align-items: center;
     padding-left: 8px;
 `;
+
+export const SIDE_NAV_WIDTH = 300;

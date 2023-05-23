@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { MoegeChart } from './Chart/MoegeChart';
-import { SIDE_NAV_WIDTH, SideNav } from '../SideNav/SideNav';
+import { SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
 import { PlaytimeLength, Attribute, GenreFocus } from './Chart/VisualNovelCard';
 import { SortingOption } from '../SideNav/LegendData';
-
+import { SIDE_NAV_WIDTH } from '../SideNav/utils';
 export const HomePage: React.FC = () => {
     const [selectedSortingOptions, setSelectedSortingOptions] = useState<
         SortingOption[]
@@ -67,6 +67,8 @@ export const HomePage: React.FC = () => {
         setSelectedPlaytimeFilter(null);
         setSelectedGenreFocusFilter(null);
         setSelectedAttributesFilters([]);
+        setIsSelectedHasSequelFilter(false);
+        setIsSelectedIsSequelFilter(false);
     };
 
     return (

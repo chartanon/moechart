@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const IsSequelIcon = () => {
+export const IsSequelIcon: React.FC<{ size?: number }> = ({ size }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
+            width={size ?? 22}
+            height={size ?? 22}
             version="1.1"
             viewBox="0 0 5.821 5.821"
         >

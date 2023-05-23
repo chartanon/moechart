@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { PlaytimeShortIcon } from '../../assets/icons/playtime/PlaytimeShortIcon';
-import { COLOURS, Column, Row, LabelFont, TitleFont } from '../../utils';
+import {
+    COLOURS,
+    Column,
+    Row,
+    LabelFont,
+    TitleFont,
+    Button
+} from '../../utils';
 import { PlaytimeMediumIcon } from '../../assets/icons/playtime/PlaytimeMediumIcon';
 import { PlaytimeVeryLongIcon } from '../../assets/icons/playtime/PlaytimeVeryLongIcon';
 import { PlaytimeLongIcon } from '../../assets/icons/playtime/PlaytimeLongIcon';
@@ -20,6 +27,8 @@ import { VisualNovelProps } from './visualNovelData';
 import { ScenarioSelectionIcon } from '../../assets/icons/attribute/ScenarioSelectionIcon';
 import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
+import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
+import { MoreInfoModal } from './MoreInfoModal';
 
 export enum PlaytimeLength {
     SHORT = 'SHORT',
@@ -92,145 +101,134 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
             break;
     }
 
+    const isVNWithSequels =
+        sequels &&
+        sequels.length > 0 &&
+        allSequelRelationships &&
+        allSequelRelationships[vndbLink];
+
+    const [shouldShowMoreInfo, setShouldShowMoreInfo] =
+        useState<boolean>(false);
+
     return (
-        <>
-            <Container>
-                <Link href={vndbLink}>
-                    <Name>{name}</Name>
-                </Link>
-                <ContentBody>
-                    <Link href={vndbLink}>
-                        <ThumbnailImage
-                            src={thumbnailSource}
-                            loading="lazy"
-                            alt=""
-                            $outlineColour={outlineColour}
-                        />
-                    </Link>
-                    <IconsContainer $outlineColour={outlineColour}>
-                        <PlaytimeIconContainer>
-                            {playtime === PlaytimeLength.SHORT ? (
-                                <PlaytimeShortIcon />
-                            ) : null}
-                            {playtime === PlaytimeLength.MEDIUM ? (
-                                <PlaytimeMediumIcon />
-                            ) : null}
-                            {playtime === PlaytimeLength.LONG ? (
-                                <PlaytimeLongIcon />
-                            ) : null}
-                            {playtime === PlaytimeLength.VERY_LONG ? (
-                                <PlaytimeVeryLongIcon />
-                            ) : null}
-                        </PlaytimeIconContainer>
-                        <AdditionalIconsContainer>
-                            {attributes
-                                .sort(
-                                    (attributeOne, attributeTwo) =>
-                                        attributesOrder.indexOf(attributeOne) -
-                                        attributesOrder.indexOf(attributeTwo)
-                                )
-                                .map(attribute => {
-                                    if (attribute === Attribute.ADV_TEXTBOX) {
-                                        return <ADVIcon key="adv" />;
-                                    }
-                                    if (attribute === Attribute.NVL_TEXTBOX) {
-                                        return <NVLIcon key="nvl" />;
-                                    }
-                                    if (
-                                        attribute === Attribute.FLOATING_TEXTBOX
-                                    ) {
-                                        return <FloatingTextIcon key="float" />;
-                                    }
-                                    if (
-                                        attribute ===
-                                        Attribute.UNLOCKABLE_ROUTES
-                                    ) {
-                                        return <LockIcon key="lock" />;
-                                    }
-                                    if (
-                                        attribute === Attribute.BRANCHING_PLOT
-                                    ) {
-                                        return <BranchIcon key="branch" />;
-                                    }
-                                    if (
-                                        attribute === Attribute.LADDER_STRUCTURE
-                                    ) {
-                                        return <LadderIcon key="ladder" />;
-                                    }
-                                    if (attribute === Attribute.TRUE_ROUTE) {
-                                        return <TrueIcon key="true" />;
-                                    }
-                                    if (attribute === Attribute.LINEAR_PLOT) {
-                                        return <LinearPlotIcon key="linear" />;
-                                    }
-                                    if (attribute === Attribute.KINETIC_NOVEL) {
-                                        return (
-                                            <KineticNovelIcon key="kinetic" />
-                                        );
-                                    }
-                                    if (
-                                        attribute ===
-                                        Attribute.SCENARIO_SELECTION
-                                    ) {
-                                        return (
-                                            <ScenarioSelectionIcon key="scenario" />
-                                        );
-                                    }
-                                    if (
-                                        attribute ===
-                                        Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
-                                    ) {
-                                        return (
-                                            <FrenchGirlIcon key="frenchgirl" />
-                                        );
-                                    }
-                                    return <></>;
-                                })}
-                            {sequels?.length && sequels.length > 0 ? (
-                                <HasSequelIcon key="has-sequel" />
-                            ) : null}
-                            {originalGame ? (
-                                <IsSequelIcon key="has-sequel" />
-                            ) : null}
-                        </AdditionalIconsContainer>
-                    </IconsContainer>
-                </ContentBody>
-                <DescriptionFont
-                    $outlineColour={outlineColour}
-                    $textAlign="right"
-                >
-                    {descriptionFirstRowText}
-                </DescriptionFont>
-                <DescriptionFont
-                    $outlineColour={outlineColour}
-                    $textAlign="right"
-                >
-                    {descriptionSecondRowText}
-                </DescriptionFont>
-                {isSelectedHideSequelFilter &&
-                sequels &&
-                sequels.length > 0 &&
-                allSequelRelationships &&
-                allSequelRelationships[vndbLink] ? (
-                    <SequelRow>
-                        {allSequelRelationships[vndbLink].map(
-                            (relationship, index) => (
-                                <Row key={relationship.vndbLink}>
-                                    <TitleFont>{(index + 1) * -1}</TitleFont>
-                                    <SequelImage
-                                        src={relationship.thumbnailSource}
-                                        loading="lazy"
-                                        alt=""
-                                        $outlineColour={outlineColour}
-                                        $index={index}
-                                    />
-                                </Row>
-                            )
-                        )}
-                    </SequelRow>
+        <Container>
+            {shouldShowMoreInfo ? <MoreInfoModal /> : null}
+            <Row>
+                {isVNWithSequels && isSelectedHideSequelFilter ? (
+                    <HelpButton onClick={() => setShouldShowMoreInfo(true)}>
+                        <HelpIcon />
+                    </HelpButton>
                 ) : null}
-            </Container>
-        </>
+                <Name>{name}</Name>
+            </Row>
+            <ContentBody>
+                <Link href={vndbLink}>
+                    <ThumbnailImage
+                        src={thumbnailSource}
+                        loading="lazy"
+                        alt=""
+                        $outlineColour={outlineColour}
+                    />
+                </Link>
+                <IconsContainer $outlineColour={outlineColour}>
+                    <PlaytimeIconContainer>
+                        {playtime === PlaytimeLength.SHORT ? (
+                            <PlaytimeShortIcon />
+                        ) : null}
+                        {playtime === PlaytimeLength.MEDIUM ? (
+                            <PlaytimeMediumIcon />
+                        ) : null}
+                        {playtime === PlaytimeLength.LONG ? (
+                            <PlaytimeLongIcon />
+                        ) : null}
+                        {playtime === PlaytimeLength.VERY_LONG ? (
+                            <PlaytimeVeryLongIcon />
+                        ) : null}
+                    </PlaytimeIconContainer>
+                    <AdditionalIconsContainer>
+                        {attributes
+                            .sort(
+                                (attributeOne, attributeTwo) =>
+                                    attributesOrder.indexOf(attributeOne) -
+                                    attributesOrder.indexOf(attributeTwo)
+                            )
+                            .map(attribute => {
+                                if (attribute === Attribute.ADV_TEXTBOX) {
+                                    return <ADVIcon key="adv" />;
+                                }
+                                if (attribute === Attribute.NVL_TEXTBOX) {
+                                    return <NVLIcon key="nvl" />;
+                                }
+                                if (attribute === Attribute.FLOATING_TEXTBOX) {
+                                    return <FloatingTextIcon key="float" />;
+                                }
+                                if (attribute === Attribute.UNLOCKABLE_ROUTES) {
+                                    return <LockIcon key="lock" />;
+                                }
+                                if (attribute === Attribute.BRANCHING_PLOT) {
+                                    return <BranchIcon key="branch" />;
+                                }
+                                if (attribute === Attribute.LADDER_STRUCTURE) {
+                                    return <LadderIcon key="ladder" />;
+                                }
+                                if (attribute === Attribute.TRUE_ROUTE) {
+                                    return <TrueIcon key="true" />;
+                                }
+                                if (attribute === Attribute.LINEAR_PLOT) {
+                                    return <LinearPlotIcon key="linear" />;
+                                }
+                                if (attribute === Attribute.KINETIC_NOVEL) {
+                                    return <KineticNovelIcon key="kinetic" />;
+                                }
+                                if (
+                                    attribute === Attribute.SCENARIO_SELECTION
+                                ) {
+                                    return (
+                                        <ScenarioSelectionIcon key="scenario" />
+                                    );
+                                }
+                                if (
+                                    attribute ===
+                                    Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+                                ) {
+                                    return <FrenchGirlIcon key="frenchgirl" />;
+                                }
+                                return <></>;
+                            })}
+                        {sequels?.length && sequels.length > 0 ? (
+                            <HasSequelIcon key="has-sequel" />
+                        ) : null}
+                        {originalGame ? (
+                            <IsSequelIcon key="has-sequel" />
+                        ) : null}
+                    </AdditionalIconsContainer>
+                </IconsContainer>
+            </ContentBody>
+            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
+                {descriptionFirstRowText}
+            </DescriptionFont>
+            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
+                {descriptionSecondRowText}
+            </DescriptionFont>
+            {isVNWithSequels && isSelectedHideSequelFilter ? (
+                <SequelRow>
+                    {allSequelRelationships[vndbLink].map(
+                        (relationship, index) => (
+                            <Row key={relationship.vndbLink}>
+                                <TitleFont>{(index + 1) * -1}</TitleFont>
+                                <SequelImage
+                                    src={relationship.thumbnailSource}
+                                    loading="lazy"
+                                    alt=""
+                                    $outlineColour={outlineColour}
+                                    $index={index}
+                                />
+                            </Row>
+                        )
+                    )}
+                </SequelRow>
+            ) : null}
+        </Container>
     );
 };
 
@@ -243,7 +241,9 @@ const Container = styled(Column)`
 `;
 
 const Name = styled(TitleFont)`
+    margin-left: 5px;
     padding-bottom: 14px;
+    font-size: 1.2rem;
 `;
 
 const ContentBody = styled(Row)`
@@ -320,4 +320,8 @@ const Link = styled.a`
 
 const DescriptionFont = styled(LabelFont)`
     font-size: 0.8rem;
+`;
+
+const HelpButton = styled(Button)`
+    margin-top: -13px;
 `;

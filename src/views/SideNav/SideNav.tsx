@@ -25,11 +25,9 @@ import {
 } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { SortByItem } from './SortByItem';
-import { LegendItemContainer, LegendLabel } from './components';
+import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
 import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
-
-export const SIDE_NAV_WIDTH = 300;
 
 interface IProps {
     selectedSortingOptions: SortingOption[];
@@ -107,7 +105,7 @@ export const SideNav: React.FC<IProps> = ({
                             }
                         >
                             <LegendItemContainer>
-                                <HasSequelIcon />
+                                <HasSequelIcon size={35} />
                                 <LegendLabel>Show VNs with sequels</LegendLabel>
                             </LegendItemContainer>
                         </ResponsiveButton>
@@ -120,7 +118,7 @@ export const SideNav: React.FC<IProps> = ({
                             }
                         >
                             <LegendItemContainer>
-                                <IsSequelIcon />
+                                <IsSequelIcon size={35} />
                                 <LegendLabel>Hide Sequels</LegendLabel>
                             </LegendItemContainer>
                         </ResponsiveButton>

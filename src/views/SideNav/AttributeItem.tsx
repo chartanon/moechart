@@ -1,6 +1,6 @@
 import React from 'react';
 import { AttributeProps } from './LegendData';
-import { LegendItemContainer, LegendLabel } from './components';
+import { LegendItemContainer, LegendLabel } from './utils';
 import { Attribute } from '../HomePage/Chart/VisualNovelCard';
 import { ResponsiveButton } from '../utils';
 
