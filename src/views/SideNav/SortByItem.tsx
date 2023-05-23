@@ -1,6 +1,6 @@
 import React from 'react';
 import { SortingOption, SortingProps } from './LegendData';
-import { LegendItemContainer, LegendLabel } from './components';
+import { LegendItemContainer, LegendLabel } from './utils';
 import { ResponsiveButton } from '../utils';
 
 interface IProps extends SortingProps {

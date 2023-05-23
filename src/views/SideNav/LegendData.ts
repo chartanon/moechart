@@ -11,12 +11,12 @@ import { LadderIcon } from '../assets/icons/attribute/LadderIcon';
 import { TrueIcon } from '../assets/icons/attribute/TrueIcon';
 import { LinearPlotIcon } from '../assets/icons/attribute/LinearPlotIcon';
 import { KineticNovelIcon } from '../assets/icons/attribute/KineticNovelIcon';
-import { FandiscIcon } from '../assets/icons/attribute/FandiscIcon';
 import { FrenchGirlIcon } from '../assets/icons/attribute/FrenchGirlIcon';
 import { ReactElement } from 'react';
-import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
 import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
 import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
+import { ScenarioSelectionIcon } from '../assets/icons/attribute/ScenarioSelectionIcon';
+import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
 
 interface BaseProps {
     IconSVG: () => ReactElement;
@@ -127,9 +127,9 @@ export const attributesList: AttributeProps[] = [
         type: Attribute.KINETIC_NOVEL
     },
     {
-        IconSVG: FandiscIcon,
-        label: "TL'd Fandisc(s)/Sequel",
-        type: Attribute.HAS_SEQUELS
+        IconSVG: ScenarioSelectionIcon,
+        label: 'Scenario Selection',
+        type: Attribute.SCENARIO_SELECTION
     },
     {
         IconSVG: FrenchGirlIcon,

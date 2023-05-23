@@ -1,6 +1,6 @@
 import React from 'react';
 import { PlaytimeProps } from './LegendData';
-import { LegendItemContainer, LegendLabel } from './components';
+import { LegendItemContainer, LegendLabel } from './utils';
 import { PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
 import { ResponsiveButton } from '../utils';
 

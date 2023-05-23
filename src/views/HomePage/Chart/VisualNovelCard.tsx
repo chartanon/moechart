@@ -1,7 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { PlaytimeShortIcon } from '../../assets/icons/playtime/PlaytimeShortIcon';
-import { COLOURS, Column, Row, LabelFont, TitleFont } from '../../utils';
+import {
+    COLOURS,
+    Column,
+    Row,
+    LabelFont,
+    TitleFont,
+    Button
+} from '../../utils';
 import { PlaytimeMediumIcon } from '../../assets/icons/playtime/PlaytimeMediumIcon';
 import { PlaytimeVeryLongIcon } from '../../assets/icons/playtime/PlaytimeVeryLongIcon';
 import { PlaytimeLongIcon } from '../../assets/icons/playtime/PlaytimeLongIcon';
@@ -14,8 +21,14 @@ import { LadderIcon } from '../../assets/icons/attribute/LadderIcon';
 import { TrueIcon } from '../../assets/icons/attribute/TrueIcon';
 import { LinearPlotIcon } from '../../assets/icons/attribute/LinearPlotIcon';
 import { KineticNovelIcon } from '../../assets/icons/attribute/KineticNovelIcon';
-import { FandiscIcon } from '../../assets/icons/attribute/FandiscIcon';
 import { FrenchGirlIcon } from '../../assets/icons/attribute/FrenchGirlIcon';
+import { VisualNovelProps } from './visualNovelData';
+import { ScenarioSelectionIcon } from '../../assets/icons/attribute/ScenarioSelectionIcon';
+import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
+import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
+import { IMAGE_HEIGHT, IMAGE_WIDTH, ThumbnailImage } from './utils';
+import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
+import moment from 'moment';
 
 export enum PlaytimeLength {
     SHORT = 'SHORT',
@@ -34,7 +47,7 @@ export enum Attribute {
     TRUE_ROUTE = 'TRUE_ROUTE',
     LINEAR_PLOT = 'LINEAR_PLOT',
     KINETIC_NOVEL = 'KINETIC_NOVEL',
-    HAS_SEQUELS = 'HAS_SEQUELS',
+    SCENARIO_SELECTION = 'SCENARIO_SELECTION',
     SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS = 'SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS'
 }
 
@@ -47,20 +60,12 @@ export enum GenreFocus {
     NUKIGE = 'NUKIGE'
 }
 
-export interface VisualNovelProps {
-    name: string;
-    vndbLink: string;
-    playtime?: PlaytimeLength;
-    thumbnailSource: string;
-    attributes: Attribute[];
-    genreFocus: GenreFocus;
-    descriptionFirstRowText: string;
-    descriptionSecondRowText: string;
-    translationReleaseDate?: number;
-    isUpcomingRelease?: boolean;
+export interface VisualNovelCardProps extends VisualNovelProps {
+    moreInfoOnClick?: () => void;
+    shouldDisplayDateInTitle?: boolean;
 }
 
-export const VisualNovelCard: React.FC<VisualNovelProps> = ({
+export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     name,
     vndbLink,
     playtime,
@@ -68,7 +73,12 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
     attributes,
     genreFocus,
     descriptionFirstRowText,
-    descriptionSecondRowText
+    descriptionSecondRowText,
+    sequels,
+    originalGame,
+    moreInfoOnClick,
+    shouldDisplayDateInTitle,
+    translationReleaseDate
 }) => {
     const attributesOrder = Object.values(Attribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
@@ -91,11 +101,26 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
         default:
             break;
     }
+
     return (
         <Container>
-            <Link href={vndbLink}>
-                <Name>{name}</Name>
-            </Link>
+            <TopRow>
+                {moreInfoOnClick ? (
+                    <HelpButton onClick={moreInfoOnClick}>
+                        <HelpIcon />
+                    </HelpButton>
+                ) : null}
+                {shouldDisplayDateInTitle ? (
+                    <Column>
+                        <Title>{name}</Title>
+                        <DateFont>
+                            ({moment(translationReleaseDate).format('ll')})
+                        </DateFont>
+                    </Column>
+                ) : (
+                    <Title>{name}</Title>
+                )}
+            </TopRow>
             <ContentBody>
                 <Link href={vndbLink}>
                     <ThumbnailImage
@@ -105,7 +130,7 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
                         $outlineColour={outlineColour}
                     />
                 </Link>
-                <IconsContainer>
+                <IconsContainer $outlineColour={outlineColour}>
                     <PlaytimeIconContainer>
                         {playtime === PlaytimeLength.SHORT ? (
                             <PlaytimeShortIcon />
@@ -155,8 +180,12 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
                                 if (attribute === Attribute.KINETIC_NOVEL) {
                                     return <KineticNovelIcon key="kinetic" />;
                                 }
-                                if (attribute === Attribute.HAS_SEQUELS) {
-                                    return <FandiscIcon key="fandisc" />;
+                                if (
+                                    attribute === Attribute.SCENARIO_SELECTION
+                                ) {
+                                    return (
+                                        <ScenarioSelectionIcon key="scenario" />
+                                    );
                                 }
                                 if (
                                     attribute ===
@@ -166,6 +195,12 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
                                 }
                                 return <></>;
                             })}
+                        {sequels?.length && sequels.length > 0 ? (
+                            <HasSequelIcon key="has-sequel" />
+                        ) : null}
+                        {originalGame ? (
+                            <IsSequelIcon key="has-sequel" />
+                        ) : null}
                     </AdditionalIconsContainer>
                 </IconsContainer>
             </ContentBody>
@@ -179,47 +214,35 @@ export const VisualNovelCard: React.FC<VisualNovelProps> = ({
     );
 };
 
-const IMAGE_HEIGHT = 260;
-const IMAGE_WIDTH = 190;
-
 const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
 `;
 
-const Name = styled(TitleFont)`
-    padding-bottom: 14px;
+const Title = styled(TitleFont)`
+    margin-left: 5px;
+    font-size: 1.15rem;
 `;
 
 const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
 `;
 
-const ThumbnailImage = styled.img<{ $outlineColour: string }>`
-    width: ${IMAGE_WIDTH}px;
-    height: ${IMAGE_HEIGHT}px;
-    object-fit: cover;
-    box-sizing: border-box;
-    border-radius: 9px;
-
-    ${({ $outlineColour }) => {
-        return css`
-            :hover {
-                outline: 4px solid ${$outlineColour};
-                margin-top: -10px;
-            }
-            box-shadow: 0 10px 40px ${$outlineColour};
-        `;
-    }}
-`;
-
-const IconsContainer = styled(Column)`
-    padding-left: 5px;
+const IconsContainer = styled(Column)<{ $outlineColour: string }>`
+    margin-left: 10px;
+    padding: 5px;
     display: flex;
     height: 100%;
     & > :last-child {
         align-self: flex-end;
         justify-content: flex-end;
     }
+    ${({ $outlineColour }) =>
+        $outlineColour
+            ? css`
+                  background-color: ${$outlineColour}88;
+                  border-radius: 15px;
+              `
+            : ''}
 `;
 
 const PlaytimeIconContainer = styled.div``;
@@ -234,4 +257,16 @@ const Link = styled.a`
 
 const DescriptionFont = styled(LabelFont)`
     font-size: 0.8rem;
+`;
+
+const HelpButton = styled(Button)`
+    margin-top: -2px;
+`;
+
+const TopRow = styled(Row)`
+    padding-bottom: 14px;
+`;
+
+const DateFont = styled(LabelFont)`
+    padding-left: 4px;
 `;

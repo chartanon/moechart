@@ -6,16 +6,13 @@ import {
     TitleFont,
     Section,
     LabelFont,
-    ResponsiveButton
+    ResponsiveButton,
+    Row
 } from '../utils';
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength
-} from '../HomePage/Chart/VisualNovelCard';
+
 import {
     SortingOption,
     attributesList,
@@ -24,8 +21,14 @@ import {
 } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { SortByItem } from './SortByItem';
-
-export const SIDE_NAV_WIDTH = 300;
+import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
+import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
+import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
+import {
+    Attribute,
+    GenreFocus,
+    PlaytimeLength
+} from '../HomePage/Chart/VisualNovelCard';
 
 interface IProps {
     selectedSortingOptions: SortingOption[];
@@ -36,6 +39,11 @@ interface IProps {
     handleSetSelectedGenreFocusFilter: (value: GenreFocus) => void;
     selectedAttributesFilters: Attribute[];
     handleSetSelectedAttributesFilters: (value: Attribute) => void;
+    isSelectedHasSequelFilter: boolean;
+    setIsSelectedHasSequelFilter: (value: boolean) => void;
+    isSelectedHideSequelFilter: boolean;
+    setIsSelectedHideSequelFilter: (value: boolean) => void;
+    isInPopupView: boolean;
     clearFilters: () => void;
 }
 
@@ -48,6 +56,11 @@ export const SideNav: React.FC<IProps> = ({
     handleSetSelectedGenreFocusFilter,
     selectedAttributesFilters,
     handleSetSelectedAttributesFilters,
+    isSelectedHasSequelFilter,
+    setIsSelectedHasSequelFilter,
+    isSelectedHideSequelFilter,
+    setIsSelectedHideSequelFilter,
+    isInPopupView,
     clearFilters
 }) => {
     return (
@@ -71,22 +84,50 @@ export const SideNav: React.FC<IProps> = ({
                             />
                         );
                     })}
-                    {attributesList.map(attribute => {
-                        return (
-                            <AttributeItem
-                                key={attribute.type}
-                                isSelected={selectedAttributesFilters.some(
-                                    attributeFilter =>
-                                        attributeFilter === attribute.type
-                                )}
-                                {...attribute}
-                                onClick={handleSetSelectedAttributesFilters}
-                            />
-                        );
-                    })}
+                    {attributesList.map(attribute => (
+                        <AttributeItem
+                            key={attribute.type}
+                            isSelected={selectedAttributesFilters.some(
+                                attributeFilter =>
+                                    attributeFilter === attribute.type
+                            )}
+                            {...attribute}
+                            onClick={handleSetSelectedAttributesFilters}
+                        />
+                    ))}
                 </Section>
                 <Section>
                     <TitleFont>EXTRA TOOLS</TitleFont>
+                    <Row $gap={15}>
+                        <ResponsiveButton
+                            $isSelected={isSelectedHasSequelFilter}
+                            onClick={() =>
+                                setIsSelectedHasSequelFilter(
+                                    !isSelectedHasSequelFilter
+                                )
+                            }
+                        >
+                            <LegendItemContainer>
+                                <HasSequelIcon size={35} />
+                                <LegendLabel>Show VNs with sequels</LegendLabel>
+                            </LegendItemContainer>
+                        </ResponsiveButton>
+                        <ResponsiveButton
+                            disabled={isInPopupView}
+                            $isSelected={isSelectedHideSequelFilter}
+                            onClick={() => {
+                                setIsSelectedHideSequelFilter(
+                                    !isSelectedHideSequelFilter
+                                );
+                            }}
+                        >
+                            <LegendItemContainer>
+                                <IsSequelIcon size={35} />
+                                <LegendLabel>Hide Sequels</LegendLabel>
+                            </LegendItemContainer>
+                        </ResponsiveButton>
+                    </Row>
+
                     {sortingList.map(sortingOption => {
                         return (
                             <SortByItem

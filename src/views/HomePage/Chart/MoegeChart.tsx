@@ -10,13 +10,8 @@ import {
     Row,
     StaggeredEntranceFade
 } from '../../utils';
-import { visualNovelData } from './visualNovelData';
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength,
-    VisualNovelCard
-} from './VisualNovelCard';
+import { VisualNovelProps, visualNovelData } from './visualNovelData';
+
 import { AnimatePresence } from 'framer-motion';
 import { SortingOption } from '../../SideNav/LegendData';
 import { MusicNoteIcon } from '../../assets/icons/misc/MusicNoteIcon';
@@ -24,20 +19,33 @@ import { ArrowIcon } from '../../assets/icons/misc/DownArrowIcon';
 import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
+import { ChartEntry } from './ChartEntry';
+import { PlaytimeLength, GenreFocus, Attribute } from './VisualNovelCard';
 
+export interface SeriesRelationshipMap {
+    [originalGameVNDBLink: string]: VisualNovelProps[];
+}
 interface IProps {
     selectedSortingOptions: SortingOption[];
     selectedPlaytimeFilter: PlaytimeLength | null;
     selectedGenreFocusFilter: GenreFocus | null;
     selectedAttributesFilters: Attribute[];
+    isSelectedHasSequelFilter: boolean;
+    isSelectedHideSequelFilter: boolean;
+    setIsInPopupView: (value: boolean) => void;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
     selectedSortingOptions,
     selectedPlaytimeFilter,
     selectedGenreFocusFilter,
-    selectedAttributesFilters
+    selectedAttributesFilters,
+    isSelectedHasSequelFilter,
+    isSelectedHideSequelFilter,
+    setIsInPopupView
 }) => {
+    let allSequelRelationships: SeriesRelationshipMap = {};
+
     const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
         if (
             selectedPlaytimeFilter !== null &&
@@ -56,6 +64,45 @@ export const MoegeChart: React.FC<IProps> = ({
             )
         ) {
             return false;
+        } else if (
+            isSelectedHasSequelFilter &&
+            (!visualNovel.sequels || visualNovel.sequels.length === 0)
+        ) {
+            return false;
+        } else if (isSelectedHideSequelFilter && visualNovel.originalGame) {
+            if (allSequelRelationships[visualNovel.originalGame]) {
+                allSequelRelationships[visualNovel.originalGame].push({
+                    vndbLink: visualNovel.vndbLink,
+                    thumbnailSource: visualNovel.thumbnailSource,
+                    name: visualNovel.name,
+                    attributes: visualNovel.attributes,
+                    genreFocus: visualNovel.genreFocus,
+                    descriptionFirstRowText:
+                        visualNovel.descriptionFirstRowText,
+                    descriptionSecondRowText:
+                        visualNovel.descriptionSecondRowText,
+                    playtime: visualNovel.playtime,
+                    translationReleaseDate: visualNovel.translationReleaseDate
+                });
+            } else {
+                allSequelRelationships[visualNovel.originalGame] = [
+                    {
+                        vndbLink: visualNovel.vndbLink,
+                        thumbnailSource: visualNovel.thumbnailSource,
+                        name: visualNovel.name,
+                        attributes: visualNovel.attributes,
+                        genreFocus: visualNovel.genreFocus,
+                        descriptionFirstRowText:
+                            visualNovel.descriptionFirstRowText,
+                        descriptionSecondRowText:
+                            visualNovel.descriptionSecondRowText,
+                        playtime: visualNovel.playtime,
+                        translationReleaseDate:
+                            visualNovel.translationReleaseDate
+                    }
+                ];
+            }
+            return false;
         }
         return !visualNovel.isUpcomingRelease;
     });
@@ -69,6 +116,8 @@ export const MoegeChart: React.FC<IProps> = ({
         );
     }
 
+    let isSortingByChronological = false;
+
     if (selectedSortingOptions.length !== 0) {
         selectedSortingOptions.forEach(option => {
             switch (option) {
@@ -78,6 +127,7 @@ export const MoegeChart: React.FC<IProps> = ({
                             visualNovelTwo.translationReleaseDate! -
                             visualNovelOne.translationReleaseDate!
                     );
+                    isSortingByChronological = true;
                     break;
                 case SortingOption.RANDOM: {
                     while (filteredReleasedVisualNovels.length > 10) {
@@ -97,14 +147,20 @@ export const MoegeChart: React.FC<IProps> = ({
         });
     }
 
-    const unreleasedVisualNovels = visualNovelData.filter(
-        visualNovel =>
-            visualNovel.isUpcomingRelease &&
-            selectedSortingOptions.length === 0 &&
-            selectedPlaytimeFilter === null &&
-            selectedGenreFocusFilter === null &&
-            selectedAttributesFilters.length === 0
-    );
+    let unreleasedVisualNovels: VisualNovelProps[] = [];
+
+    if (
+        selectedSortingOptions.length === 0 &&
+        selectedPlaytimeFilter === null &&
+        selectedGenreFocusFilter === null &&
+        selectedAttributesFilters.length === 0 &&
+        isSelectedHasSequelFilter === false &&
+        isSelectedHideSequelFilter === false
+    ) {
+        unreleasedVisualNovels = visualNovelData.filter(
+            visualNovel => visualNovel.isUpcomingRelease
+        );
+    }
 
     const moechartTitleRef = React.useRef<HTMLDivElement>(null);
     const upcomingReleasesRef = React.useRef<HTMLDivElement>(null);
@@ -166,7 +222,7 @@ export const MoegeChart: React.FC<IProps> = ({
                 </MusicButton>
             </Row>
 
-            <UpdatedInfoFont>(Last Updated: 2023-05-11)</UpdatedInfoFont>
+            <UpdatedInfoFont>(Last Updated: 2023-05-21)</UpdatedInfoFont>
             <EntriesContainer>
                 <AnimatePresence>
                     {filteredReleasedVisualNovels.map((visualNovel, index) => {
@@ -175,13 +231,24 @@ export const MoegeChart: React.FC<IProps> = ({
                                 key={visualNovel.thumbnailSource}
                                 index={index}
                             >
-                                <Entry {...visualNovel} />
+                                <Entry
+                                    {...visualNovel}
+                                    allSequelRelationships={
+                                        allSequelRelationships
+                                    }
+                                    isSelectedHideSequelFilter={
+                                        isSelectedHideSequelFilter
+                                    }
+                                    setIsInPopupView={setIsInPopupView}
+                                    shouldDisplayDateInTitle={
+                                        isSortingByChronological
+                                    }
+                                />
                             </StaggeredEntranceFade>
                         );
                     })}
                 </AnimatePresence>
             </EntriesContainer>
-
             {unreleasedVisualNovels.length > 0 ? (
                 <>
                     <SectionHeader ref={upcomingReleasesRef}>
@@ -235,7 +302,7 @@ const UpdatedInfoFont = styled(LabelFont)`
     justify-content: flex-end;
 `;
 
-const Entry = styled(VisualNovelCard)`
+const Entry = styled(ChartEntry)`
     padding: 20px;
 `;
 

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { MoegeChart } from './Chart/MoegeChart';
-import { SIDE_NAV_WIDTH, SideNav } from '../SideNav/SideNav';
+import { SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
-import { PlaytimeLength, Attribute, GenreFocus } from './Chart/VisualNovelCard';
 import { SortingOption } from '../SideNav/LegendData';
-
+import { SIDE_NAV_WIDTH } from '../SideNav/utils';
+import { PlaytimeLength, GenreFocus, Attribute } from './Chart/VisualNovelCard';
 export const HomePage: React.FC = () => {
     const [selectedSortingOptions, setSelectedSortingOptions] = useState<
         SortingOption[]
@@ -17,6 +17,12 @@ export const HomePage: React.FC = () => {
     const [selectedAttributesFilters, setSelectedAttributesFilters] = useState<
         Attribute[]
     >([]);
+    const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
+        useState<boolean>(false);
+    const [isSelectedHideSequelFilter, setIsSelectedHideSequelFilter] =
+        useState<boolean>(true);
+
+    const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
     const handleSetSelectedSortingOptions = (value: SortingOption) => {
         if (
@@ -63,6 +69,8 @@ export const HomePage: React.FC = () => {
         setSelectedPlaytimeFilter(null);
         setSelectedGenreFocusFilter(null);
         setSelectedAttributesFilters([]);
+        setIsSelectedHasSequelFilter(false);
+        setIsSelectedHideSequelFilter(false);
     };
 
     return (
@@ -84,6 +92,11 @@ export const HomePage: React.FC = () => {
                 handleSetSelectedAttributesFilters={
                     handleSetSelectedAttributesFilters
                 }
+                isSelectedHasSequelFilter={isSelectedHasSequelFilter}
+                setIsSelectedHasSequelFilter={setIsSelectedHasSequelFilter}
+                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
+                setIsSelectedHideSequelFilter={setIsSelectedHideSequelFilter}
+                isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
             />
             <MoegeChart
@@ -91,6 +104,9 @@ export const HomePage: React.FC = () => {
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 selectedGenreFocusFilter={selectedGenreFocusFilter}
                 selectedAttributesFilters={selectedAttributesFilters}
+                isSelectedHasSequelFilter={isSelectedHasSequelFilter}
+                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
+                setIsInPopupView={setIsInPopupView}
             />
         </Container>
     );
