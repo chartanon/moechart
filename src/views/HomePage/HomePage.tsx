@@ -3,9 +3,9 @@ import { MoegeChart } from './Chart/MoegeChart';
 import { SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
-import { PlaytimeLength, Attribute, GenreFocus } from './Chart/VisualNovelCard';
 import { SortingOption } from '../SideNav/LegendData';
 import { SIDE_NAV_WIDTH } from '../SideNav/utils';
+import { PlaytimeLength, GenreFocus, Attribute } from './Chart/VisualNovelCard';
 export const HomePage: React.FC = () => {
     const [selectedSortingOptions, setSelectedSortingOptions] = useState<
         SortingOption[]
@@ -19,8 +19,10 @@ export const HomePage: React.FC = () => {
     >([]);
     const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
         useState<boolean>(false);
-    const [isSelectedHideSequelFilter, setIsSelectedIsSequelFilter] =
+    const [isSelectedHideSequelFilter, setIsSelectedHideSequelFilter] =
         useState<boolean>(true);
+
+    const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
     const handleSetSelectedSortingOptions = (value: SortingOption) => {
         if (
@@ -68,7 +70,7 @@ export const HomePage: React.FC = () => {
         setSelectedGenreFocusFilter(null);
         setSelectedAttributesFilters([]);
         setIsSelectedHasSequelFilter(false);
-        setIsSelectedIsSequelFilter(false);
+        setIsSelectedHideSequelFilter(false);
     };
 
     return (
@@ -93,7 +95,8 @@ export const HomePage: React.FC = () => {
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
                 setIsSelectedHasSequelFilter={setIsSelectedHasSequelFilter}
                 isSelectedHideSequelFilter={isSelectedHideSequelFilter}
-                setIsSelectedIsSequelFilter={setIsSelectedIsSequelFilter}
+                setIsSelectedHideSequelFilter={setIsSelectedHideSequelFilter}
+                isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
             />
             <MoegeChart
@@ -103,6 +106,7 @@ export const HomePage: React.FC = () => {
                 selectedAttributesFilters={selectedAttributesFilters}
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
                 isSelectedHideSequelFilter={isSelectedHideSequelFilter}
+                setIsInPopupView={setIsInPopupView}
             />
         </Container>
     );

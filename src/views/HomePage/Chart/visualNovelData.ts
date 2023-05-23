@@ -1,5 +1,3 @@
-import { Attribute, GenreFocus, PlaytimeLength } from './VisualNovelCard';
-
 import aokana from '../../assets/thumbnails/aokana.jpg';
 import aokana_extra1 from '../../assets/thumbnails/aokana_extra1.jpg';
 import aokana_extra2 from '../../assets/thumbnails/aokana_extra2.jpg';
@@ -185,6 +183,7 @@ import nekopara_after from '../../assets/thumbnails/nekopara_after.jpg';
 import kemonomichi_love_plus from '../../assets/thumbnails/kemonomichi_love_plus.jpg';
 import kemonomichi_2 from '../../assets/thumbnails/kemonomichi_2.jpg';
 import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
+import { Attribute, GenreFocus, PlaytimeLength } from './VisualNovelCard';
 
 export interface VisualNovelProps {
     name: string;

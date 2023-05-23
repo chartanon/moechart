@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { PlaytimeShortIcon } from '../../assets/icons/playtime/PlaytimeShortIcon';
 import {
@@ -22,13 +22,12 @@ import { TrueIcon } from '../../assets/icons/attribute/TrueIcon';
 import { LinearPlotIcon } from '../../assets/icons/attribute/LinearPlotIcon';
 import { KineticNovelIcon } from '../../assets/icons/attribute/KineticNovelIcon';
 import { FrenchGirlIcon } from '../../assets/icons/attribute/FrenchGirlIcon';
-import { SeriesRelationshipMap } from './MoegeChart';
 import { VisualNovelProps } from './visualNovelData';
 import { ScenarioSelectionIcon } from '../../assets/icons/attribute/ScenarioSelectionIcon';
 import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
+import { IMAGE_HEIGHT, IMAGE_WIDTH, ThumbnailImage } from './utils';
 import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
-import { MoreInfoModal } from './MoreInfoModal';
 
 export enum PlaytimeLength {
     SHORT = 'SHORT',
@@ -61,8 +60,7 @@ export enum GenreFocus {
 }
 
 export interface VisualNovelCardProps extends VisualNovelProps {
-    allSequelRelationships?: SeriesRelationshipMap;
-    isSelectedHideSequelFilter?: boolean;
+    moreInfoOnClick?: () => void;
 }
 
 export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
@@ -76,8 +74,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     descriptionSecondRowText,
     sequels,
     originalGame,
-    allSequelRelationships,
-    isSelectedHideSequelFilter
+    moreInfoOnClick
 }) => {
     const attributesOrder = Object.values(Attribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
@@ -101,21 +98,11 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
             break;
     }
 
-    const isVNWithSequels =
-        sequels &&
-        sequels.length > 0 &&
-        allSequelRelationships &&
-        allSequelRelationships[vndbLink];
-
-    const [shouldShowMoreInfo, setShouldShowMoreInfo] =
-        useState<boolean>(false);
-
     return (
         <Container>
-            {shouldShowMoreInfo ? <MoreInfoModal /> : null}
             <Row>
-                {isVNWithSequels && isSelectedHideSequelFilter ? (
-                    <HelpButton onClick={() => setShouldShowMoreInfo(true)}>
+                {moreInfoOnClick ? (
+                    <HelpButton onClick={moreInfoOnClick}>
                         <HelpIcon />
                     </HelpButton>
                 ) : null}
@@ -210,31 +197,9 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
             <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
                 {descriptionSecondRowText}
             </DescriptionFont>
-            {isVNWithSequels && isSelectedHideSequelFilter ? (
-                <SequelRow>
-                    {allSequelRelationships[vndbLink].map(
-                        (relationship, index) => (
-                            <Row key={relationship.vndbLink}>
-                                <TitleFont>{(index + 1) * -1}</TitleFont>
-                                <SequelImage
-                                    src={relationship.thumbnailSource}
-                                    loading="lazy"
-                                    alt=""
-                                    $outlineColour={outlineColour}
-                                    $index={index}
-                                />
-                            </Row>
-                        )
-                    )}
-                </SequelRow>
-            ) : null}
         </Container>
     );
 };
-
-const IMAGE_HEIGHT = 260;
-const IMAGE_WIDTH = 190;
-const SEQUELS_OFFSET = 5;
 
 const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
@@ -243,51 +208,11 @@ const Container = styled(Column)`
 const Name = styled(TitleFont)`
     margin-left: 5px;
     padding-bottom: 14px;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 `;
 
 const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
-`;
-
-const ThumbnailImage = styled.img<{ $outlineColour: string }>`
-    width: ${IMAGE_WIDTH}px;
-    height: ${IMAGE_HEIGHT}px;
-    object-fit: cover;
-    box-sizing: border-box;
-    border-radius: 9px;
-
-    ${({ $outlineColour }) => {
-        return css`
-            :hover {
-                outline: 4px solid ${$outlineColour};
-                margin-top: -10px;
-            }
-            box-shadow: 0 10px 40px ${$outlineColour};
-        `;
-    }}
-`;
-
-const SequelImage = styled(ThumbnailImage)<{ $index: number }>`
-    position: absolute;
-    box-shadow: unset;
-    ${({ $index }) =>
-        $index
-            ? css`
-                  left: ${$index * SEQUELS_OFFSET}px;
-                  top: ${$index * SEQUELS_OFFSET}px;
-                  z-index: ${($index + 1) * -1};
-              `
-            : ''}
-`;
-
-const SequelRow = styled(Row)`
-    width: 0;
-    height: 0;
-    position: relative;
-    left: ${SEQUELS_OFFSET}px;
-    bottom: ${290 - SEQUELS_OFFSET}px;
-    z-index: -1;
 `;
 
 const IconsContainer = styled(Column)<{ $outlineColour: string }>`

@@ -12,11 +12,7 @@ import {
 import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength
-} from '../HomePage/Chart/VisualNovelCard';
+
 import {
     SortingOption,
     attributesList,
@@ -28,6 +24,11 @@ import { SortByItem } from './SortByItem';
 import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
 import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
+import {
+    Attribute,
+    GenreFocus,
+    PlaytimeLength
+} from '../HomePage/Chart/VisualNovelCard';
 
 interface IProps {
     selectedSortingOptions: SortingOption[];
@@ -41,7 +42,8 @@ interface IProps {
     isSelectedHasSequelFilter: boolean;
     setIsSelectedHasSequelFilter: (value: boolean) => void;
     isSelectedHideSequelFilter: boolean;
-    setIsSelectedIsSequelFilter: (value: boolean) => void;
+    setIsSelectedHideSequelFilter: (value: boolean) => void;
+    isInPopupView: boolean;
     clearFilters: () => void;
 }
 
@@ -57,7 +59,8 @@ export const SideNav: React.FC<IProps> = ({
     isSelectedHasSequelFilter,
     setIsSelectedHasSequelFilter,
     isSelectedHideSequelFilter,
-    setIsSelectedIsSequelFilter,
+    setIsSelectedHideSequelFilter,
+    isInPopupView,
     clearFilters
 }) => {
     return (
@@ -110,12 +113,13 @@ export const SideNav: React.FC<IProps> = ({
                             </LegendItemContainer>
                         </ResponsiveButton>
                         <ResponsiveButton
+                            disabled={isInPopupView}
                             $isSelected={isSelectedHideSequelFilter}
-                            onClick={() =>
-                                setIsSelectedIsSequelFilter(
+                            onClick={() => {
+                                setIsSelectedHideSequelFilter(
                                     !isSelectedHideSequelFilter
-                                )
-                            }
+                                );
+                            }}
                         >
                             <LegendItemContainer>
                                 <IsSequelIcon size={35} />

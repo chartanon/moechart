@@ -11,12 +11,7 @@ import {
     StaggeredEntranceFade
 } from '../../utils';
 import { VisualNovelProps, visualNovelData } from './visualNovelData';
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength,
-    VisualNovelCard
-} from './VisualNovelCard';
+
 import { AnimatePresence } from 'framer-motion';
 import { SortingOption } from '../../SideNav/LegendData';
 import { MusicNoteIcon } from '../../assets/icons/misc/MusicNoteIcon';
@@ -24,14 +19,11 @@ import { ArrowIcon } from '../../assets/icons/misc/DownArrowIcon';
 import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
-
-interface SeriesRelationship {
-    vndbLink: string;
-    thumbnailSource: string;
-}
+import { ChartEntry } from './ChartEntry';
+import { PlaytimeLength, GenreFocus, Attribute } from './VisualNovelCard';
 
 export interface SeriesRelationshipMap {
-    [originalGameVNDBLink: string]: SeriesRelationship[];
+    [originalGameVNDBLink: string]: VisualNovelProps[];
 }
 interface IProps {
     selectedSortingOptions: SortingOption[];
@@ -40,6 +32,7 @@ interface IProps {
     selectedAttributesFilters: Attribute[];
     isSelectedHasSequelFilter: boolean;
     isSelectedHideSequelFilter: boolean;
+    setIsInPopupView: (value: boolean) => void;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
@@ -48,7 +41,8 @@ export const MoegeChart: React.FC<IProps> = ({
     selectedGenreFocusFilter,
     selectedAttributesFilters,
     isSelectedHasSequelFilter,
-    isSelectedHideSequelFilter
+    isSelectedHideSequelFilter,
+    setIsInPopupView
 }) => {
     let allSequelRelationships: SeriesRelationshipMap = {};
 
@@ -79,13 +73,29 @@ export const MoegeChart: React.FC<IProps> = ({
             if (allSequelRelationships[visualNovel.originalGame]) {
                 allSequelRelationships[visualNovel.originalGame].push({
                     vndbLink: visualNovel.vndbLink,
-                    thumbnailSource: visualNovel.thumbnailSource
+                    thumbnailSource: visualNovel.thumbnailSource,
+                    name: visualNovel.name,
+                    attributes: visualNovel.attributes,
+                    genreFocus: visualNovel.genreFocus,
+                    descriptionFirstRowText:
+                        visualNovel.descriptionFirstRowText,
+                    descriptionSecondRowText:
+                        visualNovel.descriptionSecondRowText,
+                    playtime: visualNovel.playtime
                 });
             } else {
                 allSequelRelationships[visualNovel.originalGame] = [
                     {
                         vndbLink: visualNovel.vndbLink,
-                        thumbnailSource: visualNovel.thumbnailSource
+                        thumbnailSource: visualNovel.thumbnailSource,
+                        name: visualNovel.name,
+                        attributes: visualNovel.attributes,
+                        genreFocus: visualNovel.genreFocus,
+                        descriptionFirstRowText:
+                            visualNovel.descriptionFirstRowText,
+                        descriptionSecondRowText:
+                            visualNovel.descriptionSecondRowText,
+                        playtime: visualNovel.playtime
                     }
                 ];
             }
@@ -223,13 +233,13 @@ export const MoegeChart: React.FC<IProps> = ({
                                     isSelectedHideSequelFilter={
                                         isSelectedHideSequelFilter
                                     }
+                                    setIsInPopupView={setIsInPopupView}
                                 />
                             </StaggeredEntranceFade>
                         );
                     })}
                 </AnimatePresence>
             </EntriesContainer>
-
             {unreleasedVisualNovels.length > 0 ? (
                 <>
                     <SectionHeader ref={upcomingReleasesRef}>
@@ -283,7 +293,7 @@ const UpdatedInfoFont = styled(LabelFont)`
     justify-content: flex-end;
 `;
 
-const Entry = styled(VisualNovelCard)`
+const Entry = styled(ChartEntry)`
     padding: 20px;
 `;
 
