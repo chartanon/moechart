@@ -154,8 +154,7 @@ export const MoegeChart: React.FC<IProps> = ({
         selectedPlaytimeFilter === null &&
         selectedGenreFocusFilter === null &&
         selectedAttributesFilters.length === 0 &&
-        isSelectedHasSequelFilter === false &&
-        isSelectedHideSequelFilter === false
+        isSelectedHasSequelFilter === false
     ) {
         unreleasedVisualNovels = visualNovelData.filter(
             visualNovel => visualNovel.isUpcomingRelease
