@@ -1,11 +1,11 @@
 import React from 'react';
-import { SortingOption, SortingProps } from './LegendData';
+import { MiscellaneousSortingOption, SortingProps } from './LegendData';
 import { LegendItemContainer, LegendLabel } from './utils';
 import { ResponsiveButton } from '../utils';
 
 interface IProps extends SortingProps {
     isSelected: boolean;
-    onClick: (value: SortingOption) => void;
+    onClick: (value: MiscellaneousSortingOption) => void;
 }
 
 export const SortByItem: React.FC<IProps> = ({

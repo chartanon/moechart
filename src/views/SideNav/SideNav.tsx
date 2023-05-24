@@ -14,28 +14,30 @@ import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
 
 import {
-    SortingOption,
-    attributesList,
+    MiscellaneousSortingOption,
+    filterAttributesList,
     playtimesList,
-    sortingList
+    miscellaneousSortingToolsList
 } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { SortByItem } from './SortByItem';
 import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
 import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
-import { Attribute, GenreFocus } from '../HomePage/Chart/utils';
+import { FilterAttribute, GenreFocus } from '../HomePage/Chart/utils';
 import { PlaytimeLength } from '../HomePage/Chart/utils';
 
 interface IProps {
-    selectedSortingOptions: SortingOption[];
-    handleSetSelectedSortingOptions: (value: SortingOption) => void;
+    selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
+    handleSetSelectedMiscellaneousSortingOptions: (
+        value: MiscellaneousSortingOption
+    ) => void;
     selectedPlaytimeFilter: PlaytimeLength | null;
     handleSetSelectedPlaytimeFilter: (value: PlaytimeLength) => void;
     selectedGenreFocusFilter: GenreFocus | null;
     handleSetSelectedGenreFocusFilter: (value: GenreFocus) => void;
-    selectedAttributesFilters: Attribute[];
-    handleSetSelectedAttributesFilters: (value: Attribute) => void;
+    selectedFilterAttributes: FilterAttribute[];
+    handleSetSelectedFilterAttributes: (value: FilterAttribute) => void;
     isSelectedHasSequelFilter: boolean;
     setIsSelectedHasSequelFilter: (value: boolean) => void;
     isSelectedHideSequelFilter: boolean;
@@ -45,14 +47,14 @@ interface IProps {
 }
 
 export const SideNav: React.FC<IProps> = ({
-    selectedSortingOptions,
-    handleSetSelectedSortingOptions,
+    selectedMiscellaneousSortingOptions,
+    handleSetSelectedMiscellaneousSortingOptions,
     selectedPlaytimeFilter,
     handleSetSelectedPlaytimeFilter,
     selectedGenreFocusFilter,
     handleSetSelectedGenreFocusFilter,
-    selectedAttributesFilters,
-    handleSetSelectedAttributesFilters,
+    selectedFilterAttributes,
+    handleSetSelectedFilterAttributes,
     isSelectedHasSequelFilter,
     setIsSelectedHasSequelFilter,
     isSelectedHideSequelFilter,
@@ -81,15 +83,15 @@ export const SideNav: React.FC<IProps> = ({
                             />
                         );
                     })}
-                    {attributesList.map(attribute => (
+                    {filterAttributesList.map(attribute => (
                         <AttributeItem
                             key={attribute.type}
-                            isSelected={selectedAttributesFilters.some(
+                            isSelected={selectedFilterAttributes.some(
                                 attributeFilter =>
                                     attributeFilter === attribute.type
                             )}
                             {...attribute}
-                            onClick={handleSetSelectedAttributesFilters}
+                            onClick={handleSetSelectedFilterAttributes}
                         />
                     ))}
                 </Section>
@@ -125,15 +127,17 @@ export const SideNav: React.FC<IProps> = ({
                         </ResponsiveButton>
                     </Row>
 
-                    {sortingList.map(sortingOption => {
+                    {miscellaneousSortingToolsList.map(sortingOption => {
                         return (
                             <SortByItem
                                 key={sortingOption.option}
-                                isSelected={selectedSortingOptions.some(
+                                isSelected={selectedMiscellaneousSortingOptions.some(
                                     option => option === sortingOption.option
                                 )}
                                 {...sortingOption}
-                                onClick={handleSetSelectedSortingOptions}
+                                onClick={
+                                    handleSetSelectedMiscellaneousSortingOptions
+                                }
                             />
                         );
                     })}

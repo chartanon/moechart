@@ -27,7 +27,7 @@ import { ScenarioSelectionIcon } from '../../assets/icons/attribute/ScenarioSele
 import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
 import {
-    Attribute,
+    FilterAttribute,
     GenreFocus,
     IMAGE_HEIGHT,
     IMAGE_WIDTH,
@@ -57,7 +57,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     shouldDisplayDateInTitle,
     translationReleaseDate
 }) => {
-    const attributesOrder = Object.values(Attribute);
+    const attributesOrder = Object.values(FilterAttribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
         case GenreFocus.COMEDY:
@@ -134,47 +134,64 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                                         attributesOrder.indexOf(attributeTwo)
                                 )
                                 .map(attribute => {
-                                    if (attribute === Attribute.ADV_TEXTBOX) {
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.ADV_TEXTBOX
+                                    ) {
                                         return <ADVIcon key="adv" />;
                                     }
-                                    if (attribute === Attribute.NVL_TEXTBOX) {
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.NVL_TEXTBOX
+                                    ) {
                                         return <NVLIcon key="nvl" />;
                                     }
                                     if (
-                                        attribute === Attribute.FLOATING_TEXTBOX
+                                        attribute ===
+                                        FilterAttribute.FLOATING_TEXTBOX
                                     ) {
                                         return <FloatingTextIcon key="float" />;
                                     }
                                     if (
                                         attribute ===
-                                        Attribute.UNLOCKABLE_ROUTES
+                                        FilterAttribute.UNLOCKABLE_ROUTES
                                     ) {
                                         return <LockIcon key="lock" />;
                                     }
                                     if (
-                                        attribute === Attribute.BRANCHING_PLOT
+                                        attribute ===
+                                        FilterAttribute.BRANCHING_PLOT
                                     ) {
                                         return <BranchIcon key="branch" />;
                                     }
                                     if (
-                                        attribute === Attribute.LADDER_STRUCTURE
+                                        attribute ===
+                                        FilterAttribute.LADDER_STRUCTURE
                                     ) {
                                         return <LadderIcon key="ladder" />;
                                     }
-                                    if (attribute === Attribute.TRUE_ROUTE) {
+                                    if (
+                                        attribute === FilterAttribute.TRUE_ROUTE
+                                    ) {
                                         return <TrueIcon key="true" />;
                                     }
-                                    if (attribute === Attribute.LINEAR_PLOT) {
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.LINEAR_PLOT
+                                    ) {
                                         return <LinearPlotIcon key="linear" />;
                                     }
-                                    if (attribute === Attribute.KINETIC_NOVEL) {
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.KINETIC_NOVEL
+                                    ) {
                                         return (
                                             <KineticNovelIcon key="kinetic" />
                                         );
                                     }
                                     if (
                                         attribute ===
-                                        Attribute.SCENARIO_SELECTION
+                                        FilterAttribute.SCENARIO_SELECTION
                                     ) {
                                         return (
                                             <ScenarioSelectionIcon key="scenario" />
@@ -182,7 +199,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                                     }
                                     if (
                                         attribute ===
-                                        Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+                                        FilterAttribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
                                     ) {
                                         return (
                                             <FrenchGirlIcon key="frenchgirl" />

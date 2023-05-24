@@ -1,12 +1,12 @@
 import React from 'react';
 import { AttributeProps } from './LegendData';
 import { LegendItemContainer, LegendLabel } from './utils';
-import { Attribute } from '../HomePage/Chart/utils';
+import { FilterAttribute } from '../HomePage/Chart/utils';
 import { ResponsiveButton } from '../utils';
 
 interface IProps extends AttributeProps {
     isSelected: boolean;
-    onClick: (value: Attribute) => void;
+    onClick: (value: FilterAttribute) => void;
 }
 
 export const AttributeItem: React.FC<IProps> = ({

@@ -11,7 +11,7 @@ export enum PlaytimeLength {
     VERY_LONG = 'VERY_LONG'
 }
 
-export enum Attribute {
+export enum FilterAttribute {
     ADV_TEXTBOX = 'ADV_TEXTBOX',
     NVL_TEXTBOX = 'NVL_TEXTBOX',
     FLOATING_TEXTBOX = 'FLOATING_TEXTBOX',

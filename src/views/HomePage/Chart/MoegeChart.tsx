@@ -13,34 +13,34 @@ import {
 import { VisualNovelProps, visualNovelData } from './visualNovelData';
 
 import { AnimatePresence } from 'framer-motion';
-import { SortingOption } from '../../SideNav/LegendData';
+import { MiscellaneousSortingOption } from '../../SideNav/LegendData';
 import { MusicNoteIcon } from '../../assets/icons/misc/MusicNoteIcon';
 import { ArrowIcon } from '../../assets/icons/misc/DownArrowIcon';
 import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
 import { ChartEntry } from './ChartEntry';
-import { GenreFocus, Attribute } from './utils';
+import { GenreFocus, FilterAttribute } from './utils';
 import { PlaytimeLength } from './utils';
 
 export interface SeriesRelationshipMap {
     [originalGameVNDBLink: string]: VisualNovelProps[];
 }
 interface IProps {
-    selectedSortingOptions: SortingOption[];
+    selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
     selectedPlaytimeFilter: PlaytimeLength | null;
     selectedGenreFocusFilter: GenreFocus | null;
-    selectedAttributesFilters: Attribute[];
+    selectedFilterAttributes: FilterAttribute[];
     isSelectedHasSequelFilter: boolean;
     isSelectedHideSequelFilter: boolean;
     setIsInPopupView: (value: boolean) => void;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
-    selectedSortingOptions,
+    selectedMiscellaneousSortingOptions,
     selectedPlaytimeFilter,
     selectedGenreFocusFilter,
-    selectedAttributesFilters,
+    selectedFilterAttributes,
     isSelectedHasSequelFilter,
     isSelectedHideSequelFilter,
     setIsInPopupView
@@ -59,8 +59,8 @@ export const MoegeChart: React.FC<IProps> = ({
         ) {
             return false;
         } else if (
-            selectedAttributesFilters.length !== 0 &&
-            selectedAttributesFilters.some(
+            selectedFilterAttributes.length !== 0 &&
+            selectedFilterAttributes.some(
                 attribute => !visualNovel.attributes.includes(attribute)
             )
         ) {
@@ -119,10 +119,10 @@ export const MoegeChart: React.FC<IProps> = ({
 
     let isSortingByChronological = false;
 
-    if (selectedSortingOptions.length !== 0) {
-        selectedSortingOptions.forEach(option => {
+    if (selectedMiscellaneousSortingOptions.length !== 0) {
+        selectedMiscellaneousSortingOptions.forEach(option => {
             switch (option) {
-                case SortingOption.CHRONOLOGICAL:
+                case MiscellaneousSortingOption.CHRONOLOGICAL:
                     filteredReleasedVisualNovels.sort(
                         (visualNovelOne, visualNovelTwo) =>
                             visualNovelTwo.translationReleaseDate! -
@@ -130,7 +130,7 @@ export const MoegeChart: React.FC<IProps> = ({
                     );
                     isSortingByChronological = true;
                     break;
-                case SortingOption.RANDOM: {
+                case MiscellaneousSortingOption.RANDOM: {
                     while (filteredReleasedVisualNovels.length > 10) {
                         filteredReleasedVisualNovels.splice(
                             Math.floor(
@@ -151,10 +151,10 @@ export const MoegeChart: React.FC<IProps> = ({
     let unreleasedVisualNovels: VisualNovelProps[] = [];
 
     if (
-        selectedSortingOptions.length === 0 &&
+        selectedMiscellaneousSortingOptions.length === 0 &&
         selectedPlaytimeFilter === null &&
         selectedGenreFocusFilter === null &&
-        selectedAttributesFilters.length === 0 &&
+        selectedFilterAttributes.length === 0 &&
         isSelectedHasSequelFilter === false
     ) {
         unreleasedVisualNovels = visualNovelData.filter(
