@@ -358,8 +358,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v3537',
         playtime: PlaytimeLength.LONG,
         thumbnailSource: kotori_love_exp,
-        attributes: [Attribute.ADV_TEXTBOX, Attribute.BRANCHING_PLOT],
-        originalGame: 'https://vndb.org/v264', //TODO scenario selection/anthology
+        attributes: [Attribute.ADV_TEXTBOX, Attribute.SCENARIO_SELECTION],
+        originalGame: 'https://vndb.org/v264',
         genreFocus: GenreFocus.STORYLINE, //TODO Romance?
         descriptionFirstRowText: 'Slice of Life, Wife Heroine',
         descriptionSecondRowText: 'Fantasy',
@@ -503,7 +503,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: nine_shinshou,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection?
+            Attribute.SCENARIO_SELECTION,
             Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
         ],
         originalGame: 'https://vndb.org/v19829',
@@ -520,7 +520,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT
+            Attribute.SCENARIO_SELECTION
         ],
         sequels: ['https://vndb.org/v24717'],
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -536,7 +536,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v21852',
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -568,7 +568,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v1474',
         genreFocus: GenreFocus.STORY_ROMANCE,
@@ -644,7 +644,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: miazora_fd,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT, //TODO scenario selection
+            Attribute.SCENARIO_SELECTION,
             Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
         ],
         originalGame: 'https://vndb.org/v16560',
@@ -751,7 +751,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: princess_evangile_wh,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v6710',
         genreFocus: GenreFocus.ROMANCE,
@@ -1297,7 +1297,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: neko_nin_2_plus,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v20433',
         genreFocus: GenreFocus.ROM_COM,
@@ -1358,7 +1358,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: fureraba_fd,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v11856',
         genreFocus: GenreFocus.ROM_COM,
@@ -1385,7 +1385,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: making_lovers_after,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v21552',
         genreFocus: GenreFocus.ROM_COM,
@@ -1788,7 +1788,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: majikoi_a1,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v1143',
         genreFocus: GenreFocus.COMEDY,
@@ -1803,7 +1803,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: majikoi_a2,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v1143',
         genreFocus: GenreFocus.COMEDY,
@@ -1818,7 +1818,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: majikoi_a3,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v1143',
         genreFocus: GenreFocus.COMEDY,
@@ -1833,7 +1833,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: majikoi_a4,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v1143',
         genreFocus: GenreFocus.COMEDY,
@@ -1948,7 +1948,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: drapri_plus,
         attributes: [
             Attribute.ADV_TEXTBOX,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v28634',
         genreFocus: GenreFocus.COMEDY,
@@ -2080,7 +2080,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [
             Attribute.ADV_TEXTBOX,
             Attribute.UNLOCKABLE_ROUTES,
-            Attribute.BRANCHING_PLOT //TODO scenario selection
+            Attribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v17515',
         genreFocus: GenreFocus.NUKIGE,
