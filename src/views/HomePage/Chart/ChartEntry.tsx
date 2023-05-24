@@ -16,23 +16,16 @@ export interface ChartEntryProps extends VisualNovelProps {
     shouldDisplayDateInTitle?: boolean;
 }
 
-export const ChartEntry: React.FC<ChartEntryProps> = ({
-    name,
-    vndbLink,
-    playtime,
-    thumbnailSource,
-    attributes,
-    genreFocus,
-    descriptionFirstRowText,
-    descriptionSecondRowText,
-    sequels,
-    originalGame,
-    allSequelRelationships,
-    isSelectedHideSequelFilter,
-    setIsInPopupView,
-    shouldDisplayDateInTitle,
-    translationReleaseDate
-}) => {
+export const ChartEntry: React.FC<ChartEntryProps> = props => {
+    const {
+        vndbLink,
+        genreFocus,
+        sequels,
+        allSequelRelationships,
+        isSelectedHideSequelFilter,
+        setIsInPopupView,
+        shouldDisplayDateInTitle
+    } = props;
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
         case GenreFocus.COMEDY:
@@ -84,23 +77,11 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
                     shouldDisplayDateInTitle={shouldDisplayDateInTitle}
                 />
             ) : null}
-
             <VisualNovelCard
-                name={name}
-                vndbLink={vndbLink}
-                thumbnailSource={thumbnailSource}
-                attributes={attributes}
-                genreFocus={genreFocus}
-                descriptionFirstRowText={descriptionFirstRowText}
-                descriptionSecondRowText={descriptionSecondRowText}
-                playtime={playtime}
-                sequels={sequels}
-                originalGame={originalGame}
+                {...props}
                 moreInfoOnClick={
                     isVNWithSequels ? handleSetShowMoreSequelInfo : undefined
                 }
-                shouldDisplayDateInTitle={shouldDisplayDateInTitle}
-                translationReleaseDate={translationReleaseDate}
             />
             {isVNWithSequels && isSelectedHideSequelFilter ? (
                 <SequelRow>
@@ -115,6 +96,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
                                     $outlineColour={outlineColour}
                                     $index={index}
                                     $cardStackCount={sequels?.length}
+                                    $shouldScaleSize={!!sequels?.length}
                                 />
                             </Row>
                         )

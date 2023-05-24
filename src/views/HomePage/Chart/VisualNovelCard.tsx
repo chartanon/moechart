@@ -31,11 +31,13 @@ import {
     GenreFocus,
     IMAGE_HEIGHT,
     IMAGE_WIDTH,
+    SEQUELS_OFFSET,
     ThumbnailImage
 } from './utils';
 import { PlaytimeLength } from './utils';
 import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
 import moment from 'moment';
+import { StarIcon } from '../../assets/icons/attribute/StarIcon';
 
 export interface VisualNovelCardProps extends VisualNovelProps {
     moreInfoOnClick?: () => void;
@@ -55,7 +57,8 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     originalGame,
     moreInfoOnClick,
     shouldDisplayDateInTitle,
-    translationReleaseDate
+    translationReleaseDate,
+    isRecommended
 }) => {
     const attributesOrder = Object.values(FilterAttribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
@@ -106,9 +109,13 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                         alt=""
                         $outlineColour={outlineColour}
                         $cardStackCount={sequels?.length}
+                        $shouldScaleSize={!!moreInfoOnClick}
                     />
                 </Link>
-                <IconsContainer>
+                <IconsContainer
+                    $cardStackCount={sequels?.length}
+                    $shouldScaleMarginLeft={!!moreInfoOnClick}
+                >
                     <PlaytimeIconContainer $outlineColour={outlineColour}>
                         {playtime === PlaytimeLength.SHORT ? (
                             <PlaytimeShortIcon />
@@ -127,6 +134,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                         <AdditionalIconsContainer
                             $outlineColour={outlineColour}
                         >
+                            {isRecommended ? <StarIcon /> : null}
                             {attributes
                                 .sort(
                                     (attributeOne, attributeTwo) =>
@@ -208,11 +216,9 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                                     return <></>;
                                 })}
                             {sequels?.length && sequels.length > 0 ? (
-                                <HasSequelIcon key="has-sequel" />
+                                <HasSequelIcon />
                             ) : null}
-                            {originalGame ? (
-                                <IsSequelIcon key="has-sequel" />
-                            ) : null}
+                            {originalGame ? <IsSequelIcon /> : null}
                         </AdditionalIconsContainer>
                     </AdditionalIconsContainerWrapper>
                 </IconsContainer>
@@ -240,8 +246,10 @@ const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
 `;
 
-const IconsContainer = styled(Column)`
-    margin-left: 10px;
+const IconsContainer = styled(Column)<{
+    $cardStackCount?: number;
+    $shouldScaleMarginLeft?: boolean;
+}>`
     padding: 5px;
     display: flex;
     height: 100%;
@@ -249,6 +257,15 @@ const IconsContainer = styled(Column)`
         align-self: flex-end;
         justify-content: flex-end;
     }
+
+    ${({ $cardStackCount, $shouldScaleMarginLeft }) =>
+        $cardStackCount && $shouldScaleMarginLeft
+            ? css`
+                  margin-left: ${$cardStackCount * SEQUELS_OFFSET + 10}px;
+              `
+            : css`
+                  margin-left: 10px;
+              `}
 `;
 
 const PlaytimeIconContainer = styled.div<{ $outlineColour: string }>`

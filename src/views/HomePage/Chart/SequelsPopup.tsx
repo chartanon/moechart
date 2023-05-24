@@ -45,29 +45,7 @@ export const SequelsPopup: React.FC<IProps> = ({
                                         key={relationship.vndbLink}
                                         index={index}
                                     >
-                                        <VisualNovelCard
-                                            name={relationship.name}
-                                            vndbLink={relationship.vndbLink}
-                                            thumbnailSource={
-                                                relationship.thumbnailSource
-                                            }
-                                            attributes={relationship.attributes}
-                                            genreFocus={relationship.genreFocus}
-                                            descriptionFirstRowText={
-                                                relationship.descriptionFirstRowText
-                                            }
-                                            descriptionSecondRowText={
-                                                relationship.descriptionSecondRowText
-                                            }
-                                            playtime={relationship.playtime}
-                                            translationReleaseDate={
-                                                relationship.translationReleaseDate
-                                            }
-                                            shouldDisplayDateInTitle={
-                                                shouldDisplayDateInTitle
-                                            }
-                                            originalGame={originalGame}
-                                        />
+                                        <VisualNovelCard {...relationship} />
                                     </StaggeredEntranceFadeSlow>
                                 );
                             }

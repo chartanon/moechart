@@ -37,9 +37,10 @@ export enum GenreFocus {
 export const ThumbnailImage = styled.img<{
     $outlineColour?: string;
     $cardStackCount?: number;
+    $shouldScaleSize?: boolean;
 }>`
-    ${({ $cardStackCount }) =>
-        $cardStackCount
+    ${({ $cardStackCount, $shouldScaleSize }) =>
+        $cardStackCount && $shouldScaleSize
             ? css`
                   width: ${IMAGE_WIDTH - $cardStackCount * SEQUELS_OFFSET}px;
                   height: ${IMAGE_HEIGHT - $cardStackCount * SEQUELS_OFFSET}px;

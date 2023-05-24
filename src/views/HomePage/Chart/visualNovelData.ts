@@ -199,6 +199,7 @@ export interface VisualNovelProps {
     descriptionSecondRowText: string;
     translationReleaseDate?: number;
     isUpcomingRelease?: boolean;
+    isRecommended?: boolean;
 }
 
 export const visualNovelData: VisualNovelProps[] = [
@@ -215,7 +216,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Group of Friends, Sports',
         descriptionSecondRowText: 'Competition',
-        translationReleaseDate: Date.parse('2019-09-27')
+        translationReleaseDate: Date.parse('2019-09-27'),
+        isRecommended: true
     },
     {
         name: 'Aokana EXTRA1',
