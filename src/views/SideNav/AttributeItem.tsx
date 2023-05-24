@@ -1,7 +1,7 @@
 import React from 'react';
 import { AttributeProps } from './LegendData';
 import { LegendItemContainer, LegendLabel } from './utils';
-import { Attribute } from '../HomePage/Chart/VisualNovelCard';
+import { Attribute } from '../HomePage/Chart/utils';
 import { ResponsiveButton } from '../utils';
 
 interface IProps extends AttributeProps {

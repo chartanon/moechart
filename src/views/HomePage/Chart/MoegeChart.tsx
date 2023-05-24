@@ -20,7 +20,8 @@ import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
 import { ChartEntry } from './ChartEntry';
-import { PlaytimeLength, GenreFocus, Attribute } from './VisualNovelCard';
+import { GenreFocus, Attribute } from './utils';
+import { PlaytimeLength } from './utils';
 
 export interface SeriesRelationshipMap {
     [originalGameVNDBLink: string]: VisualNovelProps[];

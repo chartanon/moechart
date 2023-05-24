@@ -1,8 +1,14 @@
 import styled from 'styled-components';
-import { Column, HeaderFont, Row } from '../../utils';
+import {
+    Column,
+    HeaderFont,
+    Row,
+    StaggeredEntranceFadeSlow
+} from '../../utils';
 import { Popup } from './Popup';
 import { SeriesRelationshipMap } from './MoegeChart';
 import { VisualNovelCard } from './VisualNovelCard';
+import { AnimatePresence } from 'framer-motion';
 
 interface IProps {
     isOpen?: boolean;
@@ -31,31 +37,42 @@ export const SequelsPopup: React.FC<IProps> = ({
         <Popup isOpen={isOpen} onClose={onClose}>
             <Column $centered>
                 <EntriesContainer $maxHeight $centered>
-                    {allSequelRelations[originalGame].map(relationship => {
-                        return (
-                            <VisualNovelCard
-                                name={relationship.name}
-                                vndbLink={relationship.vndbLink}
-                                thumbnailSource={relationship.thumbnailSource}
-                                attributes={relationship.attributes}
-                                genreFocus={relationship.genreFocus}
-                                descriptionFirstRowText={
-                                    relationship.descriptionFirstRowText
-                                }
-                                descriptionSecondRowText={
-                                    relationship.descriptionSecondRowText
-                                }
-                                playtime={relationship.playtime}
-                                translationReleaseDate={
-                                    relationship.translationReleaseDate
-                                }
-                                shouldDisplayDateInTitle={
-                                    shouldDisplayDateInTitle
-                                }
-                                originalGame={originalGame}
-                            />
-                        );
-                    })}
+                    <AnimatePresence>
+                        {allSequelRelations[originalGame].map(
+                            (relationship, index) => {
+                                return (
+                                    <StaggeredEntranceFadeSlow
+                                        key={relationship.vndbLink}
+                                        index={index}
+                                    >
+                                        <VisualNovelCard
+                                            name={relationship.name}
+                                            vndbLink={relationship.vndbLink}
+                                            thumbnailSource={
+                                                relationship.thumbnailSource
+                                            }
+                                            attributes={relationship.attributes}
+                                            genreFocus={relationship.genreFocus}
+                                            descriptionFirstRowText={
+                                                relationship.descriptionFirstRowText
+                                            }
+                                            descriptionSecondRowText={
+                                                relationship.descriptionSecondRowText
+                                            }
+                                            playtime={relationship.playtime}
+                                            translationReleaseDate={
+                                                relationship.translationReleaseDate
+                                            }
+                                            shouldDisplayDateInTitle={
+                                                shouldDisplayDateInTitle
+                                            }
+                                            originalGame={originalGame}
+                                        />
+                                    </StaggeredEntranceFadeSlow>
+                                );
+                            }
+                        )}
+                    </AnimatePresence>
                 </EntriesContainer>
                 <StyledHeaderFont>
                     Translated Fandiscs and Sequels

@@ -5,7 +5,8 @@ import React, { useState } from 'react';
 import Background from '../assets/thumbnails/Background.jpg';
 import { SortingOption } from '../SideNav/LegendData';
 import { SIDE_NAV_WIDTH } from '../SideNav/utils';
-import { PlaytimeLength, GenreFocus, Attribute } from './Chart/VisualNovelCard';
+import { GenreFocus, Attribute } from './Chart/utils';
+import { PlaytimeLength } from './Chart/utils';
 export const HomePage: React.FC = () => {
     const [selectedSortingOptions, setSelectedSortingOptions] = useState<
         SortingOption[]

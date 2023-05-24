@@ -24,11 +24,8 @@ import { SortByItem } from './SortByItem';
 import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
 import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength
-} from '../HomePage/Chart/VisualNovelCard';
+import { Attribute, GenreFocus } from '../HomePage/Chart/utils';
+import { PlaytimeLength } from '../HomePage/Chart/utils';
 
 interface IProps {
     selectedSortingOptions: SortingOption[];

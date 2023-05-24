@@ -16,7 +16,8 @@ import { ReactElement } from 'react';
 import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
 import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
 import { ScenarioSelectionIcon } from '../assets/icons/attribute/ScenarioSelectionIcon';
-import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
+import { Attribute } from '../HomePage/Chart/utils';
+import { PlaytimeLength } from '../HomePage/Chart/utils';
 
 interface BaseProps {
     IconSVG: () => ReactElement;

@@ -26,39 +26,16 @@ import { VisualNovelProps } from './visualNovelData';
 import { ScenarioSelectionIcon } from '../../assets/icons/attribute/ScenarioSelectionIcon';
 import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
-import { IMAGE_HEIGHT, IMAGE_WIDTH, ThumbnailImage } from './utils';
+import {
+    Attribute,
+    GenreFocus,
+    IMAGE_HEIGHT,
+    IMAGE_WIDTH,
+    ThumbnailImage
+} from './utils';
+import { PlaytimeLength } from './utils';
 import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
 import moment from 'moment';
-
-export enum PlaytimeLength {
-    SHORT = 'SHORT',
-    MEDIUM = 'MEDIUM',
-    LONG = 'LONG',
-    VERY_LONG = 'VERY_LONG'
-}
-
-export enum Attribute {
-    ADV_TEXTBOX = 'ADV_TEXTBOX',
-    NVL_TEXTBOX = 'NVL_TEXTBOX',
-    FLOATING_TEXTBOX = 'FLOATING_TEXTBOX',
-    UNLOCKABLE_ROUTES = 'UNLOCKABLE_ROUTES',
-    BRANCHING_PLOT = 'BRANCHING_PLOT',
-    LADDER_STRUCTURE = 'LADDER_STRUCTURE',
-    TRUE_ROUTE = 'TRUE_ROUTE',
-    LINEAR_PLOT = 'LINEAR_PLOT',
-    KINETIC_NOVEL = 'KINETIC_NOVEL',
-    SCENARIO_SELECTION = 'SCENARIO_SELECTION',
-    SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS = 'SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS'
-}
-
-export enum GenreFocus {
-    STORYLINE = 'STORYLINE',
-    STORY_ROMANCE = 'STORY_ROMANCE',
-    ROMANCE = 'ROMANCE',
-    ROM_COM = 'ROM_COM',
-    COMEDY = 'COMEDY',
-    NUKIGE = 'NUKIGE'
-}
 
 export interface VisualNovelCardProps extends VisualNovelProps {
     moreInfoOnClick?: () => void;
@@ -128,10 +105,11 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                         loading="lazy"
                         alt=""
                         $outlineColour={outlineColour}
+                        $cardStackCount={sequels?.length}
                     />
                 </Link>
-                <IconsContainer $outlineColour={outlineColour}>
-                    <PlaytimeIconContainer>
+                <IconsContainer>
+                    <PlaytimeIconContainer $outlineColour={outlineColour}>
                         {playtime === PlaytimeLength.SHORT ? (
                             <PlaytimeShortIcon />
                         ) : null}
@@ -145,63 +123,81 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                             <PlaytimeVeryLongIcon />
                         ) : null}
                     </PlaytimeIconContainer>
-                    <AdditionalIconsContainer>
-                        {attributes
-                            .sort(
-                                (attributeOne, attributeTwo) =>
-                                    attributesOrder.indexOf(attributeOne) -
-                                    attributesOrder.indexOf(attributeTwo)
-                            )
-                            .map(attribute => {
-                                if (attribute === Attribute.ADV_TEXTBOX) {
-                                    return <ADVIcon key="adv" />;
-                                }
-                                if (attribute === Attribute.NVL_TEXTBOX) {
-                                    return <NVLIcon key="nvl" />;
-                                }
-                                if (attribute === Attribute.FLOATING_TEXTBOX) {
-                                    return <FloatingTextIcon key="float" />;
-                                }
-                                if (attribute === Attribute.UNLOCKABLE_ROUTES) {
-                                    return <LockIcon key="lock" />;
-                                }
-                                if (attribute === Attribute.BRANCHING_PLOT) {
-                                    return <BranchIcon key="branch" />;
-                                }
-                                if (attribute === Attribute.LADDER_STRUCTURE) {
-                                    return <LadderIcon key="ladder" />;
-                                }
-                                if (attribute === Attribute.TRUE_ROUTE) {
-                                    return <TrueIcon key="true" />;
-                                }
-                                if (attribute === Attribute.LINEAR_PLOT) {
-                                    return <LinearPlotIcon key="linear" />;
-                                }
-                                if (attribute === Attribute.KINETIC_NOVEL) {
-                                    return <KineticNovelIcon key="kinetic" />;
-                                }
-                                if (
-                                    attribute === Attribute.SCENARIO_SELECTION
-                                ) {
-                                    return (
-                                        <ScenarioSelectionIcon key="scenario" />
-                                    );
-                                }
-                                if (
-                                    attribute ===
-                                    Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
-                                ) {
-                                    return <FrenchGirlIcon key="frenchgirl" />;
-                                }
-                                return <></>;
-                            })}
-                        {sequels?.length && sequels.length > 0 ? (
-                            <HasSequelIcon key="has-sequel" />
-                        ) : null}
-                        {originalGame ? (
-                            <IsSequelIcon key="has-sequel" />
-                        ) : null}
-                    </AdditionalIconsContainer>
+                    <AdditionalIconsContainerWrapper>
+                        <AdditionalIconsContainer
+                            $outlineColour={outlineColour}
+                        >
+                            {attributes
+                                .sort(
+                                    (attributeOne, attributeTwo) =>
+                                        attributesOrder.indexOf(attributeOne) -
+                                        attributesOrder.indexOf(attributeTwo)
+                                )
+                                .map(attribute => {
+                                    if (attribute === Attribute.ADV_TEXTBOX) {
+                                        return <ADVIcon key="adv" />;
+                                    }
+                                    if (attribute === Attribute.NVL_TEXTBOX) {
+                                        return <NVLIcon key="nvl" />;
+                                    }
+                                    if (
+                                        attribute === Attribute.FLOATING_TEXTBOX
+                                    ) {
+                                        return <FloatingTextIcon key="float" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        Attribute.UNLOCKABLE_ROUTES
+                                    ) {
+                                        return <LockIcon key="lock" />;
+                                    }
+                                    if (
+                                        attribute === Attribute.BRANCHING_PLOT
+                                    ) {
+                                        return <BranchIcon key="branch" />;
+                                    }
+                                    if (
+                                        attribute === Attribute.LADDER_STRUCTURE
+                                    ) {
+                                        return <LadderIcon key="ladder" />;
+                                    }
+                                    if (attribute === Attribute.TRUE_ROUTE) {
+                                        return <TrueIcon key="true" />;
+                                    }
+                                    if (attribute === Attribute.LINEAR_PLOT) {
+                                        return <LinearPlotIcon key="linear" />;
+                                    }
+                                    if (attribute === Attribute.KINETIC_NOVEL) {
+                                        return (
+                                            <KineticNovelIcon key="kinetic" />
+                                        );
+                                    }
+                                    if (
+                                        attribute ===
+                                        Attribute.SCENARIO_SELECTION
+                                    ) {
+                                        return (
+                                            <ScenarioSelectionIcon key="scenario" />
+                                        );
+                                    }
+                                    if (
+                                        attribute ===
+                                        Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+                                    ) {
+                                        return (
+                                            <FrenchGirlIcon key="frenchgirl" />
+                                        );
+                                    }
+                                    return <></>;
+                                })}
+                            {sequels?.length && sequels.length > 0 ? (
+                                <HasSequelIcon key="has-sequel" />
+                            ) : null}
+                            {originalGame ? (
+                                <IsSequelIcon key="has-sequel" />
+                            ) : null}
+                        </AdditionalIconsContainer>
+                    </AdditionalIconsContainerWrapper>
                 </IconsContainer>
             </ContentBody>
             <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
@@ -227,7 +223,7 @@ const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
 `;
 
-const IconsContainer = styled(Column)<{ $outlineColour: string }>`
+const IconsContainer = styled(Column)`
     margin-left: 10px;
     padding: 5px;
     display: flex;
@@ -236,18 +232,32 @@ const IconsContainer = styled(Column)<{ $outlineColour: string }>`
         align-self: flex-end;
         justify-content: flex-end;
     }
+`;
+
+const PlaytimeIconContainer = styled.div<{ $outlineColour: string }>`
+    height: auto;
     ${({ $outlineColour }) =>
         $outlineColour
             ? css`
-                  background-color: ${$outlineColour}88;
+                  background-color: ${$outlineColour}bb;
                   border-radius: 15px;
+                  padding: 5px;
               `
             : ''}
 `;
 
-const PlaytimeIconContainer = styled.div``;
+const AdditionalIconsContainer = styled(Column)<{ $outlineColour: string }>`
+    ${({ $outlineColour }) =>
+        $outlineColour
+            ? css`
+                  background-color: ${$outlineColour}bb;
+                  border-radius: 15px;
+                  padding: 5px;
+              `
+            : ''}
+`;
 
-const AdditionalIconsContainer = styled(Column)`
+const AdditionalIconsContainerWrapper = styled(Column)`
     height: 100%;
 `;
 
@@ -259,9 +269,7 @@ const DescriptionFont = styled(LabelFont)`
     font-size: 0.8rem;
 `;
 
-const HelpButton = styled(Button)`
-    margin-top: -2px;
-`;
+const HelpButton = styled(Button)``;
 
 const TopRow = styled(Row)`
     padding-bottom: 14px;

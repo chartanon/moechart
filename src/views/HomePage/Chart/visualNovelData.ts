@@ -183,7 +183,8 @@ import nekopara_after from '../../assets/thumbnails/nekopara_after.jpg';
 import kemonomichi_love_plus from '../../assets/thumbnails/kemonomichi_love_plus.jpg';
 import kemonomichi_2 from '../../assets/thumbnails/kemonomichi_2.jpg';
 import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
-import { Attribute, GenreFocus, PlaytimeLength } from './VisualNovelCard';
+import { Attribute, GenreFocus } from './utils';
+import { PlaytimeLength } from './utils';
 
 export interface VisualNovelProps {
     name: string;

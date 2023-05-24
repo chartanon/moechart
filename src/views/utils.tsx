@@ -152,12 +152,36 @@ export const StaggeredEntranceFade: React.FC<{
                 opacity: 1,
                 x: 0,
                 y: 0,
-                transition: { duration: Math.min(0.1 * index, 2) }
+                transition: { duration: Math.min(0.1 * (index + 1), 2) }
             }}
             exit={{
                 opacity: 0,
                 x: 40,
                 y: -40,
+                transition: { duration: 0.4 }
+            }}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+export const StaggeredEntranceFadeSlow: React.FC<{
+    children?: React.ReactNode | undefined;
+    index: number;
+}> = ({ children, index }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: -400 }}
+            animate={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+                transition: { duration: 0.25 * (index + 1) }
+            }}
+            exit={{
+                opacity: 0,
+                y: -400,
                 transition: { duration: 0.4 }
             }}
         >

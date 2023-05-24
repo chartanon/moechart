@@ -5,8 +5,9 @@ import { COLOURS, Column, Row, TitleFont } from '../../utils';
 import { SeriesRelationshipMap } from './MoegeChart';
 import { VisualNovelProps } from './visualNovelData';
 import { SequelsPopup } from './SequelsPopup';
-import { IMAGE_WIDTH, ThumbnailImage } from './utils';
-import { GenreFocus, VisualNovelCard } from './VisualNovelCard';
+import { IMAGE_WIDTH, SEQUELS_OFFSET, ThumbnailImage } from './utils';
+import { GenreFocus } from './utils';
+import { VisualNovelCard } from './VisualNovelCard';
 
 export interface ChartEntryProps extends VisualNovelProps {
     allSequelRelationships?: SeriesRelationshipMap;
@@ -113,6 +114,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
                                     alt=""
                                     $outlineColour={outlineColour}
                                     $index={index}
+                                    $cardStackCount={sequels?.length}
                                 />
                             </Row>
                         )
@@ -122,8 +124,6 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
         </Container>
     );
 };
-
-const SEQUELS_OFFSET = 5;
 
 const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
