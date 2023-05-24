@@ -229,8 +229,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE, //TODO Romance?
         descriptionFirstRowText: 'Group of Friends, Pure Love',
         descriptionSecondRowText: 'Single Heroine',
-        translationReleaseDate: Date.parse('2020-11-06'),
-        isRecommended: true
+        translationReleaseDate: Date.parse('2020-11-06')
     },
     {
         name: 'Aokana EXTRA2',
