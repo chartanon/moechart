@@ -83,7 +83,8 @@ export const MoegeChart: React.FC<IProps> = ({
                     descriptionSecondRowText:
                         visualNovel.descriptionSecondRowText,
                     playtime: visualNovel.playtime,
-                    translationReleaseDate: visualNovel.translationReleaseDate
+                    translationReleaseDate: visualNovel.translationReleaseDate,
+                    isRecommended: visualNovel.isRecommended
                 });
             } else {
                 allSequelRelationships[visualNovel.originalGame] = [
@@ -99,7 +100,8 @@ export const MoegeChart: React.FC<IProps> = ({
                             visualNovel.descriptionSecondRowText,
                         playtime: visualNovel.playtime,
                         translationReleaseDate:
-                            visualNovel.translationReleaseDate
+                            visualNovel.translationReleaseDate,
+                        isRecommended: visualNovel.isRecommended
                     }
                 ];
             }
