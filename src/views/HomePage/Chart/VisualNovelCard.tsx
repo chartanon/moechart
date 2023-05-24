@@ -40,8 +40,9 @@ import moment from 'moment';
 import { StarIcon } from '../../assets/icons/attribute/StarIcon';
 
 export interface VisualNovelCardProps extends VisualNovelProps {
-    moreInfoOnClick?: () => void;
+    sequelInfoOnClick?: () => void;
     shouldDisplayDateInTitle?: boolean;
+    descriptionInfoOnClick?: () => void;
 }
 
 export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
@@ -55,10 +56,12 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     descriptionSecondRowText,
     sequels,
     originalGame,
-    moreInfoOnClick,
+    sequelInfoOnClick,
     shouldDisplayDateInTitle,
     translationReleaseDate,
-    isRecommended
+    isRecommended,
+    descriptionInfoOnClick,
+    isUpcomingRelease
 }) => {
     const attributesOrder = Object.values(FilterAttribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
@@ -85,8 +88,13 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     return (
         <Container>
             <TopRow>
-                {moreInfoOnClick ? (
-                    <HelpButton onClick={moreInfoOnClick}>
+                {sequelInfoOnClick && !descriptionInfoOnClick ? (
+                    <HelpButton onClick={sequelInfoOnClick}>
+                        <HelpIcon />
+                    </HelpButton>
+                ) : null}
+                {descriptionInfoOnClick ? (
+                    <HelpButton onClick={descriptionInfoOnClick}>
                         <HelpIcon />
                     </HelpButton>
                 ) : null}
@@ -109,14 +117,17 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                         alt=""
                         $outlineColour={outlineColour}
                         $cardStackCount={sequels?.length}
-                        $shouldScaleSize={!!moreInfoOnClick}
+                        $shouldScaleSize={!!sequelInfoOnClick}
                     />
                 </Link>
                 <IconsContainer
                     $cardStackCount={sequels?.length}
-                    $shouldScaleMarginLeft={!!moreInfoOnClick}
+                    $shouldScaleMarginLeft={!!sequelInfoOnClick}
                 >
-                    <PlaytimeIconContainer $outlineColour={outlineColour}>
+                    <PlaytimeIconContainer
+                        $outlineColour={outlineColour}
+                        $shouldHaveBackgroundColour={!isUpcomingRelease}
+                    >
                         {playtime === PlaytimeLength.SHORT ? (
                             <PlaytimeShortIcon />
                         ) : null}
@@ -133,6 +144,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                     <AdditionalIconsContainerWrapper>
                         <AdditionalIconsContainer
                             $outlineColour={outlineColour}
+                            $shouldHaveBackgroundColour={!isUpcomingRelease}
                         >
                             {isRecommended ? <StarIcon /> : null}
                             {attributes
@@ -268,10 +280,13 @@ const IconsContainer = styled(Column)<{
               `}
 `;
 
-const PlaytimeIconContainer = styled.div<{ $outlineColour: string }>`
+const PlaytimeIconContainer = styled.div<{
+    $outlineColour: string;
+    $shouldHaveBackgroundColour: boolean;
+}>`
     height: auto;
-    ${({ $outlineColour }) =>
-        $outlineColour
+    ${({ $outlineColour, $shouldHaveBackgroundColour }) =>
+        $outlineColour && $shouldHaveBackgroundColour
             ? css`
                   background-color: ${$outlineColour}bb;
                   border-radius: 15px;
@@ -280,9 +295,12 @@ const PlaytimeIconContainer = styled.div<{ $outlineColour: string }>`
             : ''}
 `;
 
-const AdditionalIconsContainer = styled(Column)<{ $outlineColour: string }>`
-    ${({ $outlineColour }) =>
-        $outlineColour
+const AdditionalIconsContainer = styled(Column)<{
+    $outlineColour: string;
+    $shouldHaveBackgroundColour: boolean;
+}>`
+    ${({ $outlineColour, $shouldHaveBackgroundColour }) =>
+        $outlineColour && $shouldHaveBackgroundColour
             ? css`
                   background-color: ${$outlineColour}bb;
                   border-radius: 15px;

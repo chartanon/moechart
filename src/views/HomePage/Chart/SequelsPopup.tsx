@@ -6,27 +6,24 @@ import {
     StaggeredEntranceFadeSlow
 } from '../../utils';
 import { Popup } from './Popup';
-import { SeriesRelationshipMap } from './MoegeChart';
-import { VisualNovelCard } from './VisualNovelCard';
+import { VisualNovelCard, VisualNovelCardProps } from './VisualNovelCard';
 import { AnimatePresence } from 'framer-motion';
 
 interface IProps {
     isOpen?: boolean;
     onClose?: () => void;
-    originalGame: string;
-    allSequelRelations: SeriesRelationshipMap;
+    sequelRelations: VisualNovelCardProps[];
     shouldDisplayDateInTitle?: boolean;
 }
 
 export const SequelsPopup: React.FC<IProps> = ({
     isOpen,
     onClose,
-    originalGame,
-    allSequelRelations,
+    sequelRelations,
     shouldDisplayDateInTitle
 }) => {
     if (shouldDisplayDateInTitle) {
-        allSequelRelations[originalGame].sort(
+        sequelRelations.sort(
             (visualNovelOne, visualNovelTwo) =>
                 visualNovelTwo.translationReleaseDate! -
                 visualNovelOne.translationReleaseDate!
@@ -38,18 +35,21 @@ export const SequelsPopup: React.FC<IProps> = ({
             <Column $centered>
                 <EntriesContainer $maxHeight $centered>
                     <AnimatePresence>
-                        {allSequelRelations[originalGame].map(
-                            (relationship, index) => {
-                                return (
-                                    <StaggeredEntranceFadeSlow
-                                        key={relationship.vndbLink}
-                                        index={index}
-                                    >
-                                        <VisualNovelCard {...relationship} />
-                                    </StaggeredEntranceFadeSlow>
-                                );
-                            }
-                        )}
+                        {sequelRelations.map((relationship, index) => {
+                            return (
+                                <StaggeredEntranceFadeSlow
+                                    key={relationship.vndbLink}
+                                    index={index}
+                                >
+                                    <VisualNovelCard
+                                        {...relationship}
+                                        shouldDisplayDateInTitle={
+                                            shouldDisplayDateInTitle
+                                        }
+                                    />
+                                </StaggeredEntranceFadeSlow>
+                            );
+                        })}
                     </AnimatePresence>
                 </EntriesContainer>
                 <StyledHeaderFont>

@@ -200,6 +200,7 @@ export interface VisualNovelProps {
     translationReleaseDate?: number;
     isUpcomingRelease?: boolean;
     isRecommended?: boolean;
+    recommendedDescription?: React.ReactNode;
 }
 
 export const visualNovelData: VisualNovelProps[] = [
@@ -217,7 +218,8 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Group of Friends, Sports',
         descriptionSecondRowText: 'Competition',
         translationReleaseDate: Date.parse('2019-09-27'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: <div>talent good</div>
     },
     {
         name: 'Aokana EXTRA1',

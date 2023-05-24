@@ -8,6 +8,7 @@ import { SequelsPopup } from './SequelsPopup';
 import { IMAGE_WIDTH, SEQUELS_OFFSET, ThumbnailImage } from './utils';
 import { GenreFocus } from './utils';
 import { VisualNovelCard } from './VisualNovelCard';
+import { RecommendedPopup } from './RecommendedPopup';
 
 export interface ChartEntryProps extends VisualNovelProps {
     allSequelRelationships?: SeriesRelationshipMap;
@@ -24,7 +25,8 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
         allSequelRelationships,
         isSelectedShowSequelFilter,
         setIsInPopupView,
-        shouldDisplayDateInTitle
+        shouldDisplayDateInTitle,
+        isRecommended
     } = props;
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
@@ -56,13 +58,26 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
     const [shouldShowSequelInfo, setShouldShowSequelInfo] =
         useState<boolean>(false);
 
-    const handleSetShowMoreSequelInfo = () => {
+    const [shouldShowRecommendedInfo, setShouldShowRecommendedInfo] =
+        useState<boolean>(false);
+
+    const handleShowMoreSequelInfo = () => {
         setShouldShowSequelInfo(true);
         setIsInPopupView?.(true);
     };
 
-    const handleCloseShowMoreSequelInfo = () => {
+    const handleCloseMoreSequelInfo = () => {
         setShouldShowSequelInfo(false);
+        setIsInPopupView?.(false);
+    };
+
+    const handleShowRecommendedInfo = () => {
+        setShouldShowRecommendedInfo(true);
+        setIsInPopupView?.(true);
+    };
+
+    const handleCloseRecommendedInfo = () => {
+        setShouldShowRecommendedInfo(false);
         setIsInPopupView?.(false);
     };
 
@@ -71,16 +86,24 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
             {shouldShowSequelInfo ? (
                 <SequelsPopup
                     isOpen={shouldShowSequelInfo}
-                    onClose={handleCloseShowMoreSequelInfo}
-                    originalGame={vndbLink}
-                    allSequelRelations={allSequelRelationships ?? {}}
+                    onClose={handleCloseMoreSequelInfo}
+                    sequelRelations={allSequelRelationships?.[vndbLink] ?? []}
                     shouldDisplayDateInTitle={shouldDisplayDateInTitle}
+                />
+            ) : null}
+            {shouldShowRecommendedInfo ? (
+                <RecommendedPopup
+                    isOpen={shouldShowRecommendedInfo}
+                    onClose={handleCloseRecommendedInfo}
                 />
             ) : null}
             <VisualNovelCard
                 {...props}
-                moreInfoOnClick={
-                    isVNWithSequels ? handleSetShowMoreSequelInfo : undefined
+                sequelInfoOnClick={
+                    isVNWithSequels ? handleShowMoreSequelInfo : undefined
+                }
+                descriptionInfoOnClick={
+                    isRecommended ? handleShowRecommendedInfo : undefined
                 }
             />
             {isVNWithSequels && !isSelectedShowSequelFilter ? (

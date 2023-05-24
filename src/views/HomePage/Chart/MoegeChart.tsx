@@ -261,7 +261,7 @@ export const MoegeChart: React.FC<IProps> = ({
                 {recommendedVisualNovels.length > 0 ? (
                     <VerticalFade>
                         <MainHeader>
-                            remaining translated moege
+                            translated moege
                             <Button
                                 onClick={() =>
                                     upcomingReleasesRef.current?.scrollIntoView(
@@ -324,7 +324,7 @@ export const MoegeChart: React.FC<IProps> = ({
                                 <Row>
                                     <ArrowIcon rotate={180} />
                                     <UpcomingReleasesFont>
-                                        Back to translated releases
+                                        Back to top
                                     </UpcomingReleasesFont>
                                 </Row>
                             </Button>
