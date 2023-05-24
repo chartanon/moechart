@@ -23,6 +23,7 @@ import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
 import { ChartEntry } from './ChartEntry';
 import { GenreFocus, FilterAttribute } from './utils';
 import { PlaytimeLength } from './utils';
+import Background from '../../assets/thumbnails/Background.jpg';
 
 export interface SeriesRelationshipMap {
     [originalGameVNDBLink: string]: VisualNovelProps[];
@@ -351,6 +352,7 @@ export const MoegeChart: React.FC<IProps> = ({
                     </VerticalFade>
                 ) : null}
             </AnimatePresence>
+            <BackgroundImage src={Background} />
         </Container>
     );
 };
@@ -418,4 +420,11 @@ const InfoBar = styled(Row)`
     & > :last-child {
         margin-left: auto;
     }
+`;
+
+const BackgroundImage = styled.img`
+    position: fixed;
+    z-index: -1000;
+    bottom: 0;
+    right: 0;
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { MoegeChart } from './Chart/MoegeChart';
 import { SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
-import Background from '../assets/thumbnails/Background.jpg';
+
 import { MiscellaneousSortingOption } from '../SideNav/LegendData';
 import { SIDE_NAV_WIDTH } from '../SideNav/utils';
 import { GenreFocus, FilterAttribute } from './Chart/utils';
@@ -138,6 +138,4 @@ const Container = styled.div`
     padding-left: calc(${SIDE_NAV_WIDTH}px + 20px);
     padding-bottom: 40px;
     margin-bottom: -10px;
-    min-height: 96vh;
-    background: fixed url(${Background}) bottom right no-repeat;
 `;
