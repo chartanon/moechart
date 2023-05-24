@@ -21,8 +21,12 @@ export const HomePage: React.FC = () => {
     >([]);
     const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
         useState<boolean>(false);
-    const [isSelectedHideSequelFilter, setIsSelectedHideSequelFilter] =
-        useState<boolean>(true);
+    const [isSelectedShowSequelFilter, setIsSelectedShowSequelFilter] =
+        useState<boolean>(false);
+    const [
+        isSelectedShowRecommendedFilter,
+        setIsSelectedShowRecommendedFilter
+    ] = useState<boolean>(true);
 
     const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
@@ -74,7 +78,8 @@ export const HomePage: React.FC = () => {
         setSelectedGenreFocusFilter(null);
         setSelectedFilterAttributes([]);
         setIsSelectedHasSequelFilter(false);
-        setIsSelectedHideSequelFilter(false);
+        setIsSelectedShowSequelFilter(false);
+        setIsSelectedShowRecommendedFilter(false);
     };
 
     return (
@@ -100,8 +105,14 @@ export const HomePage: React.FC = () => {
                 }
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
                 setIsSelectedHasSequelFilter={setIsSelectedHasSequelFilter}
-                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
-                setIsSelectedHideSequelFilter={setIsSelectedHideSequelFilter}
+                isSelectedShowSequelFilter={isSelectedShowSequelFilter}
+                setIsSelectedShowSequelFilter={setIsSelectedShowSequelFilter}
+                isSelectedShowRecommendedFilter={
+                    isSelectedShowRecommendedFilter
+                }
+                setIsSelectedShowRecommendedFilter={
+                    setIsSelectedShowRecommendedFilter
+                }
                 isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
             />
@@ -113,7 +124,10 @@ export const HomePage: React.FC = () => {
                 selectedGenreFocusFilter={selectedGenreFocusFilter}
                 selectedFilterAttributes={selectedFilterAttributes}
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
-                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
+                isSelectedShowSequelFilter={isSelectedShowSequelFilter}
+                isSelectedShowRecommendedFilter={
+                    isSelectedShowRecommendedFilter
+                }
                 setIsInPopupView={setIsInPopupView}
             />
         </Container>

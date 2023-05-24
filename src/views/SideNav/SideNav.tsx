@@ -26,6 +26,7 @@ import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
 import { FilterAttribute, GenreFocus } from '../HomePage/Chart/utils';
 import { PlaytimeLength } from '../HomePage/Chart/utils';
+import { StarIcon } from '../assets/icons/attribute/StarIcon';
 
 interface IProps {
     selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
@@ -40,8 +41,10 @@ interface IProps {
     handleSetSelectedFilterAttributes: (value: FilterAttribute) => void;
     isSelectedHasSequelFilter: boolean;
     setIsSelectedHasSequelFilter: (value: boolean) => void;
-    isSelectedHideSequelFilter: boolean;
-    setIsSelectedHideSequelFilter: (value: boolean) => void;
+    isSelectedShowSequelFilter: boolean;
+    setIsSelectedShowSequelFilter: (value: boolean) => void;
+    isSelectedShowRecommendedFilter: boolean;
+    setIsSelectedShowRecommendedFilter: (value: boolean) => void;
     isInPopupView: boolean;
     clearFilters: () => void;
 }
@@ -57,8 +60,10 @@ export const SideNav: React.FC<IProps> = ({
     handleSetSelectedFilterAttributes,
     isSelectedHasSequelFilter,
     setIsSelectedHasSequelFilter,
-    isSelectedHideSequelFilter,
-    setIsSelectedHideSequelFilter,
+    isSelectedShowSequelFilter,
+    setIsSelectedShowSequelFilter,
+    isSelectedShowRecommendedFilter,
+    setIsSelectedShowRecommendedFilter,
     isInPopupView,
     clearFilters
 }) => {
@@ -113,20 +118,32 @@ export const SideNav: React.FC<IProps> = ({
                         </ResponsiveButton>
                         <ResponsiveButton
                             disabled={isInPopupView}
-                            $isSelected={isSelectedHideSequelFilter}
+                            $isSelected={isSelectedShowSequelFilter}
                             onClick={() => {
-                                setIsSelectedHideSequelFilter(
-                                    !isSelectedHideSequelFilter
+                                setIsSelectedShowSequelFilter(
+                                    !isSelectedShowSequelFilter
                                 );
                             }}
                         >
                             <LegendItemContainer>
                                 <IsSequelIcon size={35} />
-                                <LegendLabel>Hide Sequels</LegendLabel>
+                                <LegendLabel>Split off Sequels</LegendLabel>
                             </LegendItemContainer>
                         </ResponsiveButton>
                     </Row>
-
+                    <ResponsiveButton
+                        $isSelected={isSelectedShowRecommendedFilter}
+                        onClick={() =>
+                            setIsSelectedShowRecommendedFilter(
+                                !isSelectedShowRecommendedFilter
+                            )
+                        }
+                    >
+                        <LegendItemContainer>
+                            <StarIcon />
+                            <LegendLabel>Show Recommended</LegendLabel>
+                        </LegendItemContainer>
+                    </ResponsiveButton>
                     {miscellaneousSortingToolsList.map(sortingOption => {
                         return (
                             <SortByItem

@@ -11,7 +11,7 @@ import { VisualNovelCard } from './VisualNovelCard';
 
 export interface ChartEntryProps extends VisualNovelProps {
     allSequelRelationships?: SeriesRelationshipMap;
-    isSelectedHideSequelFilter?: boolean;
+    isSelectedShowSequelFilter?: boolean;
     setIsInPopupView?: (value: boolean) => void;
     shouldDisplayDateInTitle?: boolean;
 }
@@ -22,7 +22,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
         genreFocus,
         sequels,
         allSequelRelationships,
-        isSelectedHideSequelFilter,
+        isSelectedShowSequelFilter,
         setIsInPopupView,
         shouldDisplayDateInTitle
     } = props;
@@ -83,7 +83,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
                     isVNWithSequels ? handleSetShowMoreSequelInfo : undefined
                 }
             />
-            {isVNWithSequels && isSelectedHideSequelFilter ? (
+            {isVNWithSequels && !isSelectedShowSequelFilter ? (
                 <SequelRow>
                     {allSequelRelationships[vndbLink].map(
                         (relationship, index) => (

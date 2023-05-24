@@ -30,11 +30,12 @@ export const FAQ: React.FC = () => {
                 question="ABOUT THE MOECHART"
                 answer={
                     <>
-                        This is <strong>not</strong> a recommendation chart, and
-                        no game will be rated here. The main purpose of the
-                        chart is to provide a complete list of moege (currently
-                        translated and future releases) sorted by 3
-                        content-related focuses. Additionally, some{' '}
+                        This is <strong>not</strong> a recommendation chart
+                        (though there are a few listed as recommended for
+                        beginners), and no game will be rated here. The main
+                        purpose of the chart is to provide a complete list of
+                        moege (currently translated and future releases) sorted
+                        by 3 content-related focuses. Additionally, some{' '}
                         <MoenukigeFont $outlineColour={COLOURS.GENRE.NUKIGE}>
                             Moenukige
                         </MoenukigeFont>{' '}

@@ -466,7 +466,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
-        translationReleaseDate: Date.parse('2019-01-31')
+        translationReleaseDate: Date.parse('2019-01-31'),
+        isRecommended: true
     },
     {
         name: '9-nine-:Episode 2',
@@ -534,7 +535,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Blondes, School Life Comedy',
         descriptionSecondRowText: 'Reunion',
-        translationReleaseDate: Date.parse('2021-06-11')
+        translationReleaseDate: Date.parse('2021-06-11'),
+        isRecommended: true
     },
     {
         name: 'Kinkoi GT',
@@ -597,7 +599,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Urban Fantasy, Mystery',
         descriptionSecondRowText: 'Library Club',
-        translationReleaseDate: Date.parse('2019-03-23')
+        translationReleaseDate: Date.parse('2019-03-23'),
+        isRecommended: true
     },
     {
         name: 'Tamayura Mirai',
@@ -747,7 +750,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Occult Club, Witches',
         descriptionSecondRowText: 'Slice of Life Comedy',
-        translationReleaseDate: Date.parse('2018-10-26')
+        translationReleaseDate: Date.parse('2018-10-26'),
+        isRecommended: true
     },
     {
         name: 'Princess Evangile',
@@ -762,7 +766,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'School Dormitory, Drama',
         descriptionSecondRowText: 'All-girls School',
-        translationReleaseDate: Date.parse('2015-03-27')
+        translationReleaseDate: Date.parse('2015-03-27'),
+        isRecommended: true
     },
     {
         name: 'Princess Evangile WH',
@@ -806,7 +811,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Student Club, Slice of Life',
         descriptionSecondRowText: 'High School',
-        translationReleaseDate: Date.parse('2017-05-06')
+        translationReleaseDate: Date.parse('2017-05-06'),
+        isRecommended: true
     },
     {
         name: 'Cafe Stella',
@@ -851,7 +857,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Secret Identity, Slice of Life',
         descriptionSecondRowText: 'Supernatural',
-        translationReleaseDate: Date.parse('2020-12-18')
+        translationReleaseDate: Date.parse('2020-12-18'),
+        isRecommended: true
     },
     {
         name: 'Hinatabokko',
@@ -1003,7 +1010,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Slice of Life, Festival',
         descriptionSecondRowText: 'Passage of Time',
-        translationReleaseDate: Date.parse('2019-04-03')
+        translationReleaseDate: Date.parse('2019-04-03'),
+        isRecommended: true
     },
     {
         name: 'Yotsunoha',
@@ -1409,7 +1417,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Slice of Life, Student Club',
         descriptionSecondRowText: 'School Life Comedy',
-        translationReleaseDate: Date.parse('2017-07-27')
+        translationReleaseDate: Date.parse('2017-07-27'),
+        isRecommended: true
     },
     {
         name: 'Tsujidou',
@@ -1438,7 +1447,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Dating Sim, Slice of Life',
         descriptionSecondRowText: 'School Life Comedy',
-        translationReleaseDate: Date.parse('2018-03-19')
+        translationReleaseDate: Date.parse('2018-03-19'),
+        isRecommended: true
     },
     {
         name: 'Fureraba Mini FD',
@@ -1468,7 +1478,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Dating Sim, Adult Life',
         descriptionSecondRowText: 'Slice of Life Comedy',
-        translationReleaseDate: Date.parse('2020-04-03')
+        translationReleaseDate: Date.parse('2020-04-03'),
+        isRecommended: true
     },
     {
         name: 'Making*Lovers After',
@@ -1915,7 +1926,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
-        translationReleaseDate: Date.parse('2015-03-10')
+        translationReleaseDate: Date.parse('2015-03-10'),
+        isRecommended: true
     },
     {
         name: 'Majikoi S',
@@ -2161,7 +2173,8 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Comedy, 4th Wall Breaking',
         descriptionSecondRowText: 'Love Triangle',
-        translationReleaseDate: Date.parse('2022-09-30')
+        translationReleaseDate: Date.parse('2022-09-30'),
+        isRecommended: true
     },
     {
         name: 'Lovekami',
