@@ -28,7 +28,7 @@ export const Row = styled.div<{
     ${({ $maxHeight }) =>
         $maxHeight
             ? css`
-                  height: 100vh;
+                  height: 100%;
               `
             : ''};
     ${({ $gap }) =>
@@ -64,7 +64,7 @@ export const COLOURS = {
 };
 
 const BaseFont = styled.div<{ $textAlign?: string }>`
-    font-family: sans-serif;
+    font-family: monospace;
     ${({ $textAlign }) =>
         $textAlign
             ? css`
@@ -74,6 +74,7 @@ const BaseFont = styled.div<{ $textAlign?: string }>`
 `;
 
 export const TitleFont = styled(BaseFont)<{ $fontColour?: string }>`
+    font-family: sans-serif;
     font-size: 1.3rem;
     width: 250px;
     white-space: nowrap;
@@ -152,12 +153,36 @@ export const StaggeredEntranceFade: React.FC<{
                 opacity: 1,
                 x: 0,
                 y: 0,
-                transition: { duration: Math.min(0.1 * index, 2) }
+                transition: { duration: Math.min(0.1 * (index + 1), 2) }
             }}
             exit={{
                 opacity: 0,
                 x: 40,
                 y: -40,
+                transition: { duration: 0.4 }
+            }}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+export const StaggeredEntranceFadeSlow: React.FC<{
+    children?: React.ReactNode | undefined;
+    index: number;
+}> = ({ children, index }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: -400 }}
+            animate={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+                transition: { duration: 0.25 * (index + 1) }
+            }}
+            exit={{
+                opacity: 0,
+                y: -400,
                 transition: { duration: 0.4 }
             }}
         >

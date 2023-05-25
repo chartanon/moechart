@@ -2,41 +2,52 @@ import styled from 'styled-components';
 import { MoegeChart } from './Chart/MoegeChart';
 import { SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
-import Background from '../assets/thumbnails/Background.jpg';
-import { SortingOption } from '../SideNav/LegendData';
+
+import { MiscellaneousSortingOption } from '../SideNav/LegendData';
 import { SIDE_NAV_WIDTH } from '../SideNav/utils';
-import { PlaytimeLength, GenreFocus, Attribute } from './Chart/VisualNovelCard';
+import { GenreFocus, FilterAttribute } from './Chart/utils';
+import { PlaytimeLength } from './Chart/utils';
 export const HomePage: React.FC = () => {
-    const [selectedSortingOptions, setSelectedSortingOptions] = useState<
-        SortingOption[]
-    >([]);
+    const [
+        selectedMiscellaneousSortingOptions,
+        setSelectedMiscellaneousSortingOptions
+    ] = useState<MiscellaneousSortingOption[]>([]);
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =
         useState<PlaytimeLength | null>(null);
     const [selectedGenreFocusFilter, setSelectedGenreFocusFilter] =
         useState<GenreFocus | null>(null);
-    const [selectedAttributesFilters, setSelectedAttributesFilters] = useState<
-        Attribute[]
+    const [selectedFilterAttributes, setSelectedFilterAttributes] = useState<
+        FilterAttribute[]
     >([]);
     const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
         useState<boolean>(false);
-    const [isSelectedHideSequelFilter, setIsSelectedHideSequelFilter] =
-        useState<boolean>(true);
+    const [isSelectedShowSequelFilter, setIsSelectedShowSequelFilter] =
+        useState<boolean>(false);
+    const [
+        isSelectedShowRecommendedFilter,
+        setIsSelectedShowRecommendedFilter
+    ] = useState<boolean>(true);
 
     const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
-    const handleSetSelectedSortingOptions = (value: SortingOption) => {
+    const handleSetSelectedMiscellaneousSortingOptions = (
+        value: MiscellaneousSortingOption
+    ) => {
         if (
-            selectedSortingOptions.some(
+            selectedMiscellaneousSortingOptions.some(
                 sortingOption => sortingOption === value
             )
         ) {
-            setSelectedSortingOptions(
-                selectedSortingOptions.filter(
+            setSelectedMiscellaneousSortingOptions(
+                selectedMiscellaneousSortingOptions.filter(
                     sortingOption => sortingOption !== value
                 )
             );
         } else {
-            setSelectedSortingOptions([...selectedSortingOptions, value]);
+            setSelectedMiscellaneousSortingOptions([
+                ...selectedMiscellaneousSortingOptions,
+                value
+            ]);
         }
     };
 
@@ -45,40 +56,40 @@ export const HomePage: React.FC = () => {
             ? setSelectedPlaytimeFilter(null)
             : setSelectedPlaytimeFilter(value);
     };
-
     const handleSetSelectedGenreFocusFilter = (value: GenreFocus) => {
         selectedGenreFocusFilter === value
             ? setSelectedGenreFocusFilter(null)
             : setSelectedGenreFocusFilter(value);
     };
-
-    const handleSetSelectedAttributesFilters = (value: Attribute) => {
-        if (selectedAttributesFilters.some(attribute => attribute === value)) {
-            setSelectedAttributesFilters(
-                selectedAttributesFilters.filter(
+    const handleSetSelectedFilterAttributes = (value: FilterAttribute) => {
+        if (selectedFilterAttributes.some(attribute => attribute === value)) {
+            setSelectedFilterAttributes(
+                selectedFilterAttributes.filter(
                     attribute => attribute !== value
                 )
             );
         } else {
-            setSelectedAttributesFilters([...selectedAttributesFilters, value]);
+            setSelectedFilterAttributes([...selectedFilterAttributes, value]);
         }
     };
-
     const clearFilters = () => {
-        setSelectedSortingOptions([]);
+        setSelectedMiscellaneousSortingOptions([]);
         setSelectedPlaytimeFilter(null);
         setSelectedGenreFocusFilter(null);
-        setSelectedAttributesFilters([]);
+        setSelectedFilterAttributes([]);
         setIsSelectedHasSequelFilter(false);
-        setIsSelectedHideSequelFilter(false);
+        setIsSelectedShowSequelFilter(false);
+        setIsSelectedShowRecommendedFilter(false);
     };
 
     return (
         <Container>
             <SideNav
-                selectedSortingOptions={selectedSortingOptions}
-                handleSetSelectedSortingOptions={
-                    handleSetSelectedSortingOptions
+                selectedMiscellaneousSortingOptions={
+                    selectedMiscellaneousSortingOptions
+                }
+                handleSetSelectedMiscellaneousSortingOptions={
+                    handleSetSelectedMiscellaneousSortingOptions
                 }
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 handleSetSelectedPlaytimeFilter={
@@ -88,24 +99,35 @@ export const HomePage: React.FC = () => {
                 handleSetSelectedGenreFocusFilter={
                     handleSetSelectedGenreFocusFilter
                 }
-                selectedAttributesFilters={selectedAttributesFilters}
-                handleSetSelectedAttributesFilters={
-                    handleSetSelectedAttributesFilters
+                selectedFilterAttributes={selectedFilterAttributes}
+                handleSetSelectedFilterAttributes={
+                    handleSetSelectedFilterAttributes
                 }
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
                 setIsSelectedHasSequelFilter={setIsSelectedHasSequelFilter}
-                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
-                setIsSelectedHideSequelFilter={setIsSelectedHideSequelFilter}
+                isSelectedShowSequelFilter={isSelectedShowSequelFilter}
+                setIsSelectedShowSequelFilter={setIsSelectedShowSequelFilter}
+                isSelectedShowRecommendedFilter={
+                    isSelectedShowRecommendedFilter
+                }
+                setIsSelectedShowRecommendedFilter={
+                    setIsSelectedShowRecommendedFilter
+                }
                 isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
             />
             <MoegeChart
-                selectedSortingOptions={selectedSortingOptions}
+                selectedMiscellaneousSortingOptions={
+                    selectedMiscellaneousSortingOptions
+                }
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 selectedGenreFocusFilter={selectedGenreFocusFilter}
-                selectedAttributesFilters={selectedAttributesFilters}
+                selectedFilterAttributes={selectedFilterAttributes}
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
-                isSelectedHideSequelFilter={isSelectedHideSequelFilter}
+                isSelectedShowSequelFilter={isSelectedShowSequelFilter}
+                isSelectedShowRecommendedFilter={
+                    isSelectedShowRecommendedFilter
+                }
                 setIsInPopupView={setIsInPopupView}
             />
         </Container>
@@ -116,6 +138,4 @@ const Container = styled.div`
     padding-left: calc(${SIDE_NAV_WIDTH}px + 20px);
     padding-bottom: 40px;
     margin-bottom: -10px;
-    min-height: 96vh;
-    background: fixed url(${Background}) bottom right no-repeat;
 `;

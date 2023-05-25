@@ -11,7 +11,7 @@ import styled, { css } from 'styled-components';
 import { HelpIcon } from '../assets/icons/misc/HelpIcon';
 import { Row } from '../utils';
 import { AnimatePresence } from 'framer-motion';
-import { GenreFocus } from '../HomePage/Chart/VisualNovelCard';
+import { GenreFocus } from '../HomePage/Chart/utils';
 
 interface IProps {
     selectedGenreFocusFilter: GenreFocus | null;

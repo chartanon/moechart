@@ -16,14 +16,15 @@ import { ReactElement } from 'react';
 import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
 import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
 import { ScenarioSelectionIcon } from '../assets/icons/attribute/ScenarioSelectionIcon';
-import { Attribute, PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
+import { FilterAttribute } from '../HomePage/Chart/utils';
+import { PlaytimeLength } from '../HomePage/Chart/utils';
 
 interface BaseProps {
     IconSVG: () => ReactElement;
     label: string;
 }
 export interface AttributeProps extends BaseProps {
-    type: Attribute;
+    type: FilterAttribute;
 }
 
 export interface PlaytimeProps extends BaseProps {
@@ -32,10 +33,10 @@ export interface PlaytimeProps extends BaseProps {
 }
 
 export interface SortingProps extends BaseProps {
-    option: SortingOption;
+    option: MiscellaneousSortingOption;
 }
 
-export enum SortingOption {
+export enum MiscellaneousSortingOption {
     CHRONOLOGICAL = 'CHRONOLOGICAL',
     RANDOM = 'RANDOM'
 }
@@ -67,73 +68,73 @@ export const playtimesList: PlaytimeProps[] = [
     }
 ];
 
-export const sortingList: SortingProps[] = [
+export const miscellaneousSortingToolsList: SortingProps[] = [
     {
         IconSVG: ClockIcon,
         label: 'Newest Releases',
-        option: SortingOption.CHRONOLOGICAL
+        option: MiscellaneousSortingOption.CHRONOLOGICAL
     },
     {
         IconSVG: DiceIcon,
         label: 'Random 10',
-        option: SortingOption.RANDOM
+        option: MiscellaneousSortingOption.RANDOM
     }
 ];
 
-export const attributesList: AttributeProps[] = [
+export const filterAttributesList: AttributeProps[] = [
     {
         IconSVG: ADVIcon,
         label: 'Part-screen Textbox',
-        type: Attribute.ADV_TEXTBOX
+        type: FilterAttribute.ADV_TEXTBOX
     },
     {
         IconSVG: NVLIcon,
         label: 'Full-screen Text-box',
-        type: Attribute.NVL_TEXTBOX
+        type: FilterAttribute.NVL_TEXTBOX
     },
     {
         IconSVG: FloatingTextIcon,
         label: 'Floating Textbox',
-        type: Attribute.FLOATING_TEXTBOX
+        type: FilterAttribute.FLOATING_TEXTBOX
     },
     {
         IconSVG: LockIcon,
         label: 'Unlockable Routes',
-        type: Attribute.UNLOCKABLE_ROUTES
+        type: FilterAttribute.UNLOCKABLE_ROUTES
     },
     {
         IconSVG: BranchIcon,
         label: 'Branching Plot',
-        type: Attribute.BRANCHING_PLOT
+        type: FilterAttribute.BRANCHING_PLOT
     },
     {
         IconSVG: LadderIcon,
         label: 'Ladder Structure',
-        type: Attribute.LADDER_STRUCTURE
+        type: FilterAttribute.LADDER_STRUCTURE
     },
     {
         IconSVG: TrueIcon,
         label: 'One True Route',
-        type: Attribute.TRUE_ROUTE
+        type: FilterAttribute.TRUE_ROUTE
     },
     {
         IconSVG: LinearPlotIcon,
         label: 'Linear Plot',
-        type: Attribute.LINEAR_PLOT
+        type: FilterAttribute.LINEAR_PLOT
     },
     {
         IconSVG: KineticNovelIcon,
         label: 'Kinetic Novel',
-        type: Attribute.KINETIC_NOVEL
+        type: FilterAttribute.KINETIC_NOVEL
     },
     {
         IconSVG: ScenarioSelectionIcon,
         label: 'Scenario Selection',
-        type: Attribute.SCENARIO_SELECTION
+        type: FilterAttribute.SCENARIO_SELECTION
     },
     {
         IconSVG: FrenchGirlIcon,
         label: 'Suitable for 12-year-old French Girls',
-        type: Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+        type: FilterAttribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
     }
 ];

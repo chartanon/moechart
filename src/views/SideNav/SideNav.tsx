@@ -14,52 +14,56 @@ import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
 
 import {
-    SortingOption,
-    attributesList,
+    MiscellaneousSortingOption,
+    filterAttributesList,
     playtimesList,
-    sortingList
+    miscellaneousSortingToolsList
 } from './LegendData';
 import { AttributeItem } from './AttributeItem';
 import { SortByItem } from './SortByItem';
 import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
 import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
-import {
-    Attribute,
-    GenreFocus,
-    PlaytimeLength
-} from '../HomePage/Chart/VisualNovelCard';
+import { FilterAttribute, GenreFocus } from '../HomePage/Chart/utils';
+import { PlaytimeLength } from '../HomePage/Chart/utils';
+import { StarIcon } from '../assets/icons/attribute/StarIcon';
 
 interface IProps {
-    selectedSortingOptions: SortingOption[];
-    handleSetSelectedSortingOptions: (value: SortingOption) => void;
+    selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
+    handleSetSelectedMiscellaneousSortingOptions: (
+        value: MiscellaneousSortingOption
+    ) => void;
     selectedPlaytimeFilter: PlaytimeLength | null;
     handleSetSelectedPlaytimeFilter: (value: PlaytimeLength) => void;
     selectedGenreFocusFilter: GenreFocus | null;
     handleSetSelectedGenreFocusFilter: (value: GenreFocus) => void;
-    selectedAttributesFilters: Attribute[];
-    handleSetSelectedAttributesFilters: (value: Attribute) => void;
+    selectedFilterAttributes: FilterAttribute[];
+    handleSetSelectedFilterAttributes: (value: FilterAttribute) => void;
     isSelectedHasSequelFilter: boolean;
     setIsSelectedHasSequelFilter: (value: boolean) => void;
-    isSelectedHideSequelFilter: boolean;
-    setIsSelectedHideSequelFilter: (value: boolean) => void;
+    isSelectedShowSequelFilter: boolean;
+    setIsSelectedShowSequelFilter: (value: boolean) => void;
+    isSelectedShowRecommendedFilter: boolean;
+    setIsSelectedShowRecommendedFilter: (value: boolean) => void;
     isInPopupView: boolean;
     clearFilters: () => void;
 }
 
 export const SideNav: React.FC<IProps> = ({
-    selectedSortingOptions,
-    handleSetSelectedSortingOptions,
+    selectedMiscellaneousSortingOptions,
+    handleSetSelectedMiscellaneousSortingOptions,
     selectedPlaytimeFilter,
     handleSetSelectedPlaytimeFilter,
     selectedGenreFocusFilter,
     handleSetSelectedGenreFocusFilter,
-    selectedAttributesFilters,
-    handleSetSelectedAttributesFilters,
+    selectedFilterAttributes,
+    handleSetSelectedFilterAttributes,
     isSelectedHasSequelFilter,
     setIsSelectedHasSequelFilter,
-    isSelectedHideSequelFilter,
-    setIsSelectedHideSequelFilter,
+    isSelectedShowSequelFilter,
+    setIsSelectedShowSequelFilter,
+    isSelectedShowRecommendedFilter,
+    setIsSelectedShowRecommendedFilter,
     isInPopupView,
     clearFilters
 }) => {
@@ -84,15 +88,15 @@ export const SideNav: React.FC<IProps> = ({
                             />
                         );
                     })}
-                    {attributesList.map(attribute => (
+                    {filterAttributesList.map(attribute => (
                         <AttributeItem
                             key={attribute.type}
-                            isSelected={selectedAttributesFilters.some(
+                            isSelected={selectedFilterAttributes.some(
                                 attributeFilter =>
                                     attributeFilter === attribute.type
                             )}
                             {...attribute}
-                            onClick={handleSetSelectedAttributesFilters}
+                            onClick={handleSetSelectedFilterAttributes}
                         />
                     ))}
                 </Section>
@@ -114,29 +118,43 @@ export const SideNav: React.FC<IProps> = ({
                         </ResponsiveButton>
                         <ResponsiveButton
                             disabled={isInPopupView}
-                            $isSelected={isSelectedHideSequelFilter}
+                            $isSelected={isSelectedShowSequelFilter}
                             onClick={() => {
-                                setIsSelectedHideSequelFilter(
-                                    !isSelectedHideSequelFilter
+                                setIsSelectedShowSequelFilter(
+                                    !isSelectedShowSequelFilter
                                 );
                             }}
                         >
                             <LegendItemContainer>
                                 <IsSequelIcon size={35} />
-                                <LegendLabel>Hide Sequels</LegendLabel>
+                                <LegendLabel>Split off Sequels</LegendLabel>
                             </LegendItemContainer>
                         </ResponsiveButton>
                     </Row>
-
-                    {sortingList.map(sortingOption => {
+                    <ResponsiveButton
+                        $isSelected={isSelectedShowRecommendedFilter}
+                        onClick={() =>
+                            setIsSelectedShowRecommendedFilter(
+                                !isSelectedShowRecommendedFilter
+                            )
+                        }
+                    >
+                        <LegendItemContainer>
+                            <StarIcon />
+                            <LegendLabel>Show Recommended</LegendLabel>
+                        </LegendItemContainer>
+                    </ResponsiveButton>
+                    {miscellaneousSortingToolsList.map(sortingOption => {
                         return (
                             <SortByItem
                                 key={sortingOption.option}
-                                isSelected={selectedSortingOptions.some(
+                                isSelected={selectedMiscellaneousSortingOptions.some(
                                     option => option === sortingOption.option
                                 )}
                                 {...sortingOption}
-                                onClick={handleSetSelectedSortingOptions}
+                                onClick={
+                                    handleSetSelectedMiscellaneousSortingOptions
+                                }
                             />
                         );
                     })}

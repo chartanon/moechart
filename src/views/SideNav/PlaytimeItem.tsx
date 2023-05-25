@@ -1,7 +1,7 @@
 import React from 'react';
 import { PlaytimeProps } from './LegendData';
 import { LegendItemContainer, LegendLabel } from './utils';
-import { PlaytimeLength } from '../HomePage/Chart/VisualNovelCard';
+import { PlaytimeLength } from '../HomePage/Chart/utils';
 import { ResponsiveButton } from '../utils';
 
 interface IProps extends PlaytimeProps {

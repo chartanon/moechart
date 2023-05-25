@@ -8,43 +8,49 @@ import {
     LabelFont,
     ResponsiveButton,
     Row,
-    StaggeredEntranceFade
+    StaggeredEntranceFade,
+    VerticalFade
 } from '../../utils';
 import { VisualNovelProps, visualNovelData } from './visualNovelData';
 
 import { AnimatePresence } from 'framer-motion';
-import { SortingOption } from '../../SideNav/LegendData';
+import { MiscellaneousSortingOption } from '../../SideNav/LegendData';
 import { MusicNoteIcon } from '../../assets/icons/misc/MusicNoteIcon';
 import { ArrowIcon } from '../../assets/icons/misc/DownArrowIcon';
 import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
 import { ChartEntry } from './ChartEntry';
-import { PlaytimeLength, GenreFocus, Attribute } from './VisualNovelCard';
+import { GenreFocus, FilterAttribute } from './utils';
+import { PlaytimeLength } from './utils';
+import Background from '../../assets/thumbnails/Background.jpg';
 
 export interface SeriesRelationshipMap {
     [originalGameVNDBLink: string]: VisualNovelProps[];
 }
 interface IProps {
-    selectedSortingOptions: SortingOption[];
+    selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
     selectedPlaytimeFilter: PlaytimeLength | null;
     selectedGenreFocusFilter: GenreFocus | null;
-    selectedAttributesFilters: Attribute[];
+    selectedFilterAttributes: FilterAttribute[];
     isSelectedHasSequelFilter: boolean;
-    isSelectedHideSequelFilter: boolean;
+    isSelectedShowSequelFilter: boolean;
+    isSelectedShowRecommendedFilter: boolean;
     setIsInPopupView: (value: boolean) => void;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
-    selectedSortingOptions,
+    selectedMiscellaneousSortingOptions,
     selectedPlaytimeFilter,
     selectedGenreFocusFilter,
-    selectedAttributesFilters,
+    selectedFilterAttributes,
     isSelectedHasSequelFilter,
-    isSelectedHideSequelFilter,
+    isSelectedShowSequelFilter,
+    isSelectedShowRecommendedFilter,
     setIsInPopupView
 }) => {
     let allSequelRelationships: SeriesRelationshipMap = {};
+    let recommendedVisualNovels: VisualNovelProps[] = [];
 
     const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
         if (
@@ -58,8 +64,8 @@ export const MoegeChart: React.FC<IProps> = ({
         ) {
             return false;
         } else if (
-            selectedAttributesFilters.length !== 0 &&
-            selectedAttributesFilters.some(
+            selectedFilterAttributes.length !== 0 &&
+            selectedFilterAttributes.some(
                 attribute => !visualNovel.attributes.includes(attribute)
             )
         ) {
@@ -69,36 +75,21 @@ export const MoegeChart: React.FC<IProps> = ({
             (!visualNovel.sequels || visualNovel.sequels.length === 0)
         ) {
             return false;
-        } else if (isSelectedHideSequelFilter && visualNovel.originalGame) {
+        } else if (
+            isSelectedShowRecommendedFilter &&
+            visualNovel.isRecommended
+        ) {
+            recommendedVisualNovels.push(visualNovel);
+            return false;
+        } else if (!isSelectedShowSequelFilter && visualNovel.originalGame) {
             if (allSequelRelationships[visualNovel.originalGame]) {
                 allSequelRelationships[visualNovel.originalGame].push({
-                    vndbLink: visualNovel.vndbLink,
-                    thumbnailSource: visualNovel.thumbnailSource,
-                    name: visualNovel.name,
-                    attributes: visualNovel.attributes,
-                    genreFocus: visualNovel.genreFocus,
-                    descriptionFirstRowText:
-                        visualNovel.descriptionFirstRowText,
-                    descriptionSecondRowText:
-                        visualNovel.descriptionSecondRowText,
-                    playtime: visualNovel.playtime,
-                    translationReleaseDate: visualNovel.translationReleaseDate
+                    ...visualNovel
                 });
             } else {
                 allSequelRelationships[visualNovel.originalGame] = [
                     {
-                        vndbLink: visualNovel.vndbLink,
-                        thumbnailSource: visualNovel.thumbnailSource,
-                        name: visualNovel.name,
-                        attributes: visualNovel.attributes,
-                        genreFocus: visualNovel.genreFocus,
-                        descriptionFirstRowText:
-                            visualNovel.descriptionFirstRowText,
-                        descriptionSecondRowText:
-                            visualNovel.descriptionSecondRowText,
-                        playtime: visualNovel.playtime,
-                        translationReleaseDate:
-                            visualNovel.translationReleaseDate
+                        ...visualNovel
                     }
                 ];
             }
@@ -118,23 +109,36 @@ export const MoegeChart: React.FC<IProps> = ({
 
     let isSortingByChronological = false;
 
-    if (selectedSortingOptions.length !== 0) {
-        selectedSortingOptions.forEach(option => {
+    if (selectedMiscellaneousSortingOptions.length !== 0) {
+        selectedMiscellaneousSortingOptions.forEach(option => {
             switch (option) {
-                case SortingOption.CHRONOLOGICAL:
+                case MiscellaneousSortingOption.CHRONOLOGICAL:
                     filteredReleasedVisualNovels.sort(
+                        (visualNovelOne, visualNovelTwo) =>
+                            visualNovelTwo.translationReleaseDate! -
+                            visualNovelOne.translationReleaseDate!
+                    );
+                    recommendedVisualNovels.sort(
                         (visualNovelOne, visualNovelTwo) =>
                             visualNovelTwo.translationReleaseDate! -
                             visualNovelOne.translationReleaseDate!
                     );
                     isSortingByChronological = true;
                     break;
-                case SortingOption.RANDOM: {
+                case MiscellaneousSortingOption.RANDOM: {
                     while (filteredReleasedVisualNovels.length > 10) {
                         filteredReleasedVisualNovels.splice(
                             Math.floor(
                                 Math.random() *
                                     filteredReleasedVisualNovels.length
+                            ),
+                            1
+                        );
+                    }
+                    while (recommendedVisualNovels.length > 10) {
+                        recommendedVisualNovels.splice(
+                            Math.floor(
+                                Math.random() * recommendedVisualNovels.length
                             ),
                             1
                         );
@@ -150,12 +154,11 @@ export const MoegeChart: React.FC<IProps> = ({
     let unreleasedVisualNovels: VisualNovelProps[] = [];
 
     if (
-        selectedSortingOptions.length === 0 &&
+        selectedMiscellaneousSortingOptions.length === 0 &&
         selectedPlaytimeFilter === null &&
         selectedGenreFocusFilter === null &&
-        selectedAttributesFilters.length === 0 &&
-        isSelectedHasSequelFilter === false &&
-        isSelectedHideSequelFilter === false
+        selectedFilterAttributes.length === 0 &&
+        isSelectedHasSequelFilter === false
     ) {
         unreleasedVisualNovels = visualNovelData.filter(
             visualNovel => visualNovel.isUpcomingRelease
@@ -192,37 +195,87 @@ export const MoegeChart: React.FC<IProps> = ({
 
     return (
         <Container>
-            <SectionHeader>
+            <MoechartFont>
                 <Row>
                     <VNFont ref={moechartTitleRef}>/vn/</VNFont> MOECHART
                 </Row>
-                {unreleasedVisualNovels.length > 0 ? (
-                    <Button
-                        onClick={() =>
-                            upcomingReleasesRef.current?.scrollIntoView({
-                                behavior: 'smooth'
-                            })
-                        }
-                    >
-                        <Row>
-                            <ArrowIcon />
-                            <UpcomingReleasesFont>
-                                Go to upcoming Releases
-                            </UpcomingReleasesFont>
-                        </Row>
-                    </Button>
-                ) : null}
-            </SectionHeader>
-            <Row>
+            </MoechartFont>
+            <InfoBar>
                 <MusicButton
                     onClick={handlePlaySong}
                     $isSelected={isPlayingSong}
                 >
                     <MusicNoteIcon />
                 </MusicButton>
-            </Row>
+                <UpdatedInfoFont>(Last Updated: 2023-05-21)</UpdatedInfoFont>
+            </InfoBar>
 
-            <UpdatedInfoFont>(Last Updated: 2023-05-21)</UpdatedInfoFont>
+            <AnimatePresence>
+                {recommendedVisualNovels.length > 0 ? (
+                    <VerticalFade>
+                        <OtherHeader ref={upcomingReleasesRef}>
+                            recommended
+                        </OtherHeader>
+                        <EntriesContainer>
+                            <AnimatePresence>
+                                {recommendedVisualNovels.map(
+                                    (visualNovel, index) => {
+                                        return (
+                                            <StaggeredEntranceFade
+                                                key={
+                                                    visualNovel.thumbnailSource
+                                                }
+                                                index={index}
+                                            >
+                                                <Entry
+                                                    {...visualNovel}
+                                                    allSequelRelationships={
+                                                        allSequelRelationships
+                                                    }
+                                                    isSelectedShowSequelFilter={
+                                                        isSelectedShowSequelFilter
+                                                    }
+                                                    setIsInPopupView={
+                                                        setIsInPopupView
+                                                    }
+                                                    shouldDisplayDateInTitle={
+                                                        isSortingByChronological
+                                                    }
+                                                />
+                                            </StaggeredEntranceFade>
+                                        );
+                                    }
+                                )}
+                            </AnimatePresence>
+                        </EntriesContainer>
+                    </VerticalFade>
+                ) : null}
+            </AnimatePresence>
+            <AnimatePresence>
+                {recommendedVisualNovels.length > 0 ? (
+                    <VerticalFade>
+                        <MainHeader>
+                            translated moege
+                            <Button
+                                onClick={() =>
+                                    upcomingReleasesRef.current?.scrollIntoView(
+                                        {
+                                            behavior: 'smooth'
+                                        }
+                                    )
+                                }
+                            >
+                                <Row>
+                                    <ArrowIcon />
+                                    <UpcomingReleasesFont>
+                                        Go to upcoming Releases
+                                    </UpcomingReleasesFont>
+                                </Row>
+                            </Button>
+                        </MainHeader>
+                    </VerticalFade>
+                ) : null}
+            </AnimatePresence>
             <EntriesContainer>
                 <AnimatePresence>
                     {filteredReleasedVisualNovels.map((visualNovel, index) => {
@@ -236,8 +289,8 @@ export const MoegeChart: React.FC<IProps> = ({
                                     allSequelRelationships={
                                         allSequelRelationships
                                     }
-                                    isSelectedHideSequelFilter={
-                                        isSelectedHideSequelFilter
+                                    isSelectedShowSequelFilter={
+                                        isSelectedShowSequelFilter
                                     }
                                     setIsInPopupView={setIsInPopupView}
                                     shouldDisplayDateInTitle={
@@ -249,45 +302,50 @@ export const MoegeChart: React.FC<IProps> = ({
                     })}
                 </AnimatePresence>
             </EntriesContainer>
-            {unreleasedVisualNovels.length > 0 ? (
-                <>
-                    <SectionHeader ref={upcomingReleasesRef}>
-                        UPCOMING
-                        <Button
-                            onClick={() =>
-                                moechartTitleRef.current?.scrollIntoView({
-                                    block: 'end',
-                                    behavior: 'smooth'
-                                })
-                            }
-                        >
-                            <Row>
-                                <ArrowIcon rotate={180} />
-                                <UpcomingReleasesFont>
-                                    Back to translated releases
-                                </UpcomingReleasesFont>
-                            </Row>
-                        </Button>
-                    </SectionHeader>
-
-                    <EntriesContainer>
-                        <AnimatePresence>
-                            {unreleasedVisualNovels.map(
-                                (visualNovel, index) => {
-                                    return (
-                                        <StaggeredEntranceFade
-                                            key={visualNovel.thumbnailSource}
-                                            index={index}
-                                        >
-                                            <Entry {...visualNovel} />
-                                        </StaggeredEntranceFade>
-                                    );
+            <AnimatePresence>
+                {unreleasedVisualNovels.length > 0 ? (
+                    <VerticalFade>
+                        <OtherHeader ref={upcomingReleasesRef}>
+                            upcoming
+                            <Button
+                                onClick={() =>
+                                    moechartTitleRef.current?.scrollIntoView({
+                                        block: 'end',
+                                        behavior: 'smooth'
+                                    })
                                 }
-                            )}
-                        </AnimatePresence>
-                    </EntriesContainer>
-                </>
-            ) : null}
+                            >
+                                <Row>
+                                    <ArrowIcon rotate={180} />
+                                    <UpcomingReleasesFont>
+                                        Back to top
+                                    </UpcomingReleasesFont>
+                                </Row>
+                            </Button>
+                        </OtherHeader>
+
+                        <EntriesContainer>
+                            <AnimatePresence>
+                                {unreleasedVisualNovels.map(
+                                    (visualNovel, index) => {
+                                        return (
+                                            <StaggeredEntranceFade
+                                                key={
+                                                    visualNovel.thumbnailSource
+                                                }
+                                                index={index}
+                                            >
+                                                <Entry {...visualNovel} />
+                                            </StaggeredEntranceFade>
+                                        );
+                                    }
+                                )}
+                            </AnimatePresence>
+                        </EntriesContainer>
+                    </VerticalFade>
+                ) : null}
+            </AnimatePresence>
+            <BackgroundImage src={Background} />
         </Container>
     );
 };
@@ -311,12 +369,23 @@ const EntriesContainer = styled(Row)`
     flex-wrap: wrap;
 `;
 
-const SectionHeader = styled(HeaderFont)`
+const MainHeader = styled(HeaderFont)`
     display: flex;
     padding-top: 20px;
     border-bottom: 2px solid ${COLOURS.TEXT};
+
     width: 100%;
     justify-content: space-between;
+    font-family: monospace;
+`;
+
+const OtherHeader = styled(MainHeader)`
+    margin-bottom: 40px;
+`;
+
+const MoechartFont = styled(MainHeader)`
+    font-weight: 800;
+    letter-spacing: 0.07rem;
 `;
 
 const VNFont = styled.div`
@@ -343,4 +412,17 @@ const MusicButton = styled(ResponsiveButton)`
                   border-radius: 4px;
               `
             : ''};
+`;
+
+const InfoBar = styled(Row)`
+    & > :last-child {
+        margin-left: auto;
+    }
+`;
+
+const BackgroundImage = styled.img`
+    position: fixed;
+    z-index: -1000;
+    bottom: 0;
+    right: 0;
 `;

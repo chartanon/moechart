@@ -5,33 +5,30 @@ import { COLOURS, Column, Row, TitleFont } from '../../utils';
 import { SeriesRelationshipMap } from './MoegeChart';
 import { VisualNovelProps } from './visualNovelData';
 import { SequelsPopup } from './SequelsPopup';
-import { IMAGE_WIDTH, ThumbnailImage } from './utils';
-import { GenreFocus, VisualNovelCard } from './VisualNovelCard';
+import { IMAGE_WIDTH, SEQUELS_OFFSET, ThumbnailImage } from './utils';
+import { GenreFocus } from './utils';
+import { VisualNovelCard } from './VisualNovelCard';
+import { RecommendedPopup } from './RecommendedPopup';
 
 export interface ChartEntryProps extends VisualNovelProps {
     allSequelRelationships?: SeriesRelationshipMap;
-    isSelectedHideSequelFilter?: boolean;
+    isSelectedShowSequelFilter?: boolean;
     setIsInPopupView?: (value: boolean) => void;
     shouldDisplayDateInTitle?: boolean;
 }
 
-export const ChartEntry: React.FC<ChartEntryProps> = ({
-    name,
-    vndbLink,
-    playtime,
-    thumbnailSource,
-    attributes,
-    genreFocus,
-    descriptionFirstRowText,
-    descriptionSecondRowText,
-    sequels,
-    originalGame,
-    allSequelRelationships,
-    isSelectedHideSequelFilter,
-    setIsInPopupView,
-    shouldDisplayDateInTitle,
-    translationReleaseDate
-}) => {
+export const ChartEntry: React.FC<ChartEntryProps> = props => {
+    const {
+        vndbLink,
+        genreFocus,
+        sequels,
+        allSequelRelationships,
+        isSelectedShowSequelFilter,
+        setIsInPopupView,
+        shouldDisplayDateInTitle,
+        isRecommended
+    } = props;
+
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
         case GenreFocus.COMEDY:
@@ -62,13 +59,26 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
     const [shouldShowSequelInfo, setShouldShowSequelInfo] =
         useState<boolean>(false);
 
-    const handleSetShowMoreSequelInfo = () => {
+    const [shouldShowRecommendedInfo, setShouldShowRecommendedInfo] =
+        useState<boolean>(false);
+
+    const handleShowMoreSequelInfo = () => {
         setShouldShowSequelInfo(true);
         setIsInPopupView?.(true);
     };
 
-    const handleCloseShowMoreSequelInfo = () => {
+    const handleCloseMoreSequelInfo = () => {
         setShouldShowSequelInfo(false);
+        setIsInPopupView?.(false);
+    };
+
+    const handleShowRecommendedInfo = () => {
+        setShouldShowRecommendedInfo(true);
+        setIsInPopupView?.(true);
+    };
+
+    const handleCloseRecommendedInfo = () => {
+        setShouldShowRecommendedInfo(false);
         setIsInPopupView?.(false);
     };
 
@@ -77,31 +87,29 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
             {shouldShowSequelInfo ? (
                 <SequelsPopup
                     isOpen={shouldShowSequelInfo}
-                    onClose={handleCloseShowMoreSequelInfo}
-                    originalGame={vndbLink}
-                    allSequelRelations={allSequelRelationships ?? {}}
+                    onClose={handleCloseMoreSequelInfo}
+                    sequelRelations={allSequelRelationships?.[vndbLink] ?? []}
                     shouldDisplayDateInTitle={shouldDisplayDateInTitle}
                 />
             ) : null}
-
+            {shouldShowRecommendedInfo ? (
+                <RecommendedPopup
+                    isOpen={shouldShowRecommendedInfo}
+                    onClose={handleCloseRecommendedInfo}
+                    outlineColour={outlineColour}
+                    {...props}
+                />
+            ) : null}
             <VisualNovelCard
-                name={name}
-                vndbLink={vndbLink}
-                thumbnailSource={thumbnailSource}
-                attributes={attributes}
-                genreFocus={genreFocus}
-                descriptionFirstRowText={descriptionFirstRowText}
-                descriptionSecondRowText={descriptionSecondRowText}
-                playtime={playtime}
-                sequels={sequels}
-                originalGame={originalGame}
-                moreInfoOnClick={
-                    isVNWithSequels ? handleSetShowMoreSequelInfo : undefined
+                {...props}
+                sequelInfoOnClick={
+                    isVNWithSequels ? handleShowMoreSequelInfo : undefined
                 }
-                shouldDisplayDateInTitle={shouldDisplayDateInTitle}
-                translationReleaseDate={translationReleaseDate}
+                descriptionInfoOnClick={
+                    isRecommended ? handleShowRecommendedInfo : undefined
+                }
             />
-            {isVNWithSequels && isSelectedHideSequelFilter ? (
+            {isVNWithSequels && !isSelectedShowSequelFilter ? (
                 <SequelRow>
                     {allSequelRelationships[vndbLink].map(
                         (relationship, index) => (
@@ -113,6 +121,8 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
                                     alt=""
                                     $outlineColour={outlineColour}
                                     $index={index}
+                                    $cardStackCount={sequels?.length}
+                                    $shouldScaleSize={!!sequels?.length}
                                 />
                             </Row>
                         )
@@ -122,8 +132,6 @@ export const ChartEntry: React.FC<ChartEntryProps> = ({
         </Container>
     );
 };
-
-const SEQUELS_OFFSET = 5;
 
 const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;

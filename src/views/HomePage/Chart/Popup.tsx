@@ -32,6 +32,7 @@ const Background = styled(Column)`
 
 const Container = styled(Column)`
     margin-left: -${SIDE_NAV_WIDTH}px;
-    width: calc(80% - ${SIDE_NAV_WIDTH}px);
-    height: 80vh;
+    width: calc(90% - ${SIDE_NAV_WIDTH}px);
+    height: 70%;
+    margin-bottom: 15%;
 `;

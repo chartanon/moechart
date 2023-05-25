@@ -26,43 +26,24 @@ import { VisualNovelProps } from './visualNovelData';
 import { ScenarioSelectionIcon } from '../../assets/icons/attribute/ScenarioSelectionIcon';
 import { HasSequelIcon } from '../../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../../assets/icons/attribute/IsSequelIcon';
-import { IMAGE_HEIGHT, IMAGE_WIDTH, ThumbnailImage } from './utils';
-import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
+import {
+    FilterAttribute,
+    GenreFocus,
+    IMAGE_HEIGHT,
+    IMAGE_WIDTH,
+    SEQUELS_OFFSET,
+    ThumbnailImage
+} from './utils';
+import { PlaytimeLength } from './utils';
 import moment from 'moment';
-
-export enum PlaytimeLength {
-    SHORT = 'SHORT',
-    MEDIUM = 'MEDIUM',
-    LONG = 'LONG',
-    VERY_LONG = 'VERY_LONG'
-}
-
-export enum Attribute {
-    ADV_TEXTBOX = 'ADV_TEXTBOX',
-    NVL_TEXTBOX = 'NVL_TEXTBOX',
-    FLOATING_TEXTBOX = 'FLOATING_TEXTBOX',
-    UNLOCKABLE_ROUTES = 'UNLOCKABLE_ROUTES',
-    BRANCHING_PLOT = 'BRANCHING_PLOT',
-    LADDER_STRUCTURE = 'LADDER_STRUCTURE',
-    TRUE_ROUTE = 'TRUE_ROUTE',
-    LINEAR_PLOT = 'LINEAR_PLOT',
-    KINETIC_NOVEL = 'KINETIC_NOVEL',
-    SCENARIO_SELECTION = 'SCENARIO_SELECTION',
-    SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS = 'SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS'
-}
-
-export enum GenreFocus {
-    STORYLINE = 'STORYLINE',
-    STORY_ROMANCE = 'STORY_ROMANCE',
-    ROMANCE = 'ROMANCE',
-    ROM_COM = 'ROM_COM',
-    COMEDY = 'COMEDY',
-    NUKIGE = 'NUKIGE'
-}
+import { StarIcon } from '../../assets/icons/attribute/StarIcon';
+import { QuestionDiscIcon } from '../../assets/icons/misc/QuestionDiscIcon';
+import { QuestionStarIcon } from '../../assets/icons/misc/QuestionStarIcon';
 
 export interface VisualNovelCardProps extends VisualNovelProps {
-    moreInfoOnClick?: () => void;
+    sequelInfoOnClick?: () => void;
     shouldDisplayDateInTitle?: boolean;
+    descriptionInfoOnClick?: () => void;
 }
 
 export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
@@ -76,11 +57,14 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     descriptionSecondRowText,
     sequels,
     originalGame,
-    moreInfoOnClick,
+    sequelInfoOnClick,
     shouldDisplayDateInTitle,
-    translationReleaseDate
+    translationReleaseDate,
+    isRecommended,
+    descriptionInfoOnClick,
+    isUpcomingRelease
 }) => {
-    const attributesOrder = Object.values(Attribute);
+    const attributesOrder = Object.values(FilterAttribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
         case GenreFocus.COMEDY:
@@ -105,9 +89,14 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     return (
         <Container>
             <TopRow>
-                {moreInfoOnClick ? (
-                    <HelpButton onClick={moreInfoOnClick}>
-                        <HelpIcon />
+                {sequelInfoOnClick && !descriptionInfoOnClick ? (
+                    <HelpButton onClick={sequelInfoOnClick}>
+                        <QuestionDiscIcon />
+                    </HelpButton>
+                ) : null}
+                {descriptionInfoOnClick ? (
+                    <HelpButton onClick={descriptionInfoOnClick}>
+                        <QuestionStarIcon />
                     </HelpButton>
                 ) : null}
                 {shouldDisplayDateInTitle ? (
@@ -128,10 +117,18 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                         loading="lazy"
                         alt=""
                         $outlineColour={outlineColour}
+                        $cardStackCount={sequels?.length}
+                        $shouldScaleSize={!!sequelInfoOnClick}
                     />
                 </Link>
-                <IconsContainer $outlineColour={outlineColour}>
-                    <PlaytimeIconContainer>
+                <IconsContainer
+                    $cardStackCount={sequels?.length}
+                    $shouldScaleMarginLeft={!!sequelInfoOnClick}
+                >
+                    <PlaytimeIconContainer
+                        $outlineColour={outlineColour}
+                        $shouldHaveBackgroundColour={!isUpcomingRelease}
+                    >
                         {playtime === PlaytimeLength.SHORT ? (
                             <PlaytimeShortIcon />
                         ) : null}
@@ -145,63 +142,98 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                             <PlaytimeVeryLongIcon />
                         ) : null}
                     </PlaytimeIconContainer>
-                    <AdditionalIconsContainer>
-                        {attributes
-                            .sort(
-                                (attributeOne, attributeTwo) =>
-                                    attributesOrder.indexOf(attributeOne) -
-                                    attributesOrder.indexOf(attributeTwo)
-                            )
-                            .map(attribute => {
-                                if (attribute === Attribute.ADV_TEXTBOX) {
-                                    return <ADVIcon key="adv" />;
-                                }
-                                if (attribute === Attribute.NVL_TEXTBOX) {
-                                    return <NVLIcon key="nvl" />;
-                                }
-                                if (attribute === Attribute.FLOATING_TEXTBOX) {
-                                    return <FloatingTextIcon key="float" />;
-                                }
-                                if (attribute === Attribute.UNLOCKABLE_ROUTES) {
-                                    return <LockIcon key="lock" />;
-                                }
-                                if (attribute === Attribute.BRANCHING_PLOT) {
-                                    return <BranchIcon key="branch" />;
-                                }
-                                if (attribute === Attribute.LADDER_STRUCTURE) {
-                                    return <LadderIcon key="ladder" />;
-                                }
-                                if (attribute === Attribute.TRUE_ROUTE) {
-                                    return <TrueIcon key="true" />;
-                                }
-                                if (attribute === Attribute.LINEAR_PLOT) {
-                                    return <LinearPlotIcon key="linear" />;
-                                }
-                                if (attribute === Attribute.KINETIC_NOVEL) {
-                                    return <KineticNovelIcon key="kinetic" />;
-                                }
-                                if (
-                                    attribute === Attribute.SCENARIO_SELECTION
-                                ) {
-                                    return (
-                                        <ScenarioSelectionIcon key="scenario" />
-                                    );
-                                }
-                                if (
-                                    attribute ===
-                                    Attribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
-                                ) {
-                                    return <FrenchGirlIcon key="frenchgirl" />;
-                                }
-                                return <></>;
-                            })}
-                        {sequels?.length && sequels.length > 0 ? (
-                            <HasSequelIcon key="has-sequel" />
-                        ) : null}
-                        {originalGame ? (
-                            <IsSequelIcon key="has-sequel" />
-                        ) : null}
-                    </AdditionalIconsContainer>
+                    <AdditionalIconsContainerWrapper>
+                        <AdditionalIconsContainer
+                            $outlineColour={outlineColour}
+                            $shouldHaveBackgroundColour={!isUpcomingRelease}
+                        >
+                            {isRecommended ? <StarIcon /> : null}
+                            {attributes
+                                .sort(
+                                    (attributeOne, attributeTwo) =>
+                                        attributesOrder.indexOf(attributeOne) -
+                                        attributesOrder.indexOf(attributeTwo)
+                                )
+                                .map(attribute => {
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.ADV_TEXTBOX
+                                    ) {
+                                        return <ADVIcon key="adv" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.NVL_TEXTBOX
+                                    ) {
+                                        return <NVLIcon key="nvl" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.FLOATING_TEXTBOX
+                                    ) {
+                                        return <FloatingTextIcon key="float" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.UNLOCKABLE_ROUTES
+                                    ) {
+                                        return <LockIcon key="lock" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.BRANCHING_PLOT
+                                    ) {
+                                        return <BranchIcon key="branch" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.LADDER_STRUCTURE
+                                    ) {
+                                        return <LadderIcon key="ladder" />;
+                                    }
+                                    if (
+                                        attribute === FilterAttribute.TRUE_ROUTE
+                                    ) {
+                                        return <TrueIcon key="true" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.LINEAR_PLOT
+                                    ) {
+                                        return <LinearPlotIcon key="linear" />;
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.KINETIC_NOVEL
+                                    ) {
+                                        return (
+                                            <KineticNovelIcon key="kinetic" />
+                                        );
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.SCENARIO_SELECTION
+                                    ) {
+                                        return (
+                                            <ScenarioSelectionIcon key="scenario" />
+                                        );
+                                    }
+                                    if (
+                                        attribute ===
+                                        FilterAttribute.SUITABLE_FOR_12_YEAR_OLD_FRENCH_GIRLS
+                                    ) {
+                                        return (
+                                            <FrenchGirlIcon key="frenchgirl" />
+                                        );
+                                    }
+                                    return <></>;
+                                })}
+                            {sequels?.length && sequels.length > 0 ? (
+                                <HasSequelIcon />
+                            ) : null}
+                            {originalGame ? <IsSequelIcon /> : null}
+                        </AdditionalIconsContainer>
+                    </AdditionalIconsContainerWrapper>
                 </IconsContainer>
             </ContentBody>
             <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
@@ -227,8 +259,10 @@ const ContentBody = styled(Row)`
     height: ${IMAGE_HEIGHT}px;
 `;
 
-const IconsContainer = styled(Column)<{ $outlineColour: string }>`
-    margin-left: 10px;
+const IconsContainer = styled(Column)<{
+    $cardStackCount?: number;
+    $shouldScaleMarginLeft?: boolean;
+}>`
     padding: 5px;
     display: flex;
     height: 100%;
@@ -236,18 +270,47 @@ const IconsContainer = styled(Column)<{ $outlineColour: string }>`
         align-self: flex-end;
         justify-content: flex-end;
     }
-    ${({ $outlineColour }) =>
-        $outlineColour
+
+    ${({ $cardStackCount, $shouldScaleMarginLeft }) =>
+        $cardStackCount && $shouldScaleMarginLeft
             ? css`
-                  background-color: ${$outlineColour}88;
+                  margin-left: ${$cardStackCount * SEQUELS_OFFSET + 10}px;
+              `
+            : css`
+                  margin-left: 10px;
+              `}
+`;
+
+const PlaytimeIconContainer = styled.div<{
+    $outlineColour: string;
+    $shouldHaveBackgroundColour: boolean;
+}>`
+    height: auto;
+    ${({ $outlineColour, $shouldHaveBackgroundColour }) =>
+        $outlineColour && $shouldHaveBackgroundColour
+            ? css`
+                  background-color: ${$outlineColour}bb;
                   border-radius: 15px;
+                  padding: 5px;
               `
             : ''}
 `;
 
-const PlaytimeIconContainer = styled.div``;
+const AdditionalIconsContainer = styled(Column)<{
+    $outlineColour: string;
+    $shouldHaveBackgroundColour: boolean;
+}>`
+    ${({ $outlineColour, $shouldHaveBackgroundColour }) =>
+        $outlineColour && $shouldHaveBackgroundColour
+            ? css`
+                  background-color: ${$outlineColour}bb;
+                  border-radius: 15px;
+                  padding: 5px;
+              `
+            : ''}
+`;
 
-const AdditionalIconsContainer = styled(Column)`
+const AdditionalIconsContainerWrapper = styled(Column)`
     height: 100%;
 `;
 
@@ -259,9 +322,7 @@ const DescriptionFont = styled(LabelFont)`
     font-size: 0.8rem;
 `;
 
-const HelpButton = styled(Button)`
-    margin-top: -2px;
-`;
+const HelpButton = styled(Button)``;
 
 const TopRow = styled(Row)`
     padding-bottom: 14px;
