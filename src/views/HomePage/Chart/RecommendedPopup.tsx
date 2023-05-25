@@ -68,12 +68,11 @@ const ImageFont = styled(TitleFont)`
     margin-bottom: 20px;
 `;
 
-const DescriptionContainer = styled.div`
+const DescriptionContainer = styled(Column)`
     margin: 200px 30px 0;
 `;
 
 const DescriptionFont = styled(LabelFont)`
-    font-family: sans-serif;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     text-align: justify;
 `;

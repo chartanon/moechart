@@ -53,10 +53,7 @@ export const MoegeChart: React.FC<IProps> = ({
     let recommendedVisualNovels: VisualNovelProps[] = [];
 
     const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
-        if (isSelectedShowRecommendedFilter && visualNovel.isRecommended) {
-            recommendedVisualNovels.push(visualNovel);
-            return false;
-        } else if (
+        if (
             selectedPlaytimeFilter !== null &&
             selectedPlaytimeFilter !== visualNovel.playtime
         ) {
@@ -78,38 +75,21 @@ export const MoegeChart: React.FC<IProps> = ({
             (!visualNovel.sequels || visualNovel.sequels.length === 0)
         ) {
             return false;
+        } else if (
+            isSelectedShowRecommendedFilter &&
+            visualNovel.isRecommended
+        ) {
+            recommendedVisualNovels.push(visualNovel);
+            return false;
         } else if (!isSelectedShowSequelFilter && visualNovel.originalGame) {
             if (allSequelRelationships[visualNovel.originalGame]) {
                 allSequelRelationships[visualNovel.originalGame].push({
-                    vndbLink: visualNovel.vndbLink,
-                    thumbnailSource: visualNovel.thumbnailSource,
-                    name: visualNovel.name,
-                    attributes: visualNovel.attributes,
-                    genreFocus: visualNovel.genreFocus,
-                    descriptionFirstRowText:
-                        visualNovel.descriptionFirstRowText,
-                    descriptionSecondRowText:
-                        visualNovel.descriptionSecondRowText,
-                    playtime: visualNovel.playtime,
-                    translationReleaseDate: visualNovel.translationReleaseDate,
-                    isRecommended: visualNovel.isRecommended
+                    ...visualNovel
                 });
             } else {
                 allSequelRelationships[visualNovel.originalGame] = [
                     {
-                        vndbLink: visualNovel.vndbLink,
-                        thumbnailSource: visualNovel.thumbnailSource,
-                        name: visualNovel.name,
-                        attributes: visualNovel.attributes,
-                        genreFocus: visualNovel.genreFocus,
-                        descriptionFirstRowText:
-                            visualNovel.descriptionFirstRowText,
-                        descriptionSecondRowText:
-                            visualNovel.descriptionSecondRowText,
-                        playtime: visualNovel.playtime,
-                        translationReleaseDate:
-                            visualNovel.translationReleaseDate,
-                        isRecommended: visualNovel.isRecommended
+                        ...visualNovel
                     }
                 ];
             }

@@ -219,7 +219,15 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionSecondRowText: 'Competition',
         translationReleaseDate: Date.parse('2019-09-27'),
         isRecommended: true,
-        recommendedDescription: <div>talent good</div>
+        recommendedDescription: (
+            <>
+                Talent good. Sprite is a company with very high production
+                value, which you can see in Aokana's art, OST, and story
+                writing. This game has a strong emphasis on its sports-based
+                story, however there are still lots of moments of cute girls
+                being cute.
+            </>
+        )
     },
     {
         name: 'Aokana EXTRA1',
@@ -469,7 +477,16 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Superpowers, Suspense',
         descriptionSecondRowText: 'Urban Fantasy',
         translationReleaseDate: Date.parse('2019-01-31'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                Episodic VN, though all entries have been translated at this
+                point. Somewhat debateable if this could be considered a moege,
+                as there's a good amount of action and mystery in each episode.
+                However there is still a noticeable presence of slice-of-life
+                moments and romance.
+            </>
+        )
     },
     {
         name: '9-nine-:Episode 2',
@@ -537,8 +554,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Blondes, School Life Comedy',
         descriptionSecondRowText: 'Reunion',
-        translationReleaseDate: Date.parse('2021-06-11'),
-        isRecommended: true
+        translationReleaseDate: Date.parse('2021-06-11')
     },
     {
         name: 'Kinkoi GT',
@@ -602,7 +618,16 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Urban Fantasy, Mystery',
         descriptionSecondRowText: 'Library Club',
         translationReleaseDate: Date.parse('2019-03-23'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                For those interested in a good plot, Daitoshokan is a good game
+                to start off with. There's a stronger focus on the main
+                character's development compared to other moege, and the mystery
+                in the story is something you can be invested in. There is still
+                a good amount of romance, but the focus is shifted away from it.
+            </>
+        )
     },
     {
         name: 'Tamayura Mirai',
@@ -753,7 +778,17 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Occult Club, Witches',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2018-10-26'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                Yuzusoft is probably the largest moege developer, and Sanoba
+                Witch is a popular entry of theirs (You may spot some of their
+                characters hidden on this site!). There's a light supernatural
+                element to the story, but it's mainly just window dressing for
+                interacting with cute girls. Some routes are more heavily
+                focused on their route conflict than others.
+            </>
+        )
     },
     {
         name: 'Princess Evangile',
@@ -769,7 +804,17 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'School Dormitory, Drama',
         descriptionSecondRowText: 'All-girls School',
         translationReleaseDate: Date.parse('2015-03-27'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                A very pure moege, that also contains moments of action and
+                drama. The setting is rather unique and the main character is
+                somewhat of a power fantasy, being the focus of attention to the
+                large cast of heroines. There are lots of characters to enjoy,
+                and pretty much all routelets get their time to shine in the
+                Fandisc.
+            </>
+        )
     },
     {
         name: 'Princess Evangile WH',
@@ -814,7 +859,15 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Student Club, Slice of Life',
         descriptionSecondRowText: 'High School',
         translationReleaseDate: Date.parse('2017-05-06'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                A deep part of /vn/ culture. This is required reading. It's so
+                bad that it eventually becomes enjoyable to read. Unfortunately
+                we lost one of the best fan translation teams to this evil
+                company.
+            </>
+        )
     },
     {
         name: 'Cafe Stella',
@@ -860,7 +913,17 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Secret Identity, Slice of Life',
         descriptionSecondRowText: 'Supernatural',
         translationReleaseDate: Date.parse('2020-12-18'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                Riddle Joker is a prime example of a modern Yuzusoft moege. The
+                setting is somewhat fantastical and the plot is technically
+                serious, but it's still a pretty light-hearted VN. Due to the
+                consistency of Yuzusoft games, if you've read a few of them and
+                haven't enjoyed a single one, this might not be the genre for
+                you.
+            </>
+        )
     },
     {
         name: 'Hinatabokko',
@@ -1013,7 +1076,16 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Slice of Life, Festival',
         descriptionSecondRowText: 'Passage of Time',
         translationReleaseDate: Date.parse('2019-04-03'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                This is the same developer who made Hatsukoi 1/1. Hoshi Ori Yume
+                Mirai is so bereft of conflict and drama, and the fact that the
+                "after-story" for each heroine is about half of their route's
+                length, means that you'll either love the slow pacing or utterly
+                despise it.
+            </>
+        )
     },
     {
         name: 'Yotsunoha',
@@ -1420,7 +1492,17 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Slice of Life, Student Club',
         descriptionSecondRowText: 'School Life Comedy',
         translationReleaseDate: Date.parse('2017-07-27'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                One of the more standard moege entries in this chart. Like the
+                title implies, the unique quirk with the heroines of Wagamama
+                High Spec is their relatively selfish behaviour. However that's
+                not to say that they're dislikeable, they're just more strongly
+                opinionated. A good balance of romance and comedy, with just a
+                tiny emphasis on it's plot.
+            </>
+        )
     },
     {
         name: 'Tsujidou',
@@ -1450,7 +1532,16 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Dating Sim, Slice of Life',
         descriptionSecondRowText: 'School Life Comedy',
         translationReleaseDate: Date.parse('2018-03-19'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                One of the older games here, Fureraba is pretty extreme with
+                it's comedy at times, but is also another heavily ichaicha
+                focused entry from Smee. The route selection system in this game
+                is closer to a dating sim than your normal moege, where you ask
+                heroines questions and need to choose the best response.
+            </>
+        )
     },
     {
         name: 'Fureraba Mini FD',
@@ -1481,7 +1572,18 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Dating Sim, Adult Life',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2020-04-03'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                The setting for Making*Lovers is unique compared to most other
+                moege, where the main character is a working adult who doesn't
+                live with their parents. The common route is very short and you
+                get into the process of forming a relationship very quickly.
+                There's a fun gimmick of being able to plan where some of the
+                dates take place. Great for those that like comedy and ichaicha,
+                with this entry leaning a bit more into the latter.
+            </>
+        )
     },
     {
         name: 'Making*Lovers After',
@@ -1539,7 +1641,16 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Student Council, Politics',
         descriptionSecondRowText: 'Slice of Life Comedy',
-        translationReleaseDate: Date.parse('2021-07-30')
+        translationReleaseDate: Date.parse('2021-07-30'),
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                A gateway to moenukige, for those that are interested. If you
+                like this game, there's also the other translated Marmalade
+                games (including the sequel). All of them have high production
+                quality and a nice art style to look at.
+            </>
+        )
     },
     {
         name: 'PRIMAL×HEARTS 2',
@@ -1929,7 +2040,19 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2015-03-10'),
-        isRecommended: true
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                Lots of choices you can make, with a huge cast of characters.
+                It's pretty lengthy and has several fandiscs, so there's a lot
+                to sink your teeth into if this is something you enjoy. That
+                being said, this isn't your typical moege, as there's a bit more
+                drama and plot here, as well as having actual fight scenes. If
+                the above sounds interesting, go ahead and try it out.
+                Otherwise, feel free to check something else out, as this is far
+                from the norm for moege.
+            </>
+        )
     },
     {
         name: 'Majikoi S',
@@ -2048,7 +2171,16 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Love Triangle, Comedy',
         descriptionSecondRowText: 'Rent-a-boyfriend',
-        translationReleaseDate: Date.parse('2021-10-22')
+        translationReleaseDate: Date.parse('2021-10-22'),
+        isRecommended: true,
+        recommendedDescription: (
+            <>
+                The most popular ASa Project game on /vn/, this company is
+                generally known for some pretty over the top comedy and fourth
+                wall breaks. The story is rather silly and not meant to be taken
+                seriously, with the focus being on the heroines themselves.
+            </>
+        )
     },
     {
         name: 'Onigokko!',
@@ -2175,8 +2307,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Comedy, 4th Wall Breaking',
         descriptionSecondRowText: 'Love Triangle',
-        translationReleaseDate: Date.parse('2022-09-30'),
-        isRecommended: true
+        translationReleaseDate: Date.parse('2022-09-30')
     },
     {
         name: 'Lovekami',
