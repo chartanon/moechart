@@ -1,8 +1,16 @@
 import styled from 'styled-components';
-import { COLOURS, Column, LabelFont, Row, TitleFont } from '../../utils';
+import {
+    COLOURS,
+    Column,
+    LabelFont,
+    Row,
+    TitleFont,
+    VerticalFade
+} from '../../utils';
 import { Modal } from './Modal';
 import { ChartEntryProps } from './ChartEntry';
 import { ThumbnailImage } from './utils';
+import { AnimatePresence } from 'framer-motion';
 
 interface IProps extends ChartEntryProps {
     isOpen?: boolean;
@@ -21,25 +29,29 @@ export const RecommendedModal: React.FC<IProps> = ({
 }) => {
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
-            <ContentContainer $centered $maxWidth $maxHeight>
-                <Row>
-                    <ImageContainer>
-                        <ImageFont>{name}</ImageFont>
-                        <RecommendedImage
-                            src={thumbnailSource}
-                            loading="lazy"
-                            alt=""
-                            $outlineColour={outlineColour}
-                            $cardStackCount={sequels?.length}
-                        />
-                    </ImageContainer>
-                    <DescriptionContainer>
-                        <DescriptionFont>
-                            {recommendedDescription}
-                        </DescriptionFont>
-                    </DescriptionContainer>
-                </Row>
-            </ContentContainer>
+            <AnimatePresence>
+                <VerticalFade $maxHeight>
+                    <ContentContainer $centered $maxWidth $maxHeight>
+                        <Row>
+                            <ImageContainer>
+                                <ImageFont>{name}</ImageFont>
+                                <RecommendedImage
+                                    src={thumbnailSource}
+                                    loading="lazy"
+                                    alt=""
+                                    $outlineColour={outlineColour}
+                                    $cardStackCount={sequels?.length}
+                                />
+                            </ImageContainer>
+                            <DescriptionContainer>
+                                <DescriptionFont>
+                                    {recommendedDescription}
+                                </DescriptionFont>
+                            </DescriptionContainer>
+                        </Row>
+                    </ContentContainer>
+                </VerticalFade>
+            </AnimatePresence>
         </Modal>
     );
 };

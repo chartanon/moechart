@@ -122,9 +122,11 @@ export const Button = styled.button`
 
 export const VerticalFade: React.FC<{
     children?: React.ReactNode | undefined;
-}> = ({ children }) => {
+    $maxHeight?: boolean;
+}> = ({ children, $maxHeight }) => {
     return (
-        <motion.div
+        <FadeDiv
+            $maxHeight={$maxHeight}
             initial={{ opacity: 0, y: -20 }}
             animate={{
                 opacity: 1,
@@ -138,9 +140,18 @@ export const VerticalFade: React.FC<{
             }}
         >
             {children}
-        </motion.div>
+        </FadeDiv>
     );
 };
+
+const FadeDiv = styled(motion.div)<{ $maxHeight?: boolean }>`
+    ${({ $maxHeight }) =>
+        $maxHeight
+            ? css`
+                  height: 100%;
+              `
+            : ''}
+`;
 
 export const StaggeredEntranceFade: React.FC<{
     children?: React.ReactNode | undefined;

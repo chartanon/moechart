@@ -3,7 +3,8 @@ import {
     Column,
     HeaderFont,
     Row,
-    StaggeredEntranceFadeSlow
+    StaggeredEntranceFadeSlow,
+    VerticalFade
 } from '../../utils';
 import { Modal } from './Modal';
 import { VisualNovelCard, VisualNovelCardProps } from './VisualNovelCard';
@@ -33,9 +34,13 @@ export const SequelsModal: React.FC<IProps> = ({
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <Column $maxWidth $maxHeight $centered>
-                <StyledHeaderFont>
-                    Translated Fandiscs and Sequels
-                </StyledHeaderFont>
+                <AnimatePresence>
+                    <VerticalFade>
+                        <StyledHeaderFont>
+                            Translated Fandiscs and Sequels
+                        </StyledHeaderFont>
+                    </VerticalFade>
+                </AnimatePresence>
                 <EntriesContainer $maxWidth $centered>
                     <AnimatePresence>
                         {sequelRelations.map((relationship, index) => {
