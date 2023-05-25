@@ -53,7 +53,9 @@ export const MoegeChart: React.FC<IProps> = ({
     let recommendedVisualNovels: VisualNovelProps[] = [];
 
     const filteredReleasedVisualNovels = visualNovelData.filter(visualNovel => {
-        if (
+        if (visualNovel.isUpcomingRelease) {
+            return false;
+        } else if (
             selectedPlaytimeFilter !== null &&
             selectedPlaytimeFilter !== visualNovel.playtime
         ) {
@@ -70,17 +72,6 @@ export const MoegeChart: React.FC<IProps> = ({
             )
         ) {
             return false;
-        } else if (
-            isSelectedHasSequelFilter &&
-            (!visualNovel.sequels || visualNovel.sequels.length === 0)
-        ) {
-            return false;
-        } else if (
-            isSelectedShowRecommendedFilter &&
-            visualNovel.isRecommended
-        ) {
-            recommendedVisualNovels.push(visualNovel);
-            return false;
         } else if (!isSelectedShowSequelFilter && visualNovel.originalGame) {
             if (allSequelRelationships[visualNovel.originalGame]) {
                 allSequelRelationships[visualNovel.originalGame].push({
@@ -95,7 +86,19 @@ export const MoegeChart: React.FC<IProps> = ({
             }
             return false;
         }
-        return !visualNovel.isUpcomingRelease;
+        // important that this comes after the allSequelRelationships check, so that the card can still stack when the has sequel filters is enabled
+        else if (
+            isSelectedHasSequelFilter &&
+            (!visualNovel.sequels || visualNovel.sequels.length === 0)
+        ) {
+            return false;
+        }
+        // important that this comes last, so that it properly filters
+        else if (isSelectedShowRecommendedFilter && visualNovel.isRecommended) {
+            recommendedVisualNovels.push(visualNovel);
+            return false;
+        }
+        return true;
     });
 
     if (selectedGenreFocusFilter === null) {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { SIDE_NAV_WIDTH } from '../../SideNav/utils';
 import { COLOURS, Column } from '../../utils';
 
-export const Popup: React.FC<{
+export const Modal: React.FC<{
     children?: React.ReactNode | undefined;
     isOpen?: boolean;
     onClose?: () => void;
