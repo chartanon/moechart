@@ -89,14 +89,14 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
     return (
         <Container>
             <TopRow>
-                {sequelInfoOnClick && !descriptionInfoOnClick ? (
-                    <HelpButton onClick={sequelInfoOnClick}>
-                        <QuestionDiscIcon />
-                    </HelpButton>
-                ) : null}
                 {descriptionInfoOnClick ? (
                     <HelpButton onClick={descriptionInfoOnClick}>
                         <QuestionStarIcon />
+                    </HelpButton>
+                ) : null}
+                {sequelInfoOnClick ? (
+                    <HelpButton onClick={sequelInfoOnClick}>
+                        <QuestionDiscIcon />
                     </HelpButton>
                 ) : null}
                 {shouldDisplayDateInTitle ? (
