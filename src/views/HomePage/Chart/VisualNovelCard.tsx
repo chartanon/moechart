@@ -35,9 +35,10 @@ import {
     ThumbnailImage
 } from './utils';
 import { PlaytimeLength } from './utils';
-import { HelpIcon } from '../../assets/icons/misc/HelpIcon';
 import moment from 'moment';
 import { StarIcon } from '../../assets/icons/attribute/StarIcon';
+import { QuestionDiscIcon } from '../../assets/icons/misc/QuestionDiscIcon';
+import { QuestionStarIcon } from '../../assets/icons/misc/QuestionStarIcon';
 
 export interface VisualNovelCardProps extends VisualNovelProps {
     sequelInfoOnClick?: () => void;
@@ -90,12 +91,12 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
             <TopRow>
                 {sequelInfoOnClick && !descriptionInfoOnClick ? (
                     <HelpButton onClick={sequelInfoOnClick}>
-                        <HelpIcon />
+                        <QuestionDiscIcon />
                     </HelpButton>
                 ) : null}
                 {descriptionInfoOnClick ? (
                     <HelpButton onClick={descriptionInfoOnClick}>
-                        <HelpIcon />
+                        <QuestionStarIcon />
                     </HelpButton>
                 ) : null}
                 {shouldDisplayDateInTitle ? (

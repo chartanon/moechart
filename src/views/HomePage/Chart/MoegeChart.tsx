@@ -138,6 +138,11 @@ export const MoegeChart: React.FC<IProps> = ({
                             visualNovelTwo.translationReleaseDate! -
                             visualNovelOne.translationReleaseDate!
                     );
+                    recommendedVisualNovels.sort(
+                        (visualNovelOne, visualNovelTwo) =>
+                            visualNovelTwo.translationReleaseDate! -
+                            visualNovelOne.translationReleaseDate!
+                    );
                     isSortingByChronological = true;
                     break;
                 case MiscellaneousSortingOption.RANDOM: {
@@ -146,6 +151,14 @@ export const MoegeChart: React.FC<IProps> = ({
                             Math.floor(
                                 Math.random() *
                                     filteredReleasedVisualNovels.length
+                            ),
+                            1
+                        );
+                    }
+                    while (recommendedVisualNovels.length > 10) {
+                        recommendedVisualNovels.splice(
+                            Math.floor(
+                                Math.random() * recommendedVisualNovels.length
                             ),
                             1
                         );
