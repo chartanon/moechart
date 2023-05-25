@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { COLOURS, Column, LabelFont, Row, TitleFont } from '../../utils';
-import { Popup } from './Popup';
+import { Modal } from './Modal';
 import { ChartEntryProps } from './ChartEntry';
 import { ThumbnailImage } from './utils';
 
@@ -10,7 +10,7 @@ interface IProps extends ChartEntryProps {
     outlineColour?: string;
 }
 
-export const RecommendedPopup: React.FC<IProps> = ({
+export const RecommendedModal: React.FC<IProps> = ({
     isOpen,
     onClose,
     name,
@@ -20,7 +20,7 @@ export const RecommendedPopup: React.FC<IProps> = ({
     recommendedDescription
 }) => {
     return (
-        <Popup isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose}>
             <ContentContainer $centered $maxWidth $maxHeight>
                 <Row>
                     <ImageContainer>
@@ -40,7 +40,7 @@ export const RecommendedPopup: React.FC<IProps> = ({
                     </DescriptionContainer>
                 </Row>
             </ContentContainer>
-        </Popup>
+        </Modal>
     );
 };
 

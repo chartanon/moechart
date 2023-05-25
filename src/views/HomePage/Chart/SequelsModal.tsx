@@ -5,7 +5,7 @@ import {
     Row,
     StaggeredEntranceFadeSlow
 } from '../../utils';
-import { Popup } from './Popup';
+import { Modal } from './Modal';
 import { VisualNovelCard, VisualNovelCardProps } from './VisualNovelCard';
 import { AnimatePresence } from 'framer-motion';
 
@@ -16,7 +16,7 @@ interface IProps {
     shouldDisplayDateInTitle?: boolean;
 }
 
-export const SequelsPopup: React.FC<IProps> = ({
+export const SequelsModal: React.FC<IProps> = ({
     isOpen,
     onClose,
     sequelRelations,
@@ -31,7 +31,7 @@ export const SequelsPopup: React.FC<IProps> = ({
     }
 
     return (
-        <Popup isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose}>
             <Column $maxWidth $maxHeight $centered>
                 <StyledHeaderFont>
                     Translated Fandiscs and Sequels
@@ -56,7 +56,7 @@ export const SequelsPopup: React.FC<IProps> = ({
                     </AnimatePresence>
                 </EntriesContainer>
             </Column>
-        </Popup>
+        </Modal>
     );
 };
 
