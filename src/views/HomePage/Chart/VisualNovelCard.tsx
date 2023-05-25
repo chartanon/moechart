@@ -236,12 +236,20 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                     </AdditionalIconsContainerWrapper>
                 </IconsContainer>
             </ContentBody>
-            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
-                {descriptionFirstRowText}
-            </DescriptionFont>
-            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
-                {descriptionSecondRowText}
-            </DescriptionFont>
+            <DescriptionContainer>
+                <DescriptionFont
+                    $outlineColour={outlineColour}
+                    $textAlign="right"
+                >
+                    {descriptionFirstRowText}
+                </DescriptionFont>
+                <DescriptionFont
+                    $outlineColour={outlineColour}
+                    $textAlign="right"
+                >
+                    {descriptionSecondRowText}
+                </DescriptionFont>
+            </DescriptionContainer>
         </Container>
     );
 };
@@ -320,6 +328,11 @@ const Link = styled.a`
 
 const DescriptionFont = styled(LabelFont)`
     font-size: 0.8rem;
+    white-space: nowrap;
+`;
+
+const DescriptionContainer = styled(Column)`
+    flex-wrap: wrap-reverse;
 `;
 
 const HelpButton = styled(Button)``;
