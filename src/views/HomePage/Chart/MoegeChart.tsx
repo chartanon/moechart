@@ -215,11 +215,11 @@ export const MoegeChart: React.FC<IProps> = ({
 
     return (
         <Container>
-            <MainHeader>
+            <MoechartFont>
                 <Row>
                     <VNFont ref={moechartTitleRef}>/vn/</VNFont> MOECHART
                 </Row>
-            </MainHeader>
+            </MoechartFont>
             <InfoBar>
                 <MusicButton
                     onClick={handlePlaySong}
@@ -401,6 +401,11 @@ const MainHeader = styled(HeaderFont)`
 
 const OtherHeader = styled(MainHeader)`
     margin-bottom: 40px;
+`;
+
+const MoechartFont = styled(MainHeader)`
+    font-weight: 800;
+    letter-spacing: 0.07rem;
 `;
 
 const VNFont = styled.div`

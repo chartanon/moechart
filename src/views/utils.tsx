@@ -28,7 +28,7 @@ export const Row = styled.div<{
     ${({ $maxHeight }) =>
         $maxHeight
             ? css`
-                  height: 100vh;
+                  height: 100%;
               `
             : ''};
     ${({ $gap }) =>
@@ -64,7 +64,7 @@ export const COLOURS = {
 };
 
 const BaseFont = styled.div<{ $textAlign?: string }>`
-    font-family: sans-serif;
+    font-family: monospace;
     ${({ $textAlign }) =>
         $textAlign
             ? css`
@@ -74,6 +74,7 @@ const BaseFont = styled.div<{ $textAlign?: string }>`
 `;
 
 export const TitleFont = styled(BaseFont)<{ $fontColour?: string }>`
+    font-family: sans-serif;
     font-size: 1.3rem;
     width: 250px;
     white-space: nowrap;

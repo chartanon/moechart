@@ -28,6 +28,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
         shouldDisplayDateInTitle,
         isRecommended
     } = props;
+
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
         case GenreFocus.COMEDY:
@@ -95,6 +96,8 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
                 <RecommendedPopup
                     isOpen={shouldShowRecommendedInfo}
                     onClose={handleCloseRecommendedInfo}
+                    outlineColour={outlineColour}
+                    {...props}
                 />
             ) : null}
             <VisualNovelCard

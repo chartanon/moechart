@@ -1,37 +1,79 @@
 import styled from 'styled-components';
-import { Column, HeaderFont, Row } from '../../utils';
+import { COLOURS, Column, LabelFont, Row, TitleFont } from '../../utils';
 import { Popup } from './Popup';
+import { ChartEntryProps } from './ChartEntry';
+import { ThumbnailImage } from './utils';
 
-interface IProps {
+interface IProps extends ChartEntryProps {
     isOpen?: boolean;
     onClose?: () => void;
+    outlineColour?: string;
 }
 
-export const RecommendedPopup: React.FC<IProps> = ({ isOpen, onClose }) => {
+export const RecommendedPopup: React.FC<IProps> = ({
+    isOpen,
+    onClose,
+    name,
+    thumbnailSource,
+    sequels,
+    outlineColour,
+    recommendedDescription
+}) => {
     return (
         <Popup isOpen={isOpen} onClose={onClose}>
-            <Column $centered>
-                <EntriesContainer $maxHeight $centered></EntriesContainer>
-                <StyledHeaderFont>Recommended VN Information</StyledHeaderFont>
-            </Column>
+            <ContentContainer $centered $maxWidth $maxHeight>
+                <Row>
+                    <ImageContainer>
+                        <ImageFont>{name}</ImageFont>
+                        <RecommendedImage
+                            src={thumbnailSource}
+                            loading="lazy"
+                            alt=""
+                            $outlineColour={outlineColour}
+                            $cardStackCount={sequels?.length}
+                        />
+                    </ImageContainer>
+                    <DescriptionContainer>
+                        <DescriptionFont>
+                            {recommendedDescription}
+                        </DescriptionFont>
+                    </DescriptionContainer>
+                </Row>
+            </ContentContainer>
         </Popup>
     );
 };
 
-const EntriesContainer = styled(Row)`
-    position: fixed;
-    flex-wrap: wrap;
-    top: 0;
-    gap: 0px 80px;
-    margin-top: 100px;
-    @media (max-width: 1050px) {
-        margin-top: 250px;
-        overflow: auto;
-        height: 75vh;
-    }
+const ContentContainer = styled(Column)`
+    border: 1px solid ${COLOURS.TEXT};
 `;
 
-const StyledHeaderFont = styled(HeaderFont)`
-    position: fixed;
-    top: 5%;
+const RecommendedImage = styled(ThumbnailImage)`
+    height: 550px;
+    width: 380px;
+    pointer-events: none;
+`;
+
+const ImageContainer = styled(Column)`
+    margin-left: 50px;
+    margin-right: auto;
+`;
+
+const ImageFont = styled(TitleFont)`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: monospace;
+    margin-bottom: 20px;
+`;
+
+const DescriptionContainer = styled.div`
+    margin: 200px 30px 0;
+`;
+
+const DescriptionFont = styled(LabelFont)`
+    font-family: sans-serif;
+    font-size: 3.2rem;
+    text-align: justify;
 `;
