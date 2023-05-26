@@ -203,7 +203,6 @@ export const MoegeChart: React.FC<IProps> = ({
         !isSelectedRandomTenFilter &&
         selectedPlaytimeFilter === null &&
         selectedFilterAttributes.length === 0 &&
-        isSelectedHasSequelFilter === false
     ) {
         unreleasedVisualNovels = visualNovelData.filter(visualNovel => {
             if (
