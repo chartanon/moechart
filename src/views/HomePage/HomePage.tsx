@@ -21,6 +21,8 @@ import {
 } from '../localStorage';
 
 export const HomePage: React.FC = () => {
+    localStorage.setItem('likesPinks', 'true');
+
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =
         useState<PlaytimeLength | null>(
             localStorage.getItem(PLAYTIME_KEY) as PlaytimeLength
