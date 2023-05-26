@@ -8,18 +8,30 @@ import { SIDE_NAV_WIDTH } from '../SideNav/utils';
 import { GenreFocus, FilterAttribute } from './Chart/utils';
 import { PlaytimeLength } from './Chart/utils';
 import { VisualNovelProps } from './Chart/visualNovelData';
+import {
+    FILTER_ATTRIBUTES,
+    GENRE_FOCUS_KEY,
+    PLAYTIME_KEY,
+    SHOW_BOOKMARKS,
+    SHOW_RECOMMENDED
+} from '../localStorage';
+
 export const HomePage: React.FC = () => {
     const [
         selectedMiscellaneousSortingOptions,
         setSelectedMiscellaneousSortingOptions
     ] = useState<MiscellaneousSortingOption[]>([]);
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =
-        useState<PlaytimeLength | null>(null);
+        useState<PlaytimeLength | null>(
+            localStorage.getItem(PLAYTIME_KEY) as PlaytimeLength
+        );
     const [selectedGenreFocusFilter, setSelectedGenreFocusFilter] =
-        useState<GenreFocus | null>(null);
+        useState<GenreFocus | null>(
+            localStorage.getItem(GENRE_FOCUS_KEY) as GenreFocus
+        );
     const [selectedFilterAttributes, setSelectedFilterAttributes] = useState<
         FilterAttribute[]
-    >([]);
+    >(JSON.parse(localStorage.getItem(FILTER_ATTRIBUTES) ?? '[]'));
     const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
         useState<boolean>(false);
     const [isSelectedShowSequelFilter, setIsSelectedShowSequelFilter] =
@@ -31,8 +43,11 @@ export const HomePage: React.FC = () => {
     const [bookmarkedVisualNovels, setBookmarkedVisualNovels] = useState<
         VisualNovelProps[]
     >([]);
+
     const [isSelectedBookmarkFilter, setIsSelectedBookmarkFilter] =
-        useState<boolean>(true);
+        useState<boolean>(
+            localStorage.getItem(SHOW_BOOKMARKS) === 'false' ? false : true
+        );
 
     const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
@@ -58,14 +73,22 @@ export const HomePage: React.FC = () => {
     };
 
     const handleSetSelectedPlaytimeFilter = (value: PlaytimeLength) => {
-        selectedPlaytimeFilter === value
-            ? setSelectedPlaytimeFilter(null)
-            : setSelectedPlaytimeFilter(value);
+        if (selectedPlaytimeFilter === value) {
+            setSelectedPlaytimeFilter(null);
+            localStorage.removeItem(PLAYTIME_KEY);
+        } else {
+            setSelectedPlaytimeFilter(value);
+            localStorage.setItem(PLAYTIME_KEY, value);
+        }
     };
     const handleSetSelectedGenreFocusFilter = (value: GenreFocus) => {
-        selectedGenreFocusFilter === value
-            ? setSelectedGenreFocusFilter(null)
-            : setSelectedGenreFocusFilter(value);
+        if (selectedGenreFocusFilter === value) {
+            setSelectedGenreFocusFilter(null);
+            localStorage.removeItem(GENRE_FOCUS_KEY);
+        } else {
+            setSelectedGenreFocusFilter(value);
+            localStorage.setItem(GENRE_FOCUS_KEY, value);
+        }
     };
     const handleSetSelectedFilterAttributes = (value: FilterAttribute) => {
         if (selectedFilterAttributes.some(attribute => attribute === value)) {
@@ -74,9 +97,31 @@ export const HomePage: React.FC = () => {
                     attribute => attribute !== value
                 )
             );
+            localStorage.setItem(
+                FILTER_ATTRIBUTES,
+                JSON.stringify(
+                    selectedFilterAttributes.filter(
+                        attribute => attribute !== value
+                    )
+                )
+            );
         } else {
             setSelectedFilterAttributes([...selectedFilterAttributes, value]);
+            localStorage.setItem(
+                FILTER_ATTRIBUTES,
+                JSON.stringify([...selectedFilterAttributes, value])
+            );
         }
+    };
+
+    const handleSetIsSelectedBookmarkFilter = (value: boolean) => {
+        setIsSelectedBookmarkFilter(value);
+        localStorage.setItem(SHOW_BOOKMARKS, JSON.stringify(value));
+    };
+
+    const handleSetIsSelectedShowRecommendedFilter = (value: boolean) => {
+        setIsSelectedBookmarkFilter(value);
+        localStorage.setItem(SHOW_RECOMMENDED, JSON.stringify(value));
     };
 
     const handleBookmarkVisualNovel = (visualNovel: VisualNovelProps) => {
@@ -135,13 +180,15 @@ export const HomePage: React.FC = () => {
                 isSelectedShowRecommendedFilter={
                     isSelectedShowRecommendedFilter
                 }
-                setIsSelectedShowRecommendedFilter={
-                    setIsSelectedShowRecommendedFilter
+                handleSetIsSelectedShowRecommendedFilter={
+                    handleSetIsSelectedShowRecommendedFilter
                 }
                 isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
                 isSelectedBookmarkFilter={isSelectedBookmarkFilter}
-                setIsSelectedBookmarkFilter={setIsSelectedBookmarkFilter}
+                handleSetIsSelectedBookmarkFilter={
+                    handleSetIsSelectedBookmarkFilter
+                }
             />
             <MoegeChart
                 selectedMiscellaneousSortingOptions={

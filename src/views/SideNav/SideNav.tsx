@@ -45,11 +45,11 @@ interface IProps {
     isSelectedShowSequelFilter: boolean;
     setIsSelectedShowSequelFilter: (value: boolean) => void;
     isSelectedShowRecommendedFilter: boolean;
-    setIsSelectedShowRecommendedFilter: (value: boolean) => void;
+    handleSetIsSelectedShowRecommendedFilter: (value: boolean) => void;
     isInPopupView: boolean;
     clearFilters: () => void;
     isSelectedBookmarkFilter: boolean;
-    setIsSelectedBookmarkFilter: (value: boolean) => void;
+    handleSetIsSelectedBookmarkFilter: (value: boolean) => void;
 }
 
 export const SideNav: React.FC<IProps> = ({
@@ -66,11 +66,11 @@ export const SideNav: React.FC<IProps> = ({
     isSelectedShowSequelFilter,
     setIsSelectedShowSequelFilter,
     isSelectedShowRecommendedFilter,
-    setIsSelectedShowRecommendedFilter,
+    handleSetIsSelectedShowRecommendedFilter,
     isInPopupView,
     clearFilters,
     isSelectedBookmarkFilter,
-    setIsSelectedBookmarkFilter
+    handleSetIsSelectedBookmarkFilter
 }) => {
     return (
         <NavBar>
@@ -110,7 +110,7 @@ export const SideNav: React.FC<IProps> = ({
                     <ResponsiveButton
                         $isSelected={isSelectedBookmarkFilter}
                         onClick={() =>
-                            setIsSelectedBookmarkFilter(
+                            handleSetIsSelectedBookmarkFilter(
                                 !isSelectedBookmarkFilter
                             )
                         }
@@ -123,7 +123,7 @@ export const SideNav: React.FC<IProps> = ({
                     <ResponsiveButton
                         $isSelected={isSelectedShowRecommendedFilter}
                         onClick={() =>
-                            setIsSelectedShowRecommendedFilter(
+                            handleSetIsSelectedShowRecommendedFilter(
                                 !isSelectedShowRecommendedFilter
                             )
                         }

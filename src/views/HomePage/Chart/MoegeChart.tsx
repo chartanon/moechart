@@ -283,7 +283,7 @@ export const MoegeChart: React.FC<IProps> = ({
                 {bookmarkedVisualNovels.length > 0 &&
                 isSelectedBookmarkFilter ? (
                     <VerticalFade>
-                        <SectionHeader>bookmarked</SectionHeader>
+                        <SectionHeader>bookmarks</SectionHeader>
                         <EntriesContainer>
                             <AnimatePresence>
                                 {bookmarkedVisualNovels.map(
