@@ -160,18 +160,18 @@ export const MoegeChart: React.FC<IProps> = ({
     if (isSelectedChronologicalSort) {
         filteredReleasedVisualNovels.sort(
             (visualNovelOne, visualNovelTwo) =>
-                visualNovelTwo.translationReleaseDate! -
-                visualNovelOne.translationReleaseDate!
+                (visualNovelTwo.translationReleaseDate ?? 0) -
+                (visualNovelOne.translationReleaseDate ?? 0)
         );
         recommendedVisualNovels.sort(
             (visualNovelOne, visualNovelTwo) =>
-                visualNovelTwo.translationReleaseDate! -
-                visualNovelOne.translationReleaseDate!
+                (visualNovelTwo.translationReleaseDate ?? 0) -
+                (visualNovelOne.translationReleaseDate ?? 0)
         );
         bookmarkedVisualNovels.sort(
             (visualNovelOne, visualNovelTwo) =>
-                visualNovelTwo.translationReleaseDate! -
-                visualNovelOne.translationReleaseDate!
+                (visualNovelTwo.translationReleaseDate ?? 0) -
+                (visualNovelOne.translationReleaseDate ?? 0)
         );
     }
 
