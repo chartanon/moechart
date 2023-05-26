@@ -287,20 +287,22 @@ export const MoegeChart: React.FC<IProps> = ({
                             </Row>
                         </Button>
                     ) : null}
-                    <Button
-                        onClick={() =>
-                            upcomingReleasesRef.current?.scrollIntoView({
-                                behavior: 'smooth'
-                            })
-                        }
-                    >
-                        <Row>
-                            <ArrowIcon />
-                            <UpcomingReleasesFont>
-                                Go to upcoming Releases
-                            </UpcomingReleasesFont>
-                        </Row>
-                    </Button>
+                    {unreleasedVisualNovels.length > 0 ? (
+                        <Button
+                            onClick={() =>
+                                upcomingReleasesRef.current?.scrollIntoView({
+                                    behavior: 'smooth'
+                                })
+                            }
+                        >
+                            <Row>
+                                <ArrowIcon />
+                                <UpcomingReleasesFont>
+                                    Go to upcoming Releases
+                                </UpcomingReleasesFont>
+                            </Row>
+                        </Button>
+                    ) : null}
                 </Row>
             </MoechartFont>
 
@@ -435,22 +437,24 @@ export const MoegeChart: React.FC<IProps> = ({
                                     </UpcomingReleasesFont>
                                 </Row>
                             </Button>
-                            <Button
-                                onClick={() =>
-                                    upcomingReleasesRef.current?.scrollIntoView(
-                                        {
-                                            behavior: 'smooth'
-                                        }
-                                    )
-                                }
-                            >
-                                <Row>
-                                    <ArrowIcon />
-                                    <UpcomingReleasesFont>
-                                        Go to upcoming Releases
-                                    </UpcomingReleasesFont>
-                                </Row>
-                            </Button>
+                            {unreleasedVisualNovels.length > 0 ? (
+                                <Button
+                                    onClick={() =>
+                                        upcomingReleasesRef.current?.scrollIntoView(
+                                            {
+                                                behavior: 'smooth'
+                                            }
+                                        )
+                                    }
+                                >
+                                    <Row>
+                                        <ArrowIcon />
+                                        <UpcomingReleasesFont>
+                                            Go to upcoming Releases
+                                        </UpcomingReleasesFont>
+                                    </Row>
+                                </Button>
+                            ) : null}
                         </Row>
                     ) : null}
                 </TranslatedMoegeHeader>
