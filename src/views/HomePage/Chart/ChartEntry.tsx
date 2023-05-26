@@ -3,18 +3,16 @@ import styled, { css } from 'styled-components';
 import { COLOURS, Column, Row, TitleFont } from '../../utils';
 
 import { SeriesRelationshipMap } from './MoegeChart';
-import { VisualNovelProps } from './visualNovelData';
 import { SequelsModal } from './SequelsModal';
 import { IMAGE_WIDTH, SEQUELS_OFFSET, ThumbnailImage } from './utils';
 import { GenreFocus } from './utils';
-import { VisualNovelCard } from './VisualNovelCard';
+import { VisualNovelCard, VisualNovelCardProps } from './VisualNovelCard';
 import { RecommendedModal } from './RecommendedModal';
 
-export interface ChartEntryProps extends VisualNovelProps {
+export interface ChartEntryProps extends VisualNovelCardProps {
     allSequelRelationships?: SeriesRelationshipMap;
     isSelectedShowSequelFilter?: boolean;
     setIsInPopupView?: (value: boolean) => void;
-    shouldDisplayDateInTitle?: boolean;
 }
 
 export const ChartEntry: React.FC<ChartEntryProps> = props => {

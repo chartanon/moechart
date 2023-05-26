@@ -27,6 +27,7 @@ import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
 import { FilterAttribute, GenreFocus } from '../HomePage/Chart/utils';
 import { PlaytimeLength } from '../HomePage/Chart/utils';
 import { StarIcon } from '../assets/icons/attribute/StarIcon';
+import { BookmarkIcon } from '../assets/icons/misc/BookmarkIcon';
 
 interface IProps {
     selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
@@ -47,6 +48,8 @@ interface IProps {
     setIsSelectedShowRecommendedFilter: (value: boolean) => void;
     isInPopupView: boolean;
     clearFilters: () => void;
+    isSelectedBookmarkFilter: boolean;
+    setIsSelectedBookmarkFilter: (value: boolean) => void;
 }
 
 export const SideNav: React.FC<IProps> = ({
@@ -65,7 +68,9 @@ export const SideNav: React.FC<IProps> = ({
     isSelectedShowRecommendedFilter,
     setIsSelectedShowRecommendedFilter,
     isInPopupView,
-    clearFilters
+    clearFilters,
+    isSelectedBookmarkFilter,
+    setIsSelectedBookmarkFilter
 }) => {
     return (
         <NavBar>
@@ -102,6 +107,32 @@ export const SideNav: React.FC<IProps> = ({
                 </Section>
                 <Section>
                     <TitleFont>EXTRA TOOLS</TitleFont>
+                    <ResponsiveButton
+                        $isSelected={isSelectedBookmarkFilter}
+                        onClick={() =>
+                            setIsSelectedBookmarkFilter(
+                                !isSelectedBookmarkFilter
+                            )
+                        }
+                    >
+                        <LegendItemContainer>
+                            <BookmarkIcon />
+                            <LegendLabel>Show Bookmarked</LegendLabel>
+                        </LegendItemContainer>
+                    </ResponsiveButton>
+                    <ResponsiveButton
+                        $isSelected={isSelectedShowRecommendedFilter}
+                        onClick={() =>
+                            setIsSelectedShowRecommendedFilter(
+                                !isSelectedShowRecommendedFilter
+                            )
+                        }
+                    >
+                        <LegendItemContainer>
+                            <StarIcon />
+                            <LegendLabel>Show Recommended</LegendLabel>
+                        </LegendItemContainer>
+                    </ResponsiveButton>
                     <Row $gap={15}>
                         <ResponsiveButton
                             $isSelected={isSelectedHasSequelFilter}
@@ -131,19 +162,6 @@ export const SideNav: React.FC<IProps> = ({
                             </LegendItemContainer>
                         </ResponsiveButton>
                     </Row>
-                    <ResponsiveButton
-                        $isSelected={isSelectedShowRecommendedFilter}
-                        onClick={() =>
-                            setIsSelectedShowRecommendedFilter(
-                                !isSelectedShowRecommendedFilter
-                            )
-                        }
-                    >
-                        <LegendItemContainer>
-                            <StarIcon />
-                            <LegendLabel>Show Recommended</LegendLabel>
-                        </LegendItemContainer>
-                    </ResponsiveButton>
                     {miscellaneousSortingToolsList.map(sortingOption => {
                         return (
                             <SortByItem

@@ -37,6 +37,9 @@ interface IProps {
     isSelectedShowSequelFilter: boolean;
     isSelectedShowRecommendedFilter: boolean;
     setIsInPopupView: (value: boolean) => void;
+    bookmarkedVisualNovels: VisualNovelProps[];
+    handleBookmarkVisualNovel: (visualNovel: VisualNovelProps) => void;
+    isSelectedBookmarkFilter: boolean;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
@@ -47,7 +50,10 @@ export const MoegeChart: React.FC<IProps> = ({
     isSelectedHasSequelFilter,
     isSelectedShowSequelFilter,
     isSelectedShowRecommendedFilter,
-    setIsInPopupView
+    setIsInPopupView,
+    bookmarkedVisualNovels,
+    handleBookmarkVisualNovel,
+    isSelectedBookmarkFilter
 }) => {
     let allSequelRelationships: SeriesRelationshipMap = {};
     let recommendedVisualNovels: VisualNovelProps[] = [];
@@ -90,6 +96,16 @@ export const MoegeChart: React.FC<IProps> = ({
         else if (
             isSelectedHasSequelFilter &&
             (!visualNovel.sequels || visualNovel.sequels.length === 0)
+        ) {
+            return false;
+        }
+        // important that this comes before recommended filter, so that it properly filters from both the filtered list and recommended list
+        else if (
+            isSelectedBookmarkFilter &&
+            bookmarkedVisualNovels.some(
+                currentVisualNovel =>
+                    currentVisualNovel.vndbLink === visualNovel.vndbLink
+            )
         ) {
             return false;
         }
@@ -159,16 +175,32 @@ export const MoegeChart: React.FC<IProps> = ({
     if (
         selectedMiscellaneousSortingOptions.length === 0 &&
         selectedPlaytimeFilter === null &&
-        selectedGenreFocusFilter === null &&
         selectedFilterAttributes.length === 0 &&
         isSelectedHasSequelFilter === false
     ) {
-        unreleasedVisualNovels = visualNovelData.filter(
-            visualNovel => visualNovel.isUpcomingRelease
-        );
+        unreleasedVisualNovels = visualNovelData.filter(visualNovel => {
+            if (
+                isSelectedBookmarkFilter &&
+                bookmarkedVisualNovels.some(
+                    currentVisualNovel =>
+                        currentVisualNovel.vndbLink === visualNovel.vndbLink
+                )
+            ) {
+                return false;
+            }
+            if (
+                selectedGenreFocusFilter !== null &&
+                visualNovel.genreFocus !== selectedGenreFocusFilter
+            ) {
+                return false;
+            }
+
+            return visualNovel.isUpcomingRelease;
+        });
     }
 
     const moechartTitleRef = React.useRef<HTMLDivElement>(null);
+    const translatedMoegeRef = React.useRef<HTMLDivElement>(null);
     const upcomingReleasesRef = React.useRef<HTMLDivElement>(null);
 
     const [backgroundSongs] = useState<HTMLAudioElement[]>([
@@ -202,7 +234,41 @@ export const MoegeChart: React.FC<IProps> = ({
                 <Row>
                     <VNFont ref={moechartTitleRef}>/vn/</VNFont> MOECHART
                 </Row>
+                <Row $gap={10}>
+                    {isSelectedShowRecommendedFilter ||
+                    isSelectedBookmarkFilter ? (
+                        <Button
+                            onClick={() =>
+                                translatedMoegeRef.current?.scrollIntoView({
+                                    behavior: 'smooth'
+                                })
+                            }
+                        >
+                            <Row>
+                                <ArrowIcon />
+                                <UpcomingReleasesFont>
+                                    Go to translated moege
+                                </UpcomingReleasesFont>
+                            </Row>
+                        </Button>
+                    ) : null}
+                    <Button
+                        onClick={() =>
+                            upcomingReleasesRef.current?.scrollIntoView({
+                                behavior: 'smooth'
+                            })
+                        }
+                    >
+                        <Row>
+                            <ArrowIcon />
+                            <UpcomingReleasesFont>
+                                Go to upcoming Releases
+                            </UpcomingReleasesFont>
+                        </Row>
+                    </Button>
+                </Row>
             </MoechartFont>
+
             <InfoBar>
                 <MusicButton
                     onClick={handlePlaySong}
@@ -214,11 +280,63 @@ export const MoegeChart: React.FC<IProps> = ({
             </InfoBar>
 
             <AnimatePresence>
+                {bookmarkedVisualNovels.length > 0 &&
+                isSelectedBookmarkFilter ? (
+                    <VerticalFade>
+                        <SectionHeader>bookmarked</SectionHeader>
+                        <EntriesContainer>
+                            <AnimatePresence>
+                                {bookmarkedVisualNovels.map(
+                                    (visualNovel, index) => {
+                                        const isBookmarked =
+                                            bookmarkedVisualNovels.some(
+                                                currentVisualNovel =>
+                                                    currentVisualNovel.vndbLink ===
+                                                    visualNovel.vndbLink
+                                            );
+                                        return (
+                                            <StaggeredEntranceFade
+                                                key={
+                                                    visualNovel.thumbnailSource
+                                                }
+                                                index={index}
+                                            >
+                                                <Entry
+                                                    {...visualNovel}
+                                                    allSequelRelationships={
+                                                        allSequelRelationships
+                                                    }
+                                                    isSelectedShowSequelFilter={
+                                                        isSelectedShowSequelFilter
+                                                    }
+                                                    setIsInPopupView={
+                                                        setIsInPopupView
+                                                    }
+                                                    shouldDisplayDateInTitle={
+                                                        isSortingByChronological
+                                                    }
+                                                    shouldDisplayUpcomingDisclaimerInTitle={
+                                                        isBookmarked &&
+                                                        visualNovel.isUpcomingRelease
+                                                    }
+                                                    isBookmarked={isBookmarked}
+                                                    onBookmark={
+                                                        handleBookmarkVisualNovel
+                                                    }
+                                                />
+                                            </StaggeredEntranceFade>
+                                        );
+                                    }
+                                )}
+                            </AnimatePresence>
+                        </EntriesContainer>
+                    </VerticalFade>
+                ) : null}
+            </AnimatePresence>
+            <AnimatePresence>
                 {recommendedVisualNovels.length > 0 ? (
                     <VerticalFade>
-                        <OtherHeader ref={upcomingReleasesRef}>
-                            recommended
-                        </OtherHeader>
+                        <SectionHeader>recommended</SectionHeader>
                         <EntriesContainer>
                             <AnimatePresence>
                                 {recommendedVisualNovels.map(
@@ -244,6 +362,14 @@ export const MoegeChart: React.FC<IProps> = ({
                                                     shouldDisplayDateInTitle={
                                                         isSortingByChronological
                                                     }
+                                                    isBookmarked={bookmarkedVisualNovels.some(
+                                                        currentVisualNovel =>
+                                                            currentVisualNovel.vndbLink ===
+                                                            visualNovel.vndbLink
+                                                    )}
+                                                    onBookmark={
+                                                        handleBookmarkVisualNovel
+                                                    }
                                                 />
                                             </StaggeredEntranceFade>
                                         );
@@ -254,11 +380,27 @@ export const MoegeChart: React.FC<IProps> = ({
                     </VerticalFade>
                 ) : null}
             </AnimatePresence>
-            <AnimatePresence>
-                {recommendedVisualNovels.length > 0 ? (
-                    <VerticalFade>
-                        <MainHeader>
-                            translated moege
+            <EntriesContainer ref={translatedMoegeRef}>
+                <HeaderWithJump>
+                    translated moege
+                    {isSelectedShowRecommendedFilter ||
+                    isSelectedBookmarkFilter ? (
+                        <Row $gap={10}>
+                            <Button
+                                onClick={() =>
+                                    moechartTitleRef.current?.scrollIntoView({
+                                        block: 'end',
+                                        behavior: 'smooth'
+                                    })
+                                }
+                            >
+                                <Row>
+                                    <ArrowIcon rotate={180} />
+                                    <UpcomingReleasesFont>
+                                        Back to top
+                                    </UpcomingReleasesFont>
+                                </Row>
+                            </Button>
                             <Button
                                 onClick={() =>
                                     upcomingReleasesRef.current?.scrollIntoView(
@@ -275,11 +417,9 @@ export const MoegeChart: React.FC<IProps> = ({
                                     </UpcomingReleasesFont>
                                 </Row>
                             </Button>
-                        </MainHeader>
-                    </VerticalFade>
-                ) : null}
-            </AnimatePresence>
-            <EntriesContainer>
+                        </Row>
+                    ) : null}
+                </HeaderWithJump>
                 <AnimatePresence>
                     {filteredReleasedVisualNovels.map((visualNovel, index) => {
                         return (
@@ -299,6 +439,12 @@ export const MoegeChart: React.FC<IProps> = ({
                                     shouldDisplayDateInTitle={
                                         isSortingByChronological
                                     }
+                                    isBookmarked={bookmarkedVisualNovels.some(
+                                        currentVisualNovel =>
+                                            currentVisualNovel.vndbLink ===
+                                            visualNovel.vndbLink
+                                    )}
+                                    onBookmark={handleBookmarkVisualNovel}
                                 />
                             </StaggeredEntranceFade>
                         );
@@ -308,7 +454,7 @@ export const MoegeChart: React.FC<IProps> = ({
             <AnimatePresence>
                 {unreleasedVisualNovels.length > 0 ? (
                     <VerticalFade>
-                        <OtherHeader ref={upcomingReleasesRef}>
+                        <HeaderWithJump ref={upcomingReleasesRef}>
                             upcoming
                             <Button
                                 onClick={() =>
@@ -325,8 +471,7 @@ export const MoegeChart: React.FC<IProps> = ({
                                     </UpcomingReleasesFont>
                                 </Row>
                             </Button>
-                        </OtherHeader>
-
+                        </HeaderWithJump>
                         <EntriesContainer>
                             <AnimatePresence>
                                 {unreleasedVisualNovels.map(
@@ -338,7 +483,17 @@ export const MoegeChart: React.FC<IProps> = ({
                                                 }
                                                 index={index}
                                             >
-                                                <Entry {...visualNovel} />
+                                                <Entry
+                                                    {...visualNovel}
+                                                    isBookmarked={bookmarkedVisualNovels.some(
+                                                        currentVisualNovel =>
+                                                            currentVisualNovel.vndbLink ===
+                                                            visualNovel.vndbLink
+                                                    )}
+                                                    onBookmark={
+                                                        handleBookmarkVisualNovel
+                                                    }
+                                                />
                                             </StaggeredEntranceFade>
                                         );
                                     }
@@ -372,23 +527,31 @@ const EntriesContainer = styled(Row)`
     flex-wrap: wrap;
 `;
 
-const MainHeader = styled(HeaderFont)`
+const BaseHeader = styled(HeaderFont)`
     display: flex;
     padding-top: 20px;
     border-bottom: 2px solid ${COLOURS.TEXT};
 
     width: 100%;
-    justify-content: space-between;
     font-family: monospace;
 `;
 
-const OtherHeader = styled(MainHeader)`
+const SectionHeader = styled(BaseHeader)`
     margin-bottom: 40px;
 `;
 
-const MoechartFont = styled(MainHeader)`
+const HeaderWithJump = styled(BaseHeader)`
+    &>: last-child {
+        margin-left: auto;
+    }
+`;
+
+const MoechartFont = styled(BaseHeader)`
     font-weight: 800;
     letter-spacing: 0.07rem;
+    & > :last-child {
+        margin-left: auto;
+    }
 `;
 
 const VNFont = styled.div`

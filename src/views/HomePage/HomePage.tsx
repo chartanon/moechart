@@ -7,6 +7,7 @@ import { MiscellaneousSortingOption } from '../SideNav/LegendData';
 import { SIDE_NAV_WIDTH } from '../SideNav/utils';
 import { GenreFocus, FilterAttribute } from './Chart/utils';
 import { PlaytimeLength } from './Chart/utils';
+import { VisualNovelProps } from './Chart/visualNovelData';
 export const HomePage: React.FC = () => {
     const [
         selectedMiscellaneousSortingOptions,
@@ -27,6 +28,11 @@ export const HomePage: React.FC = () => {
         isSelectedShowRecommendedFilter,
         setIsSelectedShowRecommendedFilter
     ] = useState<boolean>(true);
+    const [bookmarkedVisualNovels, setBookmarkedVisualNovels] = useState<
+        VisualNovelProps[]
+    >([]);
+    const [isSelectedBookmarkFilter, setIsSelectedBookmarkFilter] =
+        useState<boolean>(true);
 
     const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
@@ -72,6 +78,24 @@ export const HomePage: React.FC = () => {
             setSelectedFilterAttributes([...selectedFilterAttributes, value]);
         }
     };
+
+    const handleBookmarkVisualNovel = (visualNovel: VisualNovelProps) => {
+        if (
+            bookmarkedVisualNovels.some(
+                currentVisualNovel =>
+                    currentVisualNovel.vndbLink === visualNovel.vndbLink
+            )
+        ) {
+            setBookmarkedVisualNovels(
+                bookmarkedVisualNovels.filter(
+                    currentVisualNovel =>
+                        currentVisualNovel.vndbLink !== visualNovel.vndbLink
+                )
+            );
+        } else {
+            setBookmarkedVisualNovels([...bookmarkedVisualNovels, visualNovel]);
+        }
+    };
     const clearFilters = () => {
         setSelectedMiscellaneousSortingOptions([]);
         setSelectedPlaytimeFilter(null);
@@ -80,6 +104,7 @@ export const HomePage: React.FC = () => {
         setIsSelectedHasSequelFilter(false);
         setIsSelectedShowSequelFilter(false);
         setIsSelectedShowRecommendedFilter(false);
+        setIsSelectedBookmarkFilter(false);
     };
 
     return (
@@ -115,6 +140,8 @@ export const HomePage: React.FC = () => {
                 }
                 isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
+                isSelectedBookmarkFilter={isSelectedBookmarkFilter}
+                setIsSelectedBookmarkFilter={setIsSelectedBookmarkFilter}
             />
             <MoegeChart
                 selectedMiscellaneousSortingOptions={
@@ -129,6 +156,9 @@ export const HomePage: React.FC = () => {
                     isSelectedShowRecommendedFilter
                 }
                 setIsInPopupView={setIsInPopupView}
+                bookmarkedVisualNovels={bookmarkedVisualNovels}
+                handleBookmarkVisualNovel={handleBookmarkVisualNovel}
+                isSelectedBookmarkFilter={isSelectedBookmarkFilter}
             />
         </Container>
     );
