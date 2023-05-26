@@ -39,31 +39,39 @@ import moment from 'moment';
 import { StarIcon } from '../../assets/icons/attribute/StarIcon';
 import { QuestionDiscIcon } from '../../assets/icons/misc/QuestionDiscIcon';
 import { QuestionStarIcon } from '../../assets/icons/misc/QuestionStarIcon';
+import { BookmarkIcon } from '../../assets/icons/misc/BookmarkIcon';
 
 export interface VisualNovelCardProps extends VisualNovelProps {
     sequelInfoOnClick?: () => void;
     shouldDisplayDateInTitle?: boolean;
+    shouldDisplayUpcomingDisclaimerInTitle?: boolean;
     descriptionInfoOnClick?: () => void;
+    isBookmarked?: boolean;
+    onBookmark?: (visualNovel: VisualNovelProps) => void;
 }
 
-export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
-    name,
-    vndbLink,
-    playtime,
-    thumbnailSource,
-    attributes,
-    genreFocus,
-    descriptionFirstRowText,
-    descriptionSecondRowText,
-    sequels,
-    originalGame,
-    sequelInfoOnClick,
-    shouldDisplayDateInTitle,
-    translationReleaseDate,
-    isRecommended,
-    descriptionInfoOnClick,
-    isUpcomingRelease
-}) => {
+export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
+    const {
+        name,
+        vndbLink,
+        playtime,
+        thumbnailSource,
+        attributes,
+        genreFocus,
+        descriptionFirstRowText,
+        descriptionSecondRowText,
+        sequels,
+        originalGame,
+        sequelInfoOnClick,
+        shouldDisplayDateInTitle,
+        shouldDisplayUpcomingDisclaimerInTitle,
+        translationReleaseDate,
+        isRecommended,
+        descriptionInfoOnClick,
+        isUpcomingRelease,
+        isBookmarked,
+        onBookmark
+    } = props;
     const attributesOrder = Object.values(FilterAttribute);
     let outlineColour = COLOURS.GENRE.NUKIGE;
     switch (genreFocus) {
@@ -99,16 +107,14 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                         <QuestionDiscIcon />
                     </HelpButton>
                 ) : null}
-                {shouldDisplayDateInTitle ? (
-                    <Column>
-                        <Title>{name}</Title>
-                        <DateFont>
-                            ({moment(translationReleaseDate).format('ll')})
-                        </DateFont>
-                    </Column>
-                ) : (
-                    <Title>{name}</Title>
-                )}
+                <VisualNovelCardTitle
+                    name={name}
+                    translationReleaseDate={translationReleaseDate}
+                    shouldDisplayDateInTitle={!!shouldDisplayDateInTitle}
+                    shouldDisplayUpcomingDisclaimerInTitle={
+                        !!shouldDisplayUpcomingDisclaimerInTitle
+                    }
+                />
             </TopRow>
             <ContentBody>
                 <Link href={vndbLink}>
@@ -125,6 +131,14 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                     $cardStackCount={sequels?.length}
                     $shouldScaleMarginLeft={!!sequelInfoOnClick}
                 >
+                    <BookmarkContainer
+                        $outlineColour={outlineColour}
+                        $isBookmarked={!!isBookmarked}
+                    >
+                        <Button onClick={() => onBookmark?.({ ...props })}>
+                            <BookmarkIcon />
+                        </Button>
+                    </BookmarkContainer>
                     <PlaytimeIconContainer
                         $outlineColour={outlineColour}
                         $shouldHaveBackgroundColour={!isUpcomingRelease}
@@ -236,14 +250,55 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = ({
                     </AdditionalIconsContainerWrapper>
                 </IconsContainer>
             </ContentBody>
-            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
-                {descriptionFirstRowText}
-            </DescriptionFont>
-            <DescriptionFont $outlineColour={outlineColour} $textAlign="right">
-                {descriptionSecondRowText}
-            </DescriptionFont>
+            <DescriptionContainer>
+                <DescriptionFont
+                    $outlineColour={outlineColour}
+                    $textAlign="right"
+                >
+                    {descriptionFirstRowText}
+                </DescriptionFont>
+                <DescriptionFont
+                    $outlineColour={outlineColour}
+                    $textAlign="right"
+                >
+                    {descriptionSecondRowText}
+                </DescriptionFont>
+            </DescriptionContainer>
         </Container>
     );
+};
+
+const VisualNovelCardTitle: React.FC<{
+    name: string;
+    translationReleaseDate?: number;
+    shouldDisplayDateInTitle: boolean;
+    shouldDisplayUpcomingDisclaimerInTitle: boolean;
+}> = ({
+    name,
+    translationReleaseDate,
+    shouldDisplayDateInTitle,
+    shouldDisplayUpcomingDisclaimerInTitle
+}) => {
+    if (shouldDisplayDateInTitle && translationReleaseDate) {
+        return (
+            <Column>
+                <Title>{name}</Title>
+                <SubtitleFont>
+                    ({moment(translationReleaseDate).format('ll')})
+                </SubtitleFont>
+            </Column>
+        );
+    }
+    if (shouldDisplayUpcomingDisclaimerInTitle) {
+        return (
+            <Column>
+                <Title>{name}</Title>
+                <SubtitleFont>(Upcoming release)</SubtitleFont>
+            </Column>
+        );
+    }
+
+    return <Title>{name}</Title>;
 };
 
 const Container = styled(Column)`
@@ -296,6 +351,21 @@ const PlaytimeIconContainer = styled.div<{
             : ''}
 `;
 
+const BookmarkContainer = styled.div<{
+    $outlineColour: string;
+    $isBookmarked: boolean;
+}>`
+    height: auto;
+    border-radius: 15px;
+    padding: 5px;
+    ${({ $outlineColour, $isBookmarked }) =>
+        $outlineColour && $isBookmarked
+            ? css`
+                  background-color: ${$outlineColour}bb;
+              `
+            : ''}
+`;
+
 const AdditionalIconsContainer = styled(Column)<{
     $outlineColour: string;
     $shouldHaveBackgroundColour: boolean;
@@ -320,6 +390,11 @@ const Link = styled.a`
 
 const DescriptionFont = styled(LabelFont)`
     font-size: 0.8rem;
+    white-space: nowrap;
+`;
+
+const DescriptionContainer = styled(Column)`
+    flex-wrap: wrap-reverse;
 `;
 
 const HelpButton = styled(Button)``;
@@ -328,6 +403,6 @@ const TopRow = styled(Row)`
     padding-bottom: 14px;
 `;
 
-const DateFont = styled(LabelFont)`
+const SubtitleFont = styled(LabelFont)`
     padding-left: 4px;
 `;

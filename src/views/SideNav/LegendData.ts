@@ -13,8 +13,6 @@ import { LinearPlotIcon } from '../assets/icons/attribute/LinearPlotIcon';
 import { KineticNovelIcon } from '../assets/icons/attribute/KineticNovelIcon';
 import { FrenchGirlIcon } from '../assets/icons/attribute/FrenchGirlIcon';
 import { ReactElement } from 'react';
-import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
-import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
 import { ScenarioSelectionIcon } from '../assets/icons/attribute/ScenarioSelectionIcon';
 import { FilterAttribute } from '../HomePage/Chart/utils';
 import { PlaytimeLength } from '../HomePage/Chart/utils';
@@ -30,15 +28,6 @@ export interface AttributeProps extends BaseProps {
 export interface PlaytimeProps extends BaseProps {
     length: PlaytimeLength;
     secondaryLabel: string;
-}
-
-export interface SortingProps extends BaseProps {
-    option: MiscellaneousSortingOption;
-}
-
-export enum MiscellaneousSortingOption {
-    CHRONOLOGICAL = 'CHRONOLOGICAL',
-    RANDOM = 'RANDOM'
 }
 
 export const playtimesList: PlaytimeProps[] = [
@@ -65,19 +54,6 @@ export const playtimesList: PlaytimeProps[] = [
         label: 'Very Long',
         secondaryLabel: '>50 hrs',
         length: PlaytimeLength.VERY_LONG
-    }
-];
-
-export const miscellaneousSortingToolsList: SortingProps[] = [
-    {
-        IconSVG: ClockIcon,
-        label: 'Newest Releases',
-        option: MiscellaneousSortingOption.CHRONOLOGICAL
-    },
-    {
-        IconSVG: DiceIcon,
-        label: 'Random 10',
-        option: MiscellaneousSortingOption.RANDOM
     }
 ];
 

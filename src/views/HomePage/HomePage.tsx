@@ -3,94 +3,185 @@ import { MoegeChart } from './Chart/MoegeChart';
 import { SideNav } from '../SideNav/SideNav';
 import React, { useState } from 'react';
 
-import { MiscellaneousSortingOption } from '../SideNav/LegendData';
 import { SIDE_NAV_WIDTH } from '../SideNav/utils';
 import { GenreFocus, FilterAttribute } from './Chart/utils';
 import { PlaytimeLength } from './Chart/utils';
+import { VisualNovelProps } from './Chart/visualNovelData';
+import {
+    FILTER_ATTRIBUTES,
+    GENRE_FOCUS_KEY,
+    HAS_SEQUEL,
+    SHOW_SEQUEL,
+    PLAYTIME_KEY,
+    SHOW_BOOKMARKS,
+    SHOW_RECOMMENDED,
+    CHRONOLOGICAL_SORT,
+    RANDOM_TEN,
+    BOOKMARKS
+} from '../localStorage';
+
 export const HomePage: React.FC = () => {
-    const [
-        selectedMiscellaneousSortingOptions,
-        setSelectedMiscellaneousSortingOptions
-    ] = useState<MiscellaneousSortingOption[]>([]);
     const [selectedPlaytimeFilter, setSelectedPlaytimeFilter] =
-        useState<PlaytimeLength | null>(null);
+        useState<PlaytimeLength | null>(
+            localStorage.getItem(PLAYTIME_KEY) as PlaytimeLength
+        );
     const [selectedGenreFocusFilter, setSelectedGenreFocusFilter] =
-        useState<GenreFocus | null>(null);
+        useState<GenreFocus | null>(
+            localStorage.getItem(GENRE_FOCUS_KEY) as GenreFocus
+        );
     const [selectedFilterAttributes, setSelectedFilterAttributes] = useState<
         FilterAttribute[]
-    >([]);
-    const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
-        useState<boolean>(false);
-    const [isSelectedShowSequelFilter, setIsSelectedShowSequelFilter] =
-        useState<boolean>(false);
+    >(JSON.parse(localStorage.getItem(FILTER_ATTRIBUTES) ?? '[]'));
+
+    const [isSelectedBookmarkFilter, setIsSelectedBookmarkFilter] =
+        useState<boolean>(
+            localStorage.getItem(SHOW_BOOKMARKS) === 'false' ? false : true
+        );
     const [
         isSelectedShowRecommendedFilter,
         setIsSelectedShowRecommendedFilter
-    ] = useState<boolean>(true);
+    ] = useState<boolean>(
+        localStorage.getItem(SHOW_RECOMMENDED) === 'false' ? false : true
+    );
+    const [isSelectedHasSequelFilter, setIsSelectedHasSequelFilter] =
+        useState<boolean>(localStorage.getItem(HAS_SEQUEL) === 'true');
+    const [isSelectedShowSequelFilter, setIsSelectedShowSequelFilter] =
+        useState<boolean>(localStorage.getItem(SHOW_SEQUEL) === 'true');
+
+    const [bookmarkedVisualNovels, setBookmarkedVisualNovels] = useState<
+        VisualNovelProps[]
+    >(JSON.parse(localStorage.getItem(BOOKMARKS) ?? '[]'));
+
+    const [isSelectedChronologicalSort, setIsSelectedChronologicalSort] =
+        useState<boolean>(localStorage.getItem(CHRONOLOGICAL_SORT) === 'true');
+    const [isSelectedRandomTenFilter, setIsSelectedRandomTenFilter] =
+        useState<boolean>(localStorage.getItem(RANDOM_TEN) === 'true');
 
     const [isInPopupView, setIsInPopupView] = useState<boolean>(false);
 
-    const handleSetSelectedMiscellaneousSortingOptions = (
-        value: MiscellaneousSortingOption
-    ) => {
-        if (
-            selectedMiscellaneousSortingOptions.some(
-                sortingOption => sortingOption === value
-            )
-        ) {
-            setSelectedMiscellaneousSortingOptions(
-                selectedMiscellaneousSortingOptions.filter(
-                    sortingOption => sortingOption !== value
-                )
-            );
+    const handleSetSelectedPlaytimeFilter = (value: PlaytimeLength | null) => {
+        if (selectedPlaytimeFilter === value || value === null) {
+            setSelectedPlaytimeFilter(null);
+            localStorage.removeItem(PLAYTIME_KEY);
         } else {
-            setSelectedMiscellaneousSortingOptions([
-                ...selectedMiscellaneousSortingOptions,
-                value
-            ]);
+            setSelectedPlaytimeFilter(value);
+            localStorage.setItem(PLAYTIME_KEY, value);
         }
     };
-
-    const handleSetSelectedPlaytimeFilter = (value: PlaytimeLength) => {
-        selectedPlaytimeFilter === value
-            ? setSelectedPlaytimeFilter(null)
-            : setSelectedPlaytimeFilter(value);
+    const handleSetSelectedGenreFocusFilter = (value: GenreFocus | null) => {
+        if (selectedGenreFocusFilter === value || value === null) {
+            setSelectedGenreFocusFilter(null);
+            localStorage.removeItem(GENRE_FOCUS_KEY);
+        } else {
+            setSelectedGenreFocusFilter(value);
+            localStorage.setItem(GENRE_FOCUS_KEY, value);
+        }
     };
-    const handleSetSelectedGenreFocusFilter = (value: GenreFocus) => {
-        selectedGenreFocusFilter === value
-            ? setSelectedGenreFocusFilter(null)
-            : setSelectedGenreFocusFilter(value);
-    };
-    const handleSetSelectedFilterAttributes = (value: FilterAttribute) => {
-        if (selectedFilterAttributes.some(attribute => attribute === value)) {
+    const handleSetSelectedFilterAttributes = (
+        value: FilterAttribute | null
+    ) => {
+        if (value === null) {
+            setSelectedFilterAttributes([]);
+            localStorage.setItem(FILTER_ATTRIBUTES, '[]');
+        } else if (
+            selectedFilterAttributes.some(attribute => attribute === value)
+        ) {
             setSelectedFilterAttributes(
                 selectedFilterAttributes.filter(
                     attribute => attribute !== value
                 )
             );
+            localStorage.setItem(
+                FILTER_ATTRIBUTES,
+                JSON.stringify(
+                    selectedFilterAttributes.filter(
+                        attribute => attribute !== value
+                    )
+                )
+            );
         } else {
             setSelectedFilterAttributes([...selectedFilterAttributes, value]);
+            localStorage.setItem(
+                FILTER_ATTRIBUTES,
+                JSON.stringify([...selectedFilterAttributes, value])
+            );
         }
     };
+
+    const handleSetIsSelectedBookmarkFilter = (value: boolean) => {
+        setIsSelectedBookmarkFilter(value);
+        localStorage.setItem(SHOW_BOOKMARKS, JSON.stringify(value));
+    };
+
+    const handleSetIsSelectedShowRecommendedFilter = (value: boolean) => {
+        setIsSelectedShowRecommendedFilter(value);
+        localStorage.setItem(SHOW_RECOMMENDED, JSON.stringify(value));
+    };
+    const handleBookmarkVisualNovel = (visualNovel: VisualNovelProps) => {
+        if (
+            bookmarkedVisualNovels.some(
+                currentVisualNovel =>
+                    currentVisualNovel.vndbLink === visualNovel.vndbLink
+            )
+        ) {
+            setBookmarkedVisualNovels(
+                bookmarkedVisualNovels.filter(
+                    currentVisualNovel =>
+                        currentVisualNovel.vndbLink !== visualNovel.vndbLink
+                )
+            );
+            localStorage.setItem(
+                BOOKMARKS,
+                JSON.stringify(
+                    bookmarkedVisualNovels.filter(
+                        currentVisualNovel =>
+                            currentVisualNovel.vndbLink !== visualNovel.vndbLink
+                    )
+                )
+            );
+        } else {
+            setBookmarkedVisualNovels([...bookmarkedVisualNovels, visualNovel]);
+            localStorage.setItem(
+                BOOKMARKS,
+                JSON.stringify([...bookmarkedVisualNovels, visualNovel])
+            );
+        }
+    };
+
+    const handleSetIsSelectedHasSequelFilter = (value: boolean) => {
+        setIsSelectedHasSequelFilter(value);
+        localStorage.setItem(HAS_SEQUEL, JSON.stringify(value));
+    };
+
+    const handleSetIsSelectedShowSequelFilter = (value: boolean) => {
+        setIsSelectedShowSequelFilter(value);
+        localStorage.setItem(SHOW_SEQUEL, JSON.stringify(value));
+    };
+
+    const handleSetIsSelectedChronologicalSort = (value: boolean) => {
+        setIsSelectedChronologicalSort(value);
+        localStorage.setItem(CHRONOLOGICAL_SORT, JSON.stringify(value));
+    };
+    const handleSetIsSelectedRandomTenFilter = (value: boolean) => {
+        setIsSelectedRandomTenFilter(value);
+        localStorage.setItem(RANDOM_TEN, JSON.stringify(value));
+    };
+
     const clearFilters = () => {
-        setSelectedMiscellaneousSortingOptions([]);
-        setSelectedPlaytimeFilter(null);
-        setSelectedGenreFocusFilter(null);
-        setSelectedFilterAttributes([]);
-        setIsSelectedHasSequelFilter(false);
-        setIsSelectedShowSequelFilter(false);
-        setIsSelectedShowRecommendedFilter(false);
+        handleSetSelectedPlaytimeFilter(null);
+        handleSetSelectedGenreFocusFilter(null);
+        handleSetSelectedFilterAttributes(null);
+        handleSetIsSelectedHasSequelFilter(false);
+        handleSetIsSelectedShowSequelFilter(false);
+        handleSetIsSelectedShowRecommendedFilter(false);
+        handleSetIsSelectedBookmarkFilter(false);
+        handleSetIsSelectedChronologicalSort(false);
+        handleSetIsSelectedRandomTenFilter(false);
     };
 
     return (
         <Container>
             <SideNav
-                selectedMiscellaneousSortingOptions={
-                    selectedMiscellaneousSortingOptions
-                }
-                handleSetSelectedMiscellaneousSortingOptions={
-                    handleSetSelectedMiscellaneousSortingOptions
-                }
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 handleSetSelectedPlaytimeFilter={
                     handleSetSelectedPlaytimeFilter
@@ -104,22 +195,35 @@ export const HomePage: React.FC = () => {
                     handleSetSelectedFilterAttributes
                 }
                 isSelectedHasSequelFilter={isSelectedHasSequelFilter}
-                setIsSelectedHasSequelFilter={setIsSelectedHasSequelFilter}
+                handleSetIsSelectedHasSequelFilter={
+                    handleSetIsSelectedHasSequelFilter
+                }
                 isSelectedShowSequelFilter={isSelectedShowSequelFilter}
-                setIsSelectedShowSequelFilter={setIsSelectedShowSequelFilter}
+                handleSetIsSelectedShowSequelFilter={
+                    handleSetIsSelectedShowSequelFilter
+                }
                 isSelectedShowRecommendedFilter={
                     isSelectedShowRecommendedFilter
                 }
-                setIsSelectedShowRecommendedFilter={
-                    setIsSelectedShowRecommendedFilter
+                handleSetIsSelectedShowRecommendedFilter={
+                    handleSetIsSelectedShowRecommendedFilter
                 }
                 isInPopupView={isInPopupView}
                 clearFilters={clearFilters}
+                isSelectedBookmarkFilter={isSelectedBookmarkFilter}
+                handleSetIsSelectedBookmarkFilter={
+                    handleSetIsSelectedBookmarkFilter
+                }
+                isSelectedChronologicalSort={isSelectedChronologicalSort}
+                handleSetIsSelectedChronologicalSort={
+                    handleSetIsSelectedChronologicalSort
+                }
+                isSelectedRandomTenFilter={isSelectedRandomTenFilter}
+                handleSetIsSelectedRandomTenFilter={
+                    handleSetIsSelectedRandomTenFilter
+                }
             />
             <MoegeChart
-                selectedMiscellaneousSortingOptions={
-                    selectedMiscellaneousSortingOptions
-                }
                 selectedPlaytimeFilter={selectedPlaytimeFilter}
                 selectedGenreFocusFilter={selectedGenreFocusFilter}
                 selectedFilterAttributes={selectedFilterAttributes}
@@ -129,6 +233,11 @@ export const HomePage: React.FC = () => {
                     isSelectedShowRecommendedFilter
                 }
                 setIsInPopupView={setIsInPopupView}
+                bookmarkedVisualNovels={bookmarkedVisualNovels}
+                handleBookmarkVisualNovel={handleBookmarkVisualNovel}
+                isSelectedBookmarkFilter={isSelectedBookmarkFilter}
+                isSelectedChronologicalSort={isSelectedChronologicalSort}
+                isSelectedRandomTenFilter={isSelectedRandomTenFilter}
             />
         </Container>
     );

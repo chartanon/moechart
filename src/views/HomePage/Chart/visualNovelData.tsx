@@ -1735,7 +1735,7 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.BRANCHING_PLOT
         ],
         genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Maggic, Slice of Life, Comedy',
+        descriptionFirstRowText: 'Magic, Slice of Life, Comedy',
         descriptionSecondRowText: 'Urban Fantasy',
         translationReleaseDate: Date.parse('2019-10-10')
     },

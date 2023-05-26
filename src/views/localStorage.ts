@@ -1,0 +1,10 @@
+export const PLAYTIME_KEY = 'playtime';
+export const GENRE_FOCUS_KEY = 'genreFocus';
+export const FILTER_ATTRIBUTES = 'filterAttributes';
+export const SHOW_BOOKMARKS = 'showBookmarks';
+export const SHOW_RECOMMENDED = 'showRecommended';
+export const HAS_SEQUEL = 'hasSequel';
+export const SHOW_SEQUEL = 'showSequel';
+export const CHRONOLOGICAL_SORT = 'chronologicalSort';
+export const RANDOM_TEN = 'randomTen';
+export const BOOKMARKS = 'bookmarks';
