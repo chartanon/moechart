@@ -158,12 +158,6 @@ export const MoegeChart: React.FC<IProps> = ({
                 1
             );
         }
-        while (bookmarkedVisualNovels.length > 10) {
-            bookmarkedVisualNovels.splice(
-                Math.floor(Math.random() * bookmarkedVisualNovels.length),
-                1
-            );
-        }
     }
 
     let unreleasedVisualNovels: VisualNovelProps[] = [];
@@ -386,7 +380,7 @@ export const MoegeChart: React.FC<IProps> = ({
                 ) : null}
             </AnimatePresence>
             <EntriesContainer ref={translatedMoegeRef}>
-                <HeaderWithJump>
+                <TranslatedMoegeHeader>
                     translated moege
                     {hasSectionAboveTranslatedMoege ? (
                         <Row $gap={10}>
@@ -423,7 +417,7 @@ export const MoegeChart: React.FC<IProps> = ({
                             </Button>
                         </Row>
                     ) : null}
-                </HeaderWithJump>
+                </TranslatedMoegeHeader>
                 <AnimatePresence>
                     {filteredReleasedVisualNovels.map((visualNovel, index) => {
                         return (
@@ -458,7 +452,7 @@ export const MoegeChart: React.FC<IProps> = ({
             <AnimatePresence>
                 {unreleasedVisualNovels.length > 0 ? (
                     <VerticalFade>
-                        <HeaderWithJump ref={upcomingReleasesRef}>
+                        <UpcomingHeader ref={upcomingReleasesRef}>
                             upcoming
                             <Button
                                 onClick={() =>
@@ -475,7 +469,7 @@ export const MoegeChart: React.FC<IProps> = ({
                                     </UpcomingReleasesFont>
                                 </Row>
                             </Button>
-                        </HeaderWithJump>
+                        </UpcomingHeader>
                         <EntriesContainer>
                             <AnimatePresence>
                                 {unreleasedVisualNovels.map(
@@ -548,6 +542,14 @@ const HeaderWithJump = styled(BaseHeader)`
     &>: last-child {
         margin-left: auto;
     }
+`;
+
+const TranslatedMoegeHeader = styled(HeaderWithJump)`
+    margin-bottom: -40px;
+`;
+
+const UpcomingHeader = styled(HeaderWithJump)`
+    margin-bottom: 40px;
 `;
 
 const MoechartFont = styled(BaseHeader)`
