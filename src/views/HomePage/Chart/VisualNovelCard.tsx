@@ -97,16 +97,18 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
     return (
         <Container>
             <TopRow>
-                {descriptionInfoOnClick ? (
-                    <HelpButton onClick={descriptionInfoOnClick}>
-                        <QuestionStarIcon />
-                    </HelpButton>
-                ) : null}
-                {sequelInfoOnClick ? (
-                    <HelpButton onClick={sequelInfoOnClick}>
-                        <QuestionDiscIcon />
-                    </HelpButton>
-                ) : null}
+                <HelpIcons>
+                    {descriptionInfoOnClick ? (
+                        <HelpButton onClick={descriptionInfoOnClick}>
+                            <QuestionStarIcon />
+                        </HelpButton>
+                    ) : null}
+                    {sequelInfoOnClick ? (
+                        <HelpButton onClick={sequelInfoOnClick}>
+                            <QuestionDiscIcon />
+                        </HelpButton>
+                    ) : null}
+                </HelpIcons>
                 <VisualNovelCardTitle
                     name={name}
                     translationReleaseDate={translationReleaseDate}
@@ -281,25 +283,38 @@ const VisualNovelCardTitle: React.FC<{
 }) => {
     if (shouldDisplayDateInTitle && translationReleaseDate) {
         return (
-            <Column>
+            <TitleContainer>
                 <Title>{name}</Title>
                 <SubtitleFont>
                     ({moment(translationReleaseDate).format('ll')})
                 </SubtitleFont>
-            </Column>
+            </TitleContainer>
         );
     }
     if (shouldDisplayUpcomingDisclaimerInTitle) {
         return (
-            <Column>
+            <TitleContainer>
                 <Title>{name}</Title>
                 <SubtitleFont>(Upcoming release)</SubtitleFont>
-            </Column>
+            </TitleContainer>
         );
     }
 
-    return <Title>{name}</Title>;
+    return (
+        <TitleContainer>
+            <Title>{name}</Title>
+            <SubtitleFont> </SubtitleFont>
+        </TitleContainer>
+    );
 };
+
+const TitleContainer = styled(Column)`
+    height: 40px;
+`;
+
+const HelpIcons = styled(Row)`
+    align-items: flex-start;
+`;
 
 const Container = styled(Column)`
     max-width: ${IMAGE_WIDTH}px;
