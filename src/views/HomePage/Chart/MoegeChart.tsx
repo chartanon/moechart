@@ -368,7 +368,7 @@ const Entry = styled(ChartEntry)`
 `;
 
 const EntriesContainer = styled(Row)`
-    gap: 80px;
+    gap: 100px;
     flex-wrap: wrap;
 `;
 
