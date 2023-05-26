@@ -118,6 +118,36 @@ export const MoegeChart: React.FC<IProps> = ({
         return true;
     });
 
+    bookmarkedVisualNovels = bookmarkedVisualNovels.filter(visualNovel => {
+        if (
+            selectedPlaytimeFilter !== null &&
+            selectedPlaytimeFilter !== visualNovel.playtime
+        ) {
+            return false;
+        } else if (
+            selectedGenreFocusFilter !== null &&
+            selectedGenreFocusFilter !== visualNovel.genreFocus
+        ) {
+            return false;
+        } else if (
+            selectedFilterAttributes.length !== 0 &&
+            selectedFilterAttributes.some(
+                attribute => !visualNovel.attributes.includes(attribute)
+            )
+        ) {
+            return false;
+        } else if (
+            isSelectedHasSequelFilter &&
+            (!visualNovel.sequels || visualNovel.sequels.length === 0)
+        ) {
+            return false;
+        } else if (!isSelectedShowSequelFilter && visualNovel.originalGame) {
+            return false;
+        }
+
+        return true;
+    });
+
     if (selectedGenreFocusFilter === null) {
         const genreFocusOrder = Object.values(GenreFocus);
         filteredReleasedVisualNovels.sort(
@@ -155,6 +185,12 @@ export const MoegeChart: React.FC<IProps> = ({
         while (recommendedVisualNovels.length > 10) {
             recommendedVisualNovels.splice(
                 Math.floor(Math.random() * recommendedVisualNovels.length),
+                1
+            );
+        }
+        while (bookmarkedVisualNovels.length > 10) {
+            bookmarkedVisualNovels.splice(
+                Math.floor(Math.random() * bookmarkedVisualNovels.length),
                 1
             );
         }
