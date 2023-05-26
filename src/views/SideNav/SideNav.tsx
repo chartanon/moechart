@@ -13,14 +13,8 @@ import { PlaytimeItem } from './PlaytimeItem';
 import { FAQ } from './FAQ';
 import { FocusesOfInterest } from './FocusesOfInterest';
 
-import {
-    MiscellaneousSortingOption,
-    filterAttributesList,
-    playtimesList,
-    miscellaneousSortingToolsList
-} from './LegendData';
+import { filterAttributesList, playtimesList } from './LegendData';
 import { AttributeItem } from './AttributeItem';
-import { SortByItem } from './SortByItem';
 import { LegendItemContainer, LegendLabel, SIDE_NAV_WIDTH } from './utils';
 import { HasSequelIcon } from '../assets/icons/attribute/HasSequalIcon';
 import { IsSequelIcon } from '../assets/icons/attribute/IsSequelIcon';
@@ -28,12 +22,10 @@ import { FilterAttribute, GenreFocus } from '../HomePage/Chart/utils';
 import { PlaytimeLength } from '../HomePage/Chart/utils';
 import { StarIcon } from '../assets/icons/attribute/StarIcon';
 import { BookmarkIcon } from '../assets/icons/misc/BookmarkIcon';
+import { ClockIcon } from '../assets/icons/sorting/ClockIcon';
+import { DiceIcon } from '../assets/icons/sorting/DiceIcon';
 
 interface IProps {
-    selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
-    handleSetSelectedMiscellaneousSortingOptions: (
-        value: MiscellaneousSortingOption
-    ) => void;
     selectedPlaytimeFilter: PlaytimeLength | null;
     handleSetSelectedPlaytimeFilter: (value: PlaytimeLength) => void;
     selectedGenreFocusFilter: GenreFocus | null;
@@ -41,20 +33,22 @@ interface IProps {
     selectedFilterAttributes: FilterAttribute[];
     handleSetSelectedFilterAttributes: (value: FilterAttribute) => void;
     isSelectedHasSequelFilter: boolean;
-    setIsSelectedHasSequelFilter: (value: boolean) => void;
+    handleSetIsSelectedHasSequelFilter: (value: boolean) => void;
     isSelectedShowSequelFilter: boolean;
-    setIsSelectedShowSequelFilter: (value: boolean) => void;
+    handleSetIsSelectedShowSequelFilter: (value: boolean) => void;
     isSelectedShowRecommendedFilter: boolean;
     handleSetIsSelectedShowRecommendedFilter: (value: boolean) => void;
     isInPopupView: boolean;
     clearFilters: () => void;
     isSelectedBookmarkFilter: boolean;
     handleSetIsSelectedBookmarkFilter: (value: boolean) => void;
+    isSelectedChronologicalSort: boolean;
+    handleSetIsSelectedChronologicalSort: (value: boolean) => void;
+    isSelectedRandomTenFilter: boolean;
+    handleSetIsSelectedRandomTenFilter: (value: boolean) => void;
 }
 
 export const SideNav: React.FC<IProps> = ({
-    selectedMiscellaneousSortingOptions,
-    handleSetSelectedMiscellaneousSortingOptions,
     selectedPlaytimeFilter,
     handleSetSelectedPlaytimeFilter,
     selectedGenreFocusFilter,
@@ -62,15 +56,19 @@ export const SideNav: React.FC<IProps> = ({
     selectedFilterAttributes,
     handleSetSelectedFilterAttributes,
     isSelectedHasSequelFilter,
-    setIsSelectedHasSequelFilter,
+    handleSetIsSelectedHasSequelFilter,
     isSelectedShowSequelFilter,
-    setIsSelectedShowSequelFilter,
+    handleSetIsSelectedShowSequelFilter,
     isSelectedShowRecommendedFilter,
     handleSetIsSelectedShowRecommendedFilter,
     isInPopupView,
     clearFilters,
     isSelectedBookmarkFilter,
-    handleSetIsSelectedBookmarkFilter
+    handleSetIsSelectedBookmarkFilter,
+    isSelectedChronologicalSort,
+    handleSetIsSelectedChronologicalSort,
+    isSelectedRandomTenFilter,
+    handleSetIsSelectedRandomTenFilter
 }) => {
     return (
         <NavBar>
@@ -137,7 +135,7 @@ export const SideNav: React.FC<IProps> = ({
                         <ResponsiveButton
                             $isSelected={isSelectedHasSequelFilter}
                             onClick={() =>
-                                setIsSelectedHasSequelFilter(
+                                handleSetIsSelectedHasSequelFilter(
                                     !isSelectedHasSequelFilter
                                 )
                             }
@@ -151,7 +149,7 @@ export const SideNav: React.FC<IProps> = ({
                             disabled={isInPopupView}
                             $isSelected={isSelectedShowSequelFilter}
                             onClick={() => {
-                                setIsSelectedShowSequelFilter(
+                                handleSetIsSelectedShowSequelFilter(
                                     !isSelectedShowSequelFilter
                                 );
                             }}
@@ -162,20 +160,32 @@ export const SideNav: React.FC<IProps> = ({
                             </LegendItemContainer>
                         </ResponsiveButton>
                     </Row>
-                    {miscellaneousSortingToolsList.map(sortingOption => {
-                        return (
-                            <SortByItem
-                                key={sortingOption.option}
-                                isSelected={selectedMiscellaneousSortingOptions.some(
-                                    option => option === sortingOption.option
-                                )}
-                                {...sortingOption}
-                                onClick={
-                                    handleSetSelectedMiscellaneousSortingOptions
-                                }
-                            />
-                        );
-                    })}
+                    <ResponsiveButton
+                        $isSelected={isSelectedChronologicalSort}
+                        onClick={() =>
+                            handleSetIsSelectedChronologicalSort(
+                                !isSelectedChronologicalSort
+                            )
+                        }
+                    >
+                        <LegendItemContainer>
+                            <ClockIcon />
+                            <LegendLabel>Newest Releases</LegendLabel>
+                        </LegendItemContainer>
+                    </ResponsiveButton>
+                    <ResponsiveButton
+                        $isSelected={isSelectedRandomTenFilter}
+                        onClick={() =>
+                            handleSetIsSelectedRandomTenFilter(
+                                !isSelectedRandomTenFilter
+                            )
+                        }
+                    >
+                        <LegendItemContainer>
+                            <DiceIcon />
+                            <LegendLabel>Random 10</LegendLabel>
+                        </LegendItemContainer>
+                    </ResponsiveButton>
                 </Section>
                 <ClearButton onClick={clearFilters}>
                     <LabelFont>CLEAR</LabelFont>

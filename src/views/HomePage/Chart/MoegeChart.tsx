@@ -14,7 +14,6 @@ import {
 import { VisualNovelProps, visualNovelData } from './visualNovelData';
 
 import { AnimatePresence } from 'framer-motion';
-import { MiscellaneousSortingOption } from '../../SideNav/LegendData';
 import { MusicNoteIcon } from '../../assets/icons/misc/MusicNoteIcon';
 import { ArrowIcon } from '../../assets/icons/misc/DownArrowIcon';
 import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
@@ -29,7 +28,6 @@ export interface SeriesRelationshipMap {
     [originalGameVNDBLink: string]: VisualNovelProps[];
 }
 interface IProps {
-    selectedMiscellaneousSortingOptions: MiscellaneousSortingOption[];
     selectedPlaytimeFilter: PlaytimeLength | null;
     selectedGenreFocusFilter: GenreFocus | null;
     selectedFilterAttributes: FilterAttribute[];
@@ -40,10 +38,11 @@ interface IProps {
     bookmarkedVisualNovels: VisualNovelProps[];
     handleBookmarkVisualNovel: (visualNovel: VisualNovelProps) => void;
     isSelectedBookmarkFilter: boolean;
+    isSelectedChronologicalSort: boolean;
+    isSelectedRandomTenFilter: boolean;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
-    selectedMiscellaneousSortingOptions,
     selectedPlaytimeFilter,
     selectedGenreFocusFilter,
     selectedFilterAttributes,
@@ -53,7 +52,9 @@ export const MoegeChart: React.FC<IProps> = ({
     setIsInPopupView,
     bookmarkedVisualNovels,
     handleBookmarkVisualNovel,
-    isSelectedBookmarkFilter
+    isSelectedBookmarkFilter,
+    isSelectedChronologicalSort,
+    isSelectedRandomTenFilter
 }) => {
     let allSequelRelationships: SeriesRelationshipMap = {};
     let recommendedVisualNovels: VisualNovelProps[] = [];
@@ -126,54 +127,50 @@ export const MoegeChart: React.FC<IProps> = ({
         );
     }
 
-    let isSortingByChronological = false;
+    if (isSelectedChronologicalSort) {
+        filteredReleasedVisualNovels.sort(
+            (visualNovelOne, visualNovelTwo) =>
+                visualNovelTwo.translationReleaseDate! -
+                visualNovelOne.translationReleaseDate!
+        );
+        recommendedVisualNovels.sort(
+            (visualNovelOne, visualNovelTwo) =>
+                visualNovelTwo.translationReleaseDate! -
+                visualNovelOne.translationReleaseDate!
+        );
+        bookmarkedVisualNovels.sort(
+            (visualNovelOne, visualNovelTwo) =>
+                visualNovelTwo.translationReleaseDate! -
+                visualNovelOne.translationReleaseDate!
+        );
+    }
 
-    if (selectedMiscellaneousSortingOptions.length !== 0) {
-        selectedMiscellaneousSortingOptions.forEach(option => {
-            switch (option) {
-                case MiscellaneousSortingOption.CHRONOLOGICAL:
-                    filteredReleasedVisualNovels.sort(
-                        (visualNovelOne, visualNovelTwo) =>
-                            visualNovelTwo.translationReleaseDate! -
-                            visualNovelOne.translationReleaseDate!
-                    );
-                    recommendedVisualNovels.sort(
-                        (visualNovelOne, visualNovelTwo) =>
-                            visualNovelTwo.translationReleaseDate! -
-                            visualNovelOne.translationReleaseDate!
-                    );
-                    isSortingByChronological = true;
-                    break;
-                case MiscellaneousSortingOption.RANDOM: {
-                    while (filteredReleasedVisualNovels.length > 10) {
-                        filteredReleasedVisualNovels.splice(
-                            Math.floor(
-                                Math.random() *
-                                    filteredReleasedVisualNovels.length
-                            ),
-                            1
-                        );
-                    }
-                    while (recommendedVisualNovels.length > 10) {
-                        recommendedVisualNovels.splice(
-                            Math.floor(
-                                Math.random() * recommendedVisualNovels.length
-                            ),
-                            1
-                        );
-                    }
-                    break;
-                }
-                default:
-                    break;
-            }
-        });
+    if (isSelectedRandomTenFilter) {
+        while (filteredReleasedVisualNovels.length > 10) {
+            filteredReleasedVisualNovels.splice(
+                Math.floor(Math.random() * filteredReleasedVisualNovels.length),
+                1
+            );
+        }
+        while (recommendedVisualNovels.length > 10) {
+            recommendedVisualNovels.splice(
+                Math.floor(Math.random() * recommendedVisualNovels.length),
+                1
+            );
+        }
+        while (bookmarkedVisualNovels.length > 10) {
+            bookmarkedVisualNovels.splice(
+                Math.floor(Math.random() * bookmarkedVisualNovels.length),
+                1
+            );
+        }
     }
 
     let unreleasedVisualNovels: VisualNovelProps[] = [];
 
     if (
-        selectedMiscellaneousSortingOptions.length === 0 &&
+        !isSelectedChronologicalSort &&
+        !isSelectedRandomTenFilter &&
         selectedPlaytimeFilter === null &&
         selectedFilterAttributes.length === 0 &&
         isSelectedHasSequelFilter === false
@@ -228,6 +225,15 @@ export const MoegeChart: React.FC<IProps> = ({
         }
     };
 
+    const shouldShowRecommendedSection =
+        isSelectedShowRecommendedFilter && recommendedVisualNovels.length > 0;
+
+    const shouldShowBookmarksSection =
+        isSelectedBookmarkFilter && bookmarkedVisualNovels.length > 0;
+
+    const hasSectionAboveTranslatedMoege =
+        shouldShowRecommendedSection || shouldShowBookmarksSection;
+
     return (
         <Container>
             <MoechartFont>
@@ -235,8 +241,7 @@ export const MoegeChart: React.FC<IProps> = ({
                     <VNFont ref={moechartTitleRef}>/vn/</VNFont> MOECHART
                 </Row>
                 <Row $gap={10}>
-                    {isSelectedShowRecommendedFilter ||
-                    isSelectedBookmarkFilter ? (
+                    {hasSectionAboveTranslatedMoege ? (
                         <Button
                             onClick={() =>
                                 translatedMoegeRef.current?.scrollIntoView({
@@ -313,7 +318,7 @@ export const MoegeChart: React.FC<IProps> = ({
                                                         setIsInPopupView
                                                     }
                                                     shouldDisplayDateInTitle={
-                                                        isSortingByChronological
+                                                        isSelectedChronologicalSort
                                                     }
                                                     shouldDisplayUpcomingDisclaimerInTitle={
                                                         isBookmarked &&
@@ -360,7 +365,7 @@ export const MoegeChart: React.FC<IProps> = ({
                                                         setIsInPopupView
                                                     }
                                                     shouldDisplayDateInTitle={
-                                                        isSortingByChronological
+                                                        isSelectedChronologicalSort
                                                     }
                                                     isBookmarked={bookmarkedVisualNovels.some(
                                                         currentVisualNovel =>
@@ -383,8 +388,7 @@ export const MoegeChart: React.FC<IProps> = ({
             <EntriesContainer ref={translatedMoegeRef}>
                 <HeaderWithJump>
                     translated moege
-                    {isSelectedShowRecommendedFilter ||
-                    isSelectedBookmarkFilter ? (
+                    {hasSectionAboveTranslatedMoege ? (
                         <Row $gap={10}>
                             <Button
                                 onClick={() =>
@@ -437,7 +441,7 @@ export const MoegeChart: React.FC<IProps> = ({
                                     }
                                     setIsInPopupView={setIsInPopupView}
                                     shouldDisplayDateInTitle={
-                                        isSortingByChronological
+                                        isSelectedChronologicalSort
                                     }
                                     isBookmarked={bookmarkedVisualNovels.some(
                                         currentVisualNovel =>
