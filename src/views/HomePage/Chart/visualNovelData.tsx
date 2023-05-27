@@ -2508,16 +2508,6 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Shugaten!',
-        vndbLink: 'https://vndb.org/v20196',
-        thumbnailSource: shugaten,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Love Lab',
-        descriptionSecondRowText: '2023-05-26',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
@@ -2535,6 +2525,16 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'Early 2023',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Shugaten!',
+        vndbLink: 'https://vndb.org/v20196',
+        thumbnailSource: shugaten,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Love Lab',
+        descriptionSecondRowText: '2023',
         isUpcomingRelease: true
     },
     {
