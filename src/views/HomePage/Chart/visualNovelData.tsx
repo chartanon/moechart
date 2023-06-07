@@ -2508,6 +2508,16 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
+        name: 'Onigokko! FD',
+        vndbLink: 'https://vndb.org/v7625',
+        thumbnailSource: onigokko_fd,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'JAST',
+        descriptionSecondRowText: '2023-06-23',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
@@ -2834,16 +2844,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Sekai  Project',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Onigokko! FD',
-        vndbLink: 'https://vndb.org/v7625',
-        thumbnailSource: onigokko_fd,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'JAST',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     }
