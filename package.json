@@ -26,6 +26,7 @@
     "scripts": {
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
+        "master_deploy": "gh-pages -d build -- -u \"github-actions-bot <support+actions@github.com>\"",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
