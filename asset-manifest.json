@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.aa54c02e.js",
+    "main.js": "/moechart/static/js/main.efdd8809.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
@@ -167,6 +167,7 @@
     "static/media/renai-royale.jpg": "/moechart/static/media/renai-royale.6b6fe429fbb8d3d5c38f.jpg",
     "static/media/da_capo3.jpg": "/moechart/static/media/da_capo3.bce790ac1e7229c19e58.jpg",
     "static/media/koi-ama.jpg": "/moechart/static/media/koi-ama.c9edfbb3e2522a3e2d65.jpg",
+    "static/media/aikagi_after_days.jpg": "/moechart/static/media/aikagi_after_days.8d04f76cfa0edb027fdd.jpg",
     "static/media/icha_x2_study.jpg": "/moechart/static/media/icha_x2_study.699234978bab3fde1885.jpg",
     "static/media/yumeiro.jpg": "/moechart/static/media/yumeiro.e142fcfd966f867070a4.jpg",
     "static/media/karakara_2.jpg": "/moechart/static/media/karakara_2.7eb5bcd0b27587219fc4.jpg",
@@ -191,9 +192,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.aa54c02e.js.map": "/moechart/static/js/main.aa54c02e.js.map"
+    "main.efdd8809.js.map": "/moechart/static/js/main.efdd8809.js.map"
   },
   "entrypoints": [
-    "static/js/main.aa54c02e.js"
+    "static/js/main.efdd8809.js"
   ]
 }
