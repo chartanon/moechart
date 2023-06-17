@@ -64,6 +64,7 @@ import knot_fiction from '../../assets/thumbnails/knot-fiction.jpg';
 import ninki_seiyuu from '../../assets/thumbnails/ninki-seiyuu.jpg';
 import love_sweets from '../../assets/thumbnails/love-sweets.jpg';
 import aikagi from '../../assets/thumbnails/aikagi.jpg';
+import aikagi_after_days from '../../assets/thumbnails/aikagi_after_days.jpg';
 import icing from '../../assets/thumbnails/icing.jpg';
 import shuffle from '../../assets/thumbnails/shuffle.jpg';
 import really_really from '../../assets/thumbnails/really_really.jpg';
@@ -2518,6 +2519,16 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
+        name: 'Imouto no Seiiki',
+        vndbLink: 'https://vndb.org/v16845',
+        thumbnailSource: imouto_no_seiiki,
+        attributes: [],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: '2023-06-26',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
@@ -2738,16 +2749,6 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
-        name: 'Imouto no Seiiki',
-        vndbLink: 'https://vndb.org/v16845',
-        thumbnailSource: imouto_no_seiiki,
-        attributes: [],
-        genreFocus: GenreFocus.NUKIGE,
-        descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Gakkou no Seiiki',
         vndbLink: 'https://vndb.org/v19302',
         thumbnailSource: gakkou_no_seiiki,
@@ -2845,6 +2846,16 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Aikagi After Days',
+        vndbLink: 'https://vndb.org/v22037',
+        thumbnailSource: aikagi_after_days,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Frontwing',
+        descriptionSecondRowText: '2023',
         isUpcomingRelease: true
     }
 ];
