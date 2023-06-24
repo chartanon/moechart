@@ -2165,10 +2165,26 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.UNLOCKABLE_ROUTES,
             FilterAttribute.BRANCHING_PLOT
         ],
+        sequels: ['https://vndb.org/v7625'],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Japanese Mythology, Comedy',
         descriptionSecondRowText: 'Slice of Life',
         translationReleaseDate: Date.parse('2021-06-29')
+    },
+    {
+        name: 'Onigokko! FD',
+        vndbLink: 'https://vndb.org/v7625',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: onigokko_fd,
+        attributes: [
+            FilterAttribute.FLOATING_TEXTBOX,
+            FilterAttribute.SCENARIO_SELECTION,
+        ],
+        originalGame: 'https://vndb.org/v5549',
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Japanese Mythology, Comedy',
+        descriptionSecondRowText: 'Slice of Life',
+        translationReleaseDate: Date.parse('2023-06-23')
     },
     {
         name: 'Noratoto',
@@ -2509,16 +2525,6 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Onigokko! FD',
-        vndbLink: 'https://vndb.org/v7625',
-        thumbnailSource: onigokko_fd,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'JAST',
-        descriptionSecondRowText: '2023-06-23',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Imouto no Seiiki',
         vndbLink: 'https://vndb.org/v16845',
         thumbnailSource: imouto_no_seiiki,
@@ -2539,6 +2545,16 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
+        name: "Clover Day's",
+        vndbLink: 'https://vndb.org/v13325',
+        thumbnailSource: clover_days,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2023-08',
+        isUpcomingRelease: true
+    },
+    {
         name: "Gin'iro, Haruka",
         vndbLink: 'https://vndb.org/v18778',
         thumbnailSource: giniro_haruka,
@@ -2555,16 +2571,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Love Lab',
-        descriptionSecondRowText: '2023',
-        isUpcomingRelease: true
-    },
-    {
-        name: "Clover Day's",
-        vndbLink: 'https://vndb.org/v13325',
-        thumbnailSource: clover_days,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: '2023',
         isUpcomingRelease: true
     },
