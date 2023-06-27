@@ -570,7 +570,7 @@ const BaseHeader = styled(HeaderFont)`
     border-bottom: 2px solid ${COLOURS.TEXT};
 
     width: 100%;
-    font-family: monospace;
+    font-family: sans-serif;
 `;
 
 const SectionHeader = styled(BaseHeader)`

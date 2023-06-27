@@ -54,17 +54,17 @@ export const COLOURS = {
         STORY_ROMANCE: '#9b3add',
         ROMANCE: '#dd4b4b',
         ROM_COM: '#dd7b4b',
-        COMEDY: '#e1cd5d',
-        NUKIGE: '#e8e8e8'
+        COMEDY: '#e1cd5dbb',
+        NUKIGE: '#e8e8e8bb'
     },
     TEXT: '#ffffff',
-    SECONDARY: '#AED6F1',
+    SECONDARY: '#fff7',
     BACKGROUND: '#000000',
     NAVBAR: '#2e1c2b'
 };
 
 const BaseFont = styled.div<{ $textAlign?: string }>`
-    font-family: monospace;
+    font-family: sans-serif;
     ${({ $textAlign }) =>
         $textAlign
             ? css`
@@ -73,8 +73,24 @@ const BaseFont = styled.div<{ $textAlign?: string }>`
             : ''};
 `;
 
-export const TitleFont = styled(BaseFont)<{ $fontColour?: string }>`
-    font-family: sans-serif;
+export const GlowyText = styled(BaseFont)<{
+    $outlineColour?: string;
+}>`
+    ${({ $outlineColour }) =>
+        $outlineColour
+            ? css`
+                  text-shadow: ${$outlineColour} 0px 0px 5px,
+                      ${$outlineColour} 0px 0px 5px,
+                      ${$outlineColour} 0px 0px 5px,
+                      ${$outlineColour} 0px 0px 10px;
+              `
+            : ''};
+`;
+
+export const TitleFont = styled(GlowyText)<{
+    $fontColour?: string;
+    $outlineColour?: string;
+}>`
     font-size: 1.3rem;
     width: 250px;
     white-space: nowrap;
@@ -90,22 +106,11 @@ export const TitleFont = styled(BaseFont)<{ $fontColour?: string }>`
               `};
 `;
 
-export const LabelFont = styled(BaseFont)<{
+export const LabelFont = styled(GlowyText)<{
     $outlineColour?: string;
 }>`
     font-size: 0.9rem;
     color: ${COLOURS.TEXT};
-    ${({ $outlineColour }) =>
-        $outlineColour
-            ? css`
-                  text-shadow: #fff 0px 0px 20px, #fff 0px 0px 20px,
-                      #fff 0px 0px 20px, ${$outlineColour} 0px 0px 5px,
-                      ${$outlineColour} 0px 0px 10px,
-                      ${$outlineColour} 0px 0px 10px,
-                      ${$outlineColour} 0px 0px 10px,
-                      ${$outlineColour} 0px 0px 10px;
-              `
-            : ''};
 `;
 
 export const HeaderFont = styled(BaseFont)`
@@ -208,22 +213,24 @@ export const Section = styled(Column)`
 `;
 
 export const ResponsiveButton = styled(Button)<{ $isSelected?: boolean }>`
+    border-radius: 3px;
+
     :hover {
-        font-weight: bold;
-        box-shadow: 2px 2px 4px ${COLOURS.TEXT};
-        outline: 3px solid ${COLOURS.TEXT};
+        background-color: ${COLOURS.TEXT}22;
+        outline: 2px solid ${COLOURS.TEXT}aa;
     }
 
-    :active {
-        font-weight: normal;
+    :active,
+    :active:hover {
         outline: 2px solid ${COLOURS.TEXT};
-        box-shadow: 2px 2px 4px ${COLOURS.TEXT};
     }
 
     ${({ $isSelected }) =>
         $isSelected
             ? css`
-                  outline: 3px solid ${COLOURS.TEXT};
+                &, :hover {
+                    outline: 2px solid ${COLOURS.TEXT};
+                }
               `
             : ''};
 `;

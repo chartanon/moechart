@@ -32,23 +32,25 @@ export const RecommendedModal: React.FC<IProps> = ({
             <AnimatePresence>
                 <VerticalFade $maxHeight>
                     <ContentContainer $centered $maxWidth $maxHeight>
-                        <Row>
-                            <ImageContainer>
-                                <ImageFont>{name}</ImageFont>
-                                <RecommendedImage
-                                    src={thumbnailSource}
-                                    loading="lazy"
-                                    alt=""
-                                    $outlineColour={outlineColour}
-                                    $cardStackCount={sequels?.length}
-                                />
-                            </ImageContainer>
-                            <DescriptionContainer>
-                                <DescriptionFont>
-                                    {recommendedDescription}
-                                </DescriptionFont>
-                            </DescriptionContainer>
-                        </Row>
+                        <Column>
+                            <ImageFont>{name}</ImageFont>
+                            <Row>
+                                <ImageContainer>
+                                    <RecommendedImage
+                                        src={thumbnailSource}
+                                        loading="lazy"
+                                        alt=""
+                                        $outlineColour={outlineColour}
+                                        $cardStackCount={sequels?.length}
+                                    />
+                                </ImageContainer>
+                                <DescriptionContainer>
+                                    <DescriptionFont>
+                                        {recommendedDescription}
+                                    </DescriptionFont>
+                                </DescriptionContainer>
+                            </Row>
+                        </Column>
                     </ContentContainer>
                 </VerticalFade>
             </AnimatePresence>
@@ -61,8 +63,8 @@ const ContentContainer = styled(Column)`
 `;
 
 const RecommendedImage = styled(ThumbnailImage)`
-    height: 550px;
-    width: 380px;
+    height: 300px;
+    width: 220px;
     pointer-events: none;
 `;
 
@@ -76,15 +78,14 @@ const ImageFont = styled(TitleFont)`
     width: 100%;
     justify-content: center;
     font-size: 2.5rem;
-    font-family: monospace;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 `;
 
 const DescriptionContainer = styled(Column)`
-    margin: 200px 30px 0;
+    margin: 0 30px 0;
 `;
 
 const DescriptionFont = styled(LabelFont)`
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     text-align: justify;
 `;

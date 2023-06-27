@@ -61,7 +61,8 @@ export const ThumbnailImage = styled.img<{
                 box-shadow: 0 20px 120px ${$outlineColour};
                 margin-top: -10px;
             }
-            box-shadow: 0 10px 40px ${$outlineColour};
+            box-shadow: 0 0 10px ${$outlineColour},
+                        0 10px 40px ${$outlineColour};
         `;
     }}
 `;

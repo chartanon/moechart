@@ -221,7 +221,7 @@ const Divider = styled.div`
 `;
 
 const ClearButton = styled(ResponsiveButton)`
-    outline: 4px solid white;
-    border-radius: 4px;
-    padding: 12px;
+    outline: 2px solid white;
+    //border-radius: 4px;
+    padding: 10px;
 `;

@@ -45,6 +45,6 @@ export const FAQItem: React.FC<IProps> = ({
 
 const FAQFont = styled(TitleFont)`
     font-size: 1.15rem;
-    border-bottom: 3px solid ${COLOURS.NAVBAR};
+    border-bottom: 2px solid ${COLOURS.NAVBAR};
     padding: 5px;
 `;

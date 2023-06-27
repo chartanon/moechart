@@ -95,7 +95,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
     }
 
     return (
-        <Container>
+        <Container $outlineColour={outlineColour}>
             <TopRow>
                 <HelpIcons>
                     {descriptionInfoOnClick ? (
@@ -116,6 +116,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
                     shouldDisplayUpcomingDisclaimerInTitle={
                         !!shouldDisplayUpcomingDisclaimerInTitle
                     }
+                    outlineColour={outlineColour}
                 />
             </TopRow>
             <ContentBody>
@@ -141,10 +142,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
                             <BookmarkIcon />
                         </Button>
                     </BookmarkContainer>
-                    <PlaytimeIconContainer
-                        $outlineColour={outlineColour}
-                        $shouldHaveBackgroundColour={!isUpcomingRelease}
-                    >
+                    <PlaytimeIconContainer>
                         {playtime === PlaytimeLength.SHORT ? (
                             <PlaytimeShortIcon />
                         ) : null}
@@ -159,10 +157,7 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
                         ) : null}
                     </PlaytimeIconContainer>
                     <AdditionalIconsContainerWrapper>
-                        <AdditionalIconsContainer
-                            $outlineColour={outlineColour}
-                            $shouldHaveBackgroundColour={!isUpcomingRelease}
-                        >
+                        <AdditionalIconsContainer>
                             {isRecommended ? <StarIcon /> : null}
                             {attributes
                                 .sort(
@@ -275,16 +270,18 @@ const VisualNovelCardTitle: React.FC<{
     translationReleaseDate?: number;
     shouldDisplayDateInTitle: boolean;
     shouldDisplayUpcomingDisclaimerInTitle: boolean;
+    outlineColour: string;
 }> = ({
     name,
     translationReleaseDate,
     shouldDisplayDateInTitle,
-    shouldDisplayUpcomingDisclaimerInTitle
+    shouldDisplayUpcomingDisclaimerInTitle,
+    outlineColour
 }) => {
     if (shouldDisplayDateInTitle && translationReleaseDate) {
         return (
             <TitleContainer>
-                <Title>{name}</Title>
+                <Title $outlineColour={outlineColour} >{name}</Title>
                 <SubtitleFont>
                     ({moment(translationReleaseDate).format('ll')})
                 </SubtitleFont>
@@ -294,7 +291,7 @@ const VisualNovelCardTitle: React.FC<{
     if (shouldDisplayUpcomingDisclaimerInTitle) {
         return (
             <TitleContainer>
-                <Title>{name}</Title>
+                <Title $outlineColour={outlineColour} >{name}</Title>
                 <SubtitleFont>(Upcoming release)</SubtitleFont>
             </TitleContainer>
         );
@@ -302,22 +299,33 @@ const VisualNovelCardTitle: React.FC<{
 
     return (
         <TitleContainer>
-            <Title>{name}</Title>
+            <Title $outlineColour={outlineColour} >{name}</Title>
             <SubtitleFont> </SubtitleFont>
         </TitleContainer>
     );
 };
 
 const TitleContainer = styled(Column)`
-    height: 40px;
+    height: 30px;
 `;
 
 const HelpIcons = styled(Row)`
     align-items: flex-start;
 `;
 
-const Container = styled(Column)`
+const Container = styled(Column)<{
+    $outlineColour: string;
+}>`
     max-width: ${IMAGE_WIDTH}px;
+
+    ${({ $outlineColour }) => $outlineColour
+    ? css`
+        svg {
+            filter: drop-shadow(0 0 3px ${$outlineColour})
+                    drop-shadow(0 0 4px ${$outlineColour});
+        }
+        `
+    : ''}
 `;
 
 const Title = styled(TitleFont)`
@@ -336,6 +344,7 @@ const IconsContainer = styled(Column)<{
     padding: 5px;
     display: flex;
     height: 100%;
+    gap: 5px;
     & > :last-child {
         align-self: flex-end;
         justify-content: flex-end;
@@ -352,18 +361,8 @@ const IconsContainer = styled(Column)<{
 `;
 
 const PlaytimeIconContainer = styled.div<{
-    $outlineColour: string;
-    $shouldHaveBackgroundColour: boolean;
 }>`
     height: auto;
-    ${({ $outlineColour, $shouldHaveBackgroundColour }) =>
-        $outlineColour && $shouldHaveBackgroundColour
-            ? css`
-                  background-color: ${$outlineColour}bb;
-                  border-radius: 15px;
-                  padding: 5px;
-              `
-            : ''}
 `;
 
 const BookmarkContainer = styled.div<{
@@ -372,27 +371,25 @@ const BookmarkContainer = styled.div<{
 }>`
     height: auto;
     border-radius: 15px;
-    padding: 5px;
+
+    :hover {
+        #bookmark-fill  {
+            fill: #fff8;
+        }
+    }
+
     ${({ $outlineColour, $isBookmarked }) =>
         $outlineColour && $isBookmarked
             ? css`
-                  background-color: ${$outlineColour}bb;
+                #bookmark-fill {
+                    fill: white;
+                }
               `
             : ''}
 `;
 
-const AdditionalIconsContainer = styled(Column)<{
-    $outlineColour: string;
-    $shouldHaveBackgroundColour: boolean;
-}>`
-    ${({ $outlineColour, $shouldHaveBackgroundColour }) =>
-        $outlineColour && $shouldHaveBackgroundColour
-            ? css`
-                  background-color: ${$outlineColour}bb;
-                  border-radius: 15px;
-                  padding: 5px;
-              `
-            : ''}
+const AdditionalIconsContainer = styled(Column)`
+    gap: 3px;
 `;
 
 const AdditionalIconsContainerWrapper = styled(Column)`
