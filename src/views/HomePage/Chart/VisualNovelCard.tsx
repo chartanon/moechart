@@ -305,9 +305,7 @@ const VisualNovelCardTitle: React.FC<{
     );
 };
 
-const TitleContainer = styled(Column)`
-    height: 30px;
-`;
+const TitleContainer = styled(Column)``;
 
 const HelpIcons = styled(Row)`
     align-items: flex-start;
