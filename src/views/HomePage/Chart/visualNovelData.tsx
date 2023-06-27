@@ -2399,10 +2399,26 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
+        sequels: ['https://vndb.org/v16845'],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Master and Servant, Comedy',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2023-03-13')
+    },
+    {
+        name: 'Imouto no Seiiki',
+        vndbLink: 'https://vndb.org/v16845',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: imouto_no_seiiki,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        originalGame: 'https://vndb.org/v16150',
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Brocon Heroine, Domicile',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2023-06-26')
     },
     {
         name: 'Uchi no Kanojo',
@@ -2525,13 +2541,13 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Imouto no Seiiki',
-        vndbLink: 'https://vndb.org/v16845',
-        thumbnailSource: imouto_no_seiiki,
+        name: 'Amairo Chocolata 2',
+        vndbLink: 'https://vndb.org/v30228',
+        thumbnailSource: amairo_choco2,
         attributes: [],
-        genreFocus: GenreFocus.NUKIGE,
+        genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: '2023-06-26',
+        descriptionSecondRowText: '2023-06-28',
         isUpcomingRelease: true
     },
     {
@@ -2742,16 +2758,6 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA (soon)',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Amairo Chocolata 2',
-        vndbLink: 'https://vndb.org/v30228',
-        thumbnailSource: amairo_choco2,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
     {
