@@ -1110,10 +1110,27 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
+        sequels: ['https://vndb.org/v30228'],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Cafe, Slice of Life',
         descriptionSecondRowText: 'Kemonomimi',
         translationReleaseDate: Date.parse('2020-12-22')
+    },
+    {
+        name: 'Amairo Chocolata 2',
+        vndbLink: 'https://vndb.org/v30228',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: amairo_choco2,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.UNLOCKABLE_ROUTES,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        originalGame: 'https://vndb.org/v26581',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Cafe, Slice of Life',
+        descriptionSecondRowText: 'Kemonomimi',
+        translationReleaseDate: Date.parse('2023-06-28')
     },
     {
         name: 'Island Diary',
@@ -2539,16 +2556,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Amairo Chocolata 2',
-        vndbLink: 'https://vndb.org/v30228',
-        thumbnailSource: amairo_choco2,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: '2023-06-28',
-        isUpcomingRelease: true
     },
     {
         name: 'Mamiya Mami',
