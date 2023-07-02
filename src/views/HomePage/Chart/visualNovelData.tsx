@@ -184,6 +184,8 @@ import nekopara_after from '../../assets/thumbnails/nekopara_after.jpg';
 import kemonomichi_love_plus from '../../assets/thumbnails/kemonomichi_love_plus.jpg';
 import kemonomichi_2 from '../../assets/thumbnails/kemonomichi_2.jpg';
 import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
+import naka_no_hito from '../../assets/thumbnails/naka_no_hito.jpg';
+import yomegami from '../../assets/thumbnails/yomegami.jpg';
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
@@ -2568,6 +2570,16 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
+        name: 'Shugaten!',
+        vndbLink: 'https://vndb.org/v20196',
+        thumbnailSource: shugaten,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Love Lab',
+        descriptionSecondRowText: '2023-07-28',
+        isUpcomingRelease: true
+    },
+    {
         name: "Clover Day's",
         vndbLink: 'https://vndb.org/v13325',
         thumbnailSource: clover_days,
@@ -2585,16 +2597,6 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'Early 2023',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Shugaten!',
-        vndbLink: 'https://vndb.org/v20196',
-        thumbnailSource: shugaten,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Love Lab',
-        descriptionSecondRowText: '2023',
         isUpcomingRelease: true
     },
     {
@@ -2875,6 +2877,26 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Frontwing',
         descriptionSecondRowText: '2023',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Naka no Hito nado Inai!',
+        vndbLink: 'https://vndb.org/v10237',
+        thumbnailSource: naka_no_hito,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'JAST',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Yomegami',
+        vndbLink: 'https://vndb.org/v19686',
+        thumbnailSource: yomegami,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'JAST',
+        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     }
 ];
