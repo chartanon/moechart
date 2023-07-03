@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Row, LabelFont } from '../utils';
 
 export const LegendItemContainer = styled(Row)`
-    padding: 7px 5px 7px 5px;
+    padding: 3px 5px;
     & > :last-child {
         margin-left: auto;
         text-align: right;

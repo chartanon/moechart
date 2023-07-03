@@ -314,7 +314,7 @@ const HelpIcons = styled(Row)`
 const Container = styled(Column)<{
     $outlineColour: string;
 }>`
-    max-width: ${IMAGE_WIDTH}px;
+    max-width: ${IMAGE_WIDTH + 40}px;
 
     ${({ $outlineColour }) => $outlineColour
     ? css`
@@ -327,8 +327,8 @@ const Container = styled(Column)<{
 `;
 
 const Title = styled(TitleFont)`
-    margin-left: 5px;
     font-size: 1.15rem;
+    width: 200px;
 `;
 
 const ContentBody = styled(Row)`
@@ -339,7 +339,7 @@ const IconsContainer = styled(Column)<{
     $cardStackCount?: number;
     $shouldScaleMarginLeft?: boolean;
 }>`
-    padding: 5px;
+    padding: 0 3px;
     display: flex;
     height: 100%;
     gap: 5px;
@@ -405,9 +405,12 @@ const DescriptionFont = styled(LabelFont)`
 
 const DescriptionContainer = styled(Column)`
     flex-wrap: wrap-reverse;
+    max-width: ${IMAGE_WIDTH}px;
 `;
 
-const HelpButton = styled(Button)``;
+const HelpButton = styled(Button)`
+    &:last-of-type { margin-right: 5px; }
+`;
 
 const TopRow = styled(Row)`
     padding-bottom: 14px;

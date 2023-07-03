@@ -560,7 +560,7 @@ const Entry = styled(ChartEntry)`
 `;
 
 const EntriesContainer = styled(Row)`
-    gap: 100px;
+    gap: 40px;
     flex-wrap: wrap;
 `;
 
@@ -583,9 +583,7 @@ const HeaderWithJump = styled(BaseHeader)`
     }
 `;
 
-const TranslatedMoegeHeader = styled(HeaderWithJump)`
-    margin-bottom: -40px;
-`;
+const TranslatedMoegeHeader = styled(HeaderWithJump)``;
 
 const UpcomingHeader = styled(HeaderWithJump)`
     margin-bottom: 40px;

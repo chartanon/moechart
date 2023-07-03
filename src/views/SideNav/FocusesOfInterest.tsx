@@ -138,7 +138,6 @@ const GradientText = styled.div`
 
 const GradientBar = styled.div`
     height: 1rem;
-    margin: 0.4rem 0;
     border-radius: 0.2rem;
     background: linear-gradient(
         90deg,

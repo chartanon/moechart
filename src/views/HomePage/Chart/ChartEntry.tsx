@@ -132,7 +132,7 @@ export const ChartEntry: React.FC<ChartEntryProps> = props => {
 };
 
 const Container = styled(Column)`
-    max-width: ${IMAGE_WIDTH}px;
+    width: ${IMAGE_WIDTH + 40}px;
 `;
 
 const SequelImage = styled(ThumbnailImage)<{ $index: number }>`
