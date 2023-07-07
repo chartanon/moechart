@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.c046ecfc.js",
+    "main.js": "/moechart/static/js/main.6aba739e.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
@@ -80,6 +80,7 @@
     "static/media/nine_ep1.jpg": "/moechart/static/media/nine_ep1.516dae11d5c01c8e4d34.jpg",
     "static/media/mamiya-mami.jpg": "/moechart/static/media/mamiya-mami.ff5b922b9f79d041e009.jpg",
     "static/media/yotsunoha.jpg": "/moechart/static/media/yotsunoha.14204947d449fb91039d.jpg",
+    "static/media/neko_nin_spin.jpg": "/moechart/static/media/neko_nin_spin.20290262062a168834ab.jpg",
     "static/media/hatsukoi.jpg": "/moechart/static/media/hatsukoi.ede6fef4e189bbe1e5c2.jpg",
     "static/media/majikoi_a3.jpg": "/moechart/static/media/majikoi_a3.a2b87a02b08a362acb8a.jpg",
     "static/media/akasaka.jpg": "/moechart/static/media/akasaka.e9dfd7360e5ddda54181.jpg",
@@ -194,9 +195,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.c046ecfc.js.map": "/moechart/static/js/main.c046ecfc.js.map"
+    "main.6aba739e.js.map": "/moechart/static/js/main.6aba739e.js.map"
   },
   "entrypoints": [
-    "static/js/main.c046ecfc.js"
+    "static/js/main.6aba739e.js"
   ]
 }
