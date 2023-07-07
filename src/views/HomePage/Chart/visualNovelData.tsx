@@ -81,6 +81,7 @@ import neko_nin_plus_saiha from '../../assets/thumbnails/neko_nin_plus_saiha.jpg
 import neko_nin_2 from '../../assets/thumbnails/neko_nin_2.jpg';
 import neko_nin_2_plus from '../../assets/thumbnails/neko_nin_2_plus.jpg';
 import neko_nin_3 from '../../assets/thumbnails/neko_nin_3.jpg';
+import neko_nin_spin from '../../assets/thumbnails/neko_nin_spin.jpg';
 import wagahigh from '../../assets/thumbnails/wagahigh.jpg';
 import tsujidou from '../../assets/thumbnails/tsujidou.jpg';
 import fureraba from '../../assets/thumbnails/fureraba.jpg';
@@ -2560,6 +2561,16 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
+        name: 'Ponkowa',
+        vndbLink: 'https://vndb.org/v31002',
+        thumbnailSource: ponkowa,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2023-07-21',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
@@ -2667,16 +2678,6 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan Translation',
         descriptionSecondRowText: '23% translated',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Ponkowa',
-        vndbLink: 'https://vndb.org/v31002',
-        thumbnailSource: ponkowa,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
     {
@@ -2865,6 +2866,16 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: kemonomichi_2,
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Sekai  Project',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Neko-nin SPIN',
+        vndbLink: 'https://vndb.org/v45381',
+        thumbnailSource: neko_nin_spin,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
