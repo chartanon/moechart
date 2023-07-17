@@ -31,7 +31,7 @@ export const RecommendedModal: React.FC<IProps> = ({
         <Modal isOpen={isOpen} onClose={onClose}>
             <AnimatePresence>
                 <VerticalFade $maxHeight>
-                    <Row $centered $maxWidth>
+                    <Row $centered $maxWidth $maxHeight>
                         <ContentContainer>
                             <ImageFont $outlineColour={outlineColour} >{name}</ImageFont>
                             <Row>
@@ -61,8 +61,8 @@ export const RecommendedModal: React.FC<IProps> = ({
 const ContentContainer = styled(Column)`
     border: 1px solid ${COLOURS.TEXT};
     padding: 50px;
+    width: 70%;
     max-width: 1200px;
-    margin: 5px;
 `;
 
 const RecommendedImage = styled(ThumbnailImage)`
@@ -81,7 +81,7 @@ const ImageFont = styled(TitleFont)`
     display: flex;
     width: 100%;
     justify-content: center;
-    font-size: clamp(2rem, 3.3vw, 4.5rem);
+    font-size: clamp(2rem, 3.3vw, 3.5rem);
     margin-bottom: 30px;
 `;
 

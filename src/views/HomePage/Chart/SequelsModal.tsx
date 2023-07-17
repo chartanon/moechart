@@ -33,7 +33,7 @@ export const SequelsModal: React.FC<IProps> = ({
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
-            <Column>
+            <ContentContainer>
                 <AnimatePresence>
                     <VerticalFade>
                         <StyledHeaderFont>
@@ -41,7 +41,7 @@ export const SequelsModal: React.FC<IProps> = ({
                         </StyledHeaderFont>
                     </VerticalFade>
                 </AnimatePresence>
-                <EntriesContainer $maxWidth $centered>
+                <EntriesContainer $centered>
                     <AnimatePresence>
                         {sequelRelations.map((relationship, index) => {
                             return (
@@ -60,20 +60,27 @@ export const SequelsModal: React.FC<IProps> = ({
                         })}
                     </AnimatePresence>
                 </EntriesContainer>
-            </Column>
+            </ContentContainer>
         </Modal>
     );
 };
 
+const ContentContainer = styled(Column)`
+    overflow: auto;
+    width: 100%;
+`;
+
 const EntriesContainer = styled(Row)`
     flex-wrap: wrap;
-    gap: 0px 80px;
+    gap: 40px 80px;
+    width: 80%;
+    align-self: center;
 `;
 
 const StyledHeaderFont = styled(HeaderFont)`
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 5%;
     font-size: clamp(2rem, 3.3vw, 3rem);
 `;

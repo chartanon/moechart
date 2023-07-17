@@ -11,7 +11,7 @@ export const Modal: React.FC<{
         <>
             {isOpen ? (
                 <Background onClick={onClose}>
-                    <Container>{children}</Container>
+                    {children}
                 </Background>
             ) : null}
         </>
@@ -23,16 +23,10 @@ const Background = styled(Column)`
     background-color: ${COLOURS.BACKGROUND}dd;
     top: 0px;
     left: ${SIDE_NAV_WIDTH}px;
-    width: 100%;
+    width: calc(100% - ${SIDE_NAV_WIDTH}px);;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-`;
-
-const Container = styled(Column)`
-    margin-left: -${SIDE_NAV_WIDTH}px;
-    width: calc(90% - ${SIDE_NAV_WIDTH}px);
-    overflow: auto;
 `;
