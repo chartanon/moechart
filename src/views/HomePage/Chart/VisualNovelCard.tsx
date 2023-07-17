@@ -328,7 +328,7 @@ const Container = styled(Column)<{
 
 const Title = styled(TitleFont)`
     font-size: 1.15rem;
-    width: auto;
+    width: 185px;
 `;
 
 const ContentBody = styled(Row)`

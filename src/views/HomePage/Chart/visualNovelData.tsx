@@ -154,6 +154,7 @@ import honey from '../../assets/thumbnails/honey.jpg';
 import oneyuu from '../../assets/thumbnails/oneyuu.jpg';
 import shugaten from '../../assets/thumbnails/shugaten.jpg';
 import mamiya_mami from '../../assets/thumbnails/mamiya-mami.jpg';
+import yuuri_to_marin from '../../assets/thumbnails/yuuri_to_marin.jpg';
 import giniro_haruka from '../../assets/thumbnails/giniro-haruka.jpg';
 import clover_days from '../../assets/thumbnails/clover-days.jpg';
 import walkure_romanze from '../../assets/thumbnails/walkure-romanze.jpg';
@@ -2597,7 +2598,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: '2023-08',
+        descriptionSecondRowText: '2023-08-18',
         isUpcomingRelease: true
     },
     {
@@ -2907,6 +2908,16 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'JAST',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Yuuri to Marin wa Iyashite Agetai',
+        vndbLink: 'https://vndb.org/v35645',
+        thumbnailSource: yuuri_to_marin,
+        attributes: [],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Shiravune',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     }
