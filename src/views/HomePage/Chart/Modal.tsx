@@ -24,7 +24,7 @@ const Background = styled(Column)`
     top: 0px;
     left: ${SIDE_NAV_WIDTH}px;
     width: 100%;
-    height: 120vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,6 +34,5 @@ const Background = styled(Column)`
 const Container = styled(Column)`
     margin-left: -${SIDE_NAV_WIDTH}px;
     width: calc(90% - ${SIDE_NAV_WIDTH}px);
-    height: 70%;
-    margin-bottom: 15%;
+    overflow: auto;
 `;

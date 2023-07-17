@@ -33,7 +33,7 @@ export const SequelsModal: React.FC<IProps> = ({
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
-            <Column $maxWidth $maxHeight $centered>
+            <Column>
                 <AnimatePresence>
                     <VerticalFade>
                         <StyledHeaderFont>
@@ -71,5 +71,9 @@ const EntriesContainer = styled(Row)`
 `;
 
 const StyledHeaderFont = styled(HeaderFont)`
-    margin-bottom: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: clamp(2rem, 3.3vw, 3rem);
 `;

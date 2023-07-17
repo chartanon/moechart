@@ -31,9 +31,9 @@ export const RecommendedModal: React.FC<IProps> = ({
         <Modal isOpen={isOpen} onClose={onClose}>
             <AnimatePresence>
                 <VerticalFade $maxHeight>
-                    <ContentContainer $centered $maxWidth $maxHeight>
-                        <Column>
-                            <ImageFont>{name}</ImageFont>
+                    <Row $centered $maxWidth>
+                        <ContentContainer>
+                            <ImageFont $outlineColour={outlineColour} >{name}</ImageFont>
                             <Row>
                                 <ImageContainer>
                                     <RecommendedImage
@@ -50,8 +50,8 @@ export const RecommendedModal: React.FC<IProps> = ({
                                     </DescriptionFont>
                                 </DescriptionContainer>
                             </Row>
-                        </Column>
-                    </ContentContainer>
+                        </ContentContainer>
+                    </Row>
                 </VerticalFade>
             </AnimatePresence>
         </Modal>
@@ -60,32 +60,33 @@ export const RecommendedModal: React.FC<IProps> = ({
 
 const ContentContainer = styled(Column)`
     border: 1px solid ${COLOURS.TEXT};
+    padding: 50px;
+    max-width: 1200px;
 `;
 
 const RecommendedImage = styled(ThumbnailImage)`
-    height: 300px;
-    width: 220px;
+    height: 23vw;
+    width: 17vw;
+    max-height: 410px;
+    max-width: 300px;
     pointer-events: none;
 `;
 
 const ImageContainer = styled(Column)`
-    margin-left: 50px;
-    margin-right: auto;
+    margin-right: 30px;
 `;
 
 const ImageFont = styled(TitleFont)`
     display: flex;
     width: 100%;
     justify-content: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: clamp(2rem, 3.3vw, 4.5rem);
+    margin-bottom: 30px;
 `;
 
-const DescriptionContainer = styled(Column)`
-    margin: 0 30px 0;
-`;
+const DescriptionContainer = styled(Column)``;
 
 const DescriptionFont = styled(LabelFont)`
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 2rem);
     text-align: justify;
 `;

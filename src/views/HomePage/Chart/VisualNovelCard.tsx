@@ -314,7 +314,7 @@ const HelpIcons = styled(Row)`
 const Container = styled(Column)<{
     $outlineColour: string;
 }>`
-    max-width: ${IMAGE_WIDTH + 40}px;
+    width: auto;
 
     ${({ $outlineColour }) => $outlineColour
     ? css`
@@ -328,7 +328,7 @@ const Container = styled(Column)<{
 
 const Title = styled(TitleFont)`
     font-size: 1.15rem;
-    width: 200px;
+    width: auto;
 `;
 
 const ContentBody = styled(Row)`
@@ -339,7 +339,7 @@ const IconsContainer = styled(Column)<{
     $cardStackCount?: number;
     $shouldScaleMarginLeft?: boolean;
 }>`
-    padding: 0 3px;
+    padding-left: 3px;
     display: flex;
     height: 100%;
     gap: 5px;
