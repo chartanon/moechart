@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.5ef8912c.js",
+    "main.js": "/moechart/static/js/main.5987f908.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
@@ -143,6 +143,7 @@
     "static/media/iroseka.jpg": "/moechart/static/media/iroseka.b2f18ec335c51791837a.jpg",
     "static/media/tenkiame.jpg": "/moechart/static/media/tenkiame.746d82210d9cc0fdae59.jpg",
     "static/media/date-a-live.jpg": "/moechart/static/media/date-a-live.fd4989c78efc9caace48.jpg",
+    "static/media/yuuri_to_marin.jpg": "/moechart/static/media/yuuri_to_marin.8bb90253cd43ac62efc8.jpg",
     "static/media/noratoto.jpg": "/moechart/static/media/noratoto.7267a5e2193ffde2e167.jpg",
     "static/media/tsujidou.jpg": "/moechart/static/media/tsujidou.91dff8a42a1cfb852973.jpg",
     "static/media/noble-works.jpg": "/moechart/static/media/noble-works.006309aff34c009e9018.jpg",
@@ -195,9 +196,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.5ef8912c.js.map": "/moechart/static/js/main.5ef8912c.js.map"
+    "main.5987f908.js.map": "/moechart/static/js/main.5987f908.js.map"
   },
   "entrypoints": [
-    "static/js/main.5ef8912c.js"
+    "static/js/main.5987f908.js"
   ]
 }
