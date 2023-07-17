@@ -62,6 +62,7 @@ const ContentContainer = styled(Column)`
     border: 1px solid ${COLOURS.TEXT};
     padding: 50px;
     max-width: 1200px;
+    margin: 5px;
 `;
 
 const RecommendedImage = styled(ThumbnailImage)`
