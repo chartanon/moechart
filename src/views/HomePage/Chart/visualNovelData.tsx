@@ -2578,7 +2578,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2023-07-21',
+        descriptionSecondRowText: '2023-07-25',
         isUpcomingRelease: true
     },
     {
