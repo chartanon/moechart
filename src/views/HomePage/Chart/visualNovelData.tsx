@@ -1917,6 +1917,21 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-01-07')
     },
     {
+        name: 'Ponkowa',
+        vndbLink: 'https://vndb.org/v31002',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: ponkowa,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.UNLOCKABLE_ROUTES,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Cupid Heroine, Dousei',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2023-07-21')
+    },
+    {
         name: 'Kamiyaba',
         vndbLink: 'https://vndb.org/v19769',
         playtime: PlaytimeLength.MEDIUM,
@@ -2560,16 +2575,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Ponkowa',
-        vndbLink: 'https://vndb.org/v31002',
-        thumbnailSource: ponkowa,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: '2023-07-21',
-        isUpcomingRelease: true
     },
     {
         name: 'Mamiya Mami',
