@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.9650cb67.js",
+    "main.js": "/moechart/static/js/main.f90c96fe.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
@@ -196,9 +196,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.9650cb67.js.map": "/moechart/static/js/main.9650cb67.js.map"
+    "main.f90c96fe.js.map": "/moechart/static/js/main.f90c96fe.js.map"
   },
   "entrypoints": [
-    "static/js/main.9650cb67.js"
+    "static/js/main.f90c96fe.js"
   ]
 }
