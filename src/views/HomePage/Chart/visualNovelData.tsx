@@ -2577,16 +2577,6 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Mamiya Mami',
-        vndbLink: 'https://vndb.org/v33130',
-        thumbnailSource: mamiya_mami,
-        attributes: [],
-        genreFocus: GenreFocus.NUKIGE,
-        descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2023-07-25',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Shugaten!',
         vndbLink: 'https://vndb.org/v20196',
         thumbnailSource: shugaten,
@@ -2607,13 +2597,23 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
+        name: 'Mamiya Mami',
+        vndbLink: 'https://vndb.org/v33130',
+        thumbnailSource: mamiya_mami,
+        attributes: [],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: '2023-08',
+        isUpcomingRelease: true
+    },
+    {
         name: "Gin'iro, Haruka",
         vndbLink: 'https://vndb.org/v18778',
         thumbnailSource: giniro_haruka,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
-        descriptionSecondRowText: 'Early 2023',
+        descriptionSecondRowText: 'Partial patch released',
         isUpcomingRelease: true
     },
     {
