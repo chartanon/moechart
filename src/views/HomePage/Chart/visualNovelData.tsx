@@ -917,6 +917,20 @@ export const visualNovelData: VisualNovelProps[] = [
                 `
     },
     {
+        name: 'Shugaten!',
+        vndbLink: 'https://vndb.org/v20196',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: shugaten,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Cafe, Winter',
+        descriptionSecondRowText: 'Fairy Tale',
+        translationReleaseDate: Date.parse('2032-07-28')
+    },
+    {
         name: 'Hinatabokko',
         vndbLink: 'https://vndb.org/v898',
         playtime: PlaytimeLength.MEDIUM,
@@ -2575,16 +2589,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Shugaten!',
-        vndbLink: 'https://vndb.org/v20196',
-        thumbnailSource: shugaten,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Love Lab',
-        descriptionSecondRowText: '2023-07-28',
-        isUpcomingRelease: true
     },
     {
         name: "Clover Day's",
