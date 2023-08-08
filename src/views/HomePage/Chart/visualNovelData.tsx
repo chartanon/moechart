@@ -2601,6 +2601,16 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
+        name: 'Aikagi After Days',
+        vndbLink: 'https://vndb.org/v22037',
+        thumbnailSource: aikagi_after_days,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Frontwing',
+        descriptionSecondRowText: '2023-08-25',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
@@ -2888,16 +2898,6 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Aikagi After Days',
-        vndbLink: 'https://vndb.org/v22037',
-        thumbnailSource: aikagi_after_days,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Frontwing',
-        descriptionSecondRowText: '2023',
         isUpcomingRelease: true
     },
     {
