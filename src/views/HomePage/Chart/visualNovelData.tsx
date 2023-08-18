@@ -917,6 +917,20 @@ export const visualNovelData: VisualNovelProps[] = [
                 `
     },
     {
+        name: "Clover Day's",
+        vndbLink: 'https://vndb.org/v13325',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: clover_days,
+        attributes: [
+            FilterAttribute.FLOATING_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Twins, Slice of Life',
+        descriptionSecondRowText: 'Reunion',
+        translationReleaseDate: Date.parse('2023-08-18')
+    },
+    {
         name: 'Shugaten!',
         vndbLink: 'https://vndb.org/v20196',
         playtime: PlaytimeLength.MEDIUM,
@@ -928,7 +942,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Cafe, Winter',
         descriptionSecondRowText: 'Fairy Tale',
-        translationReleaseDate: Date.parse('2032-07-28')
+        translationReleaseDate: Date.parse('2023-07-28')
     },
     {
         name: 'Hinatabokko',
@@ -2589,16 +2603,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: "Clover Day's",
-        vndbLink: 'https://vndb.org/v13325',
-        thumbnailSource: clover_days,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: '2023-08-18',
-        isUpcomingRelease: true
     },
     {
         name: 'Aikagi After Days',
