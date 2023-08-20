@@ -574,6 +574,20 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-07-15')
     },
     {
+        name: 'Walkure Romanze',
+        vndbLink: 'https://vndb.org/v4041',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: walkure_romanze,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Jousting, Knight Heroines',
+        descriptionSecondRowText: 'Coach Protagonist',
+        translationReleaseDate: Date.parse('2023-08-18')
+    },
+    {
         name: 'Hoshimemo',
         vndbLink: 'https://vndb.org/v1474',
         playtime: PlaytimeLength.VERY_LONG,
@@ -2630,16 +2644,6 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: giniro_haruka,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Fan translation',
-        descriptionSecondRowText: 'Partial patch released',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Walkure Romanze',
-        vndbLink: 'https://vndb.org/v4041',
-        thumbnailSource: walkure_romanze,
-        attributes: [],
-        genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'Partial patch released',
         isUpcomingRelease: true
