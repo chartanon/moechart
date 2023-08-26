@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.afd0aa03.js",
+    "main.js": "/moechart/static/js/main.71ea4c33.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
@@ -190,15 +190,16 @@
     "static/media/himukai.jpg": "/moechart/static/media/himukai.4785f402ed72c41e2cd6.jpg",
     "static/media/nine_ep4.jpg": "/moechart/static/media/nine_ep4.024a8fe8dab1a071cad9.jpg",
     "static/media/loca-love.jpg": "/moechart/static/media/loca-love.2bc5912d2007dbb40ba8.jpg",
+    "static/media/shukusei_gf.jpg": "/moechart/static/media/shukusei_gf.a30c4c1bad044582d778.jpg",
     "static/media/koi-iro-chu.jpg": "/moechart/static/media/koi-iro-chu.e731fac811cbc7df2c06.jpg",
     "static/media/knot-fiction.jpg": "/moechart/static/media/knot-fiction.4c418e20c0747be57b8f.jpg",
     "static/media/lovekami.jpg": "/moechart/static/media/lovekami.5e2d3958cc88868b645e.jpg",
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.afd0aa03.js.map": "/moechart/static/js/main.afd0aa03.js.map"
+    "main.71ea4c33.js.map": "/moechart/static/js/main.71ea4c33.js.map"
   },
   "entrypoints": [
-    "static/js/main.afd0aa03.js"
+    "static/js/main.71ea4c33.js"
   ]
 }
