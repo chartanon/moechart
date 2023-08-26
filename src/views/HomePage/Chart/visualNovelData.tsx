@@ -188,6 +188,7 @@ import kemonomichi_2 from '../../assets/thumbnails/kemonomichi_2.jpg';
 import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
 import naka_no_hito from '../../assets/thumbnails/naka_no_hito.jpg';
 import yomegami from '../../assets/thumbnails/yomegami.jpg';
+import shukusei_gf from '../../assets/thumbnails/shukusei_gf.jpg';
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
@@ -1293,10 +1294,27 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
+        sequels: ['https://vndb.org/v22037'],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Winter, Dousei',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2021-11-18')
+    },
+    {
+        name: 'Aikagi After Days',
+        vndbLink: 'https://vndb.org/v22037',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: aikagi_after_days,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
+        originalGame: 'https://vndb.org/v20232',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Summer, Slice of Life',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2023-08-25')
+
     },
     {
         name: 'Icing -love coating-',
@@ -2619,16 +2637,6 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Aikagi After Days',
-        vndbLink: 'https://vndb.org/v22037',
-        thumbnailSource: aikagi_after_days,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Frontwing',
-        descriptionSecondRowText: '2023-08-25',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
@@ -2636,6 +2644,16 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Shiravune',
         descriptionSecondRowText: '2023-08',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Shukusei no Girlfriend 1',
+        vndbLink: 'https://vndb.org/v22880',
+        thumbnailSource: shukusei_gf,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: '2023',
         isUpcomingRelease: true
     },
     {
