@@ -2637,13 +2637,23 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
+        name: 'Secret Agent',
+        vndbLink: 'https://vndb.org/v27227',
+        thumbnailSource: secret_agent,
+        attributes: [],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2023-09-29',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         thumbnailSource: mamiya_mami,
         attributes: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2023-08',
+        descriptionSecondRowText: '2023-09',
         isUpcomingRelease: true
     },
     {
@@ -2732,16 +2742,6 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: tenshi_souzou,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Secret Agent',
-        vndbLink: 'https://vndb.org/v27227',
-        thumbnailSource: secret_agent,
-        attributes: [],
-        genreFocus: GenreFocus.STORY_ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
