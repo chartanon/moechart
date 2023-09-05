@@ -2107,7 +2107,8 @@ export const visualNovelData: VisualNovelProps[] = [
             'https://vndb.org/v20598',
             'https://vndb.org/v20599',
             'https://vndb.org/v20600',
-            'https://vndb.org/v20601'
+            'https://vndb.org/v20601',
+            'https://vndb.org/v20602'
         ],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
@@ -2200,6 +2201,21 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Martial Arts, Group of Friends',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2021-08-10')
+    },
+    {
+        name: 'Majikoi A-5',
+        vndbLink: 'https://vndb.org/v20602',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: majikoi_a5,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.SCENARIO_SELECTION
+        ],
+        originalGame: 'https://vndb.org/v1143',
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Martial Arts, Group of Friends',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2023-09-04')
     },
     {
         name: 'Sakura Sakura',
@@ -2663,7 +2679,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2023',
+        descriptionSecondRowText: 'Q4 2023',
         isUpcomingRelease: true
     },
     {
@@ -2704,16 +2720,6 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Majikoi A5',
-        vndbLink: 'https://vndb.org/v20602',
-        thumbnailSource: majikoi_a5,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'Fan translation',
-        descriptionSecondRowText: '85%, Partial patch released',
         isUpcomingRelease: true
     },
     {
