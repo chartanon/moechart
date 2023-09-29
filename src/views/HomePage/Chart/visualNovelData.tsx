@@ -779,6 +779,20 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2019-07-23')
     },
     {
+        name: 'Secret Agent',
+        vndbLink: 'https://vndb.org/v27227',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: secret_agent,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Duel, Secret Identity',
+        descriptionSecondRowText: 'Science Fiction',
+        translationReleaseDate: Date.parse('2023-09-29')
+    },
+    {
         name: 'Sanoba Witch',
         vndbLink: 'https://vndb.org/v16044',
         playtime: PlaytimeLength.LONG,
@@ -2651,16 +2665,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Secret Agent',
-        vndbLink: 'https://vndb.org/v27227',
-        thumbnailSource: secret_agent,
-        attributes: [],
-        genreFocus: GenreFocus.STORY_ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: '2023-09-29',
-        isUpcomingRelease: true
     },
     {
         name: 'Mamiya Mami',
