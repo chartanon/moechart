@@ -2405,10 +2405,23 @@ export const visualNovelData: VisualNovelProps[] = [
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: kemonomichi,
         attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
+        sequels: ['https://vndb.org/v36773'],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Mahou Shoujo, Idols',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2022-08-12')
+    },
+    {
+        name: 'Kemonomichi L+P',
+        vndbLink: 'https://vndb.org/v36773',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kemonomichi_love_plus,
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.KINETIC_NOVEL],
+        originalGame: 'https://vndb.org/v31669',
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Mahou Shoujo, Idols',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2023-11-17')
     },
     {
         name: "Ren'ai x Royale",
@@ -2673,7 +2686,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2023-09',
+        descriptionSecondRowText: '2023-12-01',
         isUpcomingRelease: true
     },
     {
@@ -2903,16 +2916,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Kemonomichi L+P',
-        vndbLink: 'https://vndb.org/v36773',
-        thumbnailSource: kemonomichi_love_plus,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
