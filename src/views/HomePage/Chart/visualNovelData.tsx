@@ -2484,6 +2484,20 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2014-06-21')
     },
     {
+        name: 'Mamiya Mami',
+        vndbLink: 'https://vndb.org/v33130',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: mamiya_mami,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Succubus Heroine, Dormitory',
+        descriptionSecondRowText: 'Supernatural ',
+        translationReleaseDate: Date.parse('2023-12-01')
+    },
+    {
         name: 'Momoiro Closet',
         vndbLink: 'https://vndb.org/v21458',
         playtime: PlaytimeLength.MEDIUM,
@@ -2678,16 +2692,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Mamiya Mami',
-        vndbLink: 'https://vndb.org/v33130',
-        thumbnailSource: mamiya_mami,
-        attributes: [],
-        genreFocus: GenreFocus.NUKIGE,
-        descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2023-12-01',
-        isUpcomingRelease: true
     },
     {
         name: 'Shukusei no Girlfriend 1',
