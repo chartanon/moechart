@@ -1479,6 +1479,20 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2016-09-30')
     },
     {
+        name: 'Shukusei no Girlfriend 1',
+        vndbLink: 'https://vndb.org/v22880',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: shukusei_gf,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Mahou Shoujo, Dousei',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2023-12-14')
+    },
+    {
         name: 'Neko-nin',
         vndbLink: 'https://vndb.org/v20433',
         playtime: PlaytimeLength.SHORT,
@@ -2552,7 +2566,7 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
-        sequels: ['https://vndb.org/v16845'],
+        sequels: ['https://vndb.org/v16845', 'https://vndb.org/v19302'],
         genreFocus: GenreFocus.NUKIGE,
         descriptionFirstRowText: 'Master and Servant, Comedy',
         descriptionSecondRowText: 'Single Heroine',
@@ -2572,6 +2586,21 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Brocon Heroine, Domicile',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2023-06-26')
+    },
+    {
+        name: 'Gakkou no Seiiki',
+        vndbLink: 'https://vndb.org/v19302',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: gakkou_no_seiiki,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        originalGame: 'https://vndb.org/v16150',
+        genreFocus: GenreFocus.NUKIGE,
+        descriptionFirstRowText: 'Teacher Heroine, Slice of Life',
+        descriptionSecondRowText: 'Half-Japanese Heroine',
+        translationReleaseDate: Date.parse('2023-12-15')
     },
     {
         name: 'Uchi no Kanojo',
@@ -2692,16 +2721,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Shukusei no Girlfriend 1',
-        vndbLink: 'https://vndb.org/v22880',
-        thumbnailSource: shukusei_gf,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: 'Q4 2023',
-        isUpcomingRelease: true
     },
     {
         name: "Gin'iro, Haruka",
@@ -2841,16 +2860,6 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA (soon)',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Gakkou no Seiiki',
-        vndbLink: 'https://vndb.org/v19302',
-        thumbnailSource: gakkou_no_seiiki,
-        attributes: [],
-        genreFocus: GenreFocus.NUKIGE,
-        descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
     {
