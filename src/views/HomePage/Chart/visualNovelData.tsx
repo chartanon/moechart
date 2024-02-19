@@ -543,6 +543,21 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-18')
     },
     {
+        name: 'Irotoridori no Sekai',
+        vndbLink: 'https://vndb.org/v5834',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: iroseka,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.UNLOCKABLE_ROUTES,
+            FilterAttribute.TRUE_ROUTE
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Fantasy, Central Heroine',
+        descriptionSecondRowText: 'Alternate Dimensions',
+        translationReleaseDate: Date.parse('2024-02-16')
+    },
+    {
         name: 'Kinkoi',
         vndbLink: 'https://vndb.org/v21852',
         playtime: PlaytimeLength.LONG,
@@ -2419,7 +2434,7 @@ export const visualNovelData: VisualNovelProps[] = [
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: kemonomichi,
         attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
-        sequels: ['https://vndb.org/v36773'],
+        sequels: ['https://vndb.org/v36773', 'https://vndb.org/v40507'],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Mahou Shoujo, Idols',
         descriptionSecondRowText: 'Slice of Life Comedy',
@@ -2436,6 +2451,18 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Mahou Shoujo, Idols',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2023-11-17')
+    },
+    {
+        name: 'Kemonomichi 2',
+        vndbLink: 'https://vndb.org/v40507',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: kemonomichi_2,
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
+        originalGame: 'https://vndb.org/v31669',
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Mahou Shoujo, Idols',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2023-12-18')
     },
     {
         name: "Ren'ai x Royale",
@@ -2853,16 +2880,6 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
-        name: 'Irotoridori no Sekai',
-        vndbLink: 'https://vndb.org/v5834',
-        thumbnailSource: iroseka,
-        attributes: [],
-        genreFocus: GenreFocus.STORYLINE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA (soon)',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Hoshikaka',
         vndbLink: 'https://vndb.org/v2968',
         thumbnailSource: hoshikaka,
@@ -2929,16 +2946,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Kemonomichi 2',
-        vndbLink: 'https://vndb.org/v40507',
-        thumbnailSource: kemonomichi_2,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
