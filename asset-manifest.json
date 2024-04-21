@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.e7f2b748.js",
+    "main.js": "/moechart/static/js/main.389afdf4.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
@@ -27,6 +27,7 @@
     "static/media/neko_nin.jpg": "/moechart/static/media/neko_nin.a0059a0c8eea5350a499.jpg",
     "static/media/neko_nin_2_plus.jpg": "/moechart/static/media/neko_nin_2_plus.1978ba89b4a1d189cb08.jpg",
     "static/media/konosora.jpg": "/moechart/static/media/konosora.4fd56ab93c1e38fa43e2.jpg",
+    "static/media/amanatsu.jpg": "/moechart/static/media/amanatsu.809be0987489301bd3ae.jpg",
     "static/media/kakenuke.jpg": "/moechart/static/media/kakenuke.e342b9627bbcc494c941.jpg",
     "static/media/suki-suki.jpg": "/moechart/static/media/suki-suki.8dfe594bf8b15ce06312.jpg",
     "static/media/koirizo.jpg": "/moechart/static/media/koirizo.5d85945ec8c8a0a34259.jpg",
@@ -45,6 +46,7 @@
     "static/media/hoshimemo.jpg": "/moechart/static/media/hoshimemo.6a2c8adcb984adca176b.jpg",
     "static/media/yuki-koi-melt.jpg": "/moechart/static/media/yuki-koi-melt.d47a958db6f137e7abea.jpg",
     "static/media/nekopara_after.jpg": "/moechart/static/media/nekopara_after.74385d7b3b3a98616e25.jpg",
+    "static/media/mashiro_sana.jpg": "/moechart/static/media/mashiro_sana.215735ea310667ec304c.jpg",
     "static/media/senren-banka.jpg": "/moechart/static/media/senren-banka.7682d4075e049cb525fe.jpg",
     "static/media/primal_hearts_2.jpg": "/moechart/static/media/primal_hearts_2.2e45e18d0db2e937fe2b.jpg",
     "static/media/hitotsuba.jpg": "/moechart/static/media/hitotsuba.374298781c2498ecffbb.jpg",
@@ -112,6 +114,7 @@
     "static/media/majikoi_a4.jpg": "/moechart/static/media/majikoi_a4.dd2555060539786ed699.jpg",
     "static/media/haretaka.jpg": "/moechart/static/media/haretaka.97542cbdd2ce1e8a993b.jpg",
     "static/media/neko_nin_2.jpg": "/moechart/static/media/neko_nin_2.9a9c1f7f67ef136e686f.jpg",
+    "static/media/mashiro.jpg": "/moechart/static/media/mashiro.e8b7d35ced7d3be36f65.jpg",
     "static/media/kinkoi.jpg": "/moechart/static/media/kinkoi.5eddd0b3fda6321b8d1f.jpg",
     "static/media/imouto-no-seiiki.jpg": "/moechart/static/media/imouto-no-seiiki.813da70ef7aeccc7fa95.jpg",
     "static/media/Background.jpg": "/moechart/static/media/Background.4608740a19ef247c83ca.jpg",
@@ -142,6 +145,7 @@
     "static/media/kamiyaba.jpg": "/moechart/static/media/kamiyaba.c3330619fa07fa4b2b70.jpg",
     "static/media/iroseka.jpg": "/moechart/static/media/iroseka.b2f18ec335c51791837a.jpg",
     "static/media/tenkiame.jpg": "/moechart/static/media/tenkiame.746d82210d9cc0fdae59.jpg",
+    "static/media/shukusei_gf_2.jpg": "/moechart/static/media/shukusei_gf_2.c5dca8a339cee182a437.jpg",
     "static/media/date-a-live.jpg": "/moechart/static/media/date-a-live.fd4989c78efc9caace48.jpg",
     "static/media/yuuri_to_marin.jpg": "/moechart/static/media/yuuri_to_marin.8bb90253cd43ac62efc8.jpg",
     "static/media/noratoto.jpg": "/moechart/static/media/noratoto.7267a5e2193ffde2e167.jpg",
@@ -197,9 +201,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.e7f2b748.js.map": "/moechart/static/js/main.e7f2b748.js.map"
+    "main.389afdf4.js.map": "/moechart/static/js/main.389afdf4.js.map"
   },
   "entrypoints": [
-    "static/js/main.e7f2b748.js"
+    "static/js/main.389afdf4.js"
   ]
 }
