@@ -189,6 +189,10 @@ import konosora_snow from '../../assets/thumbnails/konosora_snow.jpg';
 import naka_no_hito from '../../assets/thumbnails/naka_no_hito.jpg';
 import yomegami from '../../assets/thumbnails/yomegami.jpg';
 import shukusei_gf from '../../assets/thumbnails/shukusei_gf.jpg';
+import shukusei_gf_2 from '../../assets/thumbnails/shukusei_gf_2.jpg';
+import mashiro from '../../assets/thumbnails/mashiro.jpg';
+import mashiro_sana from '../../assets/thumbnails/mashiro_sana.jpg';
+import amanatsu from '../../assets/thumbnails/amanatsu.jpg';
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
@@ -2756,7 +2760,37 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
-        descriptionSecondRowText: 'Partial patch released',
+        descriptionSecondRowText: '2024-04-26',
+        isUpcomingRelease: true
+    },
+    {
+        name: "Mashiro-iro Symphony",
+        vndbLink: 'https://vndb.org/v1552',
+        thumbnailSource: mashiro,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: '2024-05-02',
+        isUpcomingRelease: true
+    },
+    {
+        name: "Mashiro-iro Sana",
+        vndbLink: 'https://vndb.org/v37651',
+        thumbnailSource: mashiro_sana,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: '2024-05-02',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Shukusei no Girlfriend 2',
+        vndbLink: 'https://vndb.org/v23290',
+        thumbnailSource: shukusei_gf_2,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: '2024',
         isUpcomingRelease: true
     },
     {
@@ -2806,7 +2840,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan Translation',
-        descriptionSecondRowText: '23% translated',
+        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
     {
@@ -2816,7 +2850,7 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA',
+        descriptionSecondRowText: '"No zako imouto for you" - Gaben',
         isUpcomingRelease: true
     },
     {
@@ -2976,6 +3010,16 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'JAST',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Amanatsu',
+        vndbLink: 'https://vndb.org/v34848',
+        thumbnailSource: amanatsu,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Shiravune',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
