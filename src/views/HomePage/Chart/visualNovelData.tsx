@@ -965,6 +965,50 @@ export const visualNovelData: VisualNovelProps[] = [
                 `
     },
     {
+        name: "Gin'iro, Haruka",
+        vndbLink: 'https://vndb.org/v18778',
+        playtime: PlaytimeLength.VERY_LONG,
+        thumbnailSource: giniro_haruka,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Slice of Life, Winter',
+        descriptionSecondRowText: 'Pure Love Story',
+        translationReleaseDate: Date.parse('2024-04-26')
+    },
+    {
+        name: "Mashiro-iro Symphony",
+        vndbLink: 'https://vndb.org/v1552',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: mashiro,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        sequels: ['https://vndb.org/v37651'],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Slice of Life, Winter',
+        descriptionSecondRowText: 'Former All-girls School ',
+        translationReleaseDate: Date.parse('2024-05-02')
+    },
+    {
+        name: "Mashiro-iro Sana",
+        vndbLink: 'https://vndb.org/v37651',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: mashiro_sana,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
+        originalGame: 'https://vndb.org/v1552',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Single Heroine, Winter',
+        descriptionSecondRowText: 'Former All-girls School ',
+        translationReleaseDate: Date.parse('2024-05-02')
+    },
+    {
         name: "Clover Day's",
         vndbLink: 'https://vndb.org/v13325',
         playtime: PlaytimeLength.LONG,
@@ -2754,33 +2798,13 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: "Gin'iro, Haruka",
-        vndbLink: 'https://vndb.org/v18778',
-        thumbnailSource: giniro_haruka,
+        name: 'Amanatsu',
+        vndbLink: 'https://vndb.org/v34848',
+        thumbnailSource: amanatsu,
         attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Fan translation',
-        descriptionSecondRowText: '2024-04-26',
-        isUpcomingRelease: true
-    },
-    {
-        name: "Mashiro-iro Symphony",
-        vndbLink: 'https://vndb.org/v1552',
-        thumbnailSource: mashiro,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
+        genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2024-05-02',
-        isUpcomingRelease: true
-    },
-    {
-        name: "Mashiro-iro Sana",
-        vndbLink: 'https://vndb.org/v37651',
-        thumbnailSource: mashiro_sana,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2024-05-02',
+        descriptionSecondRowText: '2024-05-16',
         isUpcomingRelease: true
     },
     {
@@ -3010,16 +3034,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'JAST',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Amanatsu',
-        vndbLink: 'https://vndb.org/v34848',
-        thumbnailSource: amanatsu,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Shiravune',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
