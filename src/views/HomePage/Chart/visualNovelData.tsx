@@ -174,6 +174,7 @@ import enking from '../../assets/thumbnails/enking.jpg';
 import melty_moment from '../../assets/thumbnails/melty-moment.jpg';
 import iroseka from '../../assets/thumbnails/iroseka.jpg';
 import amairo_choco2 from '../../assets/thumbnails/amairo-choco2.jpg';
+import amairo_choco3 from '../../assets/thumbnails/amairo-choco3.jpg';
 import imouto_no_seiiki from '../../assets/thumbnails/imouto-no-seiiki.jpg';
 import gakkou_no_seiiki from '../../assets/thumbnails/gakkou-no-seiiki.jpg';
 import hoshikaka from '../../assets/thumbnails/hoshikaka.jpg';
@@ -1405,6 +1406,20 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2021-12-03')
     },
     {
+        name: 'Amanatsu',
+        vndbLink: 'https://vndb.org/v34848',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: amanatsu,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Countryside, Summer',
+        descriptionSecondRowText: 'Group of Friends',
+        translationReleaseDate: Date.parse('2024-05-17')
+    },
+    {
         name: 'SHUFFLE!',
         vndbLink: 'https://vndb.org/v28',
         playtime: PlaytimeLength.MEDIUM,
@@ -1566,7 +1581,8 @@ export const visualNovelData: VisualNovelProps[] = [
             'https://vndb.org/v22106',
             'https://vndb.org/v22282',
             'https://vndb.org/v25673',
-            'https://vndb.org/v24872'
+            'https://vndb.org/v24872',
+            'https://vndb.org/v45381'
         ],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Fantasy, Catgirls',
@@ -1635,6 +1651,18 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Fantasy, Catgirls',
         descriptionSecondRowText: 'Polyamory',
         translationReleaseDate: Date.parse('2019-10-18')
+    },
+    {
+        name: 'Neko-nin SPIN',
+        vndbLink: 'https://vndb.org/v45381',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: neko_nin_spin,
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
+        originalGame: 'https://vndb.org/v20433',
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Fantasy, Catgirls',
+        descriptionSecondRowText: 'Polyamory',
+        translationReleaseDate: Date.parse('2024-07-15')
     },
     {
         name: 'Wagahigh',
@@ -2798,13 +2826,13 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Amanatsu',
-        vndbLink: 'https://vndb.org/v34848',
-        thumbnailSource: amanatsu,
+        name: 'Amairo Chocolata 3',
+        vndbLink: 'https://vndb.org/v41339',
+        thumbnailSource: amairo_choco3,
         attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2024-05-16',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: '2024',
         isUpcomingRelease: true
     },
     {
@@ -3004,16 +3032,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Neko-nin SPIN',
-        vndbLink: 'https://vndb.org/v45381',
-        thumbnailSource: neko_nin_spin,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Sekai  Project',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },

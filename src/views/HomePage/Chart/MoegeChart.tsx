@@ -312,7 +312,7 @@ export const MoegeChart: React.FC<IProps> = ({
                 >
                     <MusicNoteIcon />
                 </MusicButton>
-                <UpdatedInfoFont>(Last Updated: 2024-05-02)</UpdatedInfoFont>
+                <UpdatedInfoFont>(Last Updated: 2024-08-23)</UpdatedInfoFont>
             </InfoBar>
 
             <AnimatePresence>
