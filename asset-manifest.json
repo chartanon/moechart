@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.9d287a10.js",
+    "main.js": "/moechart/static/js/main.0af8478f.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
     "static/media/clover-days.jpg": "/moechart/static/media/clover-days.8e4ab011e719f0b8a305.jpg",
+    "static/media/amairo-choco3.jpg": "/moechart/static/media/amairo-choco3.e0a5536ef130ff216ba8.jpg",
     "static/media/really_really.jpg": "/moechart/static/media/really_really.4806ea30c679a9888c0c.jpg",
     "static/media/koikuma.jpg": "/moechart/static/media/koikuma.b8b914a342dec8689435.jpg",
     "static/media/nekopara_0.jpg": "/moechart/static/media/nekopara_0.464eb23ed8b344a8d977.jpg",
@@ -201,9 +202,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.9d287a10.js.map": "/moechart/static/js/main.9d287a10.js.map"
+    "main.0af8478f.js.map": "/moechart/static/js/main.0af8478f.js.map"
   },
   "entrypoints": [
-    "static/js/main.9d287a10.js"
+    "static/js/main.0af8478f.js"
   ]
 }
