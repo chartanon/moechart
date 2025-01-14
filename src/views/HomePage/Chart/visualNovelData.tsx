@@ -191,6 +191,7 @@ import naka_no_hito from '../../assets/thumbnails/naka_no_hito.jpg';
 import yomegami from '../../assets/thumbnails/yomegami.jpg';
 import shukusei_gf from '../../assets/thumbnails/shukusei_gf.jpg';
 import shukusei_gf_2 from '../../assets/thumbnails/shukusei_gf_2.jpg';
+import shukusei_gf_3 from '../../assets/thumbnails/shukusei_gf_3.jpg';
 import mashiro from '../../assets/thumbnails/mashiro.jpg';
 import mashiro_sana from '../../assets/thumbnails/mashiro_sana.jpg';
 import amanatsu from '../../assets/thumbnails/amanatsu.jpg';
@@ -309,6 +310,21 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Group of Friends, Gliders',
         descriptionSecondRowText: 'Design Story',
         translationReleaseDate: Date.parse('2019-02-27')
+    },
+    {
+        name: 'Konosora Snow Presents',
+        vndbLink: 'https://vndb.org/v14812',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: konosora_snow,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
+        originalGame: 'https://vndb.org/v9093',
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Winter, Single Heroine',
+        descriptionSecondRowText: 'Slice of Life',
+        translationReleaseDate: Date.parse('2024-12-24')
     },
     {
         name: 'Chrono Clock',
@@ -593,6 +609,20 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Blondes, School Life Comedy',
         descriptionSecondRowText: 'Reunion',
         translationReleaseDate: Date.parse('2022-07-15')
+    },
+    {
+        name: 'Kakenuke',
+        vndbLink: 'https://vndb.org/v28286',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: kakenuke,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Summer, School Life Comedy',
+        descriptionSecondRowText: 'Student Club',
+        translationReleaseDate: Date.parse('2024-10-18')
     },
     {
         name: 'Walkure Romanze',
@@ -1565,10 +1595,44 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.LINEAR_PLOT
         ],
+        sequels: [
+            'https://vndb.org/v23290',
+            'https://vndb.org/v23772'
+        ],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Mahou Shoujo, Dousei',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2023-12-14')
+    },
+    {
+        name: 'Shukusei no Girlfriend 2',
+        vndbLink: 'https://vndb.org/v23290',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: shukusei_gf_2,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.LINEAR_PLOT
+        ],
+        originalGame: 'https://vndb.org/v22880',
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Mahou Shoujo, Dousei',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2024-10-29')
+    },
+    {
+        name: 'Shukusei no Girlfriend 3',
+        vndbLink: 'https://vndb.org/v23772',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: shukusei_gf_3,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.LINEAR_PLOT
+        ],
+        originalGame: 'https://vndb.org/v22880',
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Mahou Shoujo, Dousei',
+        descriptionSecondRowText: 'Single Heroine',
+        translationReleaseDate: Date.parse('2024-10-29')
     },
     {
         name: 'Neko-nin',
@@ -2826,23 +2890,23 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
+        name: 'Tenshi☆Souzou',
+        vndbLink: 'https://vndb.org/v40520',
+        thumbnailSource: tenshi_souzou,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2025-01-24',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Amairo Chocolata 3',
         vndbLink: 'https://vndb.org/v41339',
         thumbnailSource: amairo_choco3,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: '2024',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Shukusei no Girlfriend 2',
-        vndbLink: 'https://vndb.org/v23290',
-        thumbnailSource: shukusei_gf_2,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Shiravune',
-        descriptionSecondRowText: '2024',
+        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
     {
@@ -2886,39 +2950,9 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
-        name: 'Konosora Snow Pr.',
-        vndbLink: 'https://vndb.org/v14812',
-        thumbnailSource: konosora_snow,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Fan Translation',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Tenshi☆Souzou',
-        vndbLink: 'https://vndb.org/v40520',
-        thumbnailSource: tenshi_souzou,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: '"No zako imouto for you" - Gaben',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Floral Flowlove',
         vndbLink: 'https://vndb.org/v18842',
         thumbnailSource: flowlove,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Kakenuke',
-        vndbLink: 'https://vndb.org/v28286',
-        thumbnailSource: kakenuke,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
