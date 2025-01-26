@@ -942,6 +942,21 @@ export const visualNovelData: VisualNovelProps[] = [
                 `
     },
     {
+        name: 'Tenshi☆Souzou',
+        vndbLink: 'https://vndb.org/v40520',
+        playtime: PlaytimeLength.LONG,
+        thumbnailSource: tenshi_souzou,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.UNLOCKABLE_ROUTES,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Diablo MC, Slice of Life',
+        descriptionSecondRowText: 'Reincarnation',
+        translationReleaseDate: Date.parse('2025-01-24')
+    },
+    {
         name: 'Cafe Stella',
         vndbLink: 'https://vndb.org/v26414',
         playtime: PlaytimeLength.LONG,
@@ -2888,16 +2903,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: 'Tenshi☆Souzou',
-        vndbLink: 'https://vndb.org/v40520',
-        thumbnailSource: tenshi_souzou,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: '2025-01-24',
-        isUpcomingRelease: true
     },
     {
         name: 'Amairo Chocolata 3',
