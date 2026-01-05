@@ -208,6 +208,8 @@ import tayutama_fd from '../../assets/thumbnails/tayutama_fd.jpg';
 import renzero from '../../assets/thumbnails/renzero.jpg';
 import golden_marriage from '../../assets/thumbnails/golden_marriage.jpg';
 import toheart from '../../assets/thumbnails/toheart.jpg';
+import e_school_life from '../../assets/thumbnails/e_school_life.jpg';
+import karenai_sekai from '../../assets/thumbnails/karenai_sekai.jpg';
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
@@ -658,6 +660,20 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Deities, Shinto Shrine',
         descriptionSecondRowText: 'Dousei',
         translationReleaseDate: Date.parse('2025-10-23')
+    },
+    {
+        name: 'Karenai Sekai to Owaru Hana',
+        vndbLink: 'https://vndb.org/v19658',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: karenai_sekai,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.LINEAR_PLOT
+        ],
+        genreFocus: GenreFocus.STORYLINE,
+        descriptionFirstRowText: 'Cafe, Angels',
+        descriptionSecondRowText: 'Nakige',
+        translationReleaseDate: Date.parse('2024-09-14')
     },
     {
         name: 'Kinkoi',
@@ -2178,6 +2194,20 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Love Triangle, Deredere',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2020-08-28')
+    },
+    {
+        name: 'E School Life',
+        vndbLink: 'https://vndb.org/v24935',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: e_school_life,
+        attributes: [
+            FilterAttribute.NVL_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Homecoming, Slice of Life',
+        descriptionSecondRowText: 'Pure Love Story',
+        translationReleaseDate: Date.parse('2025-11-18')
     },
     {
         name: 'Amatarasu',
