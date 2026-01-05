@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.dfe157e2.js",
+    "main.js": "/moechart/static/js/main.7a7eb450.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
     "static/media/chiisaku-mo-tsuyoki-kokoro.mp3": "/moechart/static/media/chiisaku-mo-tsuyoki-kokoro.e72fd4ca0a1079f0b44d.mp3",
     "static/media/happiness_2.jpg": "/moechart/static/media/happiness_2.ed2b8e135a6bb10bc570.jpg",
     "static/media/lovepical.jpg": "/moechart/static/media/lovepical.7af9836877886dce333c.jpg",
     "static/media/renzero.jpg": "/moechart/static/media/renzero.c5f612e83570a76a705a.jpg",
+    "static/media/e_school_life.jpg": "/moechart/static/media/e_school_life.aed1631c6610d07c5b58.jpg",
     "static/media/clover-days.jpg": "/moechart/static/media/clover-days.8e4ab011e719f0b8a305.jpg",
     "static/media/amairo-choco3.jpg": "/moechart/static/media/amairo-choco3.e0a5536ef130ff216ba8.jpg",
     "static/media/really_really.jpg": "/moechart/static/media/really_really.4806ea30c679a9888c0c.jpg",
@@ -63,6 +64,7 @@
     "static/media/princess_evangile_wh.jpg": "/moechart/static/media/princess_evangile_wh.4755547df89f3eb514d9.jpg",
     "static/media/hello-good-bye.jpg": "/moechart/static/media/hello-good-bye.2694fd596a0e1a8b26cc.jpg",
     "static/media/drapri_2.jpg": "/moechart/static/media/drapri_2.f0b1f4cf732187510e17.jpg",
+    "static/media/karenai_sekai.jpg": "/moechart/static/media/karenai_sekai.a52371fd83517b6df9ef.jpg",
     "static/media/nyan-cafe.jpg": "/moechart/static/media/nyan-cafe.3159256502b19f859ff5.jpg",
     "static/media/miazora_fd.jpg": "/moechart/static/media/miazora_fd.7390a7fadc506b01c9e1.jpg",
     "static/media/fureraba_fd.jpg": "/moechart/static/media/fureraba_fd.1d6c6548c3a00b46d603.jpg",
@@ -216,9 +218,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.dfe157e2.js.map": "/moechart/static/js/main.dfe157e2.js.map"
+    "main.7a7eb450.js.map": "/moechart/static/js/main.7a7eb450.js.map"
   },
   "entrypoints": [
-    "static/js/main.dfe157e2.js"
+    "static/js/main.7a7eb450.js"
   ]
 }
