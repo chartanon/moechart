@@ -68,7 +68,6 @@ export const VisualNovelCard: React.FC<VisualNovelCardProps> = props => {
         translationReleaseDate,
         isRecommended,
         descriptionInfoOnClick,
-        isUpcomingRelease,
         isBookmarked,
         onBookmark
     } = props;
