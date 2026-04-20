@@ -11,7 +11,7 @@ export const App: React.FC = () => {
 
     const [iconFileName, setIconFileName] = useState<string>();
     useEffect(() => {
-        const IconFileNames = ['Meguru.ico', 'Ayase.ico'];
+        const IconFileNames = ['Meguru.ico', 'Nene.ico'];
         setIconFileName(
             IconFileNames[Math.floor(Math.random() * IconFileNames.length)]
         );
