@@ -31,7 +31,7 @@
 
 - If you are adding a new entry, go to the bottom of the list and add it there. Make sure there are commas after every entry except the last one.
 
-- If you are adding a sequel/FD, find the original's entry and add slot your entry in afterwards.
+- If you are adding a sequel/FD, find the original's entry and slot your entry in afterwards.
 
 <img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/40a143ea-ede3-4b66-836f-31a7a0cfdaa4" />
 
