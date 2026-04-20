@@ -19,6 +19,7 @@ import { ArrowIcon } from '../../assets/icons/misc/DownArrowIcon';
 import first_cherry_blossom from '../../assets/audio/first-cherry-blossom.mp3';
 import chiisaku_mo_tsuyoki_kokoro from '../../assets/audio/chiisaku-mo-tsuyoki-kokoro.mp3';
 import cute_shining_idol from '../../assets/audio/cute-shining-idol.mp3';
+import kimi_ga_ichiban from '../../assets/audio/kimi-ga-ichiban.mp3';
 import { ChartEntry } from './ChartEntry';
 import { GenreFocus, FilterAttribute } from './utils';
 import { PlaytimeLength } from './utils';
@@ -232,7 +233,8 @@ export const MoegeChart: React.FC<IProps> = ({
     const [backgroundSongs] = useState<HTMLAudioElement[]>([
         new Audio(first_cherry_blossom),
         new Audio(cute_shining_idol),
-        new Audio(chiisaku_mo_tsuyoki_kokoro)
+        new Audio(chiisaku_mo_tsuyoki_kokoro),
+        new Audio(kimi_ga_ichiban)
     ]);
     const [isPlayingSong, setIsPlayingSong] = useState<boolean>(false);
     const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);
