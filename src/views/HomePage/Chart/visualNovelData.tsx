@@ -218,19 +218,33 @@ import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
 export interface VisualNovelProps {
+    //Name of VN. Can use abbreviations when appropriate.
     name: string;
+    //Link to VNDB page.
     vndbLink: string;
+    //Playtime length, refer to the utils.ts file in this same folder to see options.
     playtime?: PlaytimeLength;
+    //Image variable that was imported above.
     thumbnailSource: string;
+    //List of attributes the VN may have. Refer to the utils.ts file.
     attributes: FilterAttribute[];
+    //Optional. List of VNDB links of sequels if this game has any.
     sequels?: string[];
+    //Optional. VNDB link to the first game, if this entry is a sequel/FD.
     originalGame?: string;
+    //Genre, refer to utils.ts file.
     genreFocus: GenreFocus;
+    //Free form description. Use a few key words to describe the game.
     descriptionFirstRowText: string;
+    //Additional description line for more text.
     descriptionSecondRowText: string;
+    //Optional. TL's release date, if this game has not come out in english yet.
     translationReleaseDate?: number;
+    //Optional. 'true' if the game isn't TL'd yet.
     isUpcomingRelease?: boolean;
+    //Optional. This will be dictated by chartanon, pinkfag, or /vn/ as a whole. Don't try to be funny and sneak this in for a vn you like.
     isRecommended?: boolean;
+    //Optional. This is for the popup that appears when you want to see more information about a recommended VN.
     recommendedDescription?: string;
 }
 
