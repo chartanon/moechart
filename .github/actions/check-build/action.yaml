@@ -26,7 +26,7 @@ runs:
       run: npm run build
     - name: Upload build artifact
       if: ${{ inputs.generate_artifact != 'false' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: gh-pages-artifact
         path: build
