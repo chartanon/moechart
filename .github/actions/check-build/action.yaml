@@ -1,0 +1,34 @@
+name: Check build
+description: Ensures that the site will build, preventing garbage from being deployed
+inputs:
+  generate_artifact:
+    description: Whether or not to generate a build artifact for eventual publication
+    required: false
+    default: "false"
+outputs:
+  artifact_name:
+    description: "The name of the artifact"
+    value: "gh-pages-artifact"
+runs:
+  using: composite
+  steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+    - name: Set up nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: 19
+    - name: Install dependencies
+      shell: bash
+      run: npm install
+    - name: Build site
+      shell: bash
+      run: npm run build
+    - name: Upload build artifact
+      if: ${{ inputs.generate_artifact != 'false' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: gh-pages-artifact
+        path: build
+        retention-days: 1
+
