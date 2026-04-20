@@ -40,7 +40,7 @@
 
 <img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/2a4c96ca-c3de-4af4-9d51-9cada8569c46" />
 
-- Once you've finished adding your entry, make sure you commit the changes (just like what you did for the file upload).
+- Once you've finished adding your entry, make sure you commit the changes (just like what you did for the image upload step).
 - After that, navigate to the `Pull requests` tab and create a `New pull request`
 
 <img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/02749246-d0ec-41d2-ac76-4b2e17960c34" />
