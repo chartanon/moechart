@@ -87,6 +87,7 @@ import neko_nin_3 from '../../assets/thumbnails/neko_nin_3.jpg';
 import neko_nin_spin from '../../assets/thumbnails/neko_nin_spin.jpg';
 import neko_nin_spin_plus from '../../assets/thumbnails/neko_nin_spin_plus.jpg';
 import wagahigh from '../../assets/thumbnails/wagahigh.jpg';
+import wagahigh_oc from '../../assets/thumbnails/wagahigh_oc.jpg';
 import tsujidou from '../../assets/thumbnails/tsujidou.jpg';
 import fureraba from '../../assets/thumbnails/fureraba.jpg';
 import fureraba_fd from '../../assets/thumbnails/fureraba_fd.jpg';
@@ -94,6 +95,7 @@ import making_lovers from '../../assets/thumbnails/making-lovers.jpg';
 import making_lovers_after from '../../assets/thumbnails/making_lovers_after.jpg';
 import sugar_style from '../../assets/thumbnails/sugar-style.jpg';
 import harem_kingdom from '../../assets/thumbnails/harem-kingdom.jpg';
+import hajilove from '../../assets/thumbnails/hajilove.jpg';
 import primal_hearts from '../../assets/thumbnails/primal-hearts.jpg';
 import primal_hearts_2 from '../../assets/thumbnails/primal_hearts_2.jpg';
 import mml from '../../assets/thumbnails/mml.jpg';
@@ -201,6 +203,7 @@ import shukusei_gf_3 from '../../assets/thumbnails/shukusei_gf_3.jpg';
 import mashiro from '../../assets/thumbnails/mashiro.jpg';
 import mashiro_sana from '../../assets/thumbnails/mashiro_sana.jpg';
 import amanatsu from '../../assets/thumbnails/amanatsu.jpg';
+import amanatsu_plus from '../../assets/thumbnails/amanatsu_plus.jpg';
 import happiness_2 from '../../assets/thumbnails/happiness_2.jpg';
 import lovepical from '../../assets/thumbnails/lovepical.jpg';
 import tayutama from '../../assets/thumbnails/tayutama.jpg';
@@ -210,6 +213,7 @@ import golden_marriage from '../../assets/thumbnails/golden_marriage.jpg';
 import toheart from '../../assets/thumbnails/toheart.jpg';
 import e_school_life from '../../assets/thumbnails/e_school_life.jpg';
 import karenai_sekai from '../../assets/thumbnails/karenai_sekai.jpg';
+import karigurashi from '../../assets/thumbnails/karigurashi.jpg';
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
@@ -1616,10 +1620,26 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
+        sequels: ['https://vndb.org/v47551'],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Countryside, Summer',
         descriptionSecondRowText: 'Group of Friends',
         translationReleaseDate: Date.parse('2024-05-17')
+    },
+    {
+        name: 'Amanatsu+',
+        vndbLink: 'https://vndb.org/v47551',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: amanatsu_plus,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.SCENARIO_SELECTION
+        ],
+        originalGame: 'https://vndb.org/v34848',
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Countryside, Summer',
+        descriptionSecondRowText: 'Group of Friends',
+        translationReleaseDate: Date.parse('2026-04-14')
     },
     {
         name: 'SHUFFLE!',
@@ -1938,6 +1958,7 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
+        sequels: ['https://vndb.org/v20524'],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Slice of Life, Student Club',
         descriptionSecondRowText: 'School Life Comedy',
@@ -1951,6 +1972,21 @@ export const visualNovelData: VisualNovelProps[] = [
                 opinionated. A good balance of romance and comedy, with just a
                 tiny emphasis on it's plot.
                 `
+    },
+    {
+        name: 'Wagahigh OC',
+        vndbLink: 'https://vndb.org/v20524',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: wagahigh_oc,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.SCENARIO_SELECTION
+        ],
+        originalGame: 'https://vndb.org/v17823',
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Slice of Life, Student Club',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2026-02-13'),
     },
     {
         name: 'Tsujidou',
@@ -2085,6 +2121,20 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Cafe, Dormitory',
         descriptionSecondRowText: 'Slice of Life Comedy',
         translationReleaseDate: Date.parse('2025-12-19')
+    },
+    {
+        name: 'HajiLove',
+        vndbLink: 'https://vndb.org/v30456',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: hajilove,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Pure Love, Wedding',
+        descriptionSecondRowText: 'Slice of Life Comedy',
+        translationReleaseDate: Date.parse('2026-04-11'),
     },
     {
         name: 'PRIMAL×HEARTS',
@@ -2674,6 +2724,34 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2019-05-31')
     },
     {
+        name: "Ren'ai 0 Kilometer",
+        vndbLink: 'https://vndb.org/v6714',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: renzero,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Family Life, Comedy',
+        descriptionSecondRowText: 'Breaking the Fourth Wall',
+        translationReleaseDate: Date.parse('2026-01-29'),
+    },
+    {
+        name: "Karigurashi Ren'ai",
+        vndbLink: 'https://vndb.org/v22045',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: karigurashi,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Homecoming, Comedy',
+        descriptionSecondRowText: 'Under the Same Roof',
+        translationReleaseDate: Date.parse('2026-03-26'),
+    },
+    {
         name: 'Koikari',
         vndbLink: 'https://vndb.org/v25366',
         playtime: PlaytimeLength.MEDIUM,
@@ -3176,16 +3254,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Older Sister, Secret Romance',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2022-03-31')
-    },
-    {
-        name: "Ren'ai 0 Kilometer",
-        vndbLink: 'https://vndb.org/v6714',
-        thumbnailSource: renzero,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'kawaiinium',
-        descriptionSecondRowText: '2026-01-29',
-        isUpcomingRelease: true
     },
     {
         name: 'Aonatsu Line',
