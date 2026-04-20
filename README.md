@@ -45,10 +45,8 @@
 
 <img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/02749246-d0ec-41d2-ac76-4b2e17960c34" />
 
-- When you create the pull request, make sure you have a descriptive title that mentions the name of the VN you're adding.
+- When you create the pull request, make sure you have a descriptive title that mentions the name of the VN you're adding. Chartanon or I will review your PR before merging, in case there are any mistakes.
 
 <img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/4f0f44ac-952f-41cb-b3e9-8a047265c180" />
-
-- Chartanon or I will review your PR before merging, in case there are any mistakes.
 
 - You're done!
