@@ -27,5 +27,15 @@
 
 - Scroll down and take note of the `VisualNovelProps` section. These are all possible fields you can fill out for a VN entry.
 
-<img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/dedd397e-448b-4dd1-8edd-2be54cc1cac9" />
+<img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/72c7f222-6359-4c74-80c2-eaa306d57894" />
 
+- If you are adding a new entry, go to the bottom of the list and add it there. Make sure there are commas after every entry except the last one.
+
+- If you are adding a sequel/FD, find the original's entry and add slot your entry in afterwards.
+
+<img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/40a143ea-ede3-4b66-836f-31a7a0cfdaa4" />
+
+- Some fields have predefined options. You can check the `/utils.ts` file that is within the same folder as `visualNovelData.tsx` to see what you can use.
+- Otherwise, refer to other entries as an example to see how you should format your entry.
+
+<img width="2518" height="1324" alt="Untitled" src="https://github.com/user-attachments/assets/2a4c96ca-c3de-4af4-9d51-9cada8569c46" />
