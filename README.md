@@ -1,6 +1,6 @@
 # /vn/ Moege Chart
 
-## How to contribute
+## How to add new entries to the moechart
 
 
 - Create a fork of the repository
