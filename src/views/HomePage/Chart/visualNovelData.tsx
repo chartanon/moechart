@@ -238,7 +238,7 @@ export interface VisualNovelProps {
     descriptionFirstRowText: string;
     //Additional description line for more text.
     descriptionSecondRowText: string;
-    //Optional. TL's release date, if this game has not come out in english yet.
+    //Optional. TL's release date.
     translationReleaseDate?: number;
     //Optional. 'true' if the game isn't TL'd yet.
     isUpcomingRelease?: boolean;
