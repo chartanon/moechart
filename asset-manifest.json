@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moechart/static/js/main.94b2f696.js",
+    "main.js": "/moechart/static/js/main.b8924918.js",
     "static/media/cute-shining-idol.mp3": "/moechart/static/media/cute-shining-idol.506a35a0ea677fb1fae8.mp3",
     "static/media/kimi-ga-ichiban.mp3": "/moechart/static/media/kimi-ga-ichiban.47e54daa229776509515.mp3",
     "static/media/first-cherry-blossom.mp3": "/moechart/static/media/first-cherry-blossom.4f6ab900c5979f5c8f81.mp3",
@@ -22,6 +22,7 @@
     "static/media/period.jpg": "/moechart/static/media/period.5663b098da30b3ae231c.jpg",
     "static/media/sakusaku.jpg": "/moechart/static/media/sakusaku.9ab724c23991a872540e.jpg",
     "static/media/flowlove.jpg": "/moechart/static/media/flowlove.2b4c18947ed940d4dbdb.jpg",
+    "static/media/tenpure.jpg": "/moechart/static/media/tenpure.861ea97129c4919a2ac8.jpg",
     "static/media/tayutama_fd.jpg": "/moechart/static/media/tayutama_fd.27f407ea5d8419ecc755.jpg",
     "static/media/wan-nyan.jpg": "/moechart/static/media/wan-nyan.ef746a7515c8297e734c.jpg",
     "static/media/kemonomichi.jpg": "/moechart/static/media/kemonomichi.7d6785e9d4b2fa8c5251.jpg",
@@ -49,6 +50,7 @@
     "static/media/kemonomichi_love_plus.jpg": "/moechart/static/media/kemonomichi_love_plus.20b475ecf172b721ca9b.jpg",
     "static/media/kinkoi_gt.jpg": "/moechart/static/media/kinkoi_gt.485cb023d8a1986a6242.jpg",
     "static/media/sextet_3.jpg": "/moechart/static/media/sextet_3.c4b1a0dae65be7f8909f.jpg",
+    "static/media/koikata.jpg": "/moechart/static/media/koikata.1796f8fb872d11580bee.jpg",
     "static/media/koikuma_fd.jpg": "/moechart/static/media/koikuma_fd.46518ed894767867f47e.jpg",
     "static/media/nekomiko.jpg": "/moechart/static/media/nekomiko.87328cc980f2f7a8e67f.jpg",
     "static/media/uchi_no_koibito.jpg": "/moechart/static/media/uchi_no_koibito.81d0e967b4211548afd7.jpg",
@@ -114,6 +116,7 @@
     "static/media/wabisabi.jpg": "/moechart/static/media/wabisabi.2c2d8d64d757282d5f69.jpg",
     "static/media/walkure-romanze.jpg": "/moechart/static/media/walkure-romanze.542fa5b020104e053a3c.jpg",
     "static/media/sakura-sakura.jpg": "/moechart/static/media/sakura-sakura.2f5cce8ef707bc111ad9.jpg",
+    "static/media/imoten.jpg": "/moechart/static/media/imoten.4c4b71429524484591da.jpg",
     "static/media/majikoi.jpg": "/moechart/static/media/majikoi.d744cd9664153f13fb20.jpg",
     "static/media/ponkowa.jpg": "/moechart/static/media/ponkowa.050cef3e5386720c24e3.jpg",
     "static/media/aokana_extra2.jpg": "/moechart/static/media/aokana_extra2.4e05fbd874e9659849c3.jpg",
@@ -136,6 +139,7 @@
     "static/media/imouto-no-seiiki.jpg": "/moechart/static/media/imouto-no-seiiki.813da70ef7aeccc7fa95.jpg",
     "static/media/Background.jpg": "/moechart/static/media/Background.4608740a19ef247c83ca.jpg",
     "static/media/yukizakura.jpg": "/moechart/static/media/yukizakura.74d507b444f8cb7e0637.jpg",
+    "static/media/dora_con_cafe.jpg": "/moechart/static/media/dora_con_cafe.63d1421ad22003fc9eac.jpg",
     "static/media/chrono-clock.jpg": "/moechart/static/media/chrono-clock.68796d9a0cc88f2e327a.jpg",
     "static/media/konosora_snow.jpg": "/moechart/static/media/konosora_snow.955e0641eba154430994.jpg",
     "static/media/melty-moment.jpg": "/moechart/static/media/melty-moment.58bfbaada184899c5dc7.jpg",
@@ -150,8 +154,10 @@
     "static/media/nekopara_4.jpg": "/moechart/static/media/nekopara_4.ecbaed53d67b259b7715.jpg",
     "static/media/renai-royale-fd.jpg": "/moechart/static/media/renai-royale-fd.71da6f313eeda9de1320.jpg",
     "static/media/majikoi_a1.jpg": "/moechart/static/media/majikoi_a1.3ac53bcc76d60016fd03.jpg",
+    "static/media/docchi.jpg": "/moechart/static/media/docchi.3b2bb48108b82b1ddd8b.jpg",
     "static/media/onikiss.jpg": "/moechart/static/media/onikiss.ecb77fd34ac95241bbf0.jpg",
     "static/media/aikagi.jpg": "/moechart/static/media/aikagi.dcabe8a2c2346a2c43e6.jpg",
+    "static/media/koiama.jpg": "/moechart/static/media/koiama.d840fae1fe851b8b809c.jpg",
     "static/media/nine_shinshou.jpg": "/moechart/static/media/nine_shinshou.37880ae4bdd5dc2645e0.jpg",
     "static/media/majikoi_a2.jpg": "/moechart/static/media/majikoi_a2.9300e8c10038bed262fd.jpg",
     "static/media/loca_love_jinja.jpg": "/moechart/static/media/loca_love_jinja.52fee843842956bf1cc8.jpg",
@@ -186,6 +192,7 @@
     "static/media/koichoco.jpg": "/moechart/static/media/koichoco.1a19f851ddf17fdb19b5.jpg",
     "static/media/kotori_love_exp.jpg": "/moechart/static/media/kotori_love_exp.a274a6d63b6c072c674c.jpg",
     "static/media/cafe-stella.jpg": "/moechart/static/media/cafe-stella.a9e833738dd1dcdf6f82.jpg",
+    "static/media/triple_pairing.jpg": "/moechart/static/media/triple_pairing.efaf678dd3102f5e9aba.jpg",
     "static/media/drapri.jpg": "/moechart/static/media/drapri.d493427128181e31f15e.jpg",
     "static/media/sanoba-witch.jpg": "/moechart/static/media/sanoba-witch.c4038c301cfbbf44fe20.jpg",
     "static/media/ixshetell.jpg": "/moechart/static/media/ixshetell.c677c0f526a203e96f87.jpg",
@@ -204,6 +211,8 @@
     "static/media/nine_ep3.jpg": "/moechart/static/media/nine_ep3.b2ef6edcd20f6697640e.jpg",
     "static/media/uchi-no-kanojo.jpg": "/moechart/static/media/uchi-no-kanojo.67e6a15c8e309d03b245.jpg",
     "static/media/ninki-seiyuu.jpg": "/moechart/static/media/ninki-seiyuu.bbef58a1b0d6aa77b319.jpg",
+    "static/media/yubisaki.jpg": "/moechart/static/media/yubisaki.cf5fda6eafc8df6bcbea.jpg",
+    "static/media/secret_love.jpg": "/moechart/static/media/secret_love.129c4538d5e2e45b7608.jpg",
     "static/media/harmoney.jpg": "/moechart/static/media/harmoney.ea4d6eaca974400669b5.jpg",
     "static/media/hinatabokko.jpg": "/moechart/static/media/hinatabokko.b16d222698267f74a4ac.jpg",
     "static/media/canvas-2.jpg": "/moechart/static/media/canvas-2.83c308a5191e0ab8c18b.jpg",
@@ -223,9 +232,9 @@
     "static/media/nine_ep2.jpg": "/moechart/static/media/nine_ep2.114295c54e28cab47494.jpg",
     "static/media/ikikoi.jpg": "/moechart/static/media/ikikoi.1cac669bbb90032248ea.jpg",
     "index.html": "/moechart/index.html",
-    "main.94b2f696.js.map": "/moechart/static/js/main.94b2f696.js.map"
+    "main.b8924918.js.map": "/moechart/static/js/main.b8924918.js.map"
   },
   "entrypoints": [
-    "static/js/main.94b2f696.js"
+    "static/js/main.b8924918.js"
   ]
 }
