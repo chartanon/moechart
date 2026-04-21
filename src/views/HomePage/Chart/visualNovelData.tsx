@@ -214,6 +214,16 @@ import toheart from '../../assets/thumbnails/toheart.jpg';
 import e_school_life from '../../assets/thumbnails/e_school_life.jpg';
 import karenai_sekai from '../../assets/thumbnails/karenai_sekai.jpg';
 import karigurashi from '../../assets/thumbnails/karigurashi.jpg';
+import docchi from '../../assets/thumbnails/docchi.jpg';
+import secret_love from '../../assets/thumbnails/secret_love.jpg';
+import tenpure from '../../assets/thumbnails/tenpure.jpg';
+import triple_pairing from '../../assets/thumbnails/triple_pairing.jpg';
+import koikata from '../../assets/thumbnails/koikata.jpg';
+import koiama from '../../assets/thumbnails/koiama.jpg';
+import yubisaki from '../../assets/thumbnails/yubisaki.jpg';
+import imoten from '../../assets/thumbnails/imoten.jpg';
+import dora_con_cafe from '../../assets/thumbnails/dora_con_cafe.jpg';
+
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
 
@@ -3270,6 +3280,116 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
+        name: 'Dora-Con Cafe',
+        vndbLink: 'https://vndb.org/v51010',
+        thumbnailSource: dora_con_cafe,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: '2026-04-23',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Triple Pairing',
+        vndbLink: 'https://vndb.org/v61832',
+        thumbnailSource: triple_pairing,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Kagami Games',
+        descriptionSecondRowText: '2026-05-29',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Koikata',
+        vndbLink: 'https://vndb.org/v17632',
+        thumbnailSource: koikata,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Kagami Games',
+        descriptionSecondRowText: '2026',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Tenpure!!',
+        vndbLink: 'https://vndb.org/v22357',
+        thumbnailSource: tenpure,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Kagami Games',
+        descriptionSecondRowText: '2026',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Golden Marriage',
+        vndbLink: 'https://vndb.org/v14264',
+        thumbnailSource: golden_marriage,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2026',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Floral Flowlove',
+        vndbLink: 'https://vndb.org/v18842',
+        thumbnailSource: flowlove,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: '2026',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Docchi no i ga Suki Desu ka?',
+        vndbLink: 'https://vndb.org/v25999',
+        thumbnailSource: docchi,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Secret Love',
+        vndbLink: 'https://vndb.org/v50153',
+        thumbnailSource: secret_love,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'KoiAma',
+        vndbLink: 'https://vndb.org/v39649',
+        thumbnailSource: koiama,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Yubisaki Connection',
+        vndbLink: 'https://vndb.org/v29667',
+        thumbnailSource: yubisaki,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'NekoNyan',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Imoten',
+        vndbLink: 'https://vndb.org/v21495',
+        thumbnailSource: imoten,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'JAST',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Aonatsu Line',
         vndbLink: 'https://vndb.org/v24702',
         thumbnailSource: aonatsu_line,
@@ -3306,26 +3426,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Fan translation',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Golden Marriage',
-        vndbLink: 'https://vndb.org/v14264',
-        thumbnailSource: golden_marriage,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Floral Flowlove',
-        vndbLink: 'https://vndb.org/v18842',
-        thumbnailSource: flowlove,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
