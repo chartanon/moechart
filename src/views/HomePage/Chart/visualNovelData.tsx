@@ -258,6 +258,11 @@ export interface VisualNovelProps {
     recommendedDescription?: string;
 }
 
+/**
+ * REMEMBER TO UPDATE THE DATE!!!
+ */
+export const lastUpdatedDate: string = '2026-04-21';
+
 export const visualNovelData: VisualNovelProps[] = [
     {
         name: 'Aokana',
@@ -616,10 +621,7 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.UNLOCKABLE_ROUTES,
             FilterAttribute.TRUE_ROUTE
         ],
-        sequels: [
-            'https://vndb.org/v10028',
-            'https://vndb.org/v17147'
-        ],
+        sequels: ['https://vndb.org/v10028', 'https://vndb.org/v17147'],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Fantasy, Central Heroine',
         descriptionSecondRowText: 'Alternate Dimensions',
@@ -666,16 +668,14 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.BRANCHING_PLOT
         ],
-        sequels: [
-            'https://vndb.org/v1375'
-        ],
+        sequels: ['https://vndb.org/v1375'],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Deities, Shinto Shrine',
         descriptionSecondRowText: 'Dousei',
         translationReleaseDate: Date.parse('2025-03-27')
     },
     {
-        name: 'Tayutama -It\'s Happy Days-',
+        name: "Tayutama -It's Happy Days-",
         vndbLink: 'https://vndb.org/v1375',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: tayutama_fd,
@@ -694,10 +694,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v19658',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: karenai_sekai,
-        attributes: [
-            FilterAttribute.ADV_TEXTBOX,
-            FilterAttribute.LINEAR_PLOT
-        ],
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
         genreFocus: GenreFocus.STORYLINE,
         descriptionFirstRowText: 'Cafe, Angels',
         descriptionSecondRowText: 'Nakige',
@@ -1150,7 +1147,7 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2024-04-26')
     },
     {
-        name: "Mashiro-iro Symphony",
+        name: 'Mashiro-iro Symphony',
         vndbLink: 'https://vndb.org/v1552',
         playtime: PlaytimeLength.LONG,
         thumbnailSource: mashiro,
@@ -1165,7 +1162,7 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2024-05-02')
     },
     {
-        name: "Mashiro-iro Sana",
+        name: 'Mashiro-iro Sana',
         vndbLink: 'https://vndb.org/v37651',
         playtime: PlaytimeLength.MEDIUM,
         thumbnailSource: mashiro_sana,
@@ -1578,7 +1575,6 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Summer, Slice of Life',
         descriptionSecondRowText: 'Single Heroine',
         translationReleaseDate: Date.parse('2023-08-25')
-
     },
     {
         name: 'Icing -love coating-',
@@ -1823,14 +1819,8 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v22880',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: shukusei_gf,
-        attributes: [
-            FilterAttribute.ADV_TEXTBOX,
-            FilterAttribute.LINEAR_PLOT
-        ],
-        sequels: [
-            'https://vndb.org/v23290',
-            'https://vndb.org/v23772'
-        ],
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
+        sequels: ['https://vndb.org/v23290', 'https://vndb.org/v23772'],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Mahou Shoujo, Dousei',
         descriptionSecondRowText: 'Single Heroine',
@@ -1841,10 +1831,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v23290',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: shukusei_gf_2,
-        attributes: [
-            FilterAttribute.ADV_TEXTBOX,
-            FilterAttribute.LINEAR_PLOT
-        ],
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
         originalGame: 'https://vndb.org/v22880',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Mahou Shoujo, Dousei',
@@ -1856,10 +1843,7 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v23772',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: shukusei_gf_3,
-        attributes: [
-            FilterAttribute.ADV_TEXTBOX,
-            FilterAttribute.LINEAR_PLOT
-        ],
+        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.LINEAR_PLOT],
         originalGame: 'https://vndb.org/v22880',
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Mahou Shoujo, Dousei',
@@ -2010,7 +1994,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Slice of Life, Student Club',
         descriptionSecondRowText: 'School Life Comedy',
-        translationReleaseDate: Date.parse('2026-02-13'),
+        translationReleaseDate: Date.parse('2026-02-13')
     },
     {
         name: 'Tsujidou',
@@ -2158,7 +2142,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Pure Love, Wedding',
         descriptionSecondRowText: 'Slice of Life Comedy',
-        translationReleaseDate: Date.parse('2026-04-11'),
+        translationReleaseDate: Date.parse('2026-04-11')
     },
     {
         name: 'PRIMAL×HEARTS',
@@ -2759,7 +2743,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Family Life, Comedy',
         descriptionSecondRowText: 'Breaking the Fourth Wall',
-        translationReleaseDate: Date.parse('2026-01-29'),
+        translationReleaseDate: Date.parse('2026-01-29')
     },
     {
         name: "Karigurashi Ren'ai",
@@ -2773,7 +2757,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Homecoming, Comedy',
         descriptionSecondRowText: 'Under the Same Roof',
-        translationReleaseDate: Date.parse('2026-03-26'),
+        translationReleaseDate: Date.parse('2026-03-26')
     },
     {
         name: 'Koikari',
@@ -2810,7 +2794,7 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Love Triangle, Comedy',
         descriptionSecondRowText: 'Rent-a-boyfriend',
-        translationReleaseDate: Date.parse('2025-10-31'),
+        translationReleaseDate: Date.parse('2025-10-31')
     },
     {
         name: "Ren'ai x Royale",
@@ -2863,7 +2847,7 @@ export const visualNovelData: VisualNovelProps[] = [
         thumbnailSource: onigokko_fd,
         attributes: [
             FilterAttribute.FLOATING_TEXTBOX,
-            FilterAttribute.SCENARIO_SELECTION,
+            FilterAttribute.SCENARIO_SELECTION
         ],
         originalGame: 'https://vndb.org/v5549',
         genreFocus: GenreFocus.COMEDY,
@@ -2975,7 +2959,10 @@ export const visualNovelData: VisualNovelProps[] = [
         vndbLink: 'https://vndb.org/v36773',
         playtime: PlaytimeLength.SHORT,
         thumbnailSource: kemonomichi_love_plus,
-        attributes: [FilterAttribute.ADV_TEXTBOX, FilterAttribute.KINETIC_NOVEL],
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
         originalGame: 'https://vndb.org/v31669',
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'Mahou Shoujo, Idols',

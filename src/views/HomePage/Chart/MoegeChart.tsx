@@ -41,6 +41,7 @@ interface IProps {
     isSelectedBookmarkFilter: boolean;
     isSelectedChronologicalSort: boolean;
     isSelectedRandomTenFilter: boolean;
+    lastUpdatedDate: string;
 }
 
 export const MoegeChart: React.FC<IProps> = ({
@@ -55,7 +56,8 @@ export const MoegeChart: React.FC<IProps> = ({
     handleBookmarkVisualNovel,
     isSelectedBookmarkFilter,
     isSelectedChronologicalSort,
-    isSelectedRandomTenFilter
+    isSelectedRandomTenFilter,
+    lastUpdatedDate
 }) => {
     let allSequelRelationships: SeriesRelationshipMap = {};
     let recommendedVisualNovels: VisualNovelProps[] = [];
@@ -314,7 +316,9 @@ export const MoegeChart: React.FC<IProps> = ({
                 >
                     <MusicNoteIcon />
                 </MusicButton>
-                <UpdatedInfoFont>(Last Updated: 2026-04-21)</UpdatedInfoFont>
+                <UpdatedInfoFont>
+                    (Last Updated: {lastUpdatedDate})
+                </UpdatedInfoFont>
             </InfoBar>
 
             <AnimatePresence>

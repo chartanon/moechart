@@ -20,6 +20,8 @@ import {
     BOOKMARKS
 } from '../localStorage';
 
+import { lastUpdatedDate } from './Chart/visualNovelData';
+
 export const HomePage: React.FC = () => {
     localStorage.setItem('likesPinks', 'true');
 
@@ -240,6 +242,7 @@ export const HomePage: React.FC = () => {
                 isSelectedBookmarkFilter={isSelectedBookmarkFilter}
                 isSelectedChronologicalSort={isSelectedChronologicalSort}
                 isSelectedRandomTenFilter={isSelectedRandomTenFilter}
+                lastUpdatedDate={lastUpdatedDate}
             />
         </Container>
     );
