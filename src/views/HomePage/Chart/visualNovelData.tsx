@@ -120,6 +120,7 @@ import kamiyaba from '../../assets/thumbnails/kamiyaba.jpg';
 import otome_domain from '../../assets/thumbnails/otome-domain.jpg';
 import idoldays from '../../assets/thumbnails/idoldays.jpg';
 import pet_jijou from '../../assets/thumbnails/pet-jijou.jpg';
+import pet_jijou_2 from '../../assets/thumbnails/pet-jijou_2.jpg';
 import yukizakura from '../../assets/thumbnails/yukizakura.jpg';
 import osadai from '../../assets/thumbnails/osadai.jpg';
 import osadai_fd from '../../assets/thumbnails/osadai_fd.jpg';
@@ -163,7 +164,6 @@ import honey from '../../assets/thumbnails/honey.jpg';
 import oneyuu from '../../assets/thumbnails/oneyuu.jpg';
 import shugaten from '../../assets/thumbnails/shugaten.jpg';
 import mamiya_mami from '../../assets/thumbnails/mamiya-mami.jpg';
-import yuuri_to_marin from '../../assets/thumbnails/yuuri_to_marin.jpg';
 import giniro_haruka from '../../assets/thumbnails/giniro-haruka.jpg';
 import clover_days from '../../assets/thumbnails/clover-days.jpg';
 import walkure_romanze from '../../assets/thumbnails/walkure-romanze.jpg';
@@ -223,6 +223,12 @@ import koiama from '../../assets/thumbnails/koiama.jpg';
 import yubisaki from '../../assets/thumbnails/yubisaki.jpg';
 import imoten from '../../assets/thumbnails/imoten.jpg';
 import dora_con_cafe from '../../assets/thumbnails/dora_con_cafe.jpg';
+import flyable_heart from '../../assets/thumbnails/flyable_heart.jpg';
+import to_heart from '../../assets/thumbnails/to_heart.jpg';
+import tsuriotsu from '../../assets/thumbnails/tsuriotsu.jpg';
+import tsukikana from '../../assets/thumbnails/tsukikana.jpg';
+import monkeys from '../../assets/thumbnails/monkeys.jpg';
+
 
 import { FilterAttribute, GenreFocus } from './utils';
 import { PlaytimeLength } from './utils';
@@ -261,7 +267,7 @@ export interface VisualNovelProps {
 /**
  * REMEMBER TO UPDATE THE DATE!!!
  */
-export const lastUpdatedDate: string = '2026-04-21';
+export const lastUpdatedDate: string = '2026-08-07';
 
 export const visualNovelData: VisualNovelProps[] = [
     {
@@ -963,6 +969,21 @@ export const visualNovelData: VisualNovelProps[] = [
         descriptionFirstRowText: 'Duel, Secret Identity',
         descriptionSecondRowText: 'Science Fiction',
         translationReleaseDate: Date.parse('2023-09-29')
+    },
+    {
+        name: 'Uchi wa Mou, Enki Dekinai.',
+        vndbLink: 'https://vndb.org/v31740',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: enking,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.UNLOCKABLE_ROUTES,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Design Story, 4th Wall Breaking',
+        descriptionSecondRowText: 'Eroge Development',
+        translationReleaseDate: Date.parse('2026-07-24')
     },
     {
         name: 'Sanoba Witch',
@@ -2514,10 +2535,40 @@ export const visualNovelData: VisualNovelProps[] = [
             FilterAttribute.ADV_TEXTBOX,
             FilterAttribute.KINETIC_NOVEL
         ],
+        sequels: ['https://vndb.org/v63759'],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'Angels and Demons, Dousei',
         descriptionSecondRowText: 'Deredere Heroine',
         translationReleaseDate: Date.parse('2022-04-08')
+    },
+    {
+        name: 'Uchi no Pet Jijou Vol. 2',
+        vndbLink: 'https://vndb.org/v63759',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: pet_jijou_2,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
+        originalGame: 'https://vndb.org/v34004',
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Angels and Demons, Dousei',
+        descriptionSecondRowText: 'Deredere Heroine',
+        translationReleaseDate: Date.parse('2026-06-22')
+    },
+    {
+        name: 'Dora-Con Cafe',
+        vndbLink: 'https://vndb.org/v51010',
+        playtime: PlaytimeLength.SHORT,
+        thumbnailSource: dora_con_cafe,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.KINETIC_NOVEL
+        ],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Dragon Heroine, Slice of Life',
+        descriptionSecondRowText: 'Under the Same Roof',
+        translationReleaseDate: Date.parse('2026-04-23')
     },
     {
         name: 'Yukizakura',
@@ -3042,6 +3093,20 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2025-08-29')
     },
     {
+        name: 'Tenpure!!',
+        vndbLink: 'https://vndb.org/v22357',
+        playtime: PlaytimeLength.MEDIUM,
+        thumbnailSource: tenpure,
+        attributes: [
+            FilterAttribute.ADV_TEXTBOX,
+            FilterAttribute.BRANCHING_PLOT
+        ],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Clichés, High School',
+        descriptionSecondRowText: 'School Life Comedy',
+        translationReleaseDate: Date.parse('2026-06-26')
+    },
+    {
         name: 'Mamiya Mami',
         vndbLink: 'https://vndb.org/v33130',
         playtime: PlaytimeLength.SHORT,
@@ -3267,43 +3332,13 @@ export const visualNovelData: VisualNovelProps[] = [
         translationReleaseDate: Date.parse('2022-03-31')
     },
     {
-        name: 'Dora-Con Cafe',
-        vndbLink: 'https://vndb.org/v51010',
-        thumbnailSource: dora_con_cafe,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: '2026-04-23',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Triple Pairing',
-        vndbLink: 'https://vndb.org/v61832',
-        thumbnailSource: triple_pairing,
-        attributes: [],
-        genreFocus: GenreFocus.ROM_COM,
-        descriptionFirstRowText: 'Kagami Games',
-        descriptionSecondRowText: '2026-05-29',
-        isUpcomingRelease: true
-    },
-    {
         name: 'Koikata',
         vndbLink: 'https://vndb.org/v17632',
         thumbnailSource: koikata,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Kagami Games',
-        descriptionSecondRowText: '2026',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Tenpure!!',
-        vndbLink: 'https://vndb.org/v22357',
-        thumbnailSource: tenpure,
-        attributes: [],
-        genreFocus: GenreFocus.COMEDY,
-        descriptionFirstRowText: 'Kagami Games',
-        descriptionSecondRowText: '2026',
+        descriptionSecondRowText: '2026-08-25',
         isUpcomingRelease: true
     },
     {
@@ -3324,6 +3359,36 @@ export const visualNovelData: VisualNovelProps[] = [
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'NekoNyan',
         descriptionSecondRowText: '2026',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'AkaSaka',
+        vndbLink: 'https://vndb.org/v547',
+        thumbnailSource: akasaka,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Sekai Project',
+        descriptionSecondRowText: '2026',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Nursery☆Rhyme',
+        vndbLink: 'https://vndb.org/v310',
+        thumbnailSource: nursery_rhyme,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'kawaiinium',
+        descriptionSecondRowText: '2027',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Triple Pairing',
+        vndbLink: 'https://vndb.org/v61832',
+        thumbnailSource: triple_pairing,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Kagami Games',
+        descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
     {
@@ -3397,22 +3462,62 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
+        name: 'Flyable Heart',
+        vndbLink: 'https://vndb.org/v1179',
+        thumbnailSource: flyable_heart,
+        attributes: [],
+        genreFocus: GenreFocus.ROM_COM,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'To Heart',
+        vndbLink: 'https://vndb.org/v18',
+        thumbnailSource: to_heart,
+        attributes: [],
+        genreFocus: GenreFocus.ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Tsuriotsu',
+        vndbLink: 'https://vndb.org/v10680',
+        thumbnailSource: tsuriotsu,
+        attributes: [],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Tsukikana',
+        vndbLink: 'https://vndb.org/v24803',
+        thumbnailSource: tsukikana,
+        attributes: [],
+        genreFocus: GenreFocus.STORY_ROMANCE,
+        descriptionFirstRowText: 'Fan translation',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
+        name: 'Monkeys!¡',
+        vndbLink: 'https://vndb.org/v31262',
+        thumbnailSource: monkeys,
+        attributes: [],
+        genreFocus: GenreFocus.COMEDY,
+        descriptionFirstRowText: 'Shiravune',
+        descriptionSecondRowText: 'TBA',
+        isUpcomingRelease: true
+    },
+    {
         name: 'Lover Able',
         vndbLink: 'https://vndb.org/v5734',
         thumbnailSource: lover_able,
         attributes: [],
         genreFocus: GenreFocus.ROM_COM,
         descriptionFirstRowText: 'kawaiinium',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Nursery☆Rhyme',
-        vndbLink: 'https://vndb.org/v310',
-        thumbnailSource: nursery_rhyme,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Fan translation',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     },
@@ -3437,16 +3542,6 @@ export const visualNovelData: VisualNovelProps[] = [
         isUpcomingRelease: true
     },
     {
-        name: 'Enking',
-        vndbLink: 'https://vndb.org/v31740',
-        thumbnailSource: enking,
-        attributes: [],
-        genreFocus: GenreFocus.STORY_ROMANCE,
-        descriptionFirstRowText: 'NekoNyan',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
         name: 'MeltyMoment',
         vndbLink: 'https://vndb.org/v12830',
         thumbnailSource: melty_moment,
@@ -3460,16 +3555,6 @@ export const visualNovelData: VisualNovelProps[] = [
         name: 'Hoshikaka',
         vndbLink: 'https://vndb.org/v2968',
         thumbnailSource: hoshikaka,
-        attributes: [],
-        genreFocus: GenreFocus.ROMANCE,
-        descriptionFirstRowText: 'Sekai Project',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'AkaSaka',
-        vndbLink: 'https://vndb.org/v547',
-        thumbnailSource: akasaka,
         attributes: [],
         genreFocus: GenreFocus.ROMANCE,
         descriptionFirstRowText: 'Sekai Project',
@@ -3513,16 +3598,6 @@ export const visualNovelData: VisualNovelProps[] = [
         attributes: [],
         genreFocus: GenreFocus.COMEDY,
         descriptionFirstRowText: 'JAST',
-        descriptionSecondRowText: 'TBA',
-        isUpcomingRelease: true
-    },
-    {
-        name: 'Yuuri to Marin wa Iyashite Agetai',
-        vndbLink: 'https://vndb.org/v35645',
-        thumbnailSource: yuuri_to_marin,
-        attributes: [],
-        genreFocus: GenreFocus.NUKIGE,
-        descriptionFirstRowText: 'Shiravune',
         descriptionSecondRowText: 'TBA',
         isUpcomingRelease: true
     }
